@@ -14,6 +14,10 @@
 	align-items		: center;
 }
 
+.temp {
+	height: 200vh;
+}
+
 /* Background Mask */
 .home .background_mask {
 	position		: absolute;
@@ -21,6 +25,11 @@
 	height			: 95%;
 	left			: 0;
 	top			: 0;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
 	
 	mask-image		: url(/home_background_1.svg);
 	mask-size		: 100% 100%;
@@ -45,32 +54,31 @@
 	z-index			: -1;
 }
 
-/* Circle */
-@for $i from 1 through 5 {
-	.home .circle:nth-of-type(#{$i}) {
-		position		: absolute;
-	
-		background		: rgba(187, 187, 187, 0.1);
-		opacity			: 0;
-		border-radius		: 50%;
-	
-		animation		: background_fade 15s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-		transition-delay	: random() + s;
-		animation-delay		: random() + s;
-	}
+/* Circles */
+.home .circles {
+	position		: absolute;
+	width			: 150%;
+	height			: 150%;
 }
 
 /* Logo */
 .home .logo {
+	cursor			: pointer;
+
 	position		: absolute;
 	height			: 72px;
 	width			: 72px;
 	top			: 7.5%;
+
+	transition		: 0.15s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+}
+.home .logo:hover {
+	transform		: scale(1.1);
 }
 
 /* Welcome Text */
 .home .welcome_text {
-	position		: absolute;
+	position		: fixed;
 	height			: auto;
 	width			: auto;
 	top			: 25%;
@@ -133,7 +141,7 @@
 	position		: absolute;
 	width			: 200px;
 	height			: 50px;
-	top			: 75%;
+	top			: 80%;
 	padding			: 12.5px;
 
 	font-family		: Oxygen;
@@ -143,11 +151,11 @@
 	line-height		: 18px;
 	text-align		: center;
 
-	background-image	: linear-gradient(to left, #FFFFFF, #FFFFFF 50%, #6C47B1 50%, #6C47B1);
+	background-image	: linear-gradient(to left, #FFFFFF, #FFFFFF 50%, #634AB3 50%, #634AB3);
 	background-position	: 100% 0;
 	background-size		: 200% 200%;
-	color			: #6C47B1;
-	border			: 3px solid #6C47B1;
+	color			: #634AB3;
+	border			: 3px solid #634AB3;
 	box-sizing		: border-box;
 	box-shadow		: 4px 4px 80px rgba(0, 0, 0, 0.25);
 	border-radius		: 50px;
@@ -184,7 +192,7 @@
 		transform		: scale(1);
 		opacity			: 0;
 	}
-	5% {
+	10% {
 		transform		: scale(1);
 		opacity			: 1;
 	}

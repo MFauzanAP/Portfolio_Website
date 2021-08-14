@@ -1,40 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Particles from 'react-particles-js'
 import styles from '../styles/Home.module.scss'
-
-//	Declare constants
-const num_circles = 5;
 
 //	Declare output function
 function Home() {
-
-	/* =============================================== Generate circles ============================================== */
-
-	//	Declare array to hold values
-	var circles = [];
-
-	//	For loop to generate circles
-	for (let i = 0; i < num_circles; i++) {
-
-		//	Generate random size and position
-		let size = (Math.floor(Math.random() * 50) + 1) * 15;
-		let x = (Math.floor(Math.random() * 100));
-		let y = (Math.floor(Math.random() * 100));
-
-		//	Create style
-		let style = {
-			width		: `${size}px`,
-			height		: `${size}px`,
-			left		: `${x}%`,
-			top		: `${y}%`
-		}
-
-		//	Add to array
-		circles.push(<div className={styles.circle} style={style}></div>);
-
-	}
-
-
 
 	/* ================================================ Output final html =============================================== */
 	return (
@@ -61,35 +31,73 @@ function Home() {
 					<div className={styles.background} id="background"></div>
 
 					{/* Background Circles */}
-					{circles}
+					<Particles className={styles.circles} id="circles"
+						params={{
+							particles	: {
+								number		: {
+									value		: 5,
+									density		: {
+										enable		: true,
+										value_area	: 1000
+									}
+								},
+								color		: {
+									value		: '#BBBBBB'
+								},
+								opacity		: {
+									value		: 0.1,
+									anim		: {
+										enable		: true,
+										speed		: 3
+									}
+								},
+								size		: {
+									value		: 250,
+									random		: true,
+									anim		: {
+										enable		: true,
+										speed		: 3
+									}
+								},
+								line_linked	: {
+									enable		: false
+								},
+								move		: {
+									speed		: 1,
+									bounce		: false
+								}
+							}
+						}}
+					/>
+
+					{/* Welcome Text */}
+					<div className={styles.welcome_text} id="welcome-text">
+
+						{/* Title */}
+						<div className={styles.title} id="title">MUHAMMAD FAUZAN ARISTYA PUTRA</div>
+
+						{/* Underline */}
+						<div className={styles.underline} id="underline"></div>
+
+						{/* Meta */}
+						<div className={styles.meta} id="meta">
+							Undergraduate student at Qatar University, 
+							<br/>
+							Full Stack Developer by day, 
+							<br/>
+							Game Developer by night.
+						</div>
+
+					</div>
 
 				</div>
 
 				{/* Logo */}
 				<img className={styles.logo} src="/logo.svg"/>
 
-				{/* Welcome Text */}
-				<div className={styles.welcome_text} id="welcome-text">
-
-					{/* Title */}
-					<div className={styles.title} id="title">MUHAMMAD FAUZAN ARISTYA PUTRA</div>
-
-					{/* Underline */}
-					<div className={styles.underline} id="underline"></div>
-
-					{/* Meta */}
-					<div className={styles.meta} id="meta">
-						Undergraduate student at Qatar University, 
-						<br/>
-						Full Stack Developer by day, 
-						<br/>
-						{/* Game Developer by night. */}
-					</div>
-
-				</div>
-
 				{/* Call to Action */}
 				<div className={styles.call_to_action}>VIEW PROJECTS</div>
+				<div className={styles.temp}></div>
 
 			</div>
 
