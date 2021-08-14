@@ -1,8 +1,42 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
-export default function Home() {
+//	Declare constants
+const num_circles = 5;
+
+//	Declare output function
+function Home() {
+
+	/* =============================================== Generate circles ============================================== */
+
+	//	Declare array to hold values
+	var circles = [];
+
+	//	For loop to generate circles
+	for (let i = 0; i < num_circles; i++) {
+
+		//	Generate random size and position
+		let size = (Math.floor(Math.random() * 50) + 1) * 15;
+		let x = (Math.floor(Math.random() * 100));
+		let y = (Math.floor(Math.random() * 100));
+
+		//	Create style
+		let style = {
+			width		: `${size}px`,
+			height		: `${size}px`,
+			left		: `${x}%`,
+			top		: `${y}%`
+		}
+
+		//	Add to array
+		circles.push(<div className={styles.circle} style={style}></div>);
+
+	}
+
+
+
+	/* ================================================ Output final html =============================================== */
 	return (
 		<div className={styles.container}>
 
@@ -19,9 +53,20 @@ export default function Home() {
 
 			{/* Homepage */}
 			<div className={styles.home}>
-			
-				{/* Background */}
-				<img src="/home_background_1.svg" className={styles.background} id="background"/>
+
+				{/* Background Mask */}
+				<div className={styles.background_mask} id="background_mask">
+
+					{/* Background */}
+					<div className={styles.background} id="background"></div>
+
+					{/* Background Circles */}
+					{circles}
+
+				</div>
+
+				{/* Logo */}
+				<img className={styles.logo} src="/logo.svg"/>
 
 				{/* Welcome Text */}
 				<div className={styles.welcome_text} id="welcome-text">
@@ -38,16 +83,19 @@ export default function Home() {
 						<br/>
 						Full Stack Developer by day, 
 						<br/>
-						Game Developer by night.
+						{/* Game Developer by night. */}
 					</div>
 
 				</div>
 
 				{/* Call to Action */}
-				<div className={styles.call_to_action}></div>
+				<div className={styles.call_to_action}>VIEW PROJECTS</div>
 
 			</div>
 
 		</div>
-	)
+	);
+
 }
+
+export default Home
