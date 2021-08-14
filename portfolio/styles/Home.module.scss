@@ -1,4 +1,13 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
+/*                                                       Imports                                                      */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                       Styles                                                       */
 /* ------------------------------------------------------------------------------------------------------------------ */
 
@@ -17,6 +26,82 @@
 .temp {
 	height: 200vh;
 }
+
+/* Navbar */
+.home .navbar {
+	width			: 100%;
+	height			: 200px;
+	padding-top		: 65px;
+
+	display			: flex;
+	flex-direction		: row;
+	justify-content		: center;
+	align-items		: flex-start;
+}
+
+/* Navbar Links */
+.navbar a {
+	display			: block;
+	position			: relative;
+	
+	padding			: 0.2em 0;
+	margin-left		: 50px;
+	margin-right		: 50px;
+
+	font-family		: Lato;
+	font-style		: normal;
+	font-weight		: 500;
+	font-size		: 16px;
+	line-height		: 18px;
+
+	text-decoration		: none;
+
+	color			: #FFFFFF;
+}
+
+/* Navbar Underline */
+.navbar a::after {
+	position		: absolute;
+	bottom			: -0.2em;
+	left			: 0;
+	width			: 100%;
+	height			: 0.2em;
+
+	transform		: scale(0);
+	transform-origin	: center;
+
+	background-color	: #FFFFFF;
+	opacity			: 1;
+
+	content			: '';
+
+	transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+}
+.navbar a:hover::after,
+.navbar a:focus::after,
+.navbar a.active:hover::after,
+.navbar a.active:focus:after {
+	transform		: scale(0.9);
+}
+.navbar a.active::after {
+	transform		: scale(0.7);
+}
+
+/* Logo */
+.home .logo {
+	cursor			: pointer;
+
+	flex			: 0 1 auto;
+	height			: 72px;
+	width			: 550px;
+	margin-top		: 30px;
+
+	transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+}
+.home .logo:hover {
+	transform		: scale(1.15);
+}
+
 
 /* Background Mask */
 .home .background_mask {
@@ -61,21 +146,6 @@
 	height			: 150%;
 }
 
-/* Logo */
-.home .logo {
-	cursor			: pointer;
-
-	position		: absolute;
-	height			: 72px;
-	width			: 72px;
-	top			: 7.5%;
-
-	transition		: 0.15s cubic-bezier(0.42, 0, 0.58, 1) 0s;
-}
-.home .logo:hover {
-	transform		: scale(1.1);
-}
-
 /* Welcome Text */
 .home .welcome_text {
 	position		: fixed;
@@ -90,13 +160,13 @@
 }
 
 /* Title */
-.home .title {
+.welcome_text .title {
 	flex			: auto;
 	max-width		: 13em;
 
-	font-family		: Oxygen;
+	font-family		: Lato;
 	font-style		: normal;
-	font-weight		: bold;
+	font-weight		: 400;
 	font-size		: 32px;
 	line-height		: 40px;
 	letter-spacing		: 5px;
@@ -107,7 +177,7 @@
 }
 
 /* Underline */
-.home .underline {
+.welcome_text .underline {
 	flex			: auto;
 	width			: 200px;
 	height			: 0px;
@@ -120,13 +190,13 @@
 }
 
 /* Meta */
-.home .meta {
+.welcome_text .meta {
 	flex			: auto;
 	max-width		: 20em;
 
-	font-family		: Oxygen;
+	font-family		: Lato;
 	font-style		: normal;
-	font-weight		: normal;
+	font-weight		: 300;
 	font-size		: 18px;
 	line-height		: 23px;
 	text-align		: center;
@@ -141,10 +211,10 @@
 	position		: absolute;
 	width			: 200px;
 	height			: 50px;
-	top			: 80%;
+	top			: 85%;
 	padding			: 12.5px;
 
-	font-family		: Oxygen;
+	font-family		: Lato;
 	font-style		: normal;
 	font-weight		: bold;
 	font-size		: 13px;

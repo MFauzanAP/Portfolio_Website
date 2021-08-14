@@ -17,7 +17,6 @@ function Home() {
 				<title>Portfolio</title>
 				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
-				<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet'></link>
 
 			</Head>
 
@@ -92,8 +91,25 @@ function Home() {
 
 				</div>
 
-				{/* Logo */}
-				<img className={styles.logo} src="/logo.svg"/>
+				{/* Navbar Buttons */}
+				<div className={styles.navbar} id="navbar">
+
+					{/* Home */}
+					<a className={styles.active} href="/">Home</a>
+
+					{/* Projects */}
+					<a href="/projects">Projects</a>
+
+					{/* Logo */}
+					<img className={styles.logo} src="/logo.svg"/>
+
+					{/* About */}
+					<a href="/about">About</a>
+
+					{/* Contact */}
+					<a href="/contact">Contact</a>
+
+				</div>
 
 				{/* Call to Action */}
 				<div className={styles.call_to_action}>VIEW PROJECTS</div>
