@@ -168,6 +168,18 @@ function Home() {
 								{/* Details */}
 								<div className={styles.icon}>Al Khor International School</div>
 								<div className={styles.icon}>07/2008 - 07/2021</div>
+								<div className={styles.divider}></div>
+
+								{/* Description */}
+								
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris leo leo, vestibulum et egestas nec, fermentum a nunc. 
+								Suspendisse convallis tellus iaculis viverra faucibus. Morbi eleifend at lacus vel lacinia. Fusce sit amet massa pulvinar turpis tempus dapibus. 
+								Donec maximus euismod ipsum posuere pellentesque. Curabitur bibendum, risus sit amet luctus viverra, ipsum erat tincidunt ante, non sodales felis mi sit amet neque. 
+								Sed non nisi eu nunc rhoncus tincidunt eget sed velit. Suspendisse at turpis erat.
+								<div className={styles.divider}></div>
+
+								{/* Action */}
+								<button style={{color: '#000000', margin: '10px'}}>View Transcript</button>
 
 							</div>
 
@@ -195,6 +207,9 @@ function Home() {
 
 							{/* Body */}
 							<div className={styles.body}>
+
+								{/* Action */}
+								<button style={{color: '#000000', margin: '10px'}}>View Transcript</button>
 
 							</div>
 
