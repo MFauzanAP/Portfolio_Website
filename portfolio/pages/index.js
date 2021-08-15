@@ -1,7 +1,8 @@
+import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import Image from 'next/image'
 import Particles from 'react-particles-js'
-import styles from '../styles/Home.module.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //	Declare output function
 function Home() {
@@ -142,7 +143,59 @@ function Home() {
 					{/* Timeline */}
 					<div className={styles.timeline}>
 
-						{/* Card 1 */}
+						{/* Card */}
+						<div className={styles.card}>
+
+							{/* Head */}
+							<div className={styles.head}>
+
+								{/* Logo */}
+								<div className={styles.icon_box}></div>
+
+								{/* Header */}
+								<h2>
+									<span>07/2021</span>
+									Full Stack Developer Intern
+								</h2>
+
+							</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Body */}
+							<div className={styles.body}>
+
+								{/* Details */}
+								<div style={{marginBottom: '5px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									Malvor
+								</div>
+								<div>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
+									07/2021 - Present
+								</div>
+								<div className={styles.divider}></div>
+
+								{/* Description */}
+								
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris leo leo, vestibulum et egestas nec, fermentum a nunc. 
+								Suspendisse convallis tellus iaculis viverra faucibus. Morbi eleifend at lacus vel lacinia. Fusce sit amet massa pulvinar turpis tempus dapibus. 
+								Donec maximus euismod ipsum posuere pellentesque. Curabitur bibendum, risus sit amet luctus viverra, ipsum erat tincidunt ante, non sodales felis mi sit amet neque. 
+								Sed non nisi eu nunc rhoncus tincidunt eget sed velit. Suspendisse at turpis erat.
+								<div className={styles.divider}></div>
+
+								{/* Action */}
+								<button style={{color: '#000000', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									View Work
+								</button>
+
+							</div>
+
+						</div>
+
+						{/* Card */}
 						<div className={styles.card}>
 
 							{/* Head */}
@@ -166,8 +219,14 @@ function Home() {
 							<div className={styles.body}>
 
 								{/* Details */}
-								<div className={styles.icon}>Al Khor International School</div>
-								<div className={styles.icon}>07/2008 - 07/2021</div>
+								<div style={{marginBottom: '5px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									Al Khor International School
+								</div>
+								<div>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									07/2008 - 07/2021
+								</div>
 								<div className={styles.divider}></div>
 
 								{/* Description */}
@@ -179,13 +238,16 @@ function Home() {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<button style={{color: '#000000', margin: '10px'}}>View Transcript</button>
+								<button style={{color: '#000000', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									Download Transcript
+								</button>
 
 							</div>
 
 						</div>
 
-						{/* Card 1 */}
+						{/* Card */}
 						<div className={styles.card}>
 
 							{/* Head */}
@@ -197,7 +259,7 @@ function Home() {
 								{/* Header */}
 								<h2>
 									<span>06/2021</span>
-									Data Entry Operator
+									Data Entry Operator Intern
 								</h2>
 
 							</div>
@@ -208,8 +270,22 @@ function Home() {
 							{/* Body */}
 							<div className={styles.body}>
 
+								{/* Details */}
+								<div style={{marginBottom: '5px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									Malvor
+								</div>
+								<div>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
+									06/2021 - Present
+								</div>
+								<div className={styles.divider}></div>
+
 								{/* Action */}
-								<button style={{color: '#000000', margin: '10px'}}>View Transcript</button>
+								<button style={{color: '#000000', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									View Transcript
+								</button>
 
 							</div>
 
