@@ -7,6 +7,26 @@
 
 
 
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/*                                                      Variables                                                     */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+/* Timeline Card */
+$num-cards		: 2;
+$card-width		: 400px;
+$card-height		: 600px;
+$card-header-height	: 100px;
+$card-margin		: 90px;
+$card-padding		: 15px;
+$card-colors		: #7454da, #3bca9f, #e448a0;
+$marker-size		: 9px;
+
+
+
+
+
 /* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                       Styles                                                       */
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -16,95 +36,106 @@
 	width			: 100%;
 	height			: 100%;
 
+	overflow-x		: hidden;
+
 	flex			: 1;
 	display			: flex;
 	flex-direction		: column;
 	justify-content		: center;
 	align-items		: center;
-}
 
-.temp {
-	height: 200vh;
-}
 
-/* Navbar */
-.home .navbar {
-	width			: 100%;
-	height			: 200px;
-	padding-top		: 65px;
 
-	display			: flex;
-	flex-direction		: row;
-	justify-content		: center;
-	align-items		: flex-start;
-}
+	/* ==================================================== Children ==================================================== */
 
-/* Navbar Links */
-.navbar a {
-	display			: block;
-	position			: relative;
+	/* Navbar */
+	.navbar {
+		position		: absolute;
+		width			: 100%;
+		height			: 200px;
+		top			: 65px;
 	
-	padding			: 0.2em 0;
-	margin-left		: 50px;
-	margin-right		: 50px;
+		display			: flex;
+		flex-direction		: row;
+		flex-wrap		: wrap;
+		justify-content		: center;
+		align-items		: flex-start;
 
-	font-family		: Lato;
-	font-style		: normal;
-	font-weight		: 500;
-	font-size		: 16px;
-	line-height		: 18px;
 
-	text-decoration		: none;
 
-	color			: #FFFFFF;
+		/* ==================================================== Children ==================================================== */
+
+		/* Navbar Links */
+		a {
+			display			: block;
+			position		: relative;
+			
+			padding			: 0.2em 0;
+			margin-left		: 50px;
+			margin-right		: 50px;
+
+			font-family		: Lato;
+			font-style		: normal;
+			font-weight		: 500;
+			font-size		: 16px;
+			line-height		: 18px;
+
+			text-decoration		: none;
+
+			color			: #FFFFFF;
+		}
+
+		/* Navbar Link Underline */
+		a::after {
+			position		: absolute;
+			bottom			: -0.2em;
+			left			: 0;
+			width			: 100%;
+			height			: 0.2em;
+
+			transform		: scale(0);
+			transform-origin	: center;
+
+			background-color	: #FFFFFF;
+			opacity			: 1;
+
+			content			: '';
+
+			transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		}
+		a:hover::after,
+		a:focus::after,
+		a.active:hover::after,
+		a.active:focus:after {
+			transform		: scale(0.9);
+		}
+		a.active::after {
+			transform		: scale(0.7);
+		}
+	}
+
+	/* Logo */
+	.logo {
+		cursor			: pointer;
+
+		flex			: 0 1 auto;
+		height			: 72px;
+		width			: 550px;
+		margin-top		: 30px;
+
+		transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+	}
+	.logo:hover {
+		transform		: scale(1.15);
+	}
 }
 
-/* Navbar Underline */
-.navbar a::after {
-	position		: absolute;
-	bottom			: -0.2em;
-	left			: 0;
-	width			: 100%;
-	height			: 0.2em;
 
-	transform		: scale(0);
-	transform-origin	: center;
 
-	background-color	: #FFFFFF;
-	opacity			: 1;
-
-	content			: '';
-
-	transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-}
-.navbar a:hover::after,
-.navbar a:focus::after,
-.navbar a.active:hover::after,
-.navbar a.active:focus:after {
-	transform		: scale(0.9);
-}
-.navbar a.active::after {
-	transform		: scale(0.7);
-}
-
-/* Logo */
-.home .logo {
-	cursor			: pointer;
-
-	flex			: 0 1 auto;
-	height			: 72px;
-	width			: 550px;
-	margin-top		: 30px;
-
-	transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-}
-.home .logo:hover {
-	transform		: scale(1.15);
-}
-
+/* ================================================== Landing Page ================================================== */
 
 /* Background Mask */
-.home .background_mask {
+.background_mask {
 	position		: absolute;
 	width			: 100%;
 	height			: 95%;
@@ -125,7 +156,7 @@
 }
 
 /* Background */
-.home .background {
+.background {
 	position		: absolute;
 	width			: 200%;
 	height			: 200%;
@@ -140,14 +171,14 @@
 }
 
 /* Circles */
-.home .circles {
+.circles {
 	position		: absolute;
 	width			: 150%;
 	height			: 150%;
 }
 
 /* Welcome Text */
-.home .welcome_text {
+.welcome_text {
 	position		: fixed;
 	height			: auto;
 	width			: auto;
@@ -162,7 +193,6 @@
 /* Title */
 .welcome_text .title {
 	flex			: auto;
-	max-width		: 13em;
 
 	font-family		: Lato;
 	font-style		: normal;
@@ -185,14 +215,13 @@
 	margin-top		: 10px;
 	margin-bottom		: 20px;
 
-	border			: 2px solid #FFFFFF;
+	border			: 1px solid #DDDDDD;
 	border-radius		: 1px;
 }
 
 /* Meta */
 .welcome_text .meta {
 	flex			: auto;
-	max-width		: 20em;
 
 	font-family		: Lato;
 	font-style		: normal;
@@ -205,13 +234,12 @@
 }
 
 /* Call to Action */
-.home .call_to_action {
+.call_to_action {
 	cursor			: pointer;
 
-	position		: absolute;
 	width			: 200px;
 	height			: 50px;
-	top			: 85%;
+	margin-top		: 85vh;
 	padding			: 12.5px;
 
 	font-family		: Lato;
@@ -232,12 +260,303 @@
 
 	transition		: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 }
-.home .call_to_action:hover {
+.call_to_action:hover {
 	background-position	: 0 0;
 	color			: #FFFFFF;
 
 	transform		: scale(1.1);
 }
+
+
+
+/* ==================================================== Projects ==================================================== */
+
+.projects {
+	margin-top		: 100px;
+}
+
+
+
+/* ================================================= Career Timeline ================================================ */
+
+.career_timeline {
+	width			: 100%;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
+
+	background		: #646464;
+	color			: #FFFFFF;
+
+	margin-top		: 100px;
+	padding-top		: 100px;
+	padding-bottom		: 100px;
+
+	/* Slant */
+	&::before {
+		width			: 0;
+		height			: 0;
+
+		margin-top		: -199px;
+
+		border-style		: solid;
+		border-width		: 0 0 100px 100vw;
+		border-color		: transparent transparent #646464 transparent;
+
+		content			: '';
+	}
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Title */
+	.title {
+		width			: 500px;
+
+		margin-top		: 100px;
+
+		font-family		: Lato;
+		font-style		: normal;
+		font-weight		: 500;
+		font-size		: 24px;
+		letter-spacing		: 2.5px;
+		word-spacing		: 2.5px;
+		line-height		: 18px;
+		text-align		: center;
+	}
+
+	/* Underline */
+	.underline {
+		flex			: auto;
+		width			: 200px;
+		height			: 0px;
+
+		margin-top		: 15px;
+		margin-bottom		: 100px;
+
+		border			: 1px solid #DDDDDD;
+		border-radius		: 1px;
+	}
+
+	/* Timeline */
+	.timeline {
+		position		: relative;
+
+		/* Line */
+		&::after {
+			position		: absolute;
+			top			: 0;
+			bottom			: 0;
+			left			: 50%;
+
+			border			: 1px solid #9F9F9F;
+			border-radius		: 1px;
+
+			content			: '';
+
+			z-index			: 1;
+		}
+		
+
+
+		/* ==================================================== Children ==================================================== */
+
+		/* Card */
+		.card {
+			position		: relative;
+			max-height		: $card-height;
+			width			: $card-width;
+			height			: auto;
+
+			display			: flex;
+			flex-direction		: column;
+			box-shadow		: 4px 4px 50px rgba(0, 0, 0, 0.25);
+
+			margin			: 0;
+			margin-top		: $card-margin / 2;
+			margin-bottom		: $card-margin / 2;
+
+			z-index			: 2;
+
+			/* Left */
+			&:nth-child(odd) {
+				margin-right		: $card-width + $card-margin;
+
+				/* Arrow */
+				.head::before {
+					position		: absolute;
+					width			: 0;
+					height			: 0;
+					left			: 100%;
+
+					border-color		: #46B8E9;
+					border-top		: 10px solid transparent;
+					border-bottom		: 10px solid transparent;
+					border-left-width	: 10px;
+					border-left-style	: solid;
+
+					content			: "";
+				}
+
+				/* Marker */
+				.head::after {
+					position		: absolute;
+					width			: $marker-size;
+					height			: $marker-size;
+					left			: $card-width + ($card-margin / 2) - ($marker-size / 2) + 1;
+
+					background-color	: #9F9F9F;
+					border-radius		: $marker-size;
+
+					box-shadow		: 0px 0px 2px 8px #646464;
+
+					content			: "";
+				}
+			}
+
+			/* Right */
+			&:nth-child(even) {
+				margin-left		: $card-width + $card-margin;
+
+				/* Head */
+				.head::before {
+					position		: absolute;
+					width			: 0;
+					height			: 0;
+					right			: 100%;
+
+					border-color		: #46B8E9;
+					border-top		: 10px solid transparent;
+					border-bottom		: 10px solid transparent;
+					border-right-width	: 10px;
+					border-right-style	: solid;
+
+					content			: "";
+				}
+
+				/* Marker */
+				.head::after {
+					position		: absolute;
+					width			: $marker-size;
+					height			: $marker-size;
+					right			: $card-width + ($card-margin / 2) - ($marker-size / 2) - 1;
+
+					background-color	: #9F9F9F;
+					border-radius		: $marker-size;
+
+					box-shadow		: 0px 0px 2px 8px #646464;
+
+					content			: "";
+				}
+			}
+
+			/* Head */
+			.head {
+				position		: relative;
+				flex			: 0 1 $card-header-height;
+
+				display			: flex;
+				align-items		: center;
+
+				background-color	: #46B8E9;
+				color			: #FFFFFF;
+				border-radius		: 5px 5px 0 0;
+
+				font-weight		: 400;
+
+				/* Icon Box */
+				.icon_box {
+					display			: inline;
+					float			: left;
+					width			: 50px;
+					height			: 50px;
+
+					margin			: $card-padding;
+
+					background		: rgba(0, 0, 0, 0.15);
+					border-radius		: 25%;
+				}
+
+				/* Title */
+				h2 {
+					margin			: 0;
+					margin-bottom		: 6px;
+
+					font-weight		: inherit;
+					line-height		: 1rem;
+
+					/* Subtitle */
+					span {
+						display			: block;
+
+						margin			: 0;
+						margin-bottom		: 6px;
+
+						font-size		: 0.8rem;
+					}
+				}
+			}
+
+			/* Underline */
+			.underline {
+				position		: absolute;
+				width			: $card-width;
+				height			: 10px;
+				top			: 100%;
+
+				background-color	: purple;
+				border			: none;
+				border-radius		: 0 0 10px 10px;
+
+				margin-top		: -5px;
+			}
+
+			/* Body */
+			.body {
+				position		: relative;
+				width			: $card-width;
+				flex			: 1 1 auto;
+
+				background-color	: #FFFFFF;
+				border-radius		: 0 0 10px 10px;
+				color			: #3D3D3D;
+
+				padding			: $card-padding;
+			}
+		}
+		@for $i from 1 through $num-cards {
+
+			/* Loop through each child and change colour */
+			.card:nth-child(#{$i}) {
+
+				/* Get Color */
+				$color			: nth($card-colors, ((($i - 1) % 3) + 1));
+
+				/* Change Color*/
+				.head {
+					background-color		: $color;
+				}
+				.head::before {
+				  	border-color			: $color;
+					border-top			: 10px solid transparent;
+					border-bottom			: 10px solid transparent;
+				}
+				.underline {
+					background-color		: $color;
+				}
+				
+			}
+
+		}
+
+	}
+
+}
+
+
 
 
 

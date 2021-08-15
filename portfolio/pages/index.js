@@ -23,6 +23,8 @@ function Home() {
 			{/* Homepage */}
 			<div className={styles.home}>
 
+				{/* ================================================== Landing Page ================================================== */}
+
 				{/* Background Mask */}
 				<div className={styles.background_mask} id="background_mask">
 
@@ -73,14 +75,18 @@ function Home() {
 					<div className={styles.welcome_text} id="welcome-text">
 
 						{/* Title */}
-						<div className={styles.title} id="title">MUHAMMAD FAUZAN ARISTYA PUTRA</div>
+						<div className={styles.title} id="title">
+							MUHAMMAD FAUZAN 
+							<br/>
+							ARISTYA PUTRA
+						</div>
 
 						{/* Underline */}
 						<div className={styles.underline} id="underline"></div>
 
 						{/* Meta */}
 						<div className={styles.meta} id="meta">
-							Undergraduate student at Qatar University, 
+							First year undergraduate student at Qatar University, 
 							<br/>
 							Full Stack Developer by day, 
 							<br/>
@@ -113,6 +119,93 @@ function Home() {
 
 				{/* Call to Action */}
 				<div className={styles.call_to_action}>VIEW PROJECTS</div>
+
+
+
+				{/* ==================================================== Projects ==================================================== */}
+				<div className={styles.projects}>
+
+					{/* Title */}
+					<h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+
+				</div>
+
+
+
+				{/* ==================================================== Career Timeline ==================================================== */}
+				<div className={styles.career_timeline}>
+
+					{/* Title */}
+					<div className={styles.title}>CAREER TIMELINE</div>
+					<div className={styles.underline}></div>
+
+					{/* Timeline */}
+					<div className={styles.timeline}>
+
+						{/* Card 1 */}
+						<div className={styles.card}>
+
+							{/* Head */}
+							<div className={styles.head}>
+
+								{/* Logo */}
+								<div className={styles.icon_box}></div>
+
+								{/* Header */}
+								<h2>
+									<span>07/2021</span>
+									High School Diploma
+								</h2>
+
+							</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Body */}
+							<div className={styles.body}>
+
+								{/* Details */}
+								<div className={styles.icon}>Al Khor International School</div>
+								<div className={styles.icon}>07/2008 - 07/2021</div>
+
+							</div>
+
+						</div>
+
+						{/* Card 1 */}
+						<div className={styles.card}>
+
+							{/* Head */}
+							<div className={styles.head}>
+
+								{/* Logo */}
+								<div className={styles.icon_box}></div>
+
+								{/* Header */}
+								<h2>
+									<span>06/2021</span>
+									Data Entry Operator
+								</h2>
+
+							</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Body */}
+							<div className={styles.body}>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
 				<div className={styles.temp}></div>
 
 			</div>
