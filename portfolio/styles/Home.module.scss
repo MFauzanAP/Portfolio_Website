@@ -14,7 +14,7 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 /* Timeline Card */
-$num-cards		: 2;
+$num-cards		: 3;
 $card-width		: 400px;
 $card-height		: 600px;
 $card-header-height	: 100px;
@@ -531,7 +531,6 @@ $marker-size		: 9px;
 				height			: 10px;
 				top			: 100%;
 
-				background-color	: purple;
 				border			: none;
 				border-radius		: 0 0 10px 10px;
 
@@ -588,6 +587,9 @@ $marker-size		: 9px;
 				}
 				button {
 					border-color			: $color;
+				}
+				.icon {
+					color				: $color;
 				}
 				
 			}
