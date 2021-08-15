@@ -150,7 +150,9 @@ function Home() {
 							<div className={styles.head}>
 
 								{/* Logo */}
-								<div className={styles.icon_box}></div>
+								<div className={styles.icon_box}>
+									<img src="/qu_logo.svg"></img>
+								</div>
 
 								{/* Header */}
 								<h2>
@@ -194,7 +196,9 @@ function Home() {
 							<div className={styles.head}>
 
 								{/* Logo */}
-								<div className={styles.icon_box}></div>
+								<div className={styles.icon_box}>
+									<img src="/malvor_logo.svg"></img>
+								</div>
 
 								{/* Header */}
 								<h2>
@@ -271,7 +275,9 @@ function Home() {
 							<div className={styles.head}>
 
 								{/* Logo */}
-								<div className={styles.icon_box}></div>
+								<div className={styles.icon_box}>
+									<img src="/malvor_logo.svg"></img>
+								</div>
 
 								{/* Header */}
 								<h2>
@@ -323,7 +329,9 @@ function Home() {
 							<div className={styles.head}>
 
 								{/* Logo */}
-								<div className={styles.icon_box}></div>
+								<div className={styles.icon_box}>
+									<img src="/akis_logo.png"></img>
+								</div>
 
 								{/* Header */}
 								<h2>
