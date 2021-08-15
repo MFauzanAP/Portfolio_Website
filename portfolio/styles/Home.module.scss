@@ -14,8 +14,8 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 /* Timeline Card */
-$num-cards		: 3;
-$card-width		: 400px;
+$num-cards		: 4;
+$card-width		: 500px;
 $card-height		: 600px;
 $card-header-height	: 100px;
 $card-margin		: 90px;
@@ -550,6 +550,30 @@ $marker-size		: 9px;
 				padding			: $card-padding;
 				padding-left		: $card-padding + 10px;
 				padding-right		: $card-padding + 10px;
+
+				/* Tags */
+				.tags {
+					padding-inline-start	: 0;
+
+					/* Tag */
+					li {
+						display			: inline-block;
+						width			: auto;
+						height			: 32px;
+
+						background-color	: #E4E4E4;
+						border-radius		: 12px;
+						color			: #5B5B5B;
+
+						font-size		: 14px;
+						text-align		: center;
+						line-height		: 32px;
+
+						padding			: 0 12px;
+						margin-bottom		: 5px;
+						margin-right		: 5px;
+					}
+				}
 			}
 
 			/* Divider */
