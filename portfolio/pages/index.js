@@ -4,9 +4,11 @@ import Image from 'next/image'
 import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
+import { ToastContainer } from 'react-nextjs-toast';
+import copy_to_clipboard from './utils/copy_to_clipboard';
 
 //	Declare output function
-function Home() {
+function Home () {
 
 	/* ================================================ Output final html =============================================== */
 	return (
@@ -24,6 +26,9 @@ function Home() {
 
 			{/* Homepage */}
 			<div className={styles.home}>
+
+				{/* Toast Container */}
+				<ToastContainer/>
 
 				{/* ================================================== Landing Page ================================================== */}
 
@@ -438,18 +443,28 @@ function Home() {
 
 
 				{/* ==================================================== Showcase ==================================================== */}
-				{/* <div className={styles.showcase}>
+				<div className={styles.showcase}>
 
 					
 
-				</div> */}
+				</div>
 
 
 
 				{/* ===================================================== Footer ===================================================== */}
 				<div className={styles.footer}>
+					
+					{/* Copyright */}
+					<div className={styles.divider}></div>
+					<p>Copyright © 2021 Muhammad Fauzan Aristya Putra</p>
 
-					@ 2021 Muhammad Fauzan Aristya Putra
+					{/* Links */}
+					<ul className={styles.links}>
+						<a href="https://github.com/MFauzanAP" target="_blank"><li><FontAwesomeIcon className={styles.icon} icon={['fab', 'github']}></FontAwesomeIcon></li></a>
+						<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank"><li><FontAwesomeIcon className={styles.icon} icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
+						<a href="https://www.instagram.com/fow_zen/" target="_blank"><li><FontAwesomeIcon className={styles.icon} icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
+						<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={copy_to_clipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon className={styles.icon} icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
+					</ul>
 
 				</div>
 				
