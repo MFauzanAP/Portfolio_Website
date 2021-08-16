@@ -16,7 +16,7 @@ function Home() {
 			<Head>
 
 				{/* Details */}
-				<title>Portfolio</title>
+				<title>Muhammad Fauzan Aristya Putra's Portfolio</title>
 				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
 
@@ -71,31 +71,34 @@ function Home() {
 								}
 							}
 						}}
-					/>
+					></Particles>
+
+					{/* Background End */}
+					<div style={{position: 'absolute', bottom: "300px"}} id="background_end"></div>
 
 					{/* Welcome Text */}
-					<div className={styles.welcome_text} id="welcome-text">
+					<Controller><Scene duration={300} triggerElement="#background_end">
+						{progress => (
+							<div className={styles.welcome_text} style={{opacity: 1 - progress}} id="welcome-text">
 
-						{/* Title */}
-						<div className={styles.title} id="title">
-							MUHAMMAD FAUZAN 
-							<br/>
-							ARISTYA PUTRA
-						</div>
+								{/* Title */}
+								<div className={styles.title} id="title">
+									MUHAMMAD FAUZAN
+									<br/>
+									ARISTYA PUTRA
+								</div>
 
-						{/* Underline */}
-						<div className={styles.underline} id="underline"></div>
+								{/* Underline */}
+								<div className={styles.underline} id="underline"></div>
 
-						{/* Meta */}
-						<div className={styles.meta} id="meta">
-							First year undergraduate student at Qatar University, 
-							<br/>
-							Full Stack Developer by day, 
-							<br/>
-							Game Developer by night.
-						</div>
+								{/* Meta */}
+								<div className={styles.meta} id="meta">First year undergraduate student at Qatar University,</div>
+								<div className={styles.meta} style={{animationDelay: '4s'}} id="meta">Full Stack Developer by day,</div>
+								<div className={styles.meta} style={{animationDelay: '5.25s'}} id="meta">Game Developer by night.</div>
 
-					</div>
+							</div>
+						)}
+					</Scene></Controller>
 
 				</div>
 
@@ -120,7 +123,7 @@ function Home() {
 				</div>
 
 				{/* Call to Action */}
-				<div className={styles.call_to_action}>VIEW PROJECTS</div>
+				<div className={styles.call_to_action} id="call_to_action">VIEW PROJECTS</div>
 
 
 
@@ -375,16 +378,12 @@ function Home() {
 
 							{/* Footer */}
 							<div className={styles.footer}></div>
-							
+
 						</div>
 
 					</div>
 
 				</div></Scene></Controller>
-
-
-
-				<div className={styles.temp}></div>
 
 			</div>
 

@@ -124,9 +124,11 @@ $marker-size		: 9px;
 		margin-top		: 30px;
 
 		transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-	}
-	.logo:hover {
-		transform		: scale(1.15);
+
+		/* Hover */
+		&.hover {
+			transform		: scale(1.15);
+		}
 	}
 
 	/* Buttons */
@@ -177,84 +179,111 @@ $marker-size		: 9px;
 	overflow		: hidden;
 	
 	z-index			: -1;
-}
 
-/* Background */
-.background {
-	position		: absolute;
-	width			: 200%;
-	height			: 200%;
-	left			: 0;
-	top			: 0;
-	
-	background		: linear-gradient(114.17deg, #6C47B1 0%, #6C47B1 25%, #DB4A87 75%, #DB4A87 100%);
 
-	animation		: background_gradient 30s cubic-bezier(0.42, 0, 0.58, 1) 1s infinite;
-	
-	z-index			: -1;
-}
 
-/* Circles */
-.circles {
-	position		: absolute;
-	width			: 150%;
-	height			: 150%;
-}
+	/* ==================================================== Children ==================================================== */
 
-/* Welcome Text */
-.welcome_text {
-	position		: fixed;
-	height			: auto;
-	width			: auto;
-	top			: 25%;
+	/* Background */
+	.background {
+		position		: absolute;
+		width			: 200%;
+		height			: 200%;
+		left			: 0;
+		top			: 0;
+		
+		background		: linear-gradient(114.17deg, #6C47B1 0%, #6C47B1 25%, #DB4A87 75%, #DB4A87 100%);
 
-	display			: flex;
-	flex-direction		: column;
-	justify-content		: center;
-	align-items		: center;
-}
+		animation		: background_gradient 30s ease 1s infinite;
+		
+		z-index			: -1;
+	}
 
-/* Title */
-.welcome_text .title {
-	flex			: auto;
+	/* Circles */
+	.circles {
+		position		: absolute;
+		width			: 150%;
+		height			: 150%;
+	}
 
-	font-family		: Lato;
-	font-style		: normal;
-	font-weight		: 400;
-	font-size		: 32px;
-	line-height		: 40px;
-	letter-spacing		: 5px;
-	word-spacing		: 5px;
-	text-align		: center;
+	/* Welcome Text */
+	.welcome_text {
+		position		: fixed;
+		height			: auto;
+		width			: auto;
+		top			: 25%;
 
-	color			: #FFFFFF;
-}
+		display			: flex;
+		flex-direction		: column;
+		justify-content		: center;
+		align-items		: center;
 
-/* Underline */
-.welcome_text .underline {
-	flex			: auto;
-	width			: 200px;
-	height			: 0px;
 
-	margin-top		: 10px;
-	margin-bottom		: 20px;
 
-	border			: 1px solid #DDDDDD;
-	border-radius		: 1px;
-}
+		/* ==================================================== Children ==================================================== */
 
-/* Meta */
-.welcome_text .meta {
-	flex			: auto;
+		/* Title */
+		.title {
+			flex			: auto;
 
-	font-family		: Lato;
-	font-style		: normal;
-	font-weight		: 300;
-	font-size		: 18px;
-	line-height		: 23px;
-	text-align		: center;
+			font-family		: Lato;
+			font-style		: normal;
+			font-weight		: 400;
+			font-size		: 32px;
+			line-height		: 40px;
+			letter-spacing		: 5px;
+			word-spacing		: 5px;
+			text-align		: center;
 
-	color			: #EEEEEE;
+			opacity			: 0;
+
+			color			: #FFFFFF;
+			
+			animation		: background_title 1s cubic-bezier(0.34,-0.39, 0.68, 1.38) forwards;
+		}
+
+		/* Underline */
+		.underline {
+			flex			: auto;
+			width			: 200px;
+			height			: 0px;
+
+			margin-top		: 10px;
+			margin-bottom		: 20px;
+
+			border			: 1px solid #DDDDDD;
+			border-radius		: 1px;
+
+			transform		: scaleX(0);
+
+			animation		: background_underline 1s ease forwards;
+			animation-delay		: 1s;
+		}
+
+		/* Meta */
+		.meta {
+			flex			: auto;
+			width			: 0;
+			height			: 1.5em;
+
+			overflow		: hidden;
+
+			font-family		: Lato;
+			font-style		: normal;
+			font-weight		: 300;
+			font-size		: 18px;
+			line-height		: 23px;
+			text-align		: center;
+			word-break		: break-all;
+
+			color			: #EEEEEE;
+
+			animation		: background_meta 2s steps(100, end) 1s 1 normal both;
+			animation-delay		: 2s;
+		}
+
+	}
+
 }
 
 /* Call to Action */
@@ -283,12 +312,14 @@ $marker-size		: 9px;
 	border-radius		: 50px;
 
 	transition		: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-}
-.call_to_action:hover {
-	background-position	: 0 0;
-	color			: #FFFFFF;
 
-	transform		: scale(1.1);
+	/* Hover */
+	&:hover {
+		background-position	: 0 0;
+		color			: #FFFFFF;
+
+		transform		: scale(1.1);
+	}
 }
 
 
@@ -358,16 +389,6 @@ $marker-size		: 9px;
 				opacity			: 1;
 	
 				transform		: scaleX(1);
-
-				/* Body */
-				.body {
-					transform		: scaleX(1);
-				}
-
-				/* Footer */
-				.footer {
-					transform		: scaleX(1);
-				}
 			}
 		}
 
@@ -614,11 +635,6 @@ $marker-size		: 9px;
 				padding-left		: $card-padding + 10px;
 				padding-right		: $card-padding + 10px;
 
-				transform		: scaleY(0);
-				transform-origin	: top;
-
-				transition		: 0.5s ease 1s;
-
 				/* Tags */
 				.tags {
 					padding-inline-start	: 0;
@@ -653,11 +669,6 @@ $marker-size		: 9px;
 				border-radius		: 0 0 10px 10px;
 
 				margin-top		: -5px;
-
-				transform		: scaleY(0);
-				transform-origin	: top;
-
-				transition		: 0.5s ease 1.25s;
 			}
 
 			/* Divider */
@@ -744,5 +755,32 @@ $marker-size		: 9px;
 	100% {
 		transform		: scale(1);
 		opacity			: 0;
+	}
+}
+
+@keyframes background_title {
+	0% {
+		opacity			: 0;
+	}
+	100% {
+		opacity			: 1;
+	}
+}
+
+@keyframes background_underline {
+	0% {
+		transform		: scaleX(0);
+	}
+	100% {
+		transform		: scaleX(1);
+	}
+}
+
+@keyframes background_meta {
+	from {
+		width			: 0;
+	}
+	to {
+		width			: 100%;
 	}
 }
