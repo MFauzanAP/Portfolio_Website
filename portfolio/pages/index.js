@@ -74,12 +74,12 @@ function Home() {
 					></Particles>
 
 					{/* Background End */}
-					<div style={{position: 'absolute', bottom: "300px"}} id="background_end"></div>
+					<div style={{position: 'absolute', bottom: "40%"}} id="background_end"></div>
 
 					{/* Welcome Text */}
-					<Controller><Scene duration={300} triggerElement="#background_end">
+					<Controller><Scene duration={600} triggerElement="#background_end">
 						{progress => (
-							<div className={styles.welcome_text} style={{opacity: 1 - progress}} id="welcome-text">
+							<div className={styles.welcome_text} style={{opacity: 1 - progress, top: `${25 - (progress * 25)}%`}} id="welcome-text">
 
 								{/* Title */}
 								<div className={styles.title} id="title">
@@ -130,11 +130,38 @@ function Home() {
 
 
 
-				{/* ==================================================== Projects ==================================================== */}
-				<div className={styles.projects}>
+				{/* ===================================================== Hire Me ==================================================== */}
+				<div className={styles.hire_me}>
 
 					{/* Title */}
-					<h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+					<h1>Looking for a Web Designer?</h1>
+					{/* <h1>Looking for a Web Designer or Game Developer?</h1> */}
+
+					{/* Meta */}
+					<div className={styles.meta}>
+
+						{/* Description */}
+						<div className={styles.description}>
+							<p>Are you an aspiring entrepreneur with an idea in mind, but just don't have anyone to help you accomplish it?</p>
+							<p>Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?</p>
+							<p>
+								Well if you fall into any of these categories then congrats! You've come to the right place 😊. 
+								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. 
+								To me, satisfactory just wont cut it. If you're interested, click the link below 👇.
+							</p>
+							<button>
+								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'user-plus']}></FontAwesomeIcon>
+								Hire Me
+							</button>
+						</div>
+
+						{/* Image */}
+						<div className={styles.image}>
+							<FontAwesomeIcon className={styles.icon} style={{width: '50px'}} icon={['fas', 'image']}></FontAwesomeIcon>
+							<img></img>
+						</div>
+
+					</div>
 
 				</div>
 

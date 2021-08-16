@@ -164,7 +164,7 @@ $marker-size		: 9px;
 		/* Hover */
 		&:hover {
 			background		: #EEEEEE;
-			
+
 			transform		: scale(1.1);
 		}
 
@@ -349,10 +349,82 @@ $marker-size		: 9px;
 
 
 
-/* ==================================================== Projects ==================================================== */
+/* ===================================================== Hire Me ==================================================== */
 
-.projects {
-	margin-top		: 100px;
+.hire_me {
+	width			: 100%;
+
+	color			: #3D3D3D;
+
+	display			: flex;
+	flex-direction		: column;
+	align-items		: center;
+
+	margin-top		: 50px;
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Meta */
+	.meta {
+		max-width		: 70%;
+		
+		display			: flex;
+		flex-direction		: row;
+		align-items		: center;
+
+		/* Description */
+		.description {
+			flex			: 1 1 100%;
+
+			margin			: 50px;
+			margin-top		: 20px;
+
+			/* Paragraph */
+			p {
+				margin-top		: 0;
+				margin-bottom		: 2em;
+			}
+
+			/* Button */
+			button {
+				width			: 150px;
+
+				background		: #62cfae;
+				border-color		: #36a181;
+				color			: #FFFFFF;
+
+				margin-top		: 2em;
+
+				/* Hover */
+				&:hover {
+					background		: #54b396;
+				}
+			}
+		}
+
+		/* Image */
+		.image {
+			width			: 600px;
+			height			: 375px;
+
+			flex			: 1 1 100%;
+
+			background		: #DDDDDD;
+			border-radius		: 10px;
+
+			font-size		: 5em;
+
+			display			: flex;
+			align-items		: center;
+			justify-content		: center;
+
+			margin			: 50px;
+			margin-top		: 20px;
+		}
+	}
+
 }
 
 
@@ -822,6 +894,9 @@ $marker-size		: 9px;
 .footer {
 	width			: 100%;
 	height			: 300px;
+
+	display			: flex;
+	justify-content		: center;
 
 	background		: #3D3D3D;
 	color			: #FFFFFF;
