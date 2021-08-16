@@ -332,6 +332,47 @@ $marker-size		: 9px;
 		content			: '';
 	}
 
+	/* On Active */
+	&.active {
+
+		/* Title */
+		.title {
+			opacity			: 1;
+	
+			transform		: translateY(0);
+		}
+
+		/* Underline */
+		.underline {
+			opacity			: 1;
+	
+			transform		: translateY(0);
+		}
+
+		/* Timeline */
+		.timeline {
+			transform		: scaleY(1);
+
+			/* Card */
+			.card {
+				opacity			: 1;
+	
+				transform		: scaleX(1);
+
+				/* Body */
+				.body {
+					transform		: scaleX(1);
+				}
+
+				/* Footer */
+				.footer {
+					transform		: scaleX(1);
+				}
+			}
+		}
+
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -340,8 +381,11 @@ $marker-size		: 9px;
 	.title {
 		width			: 500px;
 
+		
+		transform		: translateY(100px);
+		
 		margin-top		: 100px;
-
+		
 		font-family		: Lato;
 		font-style		: normal;
 		font-weight		: 500;
@@ -350,6 +394,10 @@ $marker-size		: 9px;
 		word-spacing		: 2.5px;
 		line-height		: 18px;
 		text-align		: center;
+		
+		opacity			: 0;
+		
+		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 	}
 
 	/* Underline */
@@ -363,11 +411,22 @@ $marker-size		: 9px;
 
 		border			: 1px solid #DDDDDD;
 		border-radius		: 1px;
+
+		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+		transform		: translateY(100px);
+
+		opacity			: 0;
 	}
 
 	/* Timeline */
 	.timeline {
 		position		: relative;
+
+		transform		: scaleY(0);
+		transform-origin	: top;
+
+		transition		: 1.5s ease 0.25s;
 
 		/* Line */
 		&::after {
@@ -391,7 +450,6 @@ $marker-size		: 9px;
 		/* Card */
 		.card {
 			position		: relative;
-			max-height		: $card-height;
 			width			: $card-width;
 			height			: auto;
 
@@ -403,11 +461,19 @@ $marker-size		: 9px;
 			margin-top		: $card-margin / 2;
 			margin-bottom		: $card-margin / 2;
 
+			transform		: scaleX(0);
+
+			transition		: 0.5s ease 1s;
+
+			opacity			: 0;
+
 			z-index			: 2;
 
 			/* Left */
 			&:nth-child(odd) {
 				margin-right		: $card-width + $card-margin;
+
+				transform-origin	: right;
 
 				/* Arrow */
 				.head::before {
@@ -444,6 +510,8 @@ $marker-size		: 9px;
 			/* Right */
 			&:nth-child(even) {
 				margin-left		: $card-width + $card-margin;
+
+				transform-origin	: left;
 
 				/* Head */
 				.head::before {
@@ -532,19 +600,6 @@ $marker-size		: 9px;
 				}
 			}
 
-			/* Underline */
-			.underline {
-				position		: absolute;
-				width			: $card-width;
-				height			: 10px;
-				top			: 100%;
-
-				border			: none;
-				border-radius		: 0 0 10px 10px;
-
-				margin-top		: -5px;
-			}
-
 			/* Body */
 			.body {
 				position		: relative;
@@ -558,6 +613,11 @@ $marker-size		: 9px;
 				padding			: $card-padding;
 				padding-left		: $card-padding + 10px;
 				padding-right		: $card-padding + 10px;
+
+				transform		: scaleY(0);
+				transform-origin	: top;
+
+				transition		: 0.5s ease 1s;
 
 				/* Tags */
 				.tags {
@@ -582,6 +642,22 @@ $marker-size		: 9px;
 						margin-right		: 5px;
 					}
 				}
+			}
+
+			/* Footer */
+			.footer {
+				width			: $card-width;
+				flex			: 0 1 10px;
+
+				border			: none;
+				border-radius		: 0 0 10px 10px;
+
+				margin-top		: -5px;
+
+				transform		: scaleY(0);
+				transform-origin	: top;
+
+				transition		: 0.5s ease 1.25s;
 			}
 
 			/* Divider */
@@ -614,7 +690,7 @@ $marker-size		: 9px;
 					border-top			: 10px solid transparent;
 					border-bottom			: 10px solid transparent;
 				}
-				.underline {
+				.footer {
 					background-color		: $color;
 				}
 				button {

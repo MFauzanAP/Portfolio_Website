@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Controller, Scene } from "react-scrollmagic";
 
 //	Declare output function
 function Home() {
@@ -134,7 +135,7 @@ function Home() {
 
 
 				{/* ==================================================== Career Timeline ==================================================== */}
-				<div className={styles.career_timeline}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.career_timeline}>
 
 					{/* Title */}
 					<div className={styles.title}>CAREER TIMELINE</div>
@@ -162,9 +163,6 @@ function Home() {
 
 							</div>
 
-							{/* Underline */}
-							<div className={styles.underline}></div>
-
 							{/* Body */}
 							<div className={styles.body}>
 
@@ -187,6 +185,9 @@ function Home() {
 
 							</div>
 
+							{/* Footer */}
+							<div className={styles.footer}></div>
+
 						</div>
 
 						{/* Card */}
@@ -207,9 +208,6 @@ function Home() {
 								</h2>
 
 							</div>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
 
 							{/* Body */}
 							<div className={styles.body}>
@@ -259,12 +257,15 @@ function Home() {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://malvor.com/" target="_blank"><button style={{color: '#000000', margin: '10px'}}>
+								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
 									View Work
 								</button></a>
 
 							</div>
+
+							{/* Footer */}
+							<div className={styles.footer}></div>
 
 						</div>
 
@@ -286,9 +287,6 @@ function Home() {
 								</h2>
 
 							</div>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
 
 							{/* Body */}
 							<div className={styles.body}>
@@ -313,12 +311,15 @@ function Home() {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://malvor.com/" target="_blank"><button style={{color: '#000000', margin: '10px'}}>
+								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
 
 							</div>
+
+							{/* Footer */}
+							<div className={styles.footer}></div>
 
 						</div>
 
@@ -340,9 +341,6 @@ function Home() {
 								</h2>
 
 							</div>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
 
 							{/* Body */}
 							<div className={styles.body}>
@@ -368,18 +366,21 @@ function Home() {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="high_school_transcript.pdf" target="_blank"><button style={{color: '#000000', margin: '10px'}}>
+								<a href="high_school_transcript.pdf" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
 									View Transcript
 								</button></a>
 
 							</div>
 
+							{/* Footer */}
+							<div className={styles.footer}></div>
+							
 						</div>
 
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
