@@ -123,7 +123,10 @@ function Home() {
 				</div>
 
 				{/* Call to Action */}
-				<div className={styles.call_to_action} id="call_to_action">VIEW PROJECTS</div>
+				<div className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">
+					VIEW PROJECTS
+					<FontAwesomeIcon className={styles.icon} style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}></FontAwesomeIcon>
+				</div>
 
 
 
@@ -189,7 +192,7 @@ function Home() {
 							</div>
 
 							{/* Footer */}
-							<div className={styles.footer}></div>
+							<div className={styles.card_footer}></div>
 
 						</div>
 
@@ -268,7 +271,7 @@ function Home() {
 							</div>
 
 							{/* Footer */}
-							<div className={styles.footer}></div>
+							<div className={styles.card_footer}></div>
 
 						</div>
 
@@ -322,7 +325,7 @@ function Home() {
 							</div>
 
 							{/* Footer */}
-							<div className={styles.footer}></div>
+							<div className={styles.card_footer}></div>
 
 						</div>
 
@@ -377,14 +380,38 @@ function Home() {
 							</div>
 
 							{/* Footer */}
-							<div className={styles.footer}></div>
+							<div className={styles.card_footer}></div>
 
 						</div>
 
 					</div>
 
+					{/* Learn More */}
+					<a href="/about"><div className={styles.call_to_action}>
+						<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['far', 'address-card']}></FontAwesomeIcon>
+						Learn More
+					</div></a>
+
 				</div></Scene></Controller>
 
+
+
+				{/* ==================================================== Showcase ==================================================== */}
+				{/* <div className={styles.showcase}>
+
+					
+
+				</div> */}
+
+
+
+				{/* ===================================================== Footer ===================================================== */}
+				<div className={styles.footer}>
+
+					@ 2021 Muhammad Fauzan Aristya Putra
+
+				</div>
+				
 			</div>
 
 		</div>
