@@ -188,7 +188,13 @@ function Home() {
 								Description
 								<div style={{height: '10px'}}></div>
 								Enrolled at Qatar University for a bachelors degree in Engineering with plans on migrating to Mechatronics.
+								<div className={styles.divider}></div>
 
+								{/* Action */}
+								<a href="https://www.qu.edu.qa/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
+									View Website
+								</button></a>
 							</div>
 
 							{/* Footer */}
@@ -264,8 +270,12 @@ function Home() {
 
 								{/* Action */}
 								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'images']}></FontAwesomeIcon>
 									View Work
+								</button></a>
+								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
+									View Website
 								</button></a>
 
 							</div>
@@ -375,6 +385,10 @@ function Home() {
 								<a href="high_school_transcript.pdf" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
 									View Transcript
+								</button></a>
+								<a href="https://akis.sch.qa/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
+									View Website
 								</button></a>
 
 							</div>
