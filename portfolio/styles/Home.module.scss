@@ -362,6 +362,19 @@ $marker-size		: 9px;
 
 	margin-top		: 50px;
 
+	opacity			: 0;
+
+	transform		: translateX(25%);
+
+	transition		: 1s ease;
+
+	/* On Active */
+	&.active {
+		opacity			: 1;
+	
+		transform		: translateX(0);
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -922,6 +935,8 @@ $marker-size		: 9px;
 
 		/* About */
 		.about {
+			width			: 400px;
+
 			margin			: 10px;
 			
 			/* Description */

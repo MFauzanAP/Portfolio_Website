@@ -136,11 +136,11 @@ function Home () {
 
 
 				{/* ===================================================== Hire Me ==================================================== */}
-				<div className={styles.hire_me}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hire_me}>
 
 					{/* Title */}
-					<h1>Looking for a Web Designer?</h1>
-					{/* <h1>Looking for a Web Designer or Game Developer?</h1> */}
+					{/* <h1>Looking for a Web Designer?</h1> */}
+					<h1>Looking for a Web Designer or Game Developer?</h1>
 
 					{/* Meta */}
 					<div className={styles.meta}>
@@ -168,7 +168,7 @@ function Home () {
 
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
@@ -468,9 +468,10 @@ function Home () {
 
 							{/* Description */}
 							<p>
-								Hey there, my name's Fauzan and I'm an undergraduate <br/>
-								student studying at Qatar University with a keen interest <br/>
-								in all things tech. Nice to meet you!
+								Hey there, my name's Fauzan and I'm an <br/>
+								undergraduate student studying at Qatar University <br/>
+								with a keen interest in all things tech. <br/>
+								Nice to meet you!
 							</p>
 
 						</div>
