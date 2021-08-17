@@ -109,34 +109,6 @@ $marker-size		: 9px;
 			}
 		}
 	}
-
-	/* Buttons */
-	button {
-		cursor			: pointer;
-		
-		background		: #FFFFFF;
-		border-width		: 2.5px 2.5px 5px 2.5px;
-		border-radius		: 10px;
-		border-style		: solid;
-
-		font-family		: Lato;
-		font-style		: normal;
-		font-weight		: bold;
-		font-size		: 13px;
-		line-height		: 18px;
-		text-align		: center;
-
-		padding			: 10px;
-
-		transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-
-		/* Hover */
-		&:hover {
-			background		: #EEEEEE;
-
-			transform		: scale(1.1);
-		}
-	}
 }
 
 
@@ -849,7 +821,114 @@ $marker-size		: 9px;
 
 .showcase {
 	width			: 100%;
-	height			: 750px;
+	min-height		: 750px;
+
+	display			: flex;
+	flex-direction		: column;
+	align-items		: center;
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Header */
+	h2 {
+		color			: #3D3D3D;
+
+		margin			: 0;
+	}
+
+	/* Underline */
+	.underline {
+		flex			: 0 1 auto;
+		width			: 125px;
+		height			: 0px;
+
+		margin-top		: 10px;
+		margin-bottom		: 50px;
+
+		border			: 2px solid #3D3D3D;
+		border-radius		: 1px;
+
+		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+	}
+
+	/* Sections */
+	.section {
+		width			: 100%;
+		height			: 500px;
+
+		display			: flex;
+		
+		background-color	: #F8F8F8;
+
+		/* Odd */
+		&:nth-child(odd) {
+			flex-direction		: row-reverse;
+		}
+
+		/* Even */
+		&:nth-child(even) {
+			flex-direction		: row;
+		}
+
+		/* Meta */
+		.meta {
+			flex			: 1 1 100%;
+			padding			: 100px;
+
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: center;
+
+			/* Underline */
+			.underline {
+				width			: 50px;
+				height			: 0px;
+
+				margin-top		: 10px;
+				margin-bottom		: 5px;
+
+				border			: 2px solid #9b5ae6;
+				border-radius		: 1px;
+
+				transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+			}
+
+			/* Title */
+			h3 {
+				margin			: 0;
+			}
+
+			/* Call to Action */
+			button {
+				width			: 150px;
+
+				margin-top		: 25px;
+
+				border-color		: #674eb6;
+				background-color	: #9b5ae6;
+				color			: #FFFFFF;
+
+				font-family		: Lato;
+				font-style		: normal;
+				font-weight		: 600;
+				font-size		: 16px;
+				line-height		: 18px;
+
+				/* Hover */
+				&:hover {
+					background-color	: #7c52ca;
+				}
+
+			}
+		}
+
+		/* Media Container */
+		.media_container {
+			flex			: 1 1 100%;
+		}
+	}
 }
 
 
