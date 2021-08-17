@@ -17,6 +17,8 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 /* Timeline Card */
+$navbar-height-1	: 200px;
+$navbar-height-2	: 75px;
 $num-cards		: 4;
 $card-width		: 500px;
 $card-height		: 600px;
@@ -50,89 +52,6 @@ $marker-size		: 9px;
 
 
 	/* ==================================================== Children ==================================================== */
-
-	/* Navbar */
-	.navbar {
-		position		: absolute;
-		width			: 100%;
-		height			: 200px;
-		top			: 65px;
-	
-		display			: flex;
-		flex-direction		: row;
-		flex-wrap		: wrap;
-		justify-content		: center;
-		align-items		: flex-start;
-
-
-
-		/* ==================================================== Children ==================================================== */
-
-		/* Logo */
-		.logo {
-			cursor			: pointer;
-
-			flex			: 0 1 auto;
-			height			: 72px;
-			width			: 550px;
-			margin-top		: 30px;
-
-			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-
-			/* Hover */
-			&:hover {
-				transform		: scale(1.15);
-			}
-		}
-
-		/* Navbar Links */
-		a {
-			display			: block;
-			position		: relative;
-			
-			padding			: 0.2em 0;
-			margin-left		: 50px;
-			margin-right		: 50px;
-
-			font-family		: Lato;
-			font-style		: normal;
-			font-weight		: 500;
-			font-size		: 16px;
-			line-height		: 18px;
-
-			text-decoration		: none;
-
-			color			: #FFFFFF;
-		}
-
-		/* Navbar Link Underline */
-		a::after {
-			position		: absolute;
-			bottom			: -0.2em;
-			left			: 0;
-			width			: 100%;
-			height			: 0.2em;
-
-			transform		: scaleX(0);
-			transform-origin	: center;
-
-			background-color	: #FFFFFF;
-			opacity			: 1;
-
-			content			: '';
-
-			transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-		}
-		a:hover::after,
-		a:focus::after,
-		a.active:hover::after,
-		a.active:focus:after {
-			transform		: scaleX(0.9);
-		}
-		a.active::after {
-			transform		: scaleX(0.7);
-		}
-	}
 
 	/* Call to Action */
 	.call_to_action {
@@ -172,11 +91,14 @@ $marker-size		: 9px;
 		&.landing_page {
 			margin-top		: 85vh;
 
-			color			: #634AB3;
-			border			: 3px solid #634AB3;
-			background-image	: linear-gradient(to left, #FFFFFF, #FFFFFF 50%, #634AB3 50%, #634AB3);
+			color			: #6C47B1;
+			border			: 3px solid #6C47B1;
+			background-image	: linear-gradient(to left, #FFFFFF, #FFFFFF 50%, #6C47B1 50%, #6C47B1);
 			background-position	: 100% 0;
 			background-size		: 200% 200%;
+
+			font-size		: 13px;
+			font-weight		: bolder;
 
 			/* Hover */
 			&:hover {

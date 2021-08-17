@@ -79,10 +79,10 @@ function Home () {
 					></Particles>
 
 					{/* Background End */}
-					<div style={{position: 'absolute', bottom: "40%"}} id="background_end"></div>
+					<div style={{position: 'absolute', bottom: "40%"}} id="fade_start"></div>
 
 					{/* Welcome Text */}
-					<Controller><Scene duration={600} triggerElement="#background_end">
+					<Controller><Scene duration={600} triggerElement="#fade_start">
 						{progress => (
 							<div className={styles.welcome_text} style={{opacity: 1 - progress, top: `${25 - (progress * 25)}%`}} id="welcome-text">
 
@@ -105,25 +105,8 @@ function Home () {
 						)}
 					</Scene></Controller>
 
-				</div>
-
-				{/* Navbar Buttons */}
-				<div className={styles.navbar} id="navbar">
-
-					{/* Home */}
-					<a className={styles.active} href="/">Home</a>
-
-					{/* Projects */}
-					<a href="/projects">Projects</a>
-
-					{/* Logo */}
-					<img className={styles.logo} src="/logo.svg"/>
-
-					{/* About */}
-					<a href="/about">About</a>
-
-					{/* Contact */}
-					<a href="/contact">Contact</a>
+					{/* Background End */}
+					<div style={{position: 'absolute', bottom: "10%"}} id="fade_end"></div>
 
 				</div>
 
@@ -534,6 +517,36 @@ function Home () {
 
 				</div>
 				
+
+
+				{/* ===================================================== Navbar ===================================================== */}
+				<Controller><Scene classToggle="active" triggerElement="#fade_end"><div className="navbar" id="navbar">
+
+					{/* Home */}
+					<a className="active" href="/">Home</a>
+
+					{/* Projects */}
+					<a href="/projects">Projects</a>
+
+					{/* Logo */}
+					<div className="logo_container"><img className="logo" src="/logo.svg"/></div>
+
+					{/* About */}
+					<a href="/about">About</a>
+
+					{/* Contact */}
+					<a href="/contact">Contact</a>
+
+					{/* Social Media Contact */}
+					<div className="social_media">
+
+						{/* Button */}
+						<div className="button"><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'phone']}></FontAwesomeIcon></div>
+					
+					</div>
+
+				</div></Scene></Controller>
+
 			</div>
 
 		</div>
