@@ -261,7 +261,7 @@ $marker-size		: 9px;
 
 			color			: #EEEEEE;
 
-			animation		: background_meta 2s steps(100, end) 1s 1 normal both;
+			animation		: typewriter 2s steps(100, end) 1s 1 normal both;
 			animation-delay		: 2s;
 		}
 
@@ -286,20 +286,54 @@ $marker-size		: 9px;
 
 	opacity			: 0;
 
-	transform		: translateX(25%);
-
 	transition		: 1s ease;
 
 	/* On Active */
 	&.active {
 		opacity			: 1;
-	
-		transform		: translateX(0);
+
+		/* Header */
+		h1 {
+			animation		: typewriter 4s steps(100, end) 0s 1 normal both;
+		}
+
+		/* Description Text */
+		.meta .description p {
+			opacity			: 1;
+
+			transform		: translateX(0);
+		}
+
+		/* Description Button */
+		.meta .description button {
+			opacity			: 1;
+
+			transform		: translateY(0);
+		}
+
+		/* Image */
+		.meta .image {
+			opacity			: 1;
+
+			max-height		: 375px;
+		}
+
 	}
 
 
 
 	/* ==================================================== Children ==================================================== */
+
+	/* Header */
+	h1 {
+		width			: 0;
+		max-height		: 1.5em;
+
+		text-align		: center;
+		word-break		: break-all;
+
+		overflow		: hidden;
+	}
 
 	/* Meta */
 	.meta {
@@ -320,6 +354,12 @@ $marker-size		: 9px;
 			p {
 				margin-top		: 0;
 				margin-bottom		: 2em;
+				
+				opacity			: 0;
+
+				transform		: translateX(25%);
+
+				transition		: 1s ease 2s;
 			}
 
 			/* Button */
@@ -332,6 +372,12 @@ $marker-size		: 9px;
 
 				margin-top		: 2em;
 
+				opacity			: 0;
+				
+				transform		: translateY(25%);
+
+				transition		: 1s ease 2.5s;
+
 				/* Hover */
 				&:hover {
 					background		: #54b396;
@@ -341,6 +387,7 @@ $marker-size		: 9px;
 
 		/* Image */
 		.image {
+			max-height		: 0;
 			width			: 600px;
 			height			: 375px;
 
@@ -357,6 +404,10 @@ $marker-size		: 9px;
 
 			margin			: 50px;
 			margin-top		: 20px;
+
+			opacity			: 0;
+
+			transition		: 1s ease 2.5s;
 		}
 	}
 
@@ -939,6 +990,15 @@ $marker-size		: 9px;
 /*                                                      Keyframes                                                     */
 /* ------------------------------------------------------------------------------------------------------------------ */
 
+@keyframes typewriter {
+	from {
+		width			: 0;
+	}
+	to {
+		width			: 100%;
+	}
+}
+
 @keyframes background_gradient {
 	0% {
 		transform		: translateX(0%);
@@ -985,14 +1045,5 @@ $marker-size		: 9px;
 	}
 	100% {
 		transform		: scaleX(1);
-	}
-}
-
-@keyframes background_meta {
-	from {
-		width			: 0;
-	}
-	to {
-		width			: 100%;
 	}
 }
