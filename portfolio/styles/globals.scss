@@ -226,19 +226,30 @@ a {
 
 	/* ==================================================== Children ==================================================== */
 
-	/* Logo */
-	.logo {
-		cursor			: pointer;
+	/* Logo Container */
+	.logo_container {
+		flex			: 1 1 auto;
+		height			: 100%;
 
-		flex			: 1 1 72px;
-		height			: 72px;
-		margin-top		: 30px;
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: flex-start;
+		align-items		: center;
 
-		transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		/* Logo */
+		.logo {
+			cursor			: pointer;
 
-		/* Hover */
-		&:hover {
-			transform		: scale(1.15);
+			flex			: 1 1 72px;
+			height			: 72px;
+			margin-top		: 30px;
+
+			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+			/* Hover */
+			&:hover {
+				transform		: scale(1.15);
+			}
 		}
 	}
 
