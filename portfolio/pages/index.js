@@ -28,9 +28,6 @@ function Home () {
 			{/* Homepage */}
 			<div className={styles.home}>
 
-				{/* Toast Container */}
-				<ToastContainer/>
-
 				{/* ================================================== Landing Page ================================================== */}
 
 				{/* Background Mask */}
@@ -444,6 +441,9 @@ function Home () {
 				<Controller><Scene classToggle="active" triggerElement="#fade_end">
 					<div className="navbar_container"><Navbar/></div>
 				</Scene></Controller>
+
+				{/* Toast Container */}
+				<ToastContainer style={{zIndex: 3}}/>
 
 			</div>
 
