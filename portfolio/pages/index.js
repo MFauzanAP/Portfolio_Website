@@ -200,7 +200,7 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								Enrolled at Qatar University for a bachelors degree in Engineering with plans on migrating to Mechatronics.
+								Enrolled at Qatar University for a bachelors degree in Engineering with plans on migrating to Electronic Engineering.
 								<div className={styles.divider}></div>
 
 								{/* Action */}
