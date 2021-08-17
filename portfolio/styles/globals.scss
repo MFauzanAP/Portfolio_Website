@@ -268,8 +268,9 @@ a {
 		/* Navbar Links */
 		a {
 			flex			: 0 1 auto;
+			height			: 100%;
 			
-			padding			: 0.2em 0;
+			padding			: (($navbar-height-2 / 2) - 12px) 0;
 			padding-right		: 2em;
 			margin-left		: 25px;
 			margin-right		: 25px;
@@ -301,6 +302,7 @@ a {
 				width			: 50%;
 				height			: 0.2em;
 				left			: 5%;
+				top			: (($navbar-height-2 / 2) + 12px);
 
 				transform		: scaleX(0);
 				transform-origin	: left;
