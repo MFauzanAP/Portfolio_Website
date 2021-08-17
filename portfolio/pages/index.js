@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "./components/navbar";
-import copy_to_clipboard from './utils/copy_to_clipboard';
+import Footer from "./components/footer";
 
 //	Declare output function
 function Home () {
@@ -436,87 +436,7 @@ function Home () {
 
 
 				{/* ===================================================== Footer ===================================================== */}
-				<div className={styles.footer}>
-
-					{/* Content */}
-					<div className={styles.content}>
-
-						{/* About */}
-						<div className={styles.about}>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
-
-							{/* Header */}
-							<h3>About Me</h3>
-
-							{/* Description */}
-							<p>
-								Hey there, my name's Fauzan and I'm an <br/>
-								undergraduate student studying at Qatar University <br/>
-								with a keen interest in all things tech. <br/>
-								Nice to meet you!
-							</p>
-
-						</div>
-
-						{/* Pages */}
-						<div className={styles.pages}>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
-
-							{/* Header */}
-							<h3>Pages</h3>
-
-							{/* Links */}
-							<ul className={styles.links}>
-								<a href="/"><li>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'home']}></FontAwesomeIcon>
-									Home
-								</li></a>
-								<a href="/projects"><li>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'project-diagram']}></FontAwesomeIcon>
-									Projects
-								</li></a>
-								<a href="/about"><li>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'address-card']}></FontAwesomeIcon>
-									About
-								</li></a>
-								<a href="/contact"><li>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'phone']}></FontAwesomeIcon>
-									Contact
-								</li></a>
-							</ul>
-
-						</div>
-
-						{/* Social Media */}
-						<div className={styles.social_media}>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
-
-							{/* Header */}
-							<h3>Social Media</h3>
-
-							{/* Links */}
-							<ul className={styles.links}>
-								<a href="https://github.com/MFauzanAP" target="_blank"><li><FontAwesomeIcon className={styles.icon} icon={['fab', 'github']}></FontAwesomeIcon></li></a>
-								<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank"><li><FontAwesomeIcon className={styles.icon} icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
-								<a href="https://www.instagram.com/fow_zen/" target="_blank"><li><FontAwesomeIcon className={styles.icon} icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
-								<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={copy_to_clipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon className={styles.icon} icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
-							</ul>
-
-						</div>
-
-					</div>
-					
-					{/* Copyright */}
-					<div className={styles.divider}></div>
-					<p className={styles.copyright}>Copyright © 2021 Muhammad Fauzan Aristya Putra</p>
-
-				</div>
+				<Footer/>
 				
 
 

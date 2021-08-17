@@ -3,7 +3,6 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Controller, Scene } from "react-scrollmagic";
 
 
 
