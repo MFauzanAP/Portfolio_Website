@@ -276,34 +276,48 @@ a {
 		text-decoration		: none;
 
 		color			: #FFFFFF;
-	}
 
-	/* Navbar Link Underline */
-	a::after {
-		position		: absolute;
-		bottom			: -0.2em;
-		left			: 0;
-		width			: 100%;
-		height			: 0.2em;
+		/* Hover */
+		&:hover {
 
-		transform		: scaleX(0);
-		transform-origin	: center;
+			/* Underline */
+			&::after {
+				transform		: scaleX(0.9);
+			}
+		}
 
-		background-color	: #FFFFFF;
-		opacity			: 1;
+		/* Underline */
+		&::after {
+			position		: absolute;
+			bottom			: -0.2em;
+			left			: 0;
+			width			: 100%;
+			height			: 0.2em;
 
-		content			: '';
+			transform		: scaleX(0);
+			transform-origin	: center;
 
-		transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-	}
-	a:hover::after,
-	a:focus::after,
-	a.active:hover::after,
-	a.active:focus:after {
-		transform		: scaleX(0.9);
-	}
-	a.active::after {
-		transform		: scaleX(0.7);
+			background-color	: #FFFFFF;
+			opacity			: 1;
+
+			content			: '';
+
+			transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		}
+
+		/* Active */
+		&.active {
+			
+			/* Underline */
+			&::after {
+				transform		: scaleX(0.7);
+			}
+
+			/* Hover */
+			&:hover::after {
+				transform		: scaleX(0.9);
+			}
+		}
 	}
 }
 
