@@ -5,6 +5,7 @@ import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
+import Navbar from "./components/navbar";
 import copy_to_clipboard from './utils/copy_to_clipboard';
 
 //	Declare output function
@@ -130,9 +131,9 @@ function Home () {
 
 						{/* Description */}
 						<div className={styles.description}>
-							<p>Are you an aspiring entrepreneur with an idea in mind, but just don't have anyone to help you accomplish it?</p>
-							<p>Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?</p>
-							<p>
+							<p style={{transitionDelay: '2s'}}>Are you an aspiring entrepreneur with an idea in mind, but just don't have anyone to help you accomplish it?</p>
+							<p style={{transitionDelay: '2.25s'}}>Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?</p>
+							<p style={{transitionDelay: '2.5s'}}>
 								Well if you fall into any of these categories then congrats! You've come to the right place 😊. 
 								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. 
 								To me, satisfactory just wont cut it. If you're interested, click the link below 👇.
@@ -520,32 +521,9 @@ function Home () {
 
 
 				{/* ===================================================== Navbar ===================================================== */}
-				<Controller><Scene classToggle="active" triggerElement="#fade_end"><div className="navbar" id="navbar">
-
-					{/* Home */}
-					<a className="active" href="/">Home</a>
-
-					{/* Projects */}
-					<a href="/projects">Projects</a>
-
-					{/* Logo */}
-					<div className="logo_container"><img className="logo" src="/logo.svg"/></div>
-
-					{/* About */}
-					<a href="/about">About</a>
-
-					{/* Contact */}
-					<a href="/contact">Contact</a>
-
-					{/* Social Media Contact */}
-					<div className="social_media">
-
-						{/* Button */}
-						<div className="button"><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'phone']}></FontAwesomeIcon></div>
-					
-					</div>
-
-				</div></Scene></Controller>
+				<Controller><Scene classToggle="active" triggerElement="#fade_end">
+					<div className="navbar_container"><Navbar/></div>
+				</Scene></Controller>
 
 			</div>
 

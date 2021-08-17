@@ -53,26 +53,132 @@ a {
 
 
 /* ===================================================== Navbar ===================================================== */
-.navbar {
-	position		: absolute;
-	max-width		: 70%;
+.navbar_container {
 	width			: 100%;
-	height			: $navbar-height-1;
-	top			: 50px;
-
-	overflow		: hidden;
 
 	display			: flex;
-	flex-direction		: row;
-	flex-wrap		: wrap;
 	justify-content		: center;
-	align-items		: flex-start;
 
-	animation-duration	: 1.5s;
-	animation-name		: navbar_hide;
+	/* Navbar */
+	.navbar {
+		position		: absolute;
+		max-width		: 70%;
+		width			: 100%;
+		height			: $navbar-height-1;
+		top			: 50px;
+
+		overflow		: hidden;
+
+		display			: flex;
+		flex-direction		: row;
+		flex-wrap		: wrap;
+		justify-content		: center;
+		align-items		: flex-start;
+
+		animation-duration	: 1.5s;
+		animation-name		: navbar_hide;
+
+
+
+		/* ==================================================== Children ==================================================== */
+
+		/* Logo Container */
+		.logo_container {
+			flex			: 1 1 auto;
+			height			: 100%;
+
+			display			: flex;
+			flex-direction		: row;
+			justify-content		: flex-start;
+			align-items		: center;
+
+			/* Logo */
+			.logo {
+				cursor			: pointer;
+
+				flex			: 1 1 72px;
+				height			: 72px;
+				margin-top		: 30px;
+
+				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+				/* Hover */
+				&:hover {
+					transform		: scale(1.15);
+				}
+			}
+		}
+
+		/* Social Media */
+		.social_media {
+			display			: none;
+		}
+
+		/* Navbar Links */
+		a {
+			display			: block;
+			position		: relative;
+			
+			padding			: 0.2em 0;
+			margin-left		: 50px;
+			margin-right		: 50px;
+
+			font-family		: Lato;
+			font-style		: normal;
+			font-weight		: 500;
+			font-size		: 16px;
+			line-height		: 18px;
+
+			text-decoration		: none;
+
+			color			: #FFFFFF;
+
+			/* Hover */
+			&:hover {
+
+				/* Underline */
+				&::after {
+					transform		: scaleX(0.9);
+				}
+			}
+
+			/* Underline */
+			&::after {
+				position		: absolute;
+				bottom			: -0.2em;
+				left			: 0;
+				width			: 100%;
+				height			: 0.2em;
+
+				transform		: scaleX(0);
+				transform-origin	: center;
+
+				background-color	: #FFFFFF;
+				opacity			: 1;
+
+				content			: '';
+
+				transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+			}
+
+			/* Active */
+			&.active {
+				
+				/* Underline */
+				&::after {
+					transform		: scaleX(0.7);
+				}
+
+				/* Hover */
+				&:hover::after {
+					transform		: scaleX(0.9);
+				}
+			}
+		}
+	}
 
 	/* On Active */
-	&.active {
+	&.active .navbar {
 		position		: fixed;
 		max-width		: 100%;
 		max-height		: $navbar-height-2;
@@ -185,6 +291,8 @@ a {
 				/* Underline */
 				&::after {
 					background-color	: #9b5ae6;
+
+					transform		: scaleX(0.9);
 				}
 			}
 
@@ -203,122 +311,24 @@ a {
 				content			: '';
 
 				transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+			}
 
-				/* Hover */
-				&:hover {
-					transform		: scaleX(0.9);
-				}
+			/* Active */
+			&.active {
 
-				/* Focus */
-				&:focus {
-					transform		: scaleX(0.9);
-				}
-
-				/* Active */
-				.active {
+				/* Underline */
+				&::after {
 					transform		: scaleX(0.7);
 				}
+
+				/* Hover */
+				&:hover::after {
+					transform		: scaleX(0.9);
+				}
 			}
 		}
 	}
 
-
-
-	/* ==================================================== Children ==================================================== */
-
-	/* Logo Container */
-	.logo_container {
-		flex			: 1 1 auto;
-		height			: 100%;
-
-		display			: flex;
-		flex-direction		: row;
-		justify-content		: flex-start;
-		align-items		: center;
-
-		/* Logo */
-		.logo {
-			cursor			: pointer;
-
-			flex			: 1 1 72px;
-			height			: 72px;
-			margin-top		: 30px;
-
-			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-
-			/* Hover */
-			&:hover {
-				transform		: scale(1.15);
-			}
-		}
-	}
-
-	/* Social Media */
-	.social_media {
-		display			: none;
-	}
-
-	/* Navbar Links */
-	a {
-		display			: block;
-		position		: relative;
-		
-		padding			: 0.2em 0;
-		margin-left		: 50px;
-		margin-right		: 50px;
-
-		font-family		: Lato;
-		font-style		: normal;
-		font-weight		: 500;
-		font-size		: 16px;
-		line-height		: 18px;
-
-		text-decoration		: none;
-
-		color			: #FFFFFF;
-
-		/* Hover */
-		&:hover {
-
-			/* Underline */
-			&::after {
-				transform		: scaleX(0.9);
-			}
-		}
-
-		/* Underline */
-		&::after {
-			position		: absolute;
-			bottom			: -0.2em;
-			left			: 0;
-			width			: 100%;
-			height			: 0.2em;
-
-			transform		: scaleX(0);
-			transform-origin	: center;
-
-			background-color	: #FFFFFF;
-			opacity			: 1;
-
-			content			: '';
-
-			transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-		}
-
-		/* Active */
-		&.active {
-			
-			/* Underline */
-			&::after {
-				transform		: scaleX(0.7);
-			}
-
-			/* Hover */
-			&:hover::after {
-				transform		: scaleX(0.9);
-			}
-		}
-	}
 }
 
 
