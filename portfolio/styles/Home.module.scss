@@ -307,8 +307,6 @@ $marker-size		: 9px;
 		/* Description Button */
 		.meta .description button {
 			opacity			: 1;
-
-			transform		: translateY(0);
 		}
 
 		/* Image */
@@ -317,7 +315,6 @@ $marker-size		: 9px;
 
 			max-height		: 375px;
 		}
-
 	}
 
 
@@ -373,14 +370,16 @@ $marker-size		: 9px;
 				margin-top		: 2em;
 
 				opacity			: 0;
-				
-				transform		: translateY(25%);
 
-				transition		: 1s ease 2.5s;
+				transition		: opacity 1s ease 2.5s,
+						  	background-color 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s,
+						  	transform 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 				/* Hover */
 				&:hover {
 					background		: #54b396;
+
+					transform		: scale(1.1);
 				}
 			}
 		}
