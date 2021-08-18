@@ -459,15 +459,11 @@ function Home () {
 						<div className={styles.media_container}>
 
 							{/* Slideshow */}
-							<div className="slideshow">
-
-								{/* Slideshow */}
-								<img/>
-
-								{/* Left Arrow */}
-								<div className="left arrow"></div>
-
-							</div>
+							<Slideshow options={{
+								images: [
+									""
+								]
+							}}/>
 
 						</div>
 
@@ -481,7 +477,7 @@ function Home () {
 
 							{/* Title */}
 							<div className={styles.underline}></div>
-							<h3>Flash Cards Project</h3>
+							<h3>Revision Cards Project</h3>
 
 							{/* Description */}
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
@@ -504,7 +500,10 @@ function Home () {
 							<Slideshow options={{
 								images: [
 									"/revision_cards_image_1.png",
-									"/revision_cards_image_1.png"
+									"/revision_cards_image_2.png",
+									"/revision_cards_image_3.png",
+									"/revision_cards_image_4.png",
+									"/revision_cards_image_5.png"
 								]
 							}}/>
 
@@ -540,15 +539,15 @@ function Home () {
 						<div className={styles.media_container}>
 
 							{/* Slideshow */}
-							<div className="slideshow">
-
-								{/* Slideshow */}
-								<img/>
-
-								{/* Left Arrow */}
-								<div className="left arrow"></div>
-
-							</div>
+							<Slideshow options={{
+								images: [
+									"/top_down_project_image_1.png",
+									"/top_down_project_image_2.png",
+									"/top_down_project_image_3.png",
+									"/top_down_project_image_4.png",
+									"/top_down_project_image_5.png"
+								]
+							}}/>
 
 						</div>
 
