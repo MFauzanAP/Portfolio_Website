@@ -7,6 +7,7 @@ import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Slideshow from './components/slideshow';
 
 //	Declare output function
 function Home () {
@@ -500,26 +501,12 @@ function Home () {
 						<div className={styles.media_container}>
 
 							{/* Slideshow */}
-							<div className="slideshow">
-
-								{/* Slideshow */}
-								<img src="/revision_cards_image_1.png"/>
-
-								{/* Arrows */}
-								<div className="left arrow"><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
-								<div className="right arrow"><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
-
-								{/* Pagination */}
-								<div className="pagination">
-
-									{/* Pages */}
-									<div className="active page"></div>
-									<div className="page"></div>
-									<div className="page"></div>
-
-								</div>
-
-							</div>
+							<Slideshow options={{
+								images: [
+									"/revision_cards_image_1.png",
+									"/revision_cards_image_1.png"
+								]
+							}}/>
 
 						</div>
 
