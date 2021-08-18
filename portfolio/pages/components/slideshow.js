@@ -13,13 +13,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 /* ------------------------------------------------------------------------------------------------------------------ */
 class Slideshow extends React.Component {
 
+	/* ==================================================== Variables =================================================== */
+
+	/* Number of Images */
+	count = 0;
+
+	/* Current autoplay index */
+	autoplay_index = 0;
+
+	/* Bool used to reset countdown */
+	reset_countdown = false;
+
+
+
 	/* ===================================================== On Load ==================================================== */
 	constructor (props) {
 		super(props);
 
 		//	Set state
 		this.state = {
-			page		: 0
+			page				: 0,
+			loop				: props.options.loop || true,
+			autoPlay			: props.options.autoPlay || true,
+			autoPlayDelay			: props.options.autoPlayDelay || 5000,
+			autoPlayIndicator		: props.options.autoPlayIndicator || true,
+			autoPlayIndicatorPosition	: props.options.autoPlayIndicatorPosition || 'bottom'
 		}
 	}
 
@@ -27,12 +45,54 @@ class Slideshow extends React.Component {
 
 	/* ==================================================== Functions =================================================== */
 
+	/* Next Page */
+	next_page () {
+
+		//	Calculate page
+		var page = this.state.page + 1 >= this.count ? (this.state.loop ? 0 : this.state.page) : this.state.page + 1;
+
+		//	Reset countdown and update page
+		this.reset_countdown = true;
+		this.setState({page}, () => {
+
+			//	Start countdown
+			this.reset_countdown = false;
+			this.setState({page});
+
+		});
+
+	}
+
+	/* Previous Page */
+	prev_page () {
+
+		//	Calculate page
+		var page = this.state.page - 1 < 0 ? (this.state.loop ? this.count - 1 : this.state.page) : this.state.page - 1;
+
+		//	Reset countdown and update page
+		this.reset_countdown = true;
+		this.setState({page}, () => {
+
+			//	Start countdown
+			this.reset_countdown = false;
+			this.setState({page});
+
+		});
+
+	}
+
 	/* Change Page */
 	change_page (page) {
 
-		//	Update state
-		console.log('change page');
-		this.setState({page});
+		//	Reset countdown and update page
+		this.reset_countdown = true;
+		this.setState({page}, () => {
+
+			//	Start countdown
+			this.reset_countdown = false;
+			this.setState({page});
+
+		});
 
 	}
 
@@ -40,6 +100,20 @@ class Slideshow extends React.Component {
 
 	/* ==================================================== On Render =================================================== */
 	render () {
+
+		//	Store number of images
+		this.count = this.props.options.images.length;
+
+		//	Start autoplaying if the option is turned on
+		if (this.state.autoPlay) {
+
+			//	Clear all previous autplay functions
+			clearInterval(this.autoplay_index); 
+
+			//	Set new autoplay index so we can clear this function on render
+			this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
+
+		}
 
 		//	Generate image elements
 		var images = this.props.options.images;
@@ -70,6 +144,18 @@ class Slideshow extends React.Component {
 
 		}
 
+		//	Generate countdown if option is enabled and if not resetting countdown
+		var countdown;
+		if (this.state.autoPlayIndicator && !this.reset_countdown) {
+
+			//	Generate class name
+			var class_name = `${this.state.autoPlayIndicatorPosition} countdown`;
+
+			//	Set countdown
+			countdown = <div className={class_name} style={{animationDuration: `${this.state.autoPlayDelay}ms`}}></div>
+
+		}
+
 		//	Return html
 		return (
 			<div className="slideshow">
@@ -78,16 +164,14 @@ class Slideshow extends React.Component {
 				{images}
 
 				{/* Arrows */}
-				<div className="left arrow"><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
-				<div className="right arrow"><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
+				<div className="left arrow" onClick={this.prev_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
+				<div className="right arrow" onClick={this.next_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 				{/* Pagination */}
-				<div className="pagination">
+				<div className="pagination">{pagination}</div>
 
-					{/* Pages */}
-					{pagination}
-
-				</div>
+				{/* Countdown */}
+				{countdown}
 
 			</div>
 		);
