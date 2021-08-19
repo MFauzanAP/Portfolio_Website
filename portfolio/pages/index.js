@@ -425,14 +425,17 @@ function Home () {
 
 
 				{/* ==================================================== Showcase ==================================================== */}
-				<div className={styles.showcase}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.showcase}>
+
+					{/* Exclamation Mark */}
+					<span className={styles.exclamation}><FontAwesomeIcon icon={['fas', 'exclamation']}/></span>
 
 					{/* Header */}
 					<div className={styles.sideline}></div>
 					<h2>Latest Side Projects</h2>
 
 					{/* Section */}
-					<div className={styles.section}>
+					<div className={styles.section} style={{transitionDelay: '3.75s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -472,7 +475,7 @@ function Home () {
 					</div>
 
 					{/* Section */}
-					<div className={styles.section}>
+					<div className={styles.section} style={{transitionDelay: '4.25s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -516,7 +519,7 @@ function Home () {
 					</div>
 
 					{/* Section */}
-					<div className={styles.section}>
+					<div className={styles.section} style={{transitionDelay: '4.75s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -559,7 +562,7 @@ function Home () {
 
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 

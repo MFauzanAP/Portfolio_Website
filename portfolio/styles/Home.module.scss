@@ -823,13 +823,67 @@ $marker-size		: 9px;
 	width			: 100%;
 	min-height		: 750px;
 
+	overflow		: hidden;
+
 	display			: flex;
 	flex-direction		: column;
 	align-items		: center;
 
+	transition		: 2.5s cubic-bezier(1, 0.34, 0.44, 1.01);
+
+	/* Active */
+	&.active {
+
+		/* Exclamation */
+		.exclamation {
+			opacity			: 1;
+			
+			animation		: showcase_exclamation 3s forwards;
+		}
+
+		/* Header */
+		h2 {
+			opacity			: 1;
+		}
+
+		/* Sideline */
+		.sideline {
+			opacity			: 1;
+
+			transform		: translateX(0);
+		}
+
+		/* Section */
+		.section {
+			opacity			: 1;
+
+			transform		: translateX(0);
+		}
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
+
+	/* Exclamation */
+	.exclamation {
+		width			: 1.75em;
+		height			: 1.75em;
+		
+		background-color	: #000000;
+		color			: #FFEE00;
+		border-radius		: 50%;
+
+		opacity			: 0;
+
+		padding			: 5px;
+		margin-bottom		: 10px;
+
+		font-size		: 2em;
+		text-align		: center;
+
+		transform-origin	: center;
+	}
 
 	/* Border */
 	.border {
@@ -849,23 +903,30 @@ $marker-size		: 9px;
 		margin-bottom		: 50px;
 		padding-left		: 10px;
 		padding-right		: 10px;
+
+		opacity			: 0;
+
+		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 3s;
 	}
 
 	/* Sideline */
 	.sideline {
-		position		: absolute;
-
 		width			: 300px;
 		height			: 0px;
 
 		margin-top		: 15px;
+		margin-bottom		: -20px;
 
 		border			: 2px solid #3D3D3D;
 		border-radius		: 1px;
 
 		z-index			: -1;
 
-		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		opacity			: 0;
+
+		transform		: translateX(-50vw);
+
+		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 3s;
 	}
 
 	/* Sections */
@@ -876,6 +937,12 @@ $marker-size		: 9px;
 		display			: flex;
 		
 		background-color	: #F8F8F8;
+
+		transform		: translateX(50vw);
+
+		opacity			: 0;
+
+		transition		: 0.5s linear;
 
 		/* Odd */
 		&:nth-of-type(odd) {
@@ -1015,5 +1082,39 @@ $marker-size		: 9px;
 	}
 	100% {
 		transform		: scaleX(1);
+	}
+}
+
+@keyframes showcase_exclamation {
+	0% {
+		opacity			: 1;
+	}
+	5% {
+		opacity			: 0;
+	}
+	10% {
+		opacity			: 1;
+	}
+	15% {
+		opacity			: 0;
+	}
+	20% {
+		opacity			: 1;
+	}
+	25% {
+		opacity			: 0;
+	}
+	30% {
+		opacity			: 1;
+	}
+	60% {
+		opacity			: 1;
+
+		transform		: scale(1);
+	}
+	100% {
+		opacity			: 0;
+
+		transform		: scale(0);
 	}
 }
