@@ -1,8 +1,9 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                       Imports                                                      */
 /* ------------------------------------------------------------------------------------------------------------------ */
-import React from 'react';
+import React, { createRef, useRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Controller, Scene } from "react-scrollmagic";
 
 
 
@@ -33,12 +34,17 @@ class Slideshow extends React.Component {
 		//	Set state
 		this.state = {
 			page				: 0,
+			pause				: true,
 			loop				: props.options.loop || true,
 			autoPlay			: props.options.autoPlay || true,
 			autoPlayDelay			: props.options.autoPlayDelay || 5000,
 			autoPlayIndicator		: props.options.autoPlayIndicator || true,
 			autoPlayIndicatorPosition	: props.options.autoPlayIndicatorPosition || 'bottom'
 		}
+
+		//	Store number of images
+		this.count = this.props.options.images.length;
+
 	}
 
 
@@ -98,22 +104,56 @@ class Slideshow extends React.Component {
 
 
 
-	/* ==================================================== On Render =================================================== */
-	render () {
+	/* ==================================================== On Update =================================================== */
+	componentDidUpdate(prevProps, prevState) {
 
-		//	Store number of images
-		this.count = this.props.options.images.length;
-
-		//	Start autoplaying if the option is turned on
+		//	If autoplaying and update is not from change of page
 		if (this.state.autoPlay) {
 
-			//	Clear all previous autplay functions
-			clearInterval(this.autoplay_index); 
+			//	If element is visible on screen
+			if ((this.props.event.type == 'start' || this.props.event.type == 'end') && this.state.pause) {
 
-			//	Set new autoplay index so we can clear this function on render
-			this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
+				//	Clear all previous autoplay functions
+				clearInterval(this.autoplay_index); 
+
+				//	Set new autoplay index so we can clear this function on render
+				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
+
+				//	Unpause
+				this.setState({pause: false});
+
+			}
+
+			//	If not visible
+			if (this.props.event.type == 'leave' && !this.state.pause) {
+
+				//	Clear all previous autoplay functions
+				clearInterval(this.autoplay_index);
+
+				//	Pause
+				this.setState({pause: true});
+
+			}
+
+			//	If updating page and not paused
+			if (this.reset_countdown && !this.state.pause) {
+
+				//	Clear all previous autoplay functions
+				clearInterval(this.autoplay_index); 
+
+				//	Set new autoplay index so we can clear this function on render
+				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
+				
+			}
 
 		}
+
+	}
+
+
+
+	/* ==================================================== On Render =================================================== */
+	render () {
 
 		//	Generate image elements
 		var images = this.props.options.images;
@@ -158,7 +198,7 @@ class Slideshow extends React.Component {
 
 		//	Return html
 		return (
-			<div className="slideshow">
+			<Controller><Scene duration={500} classToggle="active"><div className="slideshow">
 
 				{/* Slideshow */}
 				{images}
@@ -173,7 +213,7 @@ class Slideshow extends React.Component {
 				{/* Countdown */}
 				{countdown}
 
-			</div>
+			</div></Scene></Controller>
 		);
 
 	}
