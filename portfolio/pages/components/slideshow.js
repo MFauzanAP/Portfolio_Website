@@ -90,6 +90,31 @@ class Slideshow extends React.Component {
 	/* Change Page */
 	change_page (page) {
 
+		//	Check if same page
+		if (page == this.state.page) {
+
+			//	If unpaused
+			if (this.state.autoPlay) {
+
+				//	Pause the slideshow
+				this.state.autoPlay = false;
+
+				//	Change icon
+				document.getElementById('pagination').classList.add('pause');
+				
+
+			}
+			else {
+
+				//	Unpause the slideshow
+				this.state.autoPlay = true;
+
+				//	Change icon r
+
+			}
+
+		}
+
 		//	Reset countdown and update page
 		this.reset_countdown = true;
 		this.setState({page}, () => {
@@ -147,6 +172,12 @@ class Slideshow extends React.Component {
 			}
 
 		}
+		else {
+
+			//	Clear all previous autoplay functions
+			clearInterval(this.autoplay_index);
+
+		}
 
 	}
 
@@ -178,15 +209,20 @@ class Slideshow extends React.Component {
 
 			//	Generate class name
 			var class_name = i == this.state.page ? 'active page' : 'page';
+
+			//	Generate icon
+			var icon = this.state.autoPlay ? <FontAwesomeIcon icon={['fas', 'pause']}/> : <FontAwesomeIcon icon={['fas', 'play']}/>;
 			
 			//	Add element
-			pagination.push(<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i)}></div>);
+			pagination.push(
+				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i)}>{icon}</div>
+			);
 
 		}
 
 		//	Generate countdown if option is enabled and if not resetting countdown
 		var countdown;
-		if (this.state.autoPlayIndicator && !this.reset_countdown) {
+		if (this.state.autoPlayIndicator && !this.reset_countdown && this.state.autoPlay) {
 
 			//	Generate class name
 			var class_name = `${this.state.autoPlayIndicatorPosition} countdown`;
@@ -208,7 +244,7 @@ class Slideshow extends React.Component {
 				<div className="right arrow" onClick={this.next_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 				{/* Pagination */}
-				<div className="pagination">{pagination}</div>
+				<div className="pagination" id="pagination">{pagination}</div>
 
 				{/* Countdown */}
 				{countdown}
