@@ -456,14 +456,16 @@ function Home () {
 						</div>
 
 						{/* Media */}
-						<div className={styles.media_container}>
+						<div className={styles.media_container}  id="media_container_1">
 
 							{/* Slideshow */}
-							<Slideshow options={{
-								images: [
-									""
-								]
-							}}/>
+							<Controller><Scene duration={500} triggerElement="#media_container_1">{(progress, event) => (
+								<Slideshow id={event} event={event} options={{
+									images: [
+										""
+									]
+								}}/>
+							)}</Scene></Controller>
 
 						</div>
 
@@ -538,18 +540,20 @@ function Home () {
 						</div>
 
 						{/* Media */}
-						<div className={styles.media_container}>
+						<div className={styles.media_container} id="media_container_3">
 
 							{/* Slideshow */}
-							<Slideshow options={{
-								images: [
-									"/top_down_project_image_1.png",
-									"/top_down_project_image_2.png",
-									"/top_down_project_image_3.png",
-									"/top_down_project_image_4.png",
-									"/top_down_project_image_5.png"
-								]
-							}}/>
+							<Controller><Scene duration={500} triggerElement="#media_container_3">{(progress, event) => (
+								<Slideshow id={event} event={event} options={{
+									images: [
+										"/top_down_project_image_1.png",
+										"/top_down_project_image_2.png",
+										"/top_down_project_image_3.png",
+										"/top_down_project_image_4.png",
+										"/top_down_project_image_5.png"
+									]
+								}}/>
+							)}</Scene></Controller>
 
 						</div>
 

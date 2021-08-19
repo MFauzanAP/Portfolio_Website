@@ -99,18 +99,12 @@ class Slideshow extends React.Component {
 				//	Pause the slideshow
 				this.state.autoPlay = false;
 
-				//	Change icon
-				document.getElementById('pagination').classList.add('pause');
-				
-
 			}
 			else {
 
 				//	Unpause the slideshow
 				this.state.autoPlay = true;
-
-				//	Change icon r
-
+				
 			}
 
 		}
@@ -211,11 +205,13 @@ class Slideshow extends React.Component {
 			var class_name = i == this.state.page ? 'active page' : 'page';
 
 			//	Generate icon
-			var icon = this.state.autoPlay ? <FontAwesomeIcon icon={['fas', 'pause']}/> : <FontAwesomeIcon icon={['fas', 'play']}/>;
+			var icon = (!this.state.autoPlay || this.state.pause) ? ['fas', 'play'] : ['fas', 'pause'];
 			
 			//	Add element
 			pagination.push(
-				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i)}>{icon}</div>
+				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i)}>
+					<FontAwesomeIcon icon={icon}/>
+				</div>
 			);
 
 		}
