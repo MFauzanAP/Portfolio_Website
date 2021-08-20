@@ -472,6 +472,49 @@ button {
 
 
 
+/* ================================================ Radial Scrollbar ================================================ */
+.radial_scrollbar {
+	position		: fixed;
+	width			: 150px;
+	height			: 150px;
+	top			: calc(50% - 75px);
+	left			: -75px;
+
+	display			: flex;
+	flex-direction		: column;
+	align-items		: center;
+
+	background		: transparent;
+	border			: 2px dashed #FFFFFF;
+	border-radius		: 50%;
+
+	/* Purple */
+	&::before {
+		position		: fixed;
+		width			: 146px;
+		height			: 143px;
+		top			: calc(50% - 73px);
+		left			: -78px;
+
+		display			: flex;
+		flex-direction		: column;
+		align-items		: center;
+
+		background		: transparent;
+		border			: 2px dashed #674EB6;
+		border-radius		: 50%;
+
+		content			: '';
+	}
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+}
+
+
+
 /* ==================================================== Slideshow =================================================== */
 .slideshow {
 	position		: relative;
