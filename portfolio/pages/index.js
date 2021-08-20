@@ -111,10 +111,10 @@ function Home () {
 				</div>
 
 				{/* Call to Action */}
-				<div className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">
+				<a href="/projects" className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">
 					VIEW PROJECTS
 					<FontAwesomeIcon className={styles.icon} style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}></FontAwesomeIcon>
-				</div>
+				</a>
 
 
 
@@ -137,10 +137,10 @@ function Home () {
 								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. 
 								To me, satisfactory just wont cut it. If you're interested, click the link below 👇.
 							</p>
-							<button>
+							<a href="/contact"><button>
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'user-plus']}></FontAwesomeIcon>
 								Hire Me
-							</button>
+							</button></a>
 						</div>
 
 						{/* Image */}
@@ -284,10 +284,6 @@ function Home () {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'images']}></FontAwesomeIcon>
-									View Work
-								</button></a>
 								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
