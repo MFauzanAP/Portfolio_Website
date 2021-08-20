@@ -571,10 +571,14 @@ function Home () {
 				
 
 
-				{/* ===================================================== Navbar ===================================================== */}
+				{/* ================================================== Miscellaneous ================================================= */}
+
+				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#fade_end">
 					<div className="navbar_container"><Navbar/></div>
 				</Scene></Controller>
+
+				{/* Radial Scrollbar */}
 
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 3}}/>
