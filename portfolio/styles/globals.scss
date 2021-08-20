@@ -63,7 +63,7 @@ button {
 
 	padding			: 10px;
 
-	transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+	transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 	/* Hover */
 	&:hover:enabled {
@@ -133,7 +133,7 @@ button {
 				height			: 72px;
 				margin-top		: 30px;
 
-				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 				/* Hover */
 				&:hover {
@@ -191,7 +191,7 @@ button {
 
 				content			: '';
 
-				transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 			}
 
 			/* Active */
@@ -255,7 +255,7 @@ button {
 				margin-top		: 0;
 				margin-left		: 20px;
 
-				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 				/* Hover */
 				&:hover {
@@ -329,7 +329,7 @@ button {
 				transform		: scaleY(0);
 				transform-origin	: top;
 
-				transition		: 0.25s ease;
+				transition		: 0.15s ease;
 
 				/* Underline */
 				.underline {
@@ -367,7 +367,7 @@ button {
 
 					transform-origin	: center;
 
-					transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+					transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 		
 					/* Hover */
 					&:hover {
@@ -449,7 +449,7 @@ button {
 
 				content			: '';
 
-				transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 			}
 
 			/* Active */
@@ -511,6 +511,15 @@ button {
 
 	/* ==================================================== Children ==================================================== */
 
+	/* Section */
+	.section {
+
+		/* Marker */
+		&::before {
+
+		}
+	}
+
 }
 
 
@@ -556,7 +565,7 @@ button {
 
 		opacity			: 0.75;
 
-		transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 		/* Hover */
 		&:hover {
@@ -614,7 +623,7 @@ button {
 			font-size		: 0.5em;
 			text-align		: center;
 
-			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+			transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 			transform-origin	: center;
 
@@ -746,7 +755,7 @@ button {
 
 				margin			: 5px;
 
-				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				transition		: 0.1s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 				/* Hover */
 				&:hover {
@@ -773,7 +782,7 @@ button {
 
 				margin			: 5px;
 
-				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				transition		: 0.1s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 				/* Hover */
 				&:hover {
