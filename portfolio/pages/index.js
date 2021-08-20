@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Slideshow from './components/slideshow';
+import RadialScrollbar from './components/radial_scrollbar';
 
 //	Declare output function
 function Home () {
@@ -579,14 +580,7 @@ function Home () {
 				</Scene></Controller>
 
 				{/* Radial Scrollbar */}
-				<div className="radial_scrollbar">
-
-					{/* Section */}
-					<div className="section">
-
-					</div>
-
-				</div>
+				
 
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 3}}/>

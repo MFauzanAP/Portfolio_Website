@@ -475,48 +475,51 @@ button {
 /* ================================================ Radial Scrollbar ================================================ */
 .radial_scrollbar {
 	position		: fixed;
-	width			: 150px;
-	height			: 150px;
-	top			: calc(50% - 75px);
-	left			: -75px;
-
-	display			: flex;
-	flex-direction		: column;
-	align-items		: center;
 
 	background		: transparent;
 	border			: 2px dashed #FFFFFF;
 	border-radius		: 50%;
 
-	/* Purple */
-	&::before {
-		position		: fixed;
-		width			: 146px;
-		height			: 143px;
-		top			: calc(50% - 73px);
-		left			: -78px;
-
-		display			: flex;
-		flex-direction		: column;
-		align-items		: center;
-
-		background		: transparent;
-		border			: 2px dashed #674EB6;
-		border-radius		: 50%;
-
-		content			: '';
-	}
+	transform		: rotate();
 
 
 
 	/* ==================================================== Children ==================================================== */
 
-	/* Section */
-	.section {
+	/* Container */
+	.container {
+		position		: relative;
+		width			: 100%;
+		height			: 100%;
 
-		/* Marker */
-		&::before {
+		/* Secondary Color */
+		.secondary {
+			position		: absolute;
+			width			: 100%;
+			height			: 100%;
 
+			background		: transparent;
+			border			: 2px dashed #674EB6;
+			border-radius		: 50%;
+		}
+
+		/* Section */
+		.section {
+			position		: absolute;
+
+			overflow		: visible;
+
+			background		: transparent;
+			border			: 2px solid #000;
+			border-radius		: 50%;
+
+			/* Text */
+			.text {
+				position		: absolute;
+				width			: 500px;
+				left			: 10px;
+				top			: 0px;
+			}
 		}
 	}
 
