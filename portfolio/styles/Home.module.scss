@@ -487,6 +487,13 @@ $marker-size		: 9px;
 			}
 		}
 
+		/* Call to Action */
+		.call_to_action {
+			opacity			: 1;
+	
+			transform		: scaleY(1);
+		}
+
 	}
 
 
@@ -837,6 +844,13 @@ $marker-size		: 9px;
 
 		margin-top		: 50px;
 		margin-bottom		: 100px;
+
+		opacity			: 0;
+
+		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 1s;
+
+		transform		: scaleY(0);
+		transform-origin	: top;
 	}
 
 }
