@@ -572,12 +572,9 @@ function Home () {
 
 				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#fade_end">
-					<div className="navbar_container"><Navbar/></div>
+					<div className="navbar_container"><Navbar pathname=""/></div>
 				</Scene></Controller>
-
-				{/* Radial Scrollbar */}
 				
-
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 3}}/>
 

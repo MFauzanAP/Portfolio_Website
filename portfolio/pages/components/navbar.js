@@ -16,22 +16,30 @@ class Navbar extends React.Component {
 
 	/* ==================================================== On Render =================================================== */
 	render () {
+
+		//	Generate link classes
+		var home = this.props.pathname == '' ? 'active' : '';
+		var projects = this.props.pathname == 'projects' ? 'active' : '';
+		var about = this.props.pathname == 'about' ? 'active' : '';
+		var contact = this.props.pathname == 'contact' ? 'active' : '';
+
+		//	Return html
 		return (<div className="navbar" id="navbar">
 
 			{/* Home */}
-			<a className="active" href="/">Home</a>
+			<a className={home} href="/">Home</a>
 
 			{/* Projects */}
-			<a href="/projects">Projects</a>
+			<a className={projects} href="/projects">Projects</a>
 
 			{/* Logo */}
 			<div className="logo_container"><img className="logo" src="/logo.svg"/></div>
 
 			{/* About */}
-			<a href="/about">About</a>
+			<a className={about} href="/about">About</a>
 
 			{/* Contact */}
-			<a href="/contact">Contact</a>
+			<a className={contact} href="/contact">Contact</a>
 
 			{/* Social Media Contact */}
 			<div className="social_media">
@@ -59,6 +67,7 @@ class Navbar extends React.Component {
 			</div>
 
 		</div>)
+
 	}
 
 }
