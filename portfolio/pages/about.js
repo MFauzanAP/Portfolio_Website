@@ -45,7 +45,7 @@ function Home () {
 					{/* Welcome Text */}
 					<Controller><Scene duration={600} triggerElement="#fade_start">
 						{progress => (
-							<div className={styles.welcome_text} style={{opacity: 1 - (progress - 0.25), top: `${35 - (progress * 35)}%`}} id="welcome-text">
+							<div className={styles.welcome_text} style={{opacity: 1 - Math.pow(progress, 2), top: `${35 - (progress * 35)}%`}} id="welcome-text">
 
 								{/* Meta */}
 								<div className={styles.meta}>
