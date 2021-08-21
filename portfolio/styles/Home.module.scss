@@ -178,6 +178,8 @@ $marker-size		: 9px;
 			height			: 160px;
 
 			display			: block;
+
+			filter			: drop-shadow(4px 4px 25px rgba(0, 0, 0, .15));
 		}
 		    
 		.shape_fill {
