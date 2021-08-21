@@ -32,13 +32,10 @@ function Home () {
 				{/* ================================================== Landing Page ================================================== */}
 
 				{/* Background Mask */}
-				<div className={styles.background_mask} id="background_mask">
-
-					{/* Background */}
-					<div className={styles.background} id="background"></div>
+				<div className={styles.background_mask}>
 
 					{/* Background Circles */}
-					<Particles className={styles.circles} id="circles"
+					<Particles className={styles.circles}
 						params={{
 							particles	: {
 								number		: {
@@ -77,28 +74,32 @@ function Home () {
 						}}
 					></Particles>
 
+					{/* Background */}
+					<div className={styles.background}>
+						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+							<path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" className={styles.shape_fill}></path>
+						</svg>
+					</div>
+
 					{/* Background End */}
 					<div style={{position: 'absolute', bottom: "40%"}} id="fade_start"></div>
 
 					{/* Welcome Text */}
 					<Controller><Scene duration={600} triggerElement="#fade_start">
 						{progress => (
-							<div className={styles.welcome_text} style={{opacity: 1 - progress, top: `${25 - (progress * 25)}%`}} id="welcome-text">
+							<div className={styles.welcome_text} style={{opacity: 1 - (progress - 0.25), top: `${35 - (progress * 35)}%`}} id="welcome-text">
+
+								{/* Background Title */}
+								<div className={styles.background_title}>
+									ABOUT ME
+								</div>
 
 								{/* Title */}
-								<div className={styles.title} id="title">
+								<div className={styles.title}>
 									MUHAMMAD FAUZAN
 									<br/>
 									ARISTYA PUTRA
 								</div>
-
-								{/* Underline */}
-								<div className={styles.underline} id="underline"></div>
-
-								{/* Meta */}
-								<div className={styles.meta} id="meta">First year undergraduate student at Qatar University,</div>
-								<div className={styles.meta} style={{animationDelay: '4s'}} id="meta">Full Stack Developer by day,</div>
-								<div className={styles.meta} style={{animationDelay: '5.25s'}} id="meta">Game Developer by night.</div>
 
 							</div>
 						)}
@@ -110,7 +111,7 @@ function Home () {
 				</div>
 
 				{/* Call to Action */}
-				<a href="/projects" className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">
+				<a href="/projects" className={`${styles.call_to_action} ${styles.landing_page}`}>
 					VIEW PROJECTS
 					<FontAwesomeIcon className={styles.icon} style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}></FontAwesomeIcon>
 				</a>
