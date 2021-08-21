@@ -136,6 +136,8 @@ $marker-size		: 9px;
 	
 	z-index			: -1;
 
+
+
 	/* ==================================================== Children ==================================================== */
 
 	/* Background */
@@ -185,8 +187,8 @@ $marker-size		: 9px;
 
 		/* ==================================================== Children ==================================================== */
 
-		/* Background Title */
-		.background_title {
+		/* Meta */
+		.meta {
 			flex			: auto;
 			width			: 0;
 			height			: 1.5em;
@@ -227,6 +229,87 @@ $marker-size		: 9px;
 			animation		: background_title 1s cubic-bezier(0.34,-0.39, 0.68, 1.38) forwards;
 		}
 
+		/* Underline */
+		.underline {
+			flex			: auto;
+			width			: 200px;
+			height			: 0px;
+
+			margin-top		: 10px;
+			margin-bottom		: 20px;
+
+			border			: 1px solid #EEEEEE;
+			border-radius		: 1px;
+
+			transform		: scaleX(0);
+
+			animation		: background_underline 1s ease forwards;
+			animation-delay		: 1s;
+		}
+
+	}
+
+}
+
+
+
+/* ============================================== Personal Information ============================================== */
+.personal_info {
+	margin			: 100px;
+	margin-top		: 60vh;
+	margin-bottom		: 100px;
+	padding			: 50px;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: flex-start;
+	align-items		: center;
+
+	box-shadow		: 4px 4px 25px rgba(0, 0, 0, 0.15);
+
+	background		: #F8F8F8;
+	border-top		: 2px solid #8a4fce;
+	border-radius		: 5px;
+	
+
+	
+	/* ==================================================== Children ==================================================== */
+
+	/* Header */
+	h1 {
+		text-align		: center;
+
+		margin			: 0;
+	}
+
+	/* Details */
+	.details {
+		display			: flex;
+		flex-direction		: row;
+		align-items		: center;
+		justify-content		: center;
+
+		/* Profile Picture */
+		.profile_picture {
+			flex			: 0 1 300px;
+			height			: 300px;
+
+			margin-right		: 50px;
+
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: center;
+			align-items		: center;
+
+			overflow		: hidden;
+
+			border-radius		: 50%;
+
+			/* Image */
+			img {
+				width			: 100%;
+			}
+		}
 	}
 
 }

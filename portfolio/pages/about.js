@@ -30,49 +30,7 @@ function Home () {
 			<div className={styles.home}>
 
 				{/* ================================================== Landing Page ================================================== */}
-
-				{/* Background Mask */}
 				<div className={styles.background_mask}>
-
-					{/* Background Circles */}
-					<Particles className={styles.circles}
-						params={{
-							particles	: {
-								number		: {
-									value		: 5,
-									density		: {
-										enable		: true,
-										value_area	: 2000
-									}
-								},
-								color		: {
-									value		: '#BBBBBB'
-								},
-								opacity		: {
-									value		: 0.1,
-									anim		: {
-										enable		: true,
-										speed		: 3
-									}
-								},
-								size		: {
-									value		: 250,
-									random		: true,
-									anim		: {
-										enable		: true,
-										speed		: 3
-									}
-								},
-								line_linked	: {
-									enable		: false
-								},
-								move		: {
-									speed		: 1,
-									bounce		: false
-								}
-							}
-						}}
-					></Particles>
 
 					{/* Background */}
 					<div className={styles.background}>
@@ -89,8 +47,8 @@ function Home () {
 						{progress => (
 							<div className={styles.welcome_text} style={{opacity: 1 - (progress - 0.25), top: `${35 - (progress * 35)}%`}} id="welcome-text">
 
-								{/* Background Title */}
-								<div className={styles.background_title}>
+								{/* Meta */}
+								<div className={styles.meta}>
 									ABOUT ME
 								</div>
 
@@ -101,6 +59,9 @@ function Home () {
 									ARISTYA PUTRA
 								</div>
 
+								{/* Underline */}
+								<div className={styles.underline}></div>
+
 							</div>
 						)}
 					</Scene></Controller>
@@ -110,11 +71,38 @@ function Home () {
 
 				</div>
 
-				{/* Call to Action */}
-				<a href="/projects" className={`${styles.call_to_action} ${styles.landing_page}`}>
-					VIEW PROJECTS
-					<FontAwesomeIcon className={styles.icon} style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}></FontAwesomeIcon>
-				</a>
+
+
+				{/* ===================================================== Footer ===================================================== */}
+				<div className={styles.personal_info}>
+
+					{/* Details */}
+					<div className={styles.details}>
+
+						{/* Profile Picture */}
+						<div className={styles.profile_picture}><img src="/profile_picture.jpeg"/></div>
+
+						{/* Text */}
+						<div className={styles.text}>
+
+							{/* Title */}
+							<h2>Hey, I'm Fauzan</h2>
+
+							{/* Description */}
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor at dui hendrerit accumsan. <br/>
+								Curabitur nec ante risus. Donec vel erat iaculis, volutpat ante in, porttitor arcu. Interdum et malesuada <br/>
+								fames ac ante ipsum primis in faucibus. Sed vel urna condimentum, gravida tortor sit amet, molestie purus. <br/>
+								Donec nisl erat, ornare sit amet auctor ac, mattis in justo. Quisque accumsan justo arcu, <br/>
+								nec dapibus eros blandit ut. Aliquam convallis consectetur ante, eget ullamcorper ipsum auctor nec. <br/>
+								Mauris pellentesque vel odio ac ornare. Sed sed velit at risus aliquam pellentesque.
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
 
 
 
