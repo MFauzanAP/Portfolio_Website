@@ -260,6 +260,7 @@ $marker-size		: 9px;
 	margin-top		: 60vh;
 	margin-bottom		: 100px;
 	padding			: 50px;
+	padding-bottom		: 0;
 
 	display			: flex;
 	flex-direction		: column;
@@ -269,19 +270,13 @@ $marker-size		: 9px;
 	box-shadow		: 4px 4px 25px rgba(0, 0, 0, 0.15);
 
 	background		: #F8F8F8;
-	border-top		: 2px solid #8a4fce;
+	color			: #3D3D3D;
+	border-top		: 2px solid #8A4FCE;
 	border-radius		: 5px;
 	
 
 	
 	/* ==================================================== Children ==================================================== */
-
-	/* Header */
-	h1 {
-		text-align		: center;
-
-		margin			: 0;
-	}
 
 	/* Details */
 	.details {
@@ -289,6 +284,8 @@ $marker-size		: 9px;
 		flex-direction		: row;
 		align-items		: center;
 		justify-content		: center;
+
+		margin-bottom		: 100px;
 
 		/* Profile Picture */
 		.profile_picture {
@@ -309,6 +306,51 @@ $marker-size		: 9px;
 			/* Image */
 			img {
 				width			: 100%;
+			}
+		}
+	}
+
+	/* Divider */
+	.divider {
+		width			: 80%;
+
+		margin-bottom		: 100px;
+
+		border-top		: 2px solid transparent;
+
+		box-shadow		: 0 4px 4px rgba(0, 0, 0, 0.05);
+	}
+	/* Exp, edu, national, lang, age*/
+	/* Grid */
+	.grid {
+		width			: 100%;
+
+		display			: grid;
+
+		grid-template-columns	: repeat(3, 1fr);
+		grid-template-rows	: repeat(2, 1fr);
+
+		/* Details */
+		.details {
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: flex-start;
+			align-items		: center;
+
+			/* Icon */
+			.icon {
+				font-size		: 32px;
+
+				color			: #8A4FCE;
+			}
+
+			/* Description */
+			p {
+				margin-top		: 0;
+				margin-left		: 10%;
+				margin-right		: 10%;
+
+				text-align: center;
 			}
 		}
 	}

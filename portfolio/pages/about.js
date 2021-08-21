@@ -98,6 +98,130 @@ function Home () {
 								Mauris pellentesque vel odio ac ornare. Sed sed velit at risus aliquam pellentesque.
 							</p>
 
+							{/* Contact Me */}
+							<button style={{borderColor: '#8a4fce'}}>Contact Me</button>
+
+						</div>
+
+					</div>
+
+					{/* Divider */}
+					<div className={styles.divider}></div>
+
+					{/* Grid */}
+					<div className={styles.grid}>
+
+						{/* Experience */}
+						<div className={styles.details}>
+							
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'laptop-code']}/>
+							
+							{/* Title */}
+							<h3>Experience</h3>
+
+							{/* Description */}
+							<p>
+								Approx. 6 years of experience in Game Development,
+								3 years in Software Development, and 1 year in Web Development.
+							</p>
+
+						</div>
+
+						{/* Education */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'book-open']}/>
+							
+							{/* Title */}
+							<h3>Education</h3>
+
+							{/* Description */}
+							<li>Bachelor's Degree in Engineering @ Qatar University</li>
+							<li>High School Diploma @ Al Khor International School</li>
+
+						</div>
+
+						{/* Nationality */}
+						<div className={styles.details}>
+							
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'globe-asia']}/>
+							
+							{/* Title */}
+							<h3>Nationality</h3>
+
+							{/* Description */}
+							<p>
+								Born in Indonesia 🇮🇩, raised and brought up 
+								in Qatar 🇶🇦.
+							</p>
+
+						</div>
+
+						{/* Language */}
+						<div className={styles.details}>
+							
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'language']}/>
+							
+							{/* Title */}
+							<h3>Language</h3>
+
+							{/* Description */}
+							<table>
+								<tr>
+									<td>English</td>
+									<td>⬛⬛⬛⬛⬛</td>
+								</tr>
+								<tr>
+									<td>Indonesian</td>
+									<td>⬛⬛⬛⬛⬜</td>
+								</tr>
+								<tr>
+									<td>Arabic</td>
+									<td>⬛⬛⬜⬜⬜</td>
+								</tr>
+								<tr>
+									<td>Korean</td>
+									<td>⬛⬜⬜⬜⬜</td>
+								</tr>
+							</table>
+
+						</div>
+
+						{/* Age */}
+						<div className={styles.details}>
+							
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar-alt']}/>
+							
+							{/* Title */}
+							<h3>Age</h3>
+
+							{/* Description */}
+							<p>
+								Born on the 4th of May 2004 (04/05/2004) in Jakarta, Indonesia
+							</p>
+
+						</div>
+						
+						{/* Hobbies */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'book-open']}/>
+							
+							{/* Title */}
+							<h3>Hobbies</h3>
+
+							{/* Description */}
+							<li>Coding</li>
+							<li>Watching Movies/Dramas</li>
+							<li>Volleyball</li>
+							<li>Video Games</li>
+
 						</div>
 
 					</div>
