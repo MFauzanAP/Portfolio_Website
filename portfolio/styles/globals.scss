@@ -98,7 +98,7 @@ button {
 		max-width		: 70%;
 		width			: 100%;
 		height			: $navbar-height-1;
-		top			: 50px;
+		top			: 35px;
 
 		overflow		: hidden;
 
@@ -158,13 +158,13 @@ button {
 
 			font-family		: Lato;
 			font-style		: normal;
-			font-weight		: 500;
+			font-weight		: bold;
 			font-size		: 16px;
 			line-height		: 18px;
 
 			text-decoration		: none;
 
-			color			: #FFFFFF;
+			color			: #3D3D3D;
 
 			/* Hover */
 			&:hover {
@@ -186,7 +186,7 @@ button {
 				transform		: scaleX(0);
 				transform-origin	: center;
 
-				background-color	: #FFFFFF;
+				background-color	: #3D3D3D;
 				opacity			: 1;
 
 				content			: '';
@@ -880,7 +880,7 @@ button {
 	100% {
 		max-height		: $navbar-height-1;
 		height			: $navbar-height-1;
-		top			: 50px;
+		top			: 35px;
 	}
 }
 
