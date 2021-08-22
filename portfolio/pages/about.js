@@ -138,8 +138,8 @@ function Home () {
 							<h3>Education</h3>
 
 							{/* Description */}
-							<li>Bachelor's Degree in Engineering @ Qatar University</li>
-							<li>High School Diploma @ Al Khor International School</li>
+							<p>Bachelor's Degree in Engineering @ Qatar University
+							High School Diploma @ Al Khor International School.</p>
 
 						</div>
 
@@ -202,7 +202,7 @@ function Home () {
 
 							{/* Description */}
 							<p>
-								Born on the 4th of May 2004 (04/05/2004) in Jakarta, Indonesia
+								Born on the 4th of May 2004 (04/05/2004) in Jakarta, Indonesia.
 							</p>
 
 						</div>
@@ -217,10 +217,332 @@ function Home () {
 							<h3>Hobbies</h3>
 
 							{/* Description */}
-							<li>Coding</li>
-							<li>Watching Movies/Dramas</li>
-							<li>Volleyball</li>
-							<li>Video Games</li>
+							<p>Coding<br/>
+							Watching Movies/Dramas<br/>
+							Volleyball<br/>
+							Video Games</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				{/* =================================================== Tech Stack =================================================== */}
+				<div className={styles.tech_stack}>
+
+					{/* Background */}
+					<div className={styles.background}>
+						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+							<path d="M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z" className={styles.shape_fill}></path>
+						</svg>
+					</div>
+
+					{/* Title */}
+					<div className={styles.header}>TECHNICAL SKILLS</div>
+
+					{/* Grid */}
+					<div className={styles.grid}>
+						
+						{/* Skills */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="html_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>HTML</div>
+							<div className={styles.description}>
+								Web Development<br/>
+								3 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="css_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>CSS</div>
+							<div className={styles.description}>
+								Web Development<br/>
+								3 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="js_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>JavaScript</div>
+							<div className={styles.description}>
+								Web Development<br/>
+								3 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="sass_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Sass</div>
+							<div className={styles.description}>
+								Front End<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="jquery_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>jQuery</div>
+							<div className={styles.description}>
+								Front End<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="react_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>ReactJS</div>
+							<div className={styles.description}>
+								Front End<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="next_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>NextJS</div>
+							<div className={styles.description}>
+								Full Stack<br/>
+								1 Year of Experience<br/>
+							</div>
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="node_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>NodeJS</div>
+							<div className={styles.description}>
+								Back End<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="express_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>ExpressJS</div>
+							<div className={styles.description}>
+								Back End<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="mongodb_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>MongoDB</div>
+							<div className={styles.description}>
+								Database<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="elasticsearch_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>ElasticSearch</div>
+							<div className={styles.description}>
+								Database<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="handlebars_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Handlebars</div>
+							<div className={styles.description}>
+								Front End<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="chai_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>ChaiJS</div>
+							<div className={styles.description}>
+								Unit Testing<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="lodash_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Lodash</div>
+							<div className={styles.description}>
+								Utility<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="github_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>GitHub</div>
+							<div className={styles.description}>
+								Version Control<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="figma_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Figma</div>
+							<div className={styles.description}>
+								UI &amp; Design<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="unity_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Unity3D</div>
+							<div className={styles.description}>
+								Game Engine<br/>
+								6 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="csharp_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>C#</div>
+							<div className={styles.description}>
+								Programming Language<br/>
+								6 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="vb_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>VB.net</div>
+							<div className={styles.description}>
+								Programming Language<br/>
+								3 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="python_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Python</div>
+							<div className={styles.description}>
+								Programming Language<br/>
+								1 Year of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="blender_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Blender</div>
+							<div className={styles.description}>
+								3D Modelling<br/>
+								5 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="aseprite_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Aseprite</div>
+							<div className={styles.description}>
+								UI &amp; Design<br/>
+								2 Years of Experience<br/>
+							</div>
+
+						</div>
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<img src="photoshop_logo.png"/>
+
+							{/* Description */}
+							<div className={styles.title}>Photoshop</div>
+							<div className={styles.description}>
+								UI &amp; Design<br/>
+								2 Years of Experience<br/>
+							</div>
 
 						</div>
 
