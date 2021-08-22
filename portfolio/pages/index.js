@@ -164,6 +164,155 @@ function Home () {
 
 
 
+				{/* ==================================================== Showcase ==================================================== */}
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.showcase}>
+
+					{/* Background */}
+					<div className={styles.background}>
+						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+							<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shape_fill}></path>
+						</svg>
+					</div>
+
+					{/* Exclamation Mark */}
+					<span className={styles.exclamation}><FontAwesomeIcon icon={['fas', 'exclamation']}/></span>
+
+					{/* Header */}
+					<div className={styles.sideline}></div>
+					<h2>Latest Side Projects</h2>
+
+					{/* Section */}
+					<div className={styles.section} style={{transitionDelay: '3.75s'}}>
+
+						{/* Meta */}
+						<div className={styles.meta}>
+
+							{/* Title */}
+							<div className={styles.underline}></div>
+							<h3>Snowball Project</h3>
+
+							{/* Description */}
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
+							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
+							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
+							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
+							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
+							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
+							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
+
+							{/* Call to Action */}
+							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
+
+						</div>
+
+						{/* Media */}
+						<div className={styles.media_container}  id="media_container_1">
+
+							{/* Slideshow */}
+							<Controller><Scene duration={500} triggerElement="#media_container_1">{(progress, event) => (
+								<Slideshow id={event} event={event} options={{
+									images: [
+										""
+									]
+								}}/>
+							)}</Scene></Controller>
+
+						</div>
+
+					</div>
+
+					{/* Section */}
+					<div className={styles.section} style={{transitionDelay: '4.25s'}}>
+
+						{/* Meta */}
+						<div className={styles.meta}>
+
+							{/* Title */}
+							<div className={styles.underline}></div>
+							<h3>Revision Cards Project</h3>
+
+							{/* Description */}
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
+							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
+							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
+							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
+							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
+							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
+							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
+
+							{/* Call to Action */}
+							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
+
+						</div>
+
+						{/* Media */}
+						<div className={styles.media_container} id="media_container_2">
+
+							{/* Slideshow */}
+							<Controller><Scene duration={500} triggerElement="#media_container_2">{(progress, event) => (
+								<Slideshow id={event} event={event} options={{
+									images: [
+										"/revision_cards_image_1.png",
+										"/revision_cards_image_2.png",
+										"/revision_cards_image_3.png",
+										"/revision_cards_image_4.png",
+										"/revision_cards_image_5.png"
+									]
+								}}/>
+							)}</Scene></Controller>
+
+						</div>
+
+					</div>
+
+					{/* Section */}
+					<div className={styles.section} style={{transitionDelay: '4.75s'}}>
+
+						{/* Meta */}
+						<div className={styles.meta}>
+
+							{/* Title */}
+							<div className={styles.underline}></div>
+							<h3>Top Down Project</h3>
+
+							{/* Description */}
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
+							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
+							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
+							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
+							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
+							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
+							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
+
+							{/* Call to Action */}
+							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
+
+						</div>
+
+						{/* Media */}
+						<div className={styles.media_container} id="media_container_3">
+
+							{/* Slideshow */}
+							<Controller><Scene duration={500} triggerElement="#media_container_3">{(progress, event) => (
+								<Slideshow id={event} event={event} options={{
+									images: [
+										"/top_down_project_image_1.png",
+										"/top_down_project_image_2.png",
+										"/top_down_project_image_3.png",
+										"/top_down_project_image_4.png",
+										"/top_down_project_image_5.png"
+									]
+								}}/>
+							)}</Scene></Controller>
+
+						</div>
+
+					</div>
+
+				</div></Scene></Controller>
+
+
+
 				{/* ================================================= Career Timeline ================================================ */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.career_timeline}>
 
@@ -425,148 +574,6 @@ function Home () {
 						<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['far', 'address-card']}></FontAwesomeIcon>
 						Learn More
 					</div></a>
-
-				</div></Scene></Controller>
-
-
-
-				{/* ==================================================== Showcase ==================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.showcase}>
-
-					{/* Exclamation Mark */}
-					<span className={styles.exclamation}><FontAwesomeIcon icon={['fas', 'exclamation']}/></span>
-
-					{/* Header */}
-					<div className={styles.sideline}></div>
-					<h2>Latest Side Projects</h2>
-
-					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '3.75s'}}>
-
-						{/* Meta */}
-						<div className={styles.meta}>
-
-							{/* Title */}
-							<div className={styles.underline}></div>
-							<h3>Snowball Project</h3>
-
-							{/* Description */}
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
-							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
-							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
-							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
-							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
-							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
-
-							{/* Call to Action */}
-							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
-
-						</div>
-
-						{/* Media */}
-						<div className={styles.media_container}  id="media_container_1">
-
-							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement="#media_container_1">{(progress, event) => (
-								<Slideshow id={event} event={event} options={{
-									images: [
-										""
-									]
-								}}/>
-							)}</Scene></Controller>
-
-						</div>
-
-					</div>
-
-					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '4.25s'}}>
-
-						{/* Meta */}
-						<div className={styles.meta}>
-
-							{/* Title */}
-							<div className={styles.underline}></div>
-							<h3>Revision Cards Project</h3>
-
-							{/* Description */}
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
-							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
-							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
-							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
-							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
-							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
-
-							{/* Call to Action */}
-							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
-
-						</div>
-
-						{/* Media */}
-						<div className={styles.media_container} id="media_container_2">
-
-							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement="#media_container_2">{(progress, event) => (
-								<Slideshow id={event} event={event} options={{
-									images: [
-										"/revision_cards_image_1.png",
-										"/revision_cards_image_2.png",
-										"/revision_cards_image_3.png",
-										"/revision_cards_image_4.png",
-										"/revision_cards_image_5.png"
-									]
-								}}/>
-							)}</Scene></Controller>
-
-						</div>
-
-					</div>
-
-					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '4.75s'}}>
-
-						{/* Meta */}
-						<div className={styles.meta}>
-
-							{/* Title */}
-							<div className={styles.underline}></div>
-							<h3>Top Down Project</h3>
-
-							{/* Description */}
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
-							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
-							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
-							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
-							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
-							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
-
-							{/* Call to Action */}
-							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
-
-						</div>
-
-						{/* Media */}
-						<div className={styles.media_container} id="media_container_3">
-
-							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement="#media_container_3">{(progress, event) => (
-								<Slideshow id={event} event={event} options={{
-									images: [
-										"/top_down_project_image_1.png",
-										"/top_down_project_image_2.png",
-										"/top_down_project_image_3.png",
-										"/top_down_project_image_4.png",
-										"/top_down_project_image_5.png"
-									]
-								}}/>
-							)}</Scene></Controller>
-
-						</div>
-
-					</div>
 
 				</div></Scene></Controller>
 
