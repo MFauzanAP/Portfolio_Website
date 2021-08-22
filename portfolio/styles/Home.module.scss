@@ -484,8 +484,11 @@ $marker-size		: 9px;
 		top			: -135px;
 		left			: 0;
 		width			: 100%;
+
 		overflow		: hidden;
+
 		line-height		: 0;
+
 		transform		: rotate(180deg);
 		    
 		svg {
@@ -541,6 +544,10 @@ $marker-size		: 9px;
 		padding-left		: 10px;
 		padding-right		: 10px;
 
+		background		: #221e41;
+
+		z-index			: 1;
+
 		opacity			: 0;
 
 		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 3s;
@@ -557,7 +564,7 @@ $marker-size		: 9px;
 		border			: 2px solid #FFFFFF;
 		border-radius		: 1px;
 
-		z-index			: -1;
+		z-index			: 0;
 
 		opacity			: 0;
 
