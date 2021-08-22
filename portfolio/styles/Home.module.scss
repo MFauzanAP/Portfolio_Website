@@ -25,7 +25,7 @@ $card-height		: 600px;
 $card-header-height	: 100px;
 $card-margin		: 90px;
 $card-padding		: 15px;
-$card-colors		: #4346e6, #5abae6;
+$card-colors		: #4346e6, #4346e6;
 $marker-size		: 9px;
 
 
@@ -361,7 +361,7 @@ $marker-size		: 9px;
 			button {
 				width			: 150px;
 
-				background		: #5abae6;
+				background		: #00ccff;
 				border-color		: #4b9cc2;
 				color			: #FFFFFF;
 
@@ -375,7 +375,7 @@ $marker-size		: 9px;
 
 				/* Hover */
 				&:hover {
-					background		: #4fa9d3;
+					background		: #00b9e7;
 
 					transform		: scale(1.1);
 				}
@@ -640,7 +640,7 @@ $marker-size		: 9px;
 	.call_to_action {
 		margin-top		: 25px;
 
-		background-color	: #5abae6;
+		background-color	: #00ccff;
 		color			: #FFFFFF;
 
 		font-family		: Lato;
@@ -651,7 +651,7 @@ $marker-size		: 9px;
 
 		/* Hover */
 		&:hover {
-			background-color	: #4a99be;
+			background-color	: #00b9e7;
 		}
 	}
 }
