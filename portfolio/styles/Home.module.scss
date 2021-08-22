@@ -154,11 +154,34 @@ $marker-size		: 9px;
 		z-index			: -1;
 	}
 
-	/* Circles */
-	.circles {
+	/* Blob */
+	.blob {
 		position		: absolute;
-		width			: 150%;
-		height			: 150%;
+
+		background		: #FFFFFF;
+		border-radius		: 58% 42% 51% 49% / 30% 26% 74% 70%;
+
+		transform		: rotate(250deg) translate(100px, 100px) scale(1.25);
+
+		opacity			: 0.1;
+
+		animation		: blob 100s linear infinite;
+
+		/* Blob Left */
+		&.left {
+			width			: 500px;
+			height			: 500px;
+			left			: 0;
+			top			: 100px;
+		}
+
+		/* Blob Right */
+		&.right {
+			width			: 300px;
+			height			: 300px;
+			right			: 0;
+			bottom			: -100px;
+		}
 	}
 
 	/* Navbar Background */
@@ -1150,6 +1173,44 @@ $marker-size		: 9px;
 	}
 	100% {
 		transform		: scaleX(1);
+	}
+}
+
+@keyframes blob {
+	0% {
+		border-radius		: 58% 42% 51% 49% / 30% 26% 74% 70%;
+
+		opacity			: 0.05;
+
+		transform		: rotate(250deg) translate(100px, 100px) scale(1.25);
+	}
+	25% {
+		border-radius		: 71% 29% 32% 68% / 14% 75% 25% 86%;
+
+		opacity			: 0.1;
+
+		transform		: rotate(360deg) translate(100px, -200px) scale(1);
+	}
+	50% {
+		border-radius		: 71% 29% 77% 23% / 75% 47% 53% 25%;
+
+		opacity			: 0.15;
+
+		transform		: rotate(470deg) translate(-100px, -200px) scale(1.25);
+	}
+	75% {
+		border-radius		: 31% 69% 83% 17% / 24% 85% 15% 76% ;
+
+		opacity			: 0.1;
+
+		transform		: rotate(360deg) translate(-100px, 100px) scale(1);
+	}
+	100% {
+		border-radius		: 58% 42% 51% 49% / 30% 26% 74% 70%;
+
+		opacity			: 0.05;
+
+		transform		: rotate(250deg) translate(100px, 100px) scale(1.25);
 	}
 }
 
