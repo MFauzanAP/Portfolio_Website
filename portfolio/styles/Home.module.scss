@@ -25,7 +25,7 @@ $card-height		: 600px;
 $card-header-height	: 100px;
 $card-margin		: 90px;
 $card-padding		: 15px;
-$card-colors		: #4346e6, #8f43e6;
+$card-colors		: #4346e6, #5abae6;
 $marker-size		: 9px;
 
 
@@ -147,7 +147,7 @@ $marker-size		: 9px;
 		left			: 0;
 		top			: 0;
 		
-		background		: linear-gradient(114.17deg, #6C47B1 0%, #6C47B1 25%, #DB4A87 75%, #DB4A87 100%);
+		background		: linear-gradient(114.17deg, #9048e2 0%, #9048e2 25%, #DB4A87 75%, #DB4A87 100%);
 
 		animation		: background_gradient 30s ease 1s infinite;
 		
@@ -361,8 +361,8 @@ $marker-size		: 9px;
 			button {
 				width			: 150px;
 
-				background		: #62cfae;
-				border-color		: #36a181;
+				background		: #5abae6;
+				border-color		: #4b9cc2;
 				color			: #FFFFFF;
 
 				margin-top		: 2em;
@@ -375,7 +375,7 @@ $marker-size		: 9px;
 
 				/* Hover */
 				&:hover {
-					background		: #54b396;
+					background		: #4fa9d3;
 
 					transform		: scale(1.1);
 				}
@@ -640,7 +640,7 @@ $marker-size		: 9px;
 	.call_to_action {
 		margin-top		: 25px;
 
-		background-color	: #9B5AE6;
+		background-color	: #5abae6;
 		color			: #FFFFFF;
 
 		font-family		: Lato;
@@ -651,7 +651,7 @@ $marker-size		: 9px;
 
 		/* Hover */
 		&:hover {
-			background-color	: #7C52CA;
+			background-color	: #4a99be;
 		}
 	}
 }
@@ -668,7 +668,7 @@ $marker-size		: 9px;
 	justify-content		: center;
 	align-items		: center;
 
-	background		: #7305ce;
+	background		: #850ce7;
 	color			: #FFFFFF;
 
 	margin-top		: 100px;
@@ -685,7 +685,7 @@ $marker-size		: 9px;
 
 		border-style		: solid;
 		border-width		: 0 0 100px 100vw;
-		border-color		: transparent transparent #7305ce transparent;
+		border-color		: transparent transparent #850ce7 transparent;
 
 		content			: '';
 	}
@@ -699,7 +699,7 @@ $marker-size		: 9px;
 
 		border-style		: solid;
 		border-width		: 100px 100vw 0 0;
-		border-color		: #7305ce transparent transparent transparent;
+		border-color		: #850ce7 transparent transparent transparent;
 
 		content			: '';
 	}
