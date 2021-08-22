@@ -216,7 +216,7 @@ function Home () {
 					</div>
 
 					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '1.25s'}}>
+					<div className={styles.section} style={{transitionDelay: '1s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -257,7 +257,7 @@ function Home () {
 					</div>
 
 					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '1.75s'}}>
+					<div className={styles.section} style={{transitionDelay: '1.25s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
