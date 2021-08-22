@@ -174,15 +174,12 @@ function Home () {
 						</svg>
 					</div>
 
-					{/* Exclamation Mark */}
-					<span className={styles.exclamation}><FontAwesomeIcon icon={['fas', 'exclamation']}/></span>
-
 					{/* Header */}
 					<div className={styles.sideline}></div>
 					<h2>Latest Side Projects</h2>
 
 					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '3.75s'}}>
+					<div className={styles.section} style={{transitionDelay: '0.75s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -219,7 +216,7 @@ function Home () {
 					</div>
 
 					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '4.25s'}}>
+					<div className={styles.section} style={{transitionDelay: '1.25s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -260,7 +257,7 @@ function Home () {
 					</div>
 
 					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '4.75s'}}>
+					<div className={styles.section} style={{transitionDelay: '1.75s'}}>
 
 						{/* Meta */}
 						<div className={styles.meta}>
@@ -277,7 +274,7 @@ function Home () {
 
 							{/* Call to Action */}
 							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
-							
+
 						</div>
 
 						{/* Media */}

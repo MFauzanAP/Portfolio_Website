@@ -504,42 +504,9 @@ $marker-size		: 9px;
 		}
 	}
 
-	/* Exclamation */
-	.exclamation {
-		width			: 1.75em;
-		height			: 1.75em;
-		
-		background-color	: #000000;
-		color			: #FFEE00;
-		border-radius		: 50%;
-
-		opacity			: 0;
-
-		padding			: 5px;
-		margin-bottom		: 10px;
-
-		font-size		: 2em;
-		text-align		: center;
-
-		transform-origin	: center;
-	}
-
-	/* Border */
-	.border {
-		width			: 100%;
-
-		background-color	: #F8F8F8;
-
-		padding			: 50px;
-
-		display			: flex;
-		flex-direction		: column;
-		align-items		: center;
-	}
-
 	/* Header */
 	h2 {
-		margin-top		: 0;
+		margin-top		: 100px;
 		margin-bottom		: 50px;
 		padding-left		: 10px;
 		padding-right		: 10px;
@@ -550,7 +517,7 @@ $marker-size		: 9px;
 
 		opacity			: 0;
 
-		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 3s;
+		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 	}
 
 	/* Sideline */
@@ -558,8 +525,8 @@ $marker-size		: 9px;
 		width			: 300px;
 		height			: 0px;
 
-		margin-top		: 15px;
-		margin-bottom		: -20px;
+		margin-top		: 100px;
+		margin-bottom		: -120px;
 
 		border			: 2px solid #FFFFFF;
 		border-radius		: 1px;
@@ -570,7 +537,7 @@ $marker-size		: 9px;
 
 		transform		: translateX(-50vw);
 
-		transition		: 0.5s ease 3s;
+		transition		: 0.5s ease 0s;
 	}
 
 	/* Sections */
