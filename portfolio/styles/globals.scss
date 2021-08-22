@@ -92,6 +92,8 @@ button {
 	display			: flex;
 	justify-content		: center;
 
+	z-index			: 10;
+
 	/* Navbar */
 	.navbar {
 		position		: absolute;
