@@ -575,13 +575,20 @@ $marker-size		: 9px;
 
 	/* Sections */
 	.section {
-		width			: 100%;
+		width			: 70%;
 		height			: 500px;
 
 		display			: flex;
+
+		margin-bottom		: 100px;
 		
-		background-color	: #221e41;
-		color			: #FFFFFF;
+		background-color	: #FFFFFF;
+		color			: #3D3D3D;
+		border-radius		: 10px;
+
+		box-shadow		: 4px 4px 25px rgba(0, 0, 0, 0.15);
+
+		overflow		: hidden;
 
 		transform		: translateX(50vw);
 
@@ -628,12 +635,11 @@ $marker-size		: 9px;
 			}
 
 			/* Call to Action */
-			button {
-				width			: 150px;
+			.call_to_action {
+				width			: 200px;
 
 				margin-top		: 25px;
 
-				border-color		: #674EB6;
 				background-color	: #9B5AE6;
 				color			: #FFFFFF;
 

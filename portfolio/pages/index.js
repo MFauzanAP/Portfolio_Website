@@ -195,13 +195,10 @@ function Home () {
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
 							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
 							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
-							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
-							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
-							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
+							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
 
 							{/* Call to Action */}
-							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
+							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
 
 						</div>
 
@@ -235,13 +232,10 @@ function Home () {
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
 							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
 							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
-							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
-							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
-							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
+							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
 
 							{/* Call to Action */}
-							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
+							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
 
 						</div>
 
@@ -279,14 +273,11 @@ function Home () {
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
 							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
 							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.
-							Quisque porta in erat in sodales. Donec ut purus lectus. Phasellus varius, neque faucibus blandit fringilla, diam nulla bibendum dui,
-							a volutpat est mi eu urna. Quisque velit arcu, maximus vel tempor eu, finibus in metus. Nunc arcu tellus, pellentesque sit amet
-							consectetur id, gravida quis massa. Donec nec nisl id velit ultrices vulputate ac sed sapien.</p>
+							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
 
 							{/* Call to Action */}
-							<button><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</button>
-
+							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
+							
 						</div>
 
 						{/* Media */}
