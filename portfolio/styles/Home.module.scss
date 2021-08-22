@@ -25,7 +25,7 @@ $card-height		: 600px;
 $card-header-height	: 100px;
 $card-margin		: 90px;
 $card-padding		: 15px;
-$card-colors		: #4346e6, #4346e6;
+$card-colors		: #9349CC, #9349CC;
 $marker-size		: 9px;
 
 
@@ -361,8 +361,8 @@ $marker-size		: 9px;
 			button {
 				width			: 150px;
 
-				background		: #00ccff;
-				border-color		: #4b9cc2;
+				background		: #9B5AE6;
+				border-color		: #7C52CA;
 				color			: #FFFFFF;
 
 				margin-top		: 2em;
@@ -375,7 +375,7 @@ $marker-size		: 9px;
 
 				/* Hover */
 				&:hover {
-					background		: #00b9e7;
+					background		: #7C52CA;
 
 					transform		: scale(1.1);
 				}
@@ -432,14 +432,14 @@ $marker-size		: 9px;
 	/* Footer */
 	&::before {
 		position		: absolute;
-		bottom			: -135px;
+		bottom			: -200px;
 		left			: 0;
 		width			: 100%;
-		height			: 135px;
+		height			: 200px;
 
 		background-color	: #221e41;
 
-		z-index			: -1;
+		z-index			: -2;
 
 		content			: '';
 	}
@@ -575,7 +575,8 @@ $marker-size		: 9px;
 
 		/* Meta */
 		.meta {
-			flex			: 1 1 50%;
+			width			: 50%;
+
 			padding			: 100px;
 
 			display			: flex;
@@ -626,7 +627,7 @@ $marker-size		: 9px;
 
 		/* Media Container */
 		.media_container {
-			flex			: 1 1 50%;
+			width			: 50%;
 
 			overflow		: hidden;
 
@@ -640,8 +641,8 @@ $marker-size		: 9px;
 	.call_to_action {
 		margin-top		: 25px;
 
-		background-color	: #00ccff;
-		color			: #FFFFFF;
+		background-color	: #FFFFFF;
+		color			: #9B5AE6;
 
 		font-family		: Lato;
 		font-style		: normal;
@@ -651,7 +652,7 @@ $marker-size		: 9px;
 
 		/* Hover */
 		&:hover {
-			background-color	: #00b9e7;
+			background-color	: #dadada;
 		}
 	}
 }
@@ -661,6 +662,7 @@ $marker-size		: 9px;
 /* ================================================= Career Timeline ================================================ */
 
 .career_timeline {
+	position		: relative;
 	width			: 100%;
 
 	display			: flex;
@@ -668,41 +670,12 @@ $marker-size		: 9px;
 	justify-content		: center;
 	align-items		: center;
 
-	background		: #850ce7;
 	color			: #FFFFFF;
 
 	margin-top		: 100px;
 	margin-bottom		: 200px;
 	padding-top		: 100px;
 	padding-bottom		: 100px;
-
-	/* Slant */
-	&::before {
-		width			: 0;
-		height			: 0;
-
-		margin-top		: -199px;
-
-		border-style		: solid;
-		border-width		: 0 0 100px 100vw;
-		border-color		: transparent transparent #850ce7 transparent;
-
-		content			: '';
-	}
-
-	/* Slant */
-	&::after {
-		width			: 0;
-		height			: 0;
-
-		margin-bottom		: -199px;
-
-		border-style		: solid;
-		border-width		: 100px 100vw 0 0;
-		border-color		: #850ce7 transparent transparent transparent;
-
-		content			: '';
-	}
 
 	/* On Active */
 	&.active {
@@ -745,6 +718,19 @@ $marker-size		: 9px;
 
 
 	/* ==================================================== Children ==================================================== */
+
+	/* Background */
+	.background {
+		position		: absolute;
+		width			: 150%;
+		height			: 100%;
+
+		transform		: rotate(-2.5deg);
+
+		background		: linear-gradient(120deg, #9636e4 25%, #5c1894 100%);
+
+		z-index			: -1;
+	}
 
 	/* Title */
 	.title {
@@ -887,7 +873,7 @@ $marker-size		: 9px;
 					background-color	: #D8D8D8;
 					border-radius		: $marker-size;
 
-					box-shadow		: 0px 0px 2px 8px #850ce7;
+					box-shadow		: 0px 0px 2px 8px transparent;
 
 					content			: "";
 				}
@@ -925,7 +911,7 @@ $marker-size		: 9px;
 					background-color	: #D8D8D8;
 					border-radius		: $marker-size;
 
-					box-shadow		: 0px 0px 2px 8px #850ce7;
+					box-shadow		: 0px 0px 2px 8px transparent;
 
 					content			: "";
 				}

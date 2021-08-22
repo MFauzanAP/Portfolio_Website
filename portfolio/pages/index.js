@@ -307,6 +307,9 @@ function Home () {
 				{/* ================================================= Career Timeline ================================================ */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.career_timeline}>
 
+					{/* Background */}
+					<div className={styles.background}></div>
+
 					{/* Title */}
 					<div className={styles.title}>CAREER TIMELINE</div>
 					<div className={styles.underline}></div>
