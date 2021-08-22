@@ -412,6 +412,272 @@ $marker-size		: 9px;
 
 
 
+/* ==================================================== Showcase ==================================================== */
+
+.showcase {
+	position		: relative;
+	width			: 100%;
+	min-height		: 750px;
+
+	background-color	: #221e41;
+	color			: #FFFFFF;
+
+	display			: flex;
+	flex-direction		: column;
+	align-items		: center;
+
+	margin-top		: 200px;
+	padding-bottom		: 100px;
+
+	/* Footer */
+	&::before {
+		position		: absolute;
+		bottom			: -135px;
+		left			: 0;
+		width			: 100%;
+		height			: 135px;
+
+		background-color	: #221e41;
+
+		z-index			: -1;
+
+		content			: '';
+	}
+
+	/* Active */
+	&.active {
+
+		/* Exclamation */
+		.exclamation {
+			opacity			: 1;
+
+			animation		: showcase_exclamation 3s forwards;
+		}
+
+		/* Header */
+		h2 {
+			opacity			: 1;
+		}
+
+		/* Sideline */
+		.sideline {
+			opacity			: 1;
+
+			transform		: translateX(0);
+		}
+
+		/* Section */
+		.section {
+			opacity			: 1;
+
+			transform		: translateX(0);
+		}
+	}
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Background */
+	.background{
+		position		: absolute;
+		top			: -135px;
+		left			: 0;
+		width			: 100%;
+		overflow		: hidden;
+		line-height		: 0;
+		transform		: rotate(180deg);
+		    
+		svg {
+			position		: relative;
+			display			: block;
+			width			: calc(100% + 1.3px);
+			height			: 135px;
+			transform		: rotateY(180deg);
+		}
+		    
+		.shape_fill {
+			fill			: #221e41;
+		}
+	}
+
+	/* Exclamation */
+	.exclamation {
+		width			: 1.75em;
+		height			: 1.75em;
+		
+		background-color	: #000000;
+		color			: #FFEE00;
+		border-radius		: 50%;
+
+		opacity			: 0;
+
+		padding			: 5px;
+		margin-bottom		: 10px;
+
+		font-size		: 2em;
+		text-align		: center;
+
+		transform-origin	: center;
+	}
+
+	/* Border */
+	.border {
+		width			: 100%;
+
+		background-color	: #F8F8F8;
+
+		padding			: 50px;
+
+		display			: flex;
+		flex-direction		: column;
+		align-items		: center;
+	}
+
+	/* Header */
+	h2 {
+		margin-top		: 0;
+		margin-bottom		: 50px;
+		padding-left		: 10px;
+		padding-right		: 10px;
+
+		opacity			: 0;
+
+		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 3s;
+	}
+
+	/* Sideline */
+	.sideline {
+		width			: 300px;
+		height			: 0px;
+
+		margin-top		: 15px;
+		margin-bottom		: -20px;
+
+		border			: 2px solid #FFFFFF;
+		border-radius		: 1px;
+
+		z-index			: -1;
+
+		opacity			: 0;
+
+		transform		: translateX(-50vw);
+
+		transition		: 0.5s ease 3s;
+	}
+
+	/* Sections */
+	.section {
+		width			: 100%;
+		height			: 500px;
+
+		display			: flex;
+		
+		background-color	: #221e41;
+		color			: #FFFFFF;
+
+		transform		: translateX(50vw);
+
+		opacity			: 0;
+
+		transition		: 0.5s ease;
+
+		/* Odd */
+		&:nth-of-type(odd) {
+			flex-direction		: row;
+		}
+
+		/* Even */
+		&:nth-of-type(even) {
+			flex-direction		: row-reverse;
+		}
+
+		/* Meta */
+		.meta {
+			flex			: 1 1 50%;
+			padding			: 100px;
+
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: center;
+
+			/* Underline */
+			.underline {
+				width			: 50px;
+				height			: 0px;
+
+				margin-top		: 10px;
+				margin-bottom		: 5px;
+
+				border			: 2px solid #9B5AE6;
+				border-radius		: 1px;
+
+				transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+			}
+
+			/* Title */
+			h3 {
+				margin			: 0;
+			}
+
+			/* Call to Action */
+			button {
+				width			: 150px;
+
+				margin-top		: 25px;
+
+				border-color		: #674EB6;
+				background-color	: #9B5AE6;
+				color			: #FFFFFF;
+
+				font-family		: Lato;
+				font-style		: normal;
+				font-weight		: 600;
+				font-size		: 16px;
+				line-height		: 18px;
+
+				/* Hover */
+				&:hover {
+					background-color	: #7C52CA;
+				}
+
+			}
+		}
+
+		/* Media Container */
+		.media_container {
+			flex			: 1 1 50%;
+
+			overflow		: hidden;
+
+			display			: flex;
+			justify-content		: center;
+			align-items		: center;
+		}
+	}
+
+	/* Call to Action */
+	.call_to_action {
+		margin-top		: 25px;
+
+		background-color	: #9B5AE6;
+		color			: #FFFFFF;
+
+		font-family		: Lato;
+		font-style		: normal;
+		font-weight		: 600;
+		font-size		: 16px;
+		line-height		: 18px;
+
+		/* Hover */
+		&:hover {
+			background-color	: #7C52CA;
+		}
+	}
+}
+
+
+
 /* ================================================= Career Timeline ================================================ */
 
 .career_timeline {
@@ -422,7 +688,7 @@ $marker-size		: 9px;
 	justify-content		: center;
 	align-items		: center;
 
-	background		: #674EB6;
+	background		: #7305ce;
 	color			: #FFFFFF;
 
 	margin-top		: 100px;
@@ -439,7 +705,7 @@ $marker-size		: 9px;
 
 		border-style		: solid;
 		border-width		: 0 0 100px 100vw;
-		border-color		: transparent transparent #674EB6 transparent;
+		border-color		: transparent transparent #7305ce transparent;
 
 		content			: '';
 	}
@@ -453,7 +719,7 @@ $marker-size		: 9px;
 
 		border-style		: solid;
 		border-width		: 100px 100vw 0 0;
-		border-color		: #674EB6 transparent transparent transparent;
+		border-color		: #7305ce transparent transparent transparent;
 
 		content			: '';
 	}
@@ -853,233 +1119,6 @@ $marker-size		: 9px;
 		transform-origin	: top;
 	}
 
-}
-
-
-
-/* ==================================================== Showcase ==================================================== */
-
-.showcase {
-	width			: 100%;
-	min-height		: 750px;
-
-	overflow		: hidden;
-
-	display			: flex;
-	flex-direction		: column;
-	align-items		: center;
-
-	transition		: 2.5s cubic-bezier(1, 0.34, 0.44, 1.01);
-
-	/* Active */
-	&.active {
-
-		/* Exclamation */
-		.exclamation {
-			opacity			: 1;
-
-			animation		: showcase_exclamation 3s forwards;
-		}
-
-		/* Header */
-		h2 {
-			opacity			: 1;
-		}
-
-		/* Sideline */
-		.sideline {
-			opacity			: 1;
-
-			transform		: translateX(0);
-		}
-
-		/* Section */
-		.section {
-			opacity			: 1;
-
-			transform		: translateX(0);
-		}
-	}
-
-
-
-	/* ==================================================== Children ==================================================== */
-
-	/* Exclamation */
-	.exclamation {
-		width			: 1.75em;
-		height			: 1.75em;
-		
-		background-color	: #000000;
-		color			: #FFEE00;
-		border-radius		: 50%;
-
-		opacity			: 0;
-
-		padding			: 5px;
-		margin-bottom		: 10px;
-
-		font-size		: 2em;
-		text-align		: center;
-
-		transform-origin	: center;
-	}
-
-	/* Border */
-	.border {
-		width			: 100%;
-
-		background-color	: #F8F8F8;
-
-		padding			: 50px;
-
-		display			: flex;
-		flex-direction		: column;
-		align-items		: center;
-	}
-
-	/* Header */
-	h2 {
-		background-color	: #FFFFFF;
-		color			: #3D3D3D;
-
-		margin-top		: 0;
-		margin-bottom		: 50px;
-		padding-left		: 10px;
-		padding-right		: 10px;
-
-		opacity			: 0;
-
-		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 3s;
-	}
-
-	/* Sideline */
-	.sideline {
-		width			: 300px;
-		height			: 0px;
-
-		margin-top		: 15px;
-		margin-bottom		: -20px;
-
-		border			: 2px solid #3D3D3D;
-		border-radius		: 1px;
-
-		z-index			: -1;
-
-		opacity			: 0;
-
-		transform		: translateX(-50vw);
-
-		transition		: 0.5s ease 3s;
-	}
-
-	/* Sections */
-	.section {
-		width			: 100%;
-		height			: 500px;
-
-		display			: flex;
-		
-		background-color	: #F8F8F8;
-
-		transform		: translateX(50vw);
-
-		opacity			: 0;
-
-		transition		: 0.5s ease;
-
-		/* Odd */
-		&:nth-of-type(odd) {
-			flex-direction		: row;
-		}
-
-		/* Even */
-		&:nth-of-type(even) {
-			flex-direction		: row-reverse;
-		}
-
-		/* Meta */
-		.meta {
-			flex			: 1 1 50%;
-			padding			: 100px;
-
-			display			: flex;
-			flex-direction		: column;
-			justify-content		: center;
-
-			/* Underline */
-			.underline {
-				width			: 50px;
-				height			: 0px;
-
-				margin-top		: 10px;
-				margin-bottom		: 5px;
-
-				border			: 2px solid #9B5AE6;
-				border-radius		: 1px;
-
-				transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-			}
-
-			/* Title */
-			h3 {
-				margin			: 0;
-			}
-
-			/* Call to Action */
-			button {
-				width			: 150px;
-
-				margin-top		: 25px;
-
-				border-color		: #674EB6;
-				background-color	: #9B5AE6;
-				color			: #FFFFFF;
-
-				font-family		: Lato;
-				font-style		: normal;
-				font-weight		: 600;
-				font-size		: 16px;
-				line-height		: 18px;
-
-				/* Hover */
-				&:hover {
-					background-color	: #7C52CA;
-				}
-
-			}
-		}
-
-		/* Media Container */
-		.media_container {
-			flex			: 1 1 50%;
-
-			overflow		: hidden;
-
-			display			: flex;
-			justify-content		: center;
-			align-items		: center;
-		}
-	}
-
-	/* Call to Action */
-	.call_to_action {
-		margin-top		: 25px;
-
-		background-color	: #9B5AE6;
-		color			: #FFFFFF;
-
-		font-family		: Lato;
-		font-style		: normal;
-		font-weight		: 600;
-		font-size		: 16px;
-		line-height		: 18px;
-
-		/* Hover */
-		&:hover {
-			background-color	: #7C52CA;
-		}
-	}
 }
 
 
