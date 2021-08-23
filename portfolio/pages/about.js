@@ -590,12 +590,17 @@ function Home () {
 							{/* Label */}
 							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'mobile']}/></div>
 							
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
-							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
-							tortor vel rhoncus. Integer dignissim varius auctor. Vivamus tristique lacinia eros ut pretium. Aenean 
-							a metus ligula. Maecenas sit amet ligula tincidunt, maximus enim at, ultricies erat. Vestibulum eu enim 
-							sed magna congue efficitur eget eget eros. In placerat ut eros nec mattis. Vivamus cursus felis sit amet 
-							est vulputate semper. Aliquam laoreet maximus felis id convallis. In quis nisi vel quam fermentum lobortis.
+							{/* Container */}
+							<div className={styles.container}>
+								<p>
+									&emsp; I first started creating desktop applications a couple of years back when I decided
+									to take a break from game development to work on something different. One of my first ever desktop 
+									applications was a time management software where I planned on having the software try and track
+									what type of application you were running and log the hours spent on that app. The plan was to give
+									points based on how little you used a non-beneficial app and how often you did something productive. 
+									However the project didn't go far and I stopped before I got anything meaningful done.
+								</p>
+							</div>
 
 						</div>
 						<div className={styles.card}>
