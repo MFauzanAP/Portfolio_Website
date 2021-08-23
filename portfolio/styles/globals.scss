@@ -604,6 +604,13 @@ button {
 
 			background		: linear-gradient(to left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
 		}
+
+		/* Invert */
+		&.inverted {
+			background		: transparent;
+
+			color			: #3D3D3D;
+		}
 	}
 
 	/* Pagination */

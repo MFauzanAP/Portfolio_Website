@@ -39,6 +39,8 @@ class Slideshow extends React.Component {
 			autoPlay			: props.options ? (props.options.autoPlay !== undefined ? props.options.autoPlay : true) : true,
 			autoPlayDelay			: props.options ? (props.options.autoPlayDelay || 5000) : 5000,
 			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator !== undefined ? props.options.autoPlayIndicator : true) : true,
+			invertArrows			: props.options ? (props.options.invertArrows !== undefined ? props.options.invertArrows : false) : false,
+			itemScale			: props.options ? (props.options.itemScale || 1) : 1,
 			autoPlayIndicatorPosition	: props.options ? (props.options.autoPlayIndicatorPosition || 'bottom') : 'bottom'
 		}
 
@@ -187,9 +189,12 @@ class Slideshow extends React.Component {
 			//	Calculate offset
 			var offset = (i - this.state.page) * 100;
 
+			//	Calculate scale
+			var scale = i == this.state.page ? 1 : this.state.itemScale;
+
 			//	Create styles
 			var style = {
-				transform	: `translateX(${offset}%)`
+				transform	: `translateX(${offset}%) scale(${scale})`
 			};
 
 			//	Add element
@@ -239,8 +244,8 @@ class Slideshow extends React.Component {
 				</div>
 
 				{/* Arrows */}
-				<div className="left arrow" onClick={this.prev_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
-				<div className="right arrow" onClick={this.next_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
+				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} arrow`} onClick={this.prev_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
+				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} arrow`} onClick={this.next_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 				{/* Pagination */}
 				<div className="pagination" id="pagination">{pagination}</div>
