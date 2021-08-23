@@ -170,7 +170,7 @@ function Home () {
 							<h3>Language</h3>
 
 							{/* Description */}
-							<table>
+							<table><tbody>
 								<tr>
 									<td>English</td>
 									<td>⬛⬛⬛⬛⬛</td>
@@ -187,7 +187,7 @@ function Home () {
 									<td>Korean</td>
 									<td>⬛⬜⬜⬜⬜</td>
 								</tr>
-							</table>
+							</tbody></table>
 
 						</div>
 
@@ -551,7 +551,7 @@ function Home () {
 					{/* Footer */}
 					<div className={styles.footer}>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-							<path fill="#221e41" fill-opacity="1" d="M0,64L0,32L160,32L160,96L320,96L320,224L480,224L480,96L640,96L640,32L800,32L800,256L960,256L960,0L1120,0L1120,96L1280,96L1280,160L1440,160L1440,0L1280,0L1280,0L1120,0L1120,0L960,0L960,0L800,0L800,0L640,0L640,0L480,0L480,0L320,0L320,0L160,0L160,0L0,0L0,0Z"></path>
+							<path fill="#221e41" opacity="1" d="M0,64L0,32L160,32L160,96L320,96L320,224L480,224L480,96L640,96L640,32L800,32L800,256L960,256L960,0L1120,0L1120,96L1280,96L1280,160L1440,160L1440,0L1280,0L1280,0L1120,0L1120,0L960,0L960,0L800,0L800,0L640,0L640,0L480,0L480,0L320,0L320,0L160,0L160,0L0,0L0,0Z"></path>
 						</svg>
 					</div>
 
@@ -559,7 +559,53 @@ function Home () {
 
 
 
-				{/* ==================================================== Education =================================================== */}
+				{/* =================================================== Experience =================================================== */}
+				<div className={styles.experience}>
+
+					{/* Header */}
+					<div className={styles.header}>EXPERIENCE</div>
+
+					{/* Subheader */}
+					<div className={styles.subheader}>Game Development</div>
+
+					{/* Slideshow */}
+					<div className={styles.slideshow}><Slideshow options={{autoPlay: false, invertArrows: true, padding: 10, maxWidth: '700px', maxHeight: '500px', itemScale: 0.8}}>
+						
+						{/* Cards */}
+						<div className={styles.card}>
+							
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
+							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
+							tortor vel rhoncus. Integer dignissim varius auctor. Vivamus tristique lacinia eros ut pretium. Aenean 
+							a metus ligula. Maecenas sit amet ligula tincidunt, maximus enim at, ultricies erat. Vestibulum eu enim 
+							sed magna congue efficitur eget eget eros. In placerat ut eros nec mattis. Vivamus cursus felis sit amet 
+							est vulputate semper. Aliquam laoreet maximus felis id convallis. In quis nisi vel quam fermentum lobortis.
+
+						</div>
+						<div className={styles.card}>
+							
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
+							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
+							tortor vel rhoncus. Integer dignissim varius auctor. Vivamus tristique lacinia eros ut pretium. Aenean 
+							a metus ligula. Maecenas sit amet ligula tincidunt, maximus enim at, ultricies erat. Vestibulum eu enim 
+							sed magna congue efficitur eget eget eros. In placerat ut eros nec mattis. Vivamus cursus felis sit amet 
+							est vulputate semper. Aliquam laoreet maximus felis id convallis. In quis nisi vel quam fermentum lobortis.
+
+						</div>
+						<div className={styles.card}>
+							
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
+							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
+							tortor vel rhoncus. Integer dignissim varius auctor. Vivamus tristique lacinia eros ut pretium. Aenean 
+							a metus ligula. Maecenas sit amet ligula tincidunt, maximus enim at, ultricies erat. Vestibulum eu enim 
+							sed magna congue efficitur eget eget eros. In placerat ut eros nec mattis. Vivamus cursus felis sit amet 
+							est vulputate semper. Aliquam laoreet maximus felis id convallis. In quis nisi vel quam fermentum lobortis.
+
+						</div>
+
+					</Slideshow></div>
+
+				</div>
 
 
 

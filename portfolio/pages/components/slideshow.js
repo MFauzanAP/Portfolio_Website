@@ -232,7 +232,7 @@ class Slideshow extends React.Component {
 			};
 
 			//	Add element
-			elements.push(React.cloneElement(element, { style }));
+			elements.push(React.cloneElement(element, { style, key: i.toString() }));
 
 		});
 
