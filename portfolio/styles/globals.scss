@@ -535,20 +535,30 @@ button {
 	width			: 100%;
 	height			: 100%;
 
-	/* Images */
-	img {
-		pointer-events		: none;
-		
-		position		: absolute;
+	/* Slides */
+	.slides {
 		width			: 100%;
 		height			: 100%;
-		top			: 0;
 
-		object-fit		: cover;
+		display			: flex;
+		justify-content		: center;
+		align-items		: center;
 
-		background-color	: #CCCCCC;
+		/* Images */
+		img {
+			pointer-events		: none;
+			
+			position		: absolute;
+			width			: 100%;
+			height			: 100%;
+			top			: 0;
+	
+			object-fit		: cover;
 
-		transition		: 0.5s ease;
+			background-color	: #CCCCCC;
+	
+			transition		: 0.5s ease;
+		}
 	}
 
 	/* Arrows */

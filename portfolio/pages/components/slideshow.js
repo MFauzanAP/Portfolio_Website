@@ -233,7 +233,10 @@ class Slideshow extends React.Component {
 			<div className="slideshow">
 
 				{/* Slideshow */}
-				{images}
+				<div className="slides">
+					{images}
+					{this.props.children}
+				</div>
 
 				{/* Arrows */}
 				<div className="left arrow" onClick={this.prev_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
