@@ -35,15 +35,15 @@ class Slideshow extends React.Component {
 		this.state = {
 			page				: 0,
 			pause				: true,
-			loop				: props.options.loop || true,
-			autoPlay			: props.options.autoPlay || true,
-			autoPlayDelay			: props.options.autoPlayDelay || 5000,
-			autoPlayIndicator		: props.options.autoPlayIndicator || true,
-			autoPlayIndicatorPosition	: props.options.autoPlayIndicatorPosition || 'bottom'
+			loop				: props.options ? (props.options.loop || true) : true,
+			autoPlay			: props.options ? (props.options.autoPlay || true) : true,
+			autoPlayDelay			: props.options ? (props.options.autoPlayDelay || 5000) : 5000,
+			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator || true) : true,
+			autoPlayIndicatorPosition	: props.options ? (props.options.autoPlayIndicatorPosition || 'bottom') : 'bottom'
 		}
 
 		//	Store number of images
-		this.count = this.props.options.images.length;
+		if (props.options && props.options.images.length) this.count = props.options.images.length;
 
 	}
 
@@ -181,7 +181,7 @@ class Slideshow extends React.Component {
 	render () {
 
 		//	Generate image elements
-		var images = this.props.options.images;
+		var images = this.props.options ? this.props.options.images : [];
 		images = images.map((source, i) => { 
 
 			//	Calculate offset
@@ -199,7 +199,7 @@ class Slideshow extends React.Component {
 
 		//	Generate pagination
 		var pagination = [];
-		for (let i = 0; i < this.props.options.images.length; i++) {
+		for (let i = 0; i < this.count; i++) {
 
 			//	Generate class name
 			var class_name = i == this.state.page ? 'active page' : 'page';
