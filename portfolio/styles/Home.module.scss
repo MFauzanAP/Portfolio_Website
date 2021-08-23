@@ -25,7 +25,7 @@ $card-height		: 600px;
 $card-header-height	: 100px;
 $card-margin		: 90px;
 $card-padding		: 15px;
-$card-colors		: #9349CC, #9349CC;
+$card-colors		: #B252FF, #B252FF;
 $marker-size		: 9px;
 
 
@@ -442,7 +442,7 @@ $marker-size		: 9px;
 	width			: 100%;
 	min-height		: 750px;
 
-	background-color	: #221e41;
+	background-color	: #221E41;
 	color			: #FFFFFF;
 
 	display			: flex;
@@ -460,7 +460,7 @@ $marker-size		: 9px;
 		width			: 100%;
 		height			: 200px;
 
-		background-color	: #221e41;
+		background-color	: #221E41;
 
 		z-index			: -2;
 
@@ -523,7 +523,7 @@ $marker-size		: 9px;
 		}
 		    
 		.shape_fill {
-			fill			: #221e41;
+			fill			: #221E41;
 		}
 	}
 
@@ -534,7 +534,7 @@ $marker-size		: 9px;
 		padding-left		: 10px;
 		padding-right		: 10px;
 
-		background		: #221e41;
+		background		: #221E41;
 
 		z-index			: 1;
 
@@ -750,7 +750,7 @@ $marker-size		: 9px;
 
 		transform		: rotate(-2.5deg);
 
-		background		: linear-gradient(110deg, #9636e4 50%, #5c1894 100%);
+		background		: #332D61;
 
 		z-index			: -1;
 	}
