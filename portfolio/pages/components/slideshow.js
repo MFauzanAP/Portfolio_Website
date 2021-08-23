@@ -23,7 +23,10 @@ class Slideshow extends React.Component {
 	autoplay_index = 0;
 
 	/* Bool used to reset countdown */
-	reset_countdown = false;
+	is_reset_countdown = false;
+
+	/* Bool used to stop infinite loops when updating countdown */
+	updating = false;
 
 
 
@@ -34,7 +37,8 @@ class Slideshow extends React.Component {
 		//	Set state
 		this.state = {
 			page				: 0,
-			pause				: true,
+			pause				: false,
+			visible				: false,
 			loop				: props.options ? (props.options.loop !== undefined ? props.options.loop : true) : true,
 			autoPlay			: props.options ? (props.options.autoPlay !== undefined ? props.options.autoPlay : true) : true,
 			autoPlayDelay			: props.options ? (props.options.autoPlayDelay || 5000) : 5000,
@@ -59,6 +63,29 @@ class Slideshow extends React.Component {
 
 	/* ==================================================== Functions =================================================== */
 
+	/* Reset Countdown */
+	reset_countdown (page) {
+
+		//	Updating
+		this.updating = true;
+
+		//	Reset countdown and update page
+		this.is_reset_countdown = true;
+		this.setState({page}, () => {
+
+			//	Start countdown
+			this.is_reset_countdown = false;
+			this.setState({page}, () => {
+
+				//	Finished updating
+				this.updating = false;
+
+			});
+
+		});
+
+	}
+
 	/* Next Page */
 	next_page () {
 
@@ -66,14 +93,7 @@ class Slideshow extends React.Component {
 		var page = this.state.page + 1 >= this.count ? (this.state.loop ? 0 : this.state.page) : this.state.page + 1;
 
 		//	Reset countdown and update page
-		this.reset_countdown = true;
-		this.setState({page}, () => {
-
-			//	Start countdown
-			this.reset_countdown = false;
-			this.setState({page});
-
-		});
+		this.reset_countdown(page);
 
 	}
 
@@ -84,14 +104,7 @@ class Slideshow extends React.Component {
 		var page = this.state.page - 1 < 0 ? (this.state.loop ? this.count - 1 : this.state.page) : this.state.page - 1;
 
 		//	Reset countdown and update page
-		this.reset_countdown = true;
-		this.setState({page}, () => {
-
-			//	Start countdown
-			this.reset_countdown = false;
-			this.setState({page});
-
-		});
+		this.reset_countdown(page);
 
 	}
 
@@ -102,43 +115,48 @@ class Slideshow extends React.Component {
 		if (page == this.state.page) {
 
 			//	If unpaused
-			if (this.state.autoPlay) {
+			if (!this.state.pause) {
 
 				//	Pause the slideshow
-				this.state.autoPlay = false;
+				this.state.pause = true;
+
+				//	Clear all previous autoplay functions
+				clearInterval(this.autoplay_index); 
 
 			}
 			else {
 
 				//	Unpause the slideshow
-				this.state.autoPlay = true;
+				this.state.pause = false;
+
+				//	Clear all previous autoplay functions
+				clearInterval(this.autoplay_index); 
+
+				//	Set new autoplay index so we can clear this function on render
+				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
 				
 			}
 
 		}
 
 		//	Reset countdown and update page
-		this.reset_countdown = true;
-		this.setState({page}, () => {
-
-			//	Start countdown
-			this.reset_countdown = false;
-			this.setState({page});
-
-		});
+		this.reset_countdown(page);
 
 	}
 
 
 
 	/* ==================================================== On Update =================================================== */
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate (prevProps, prevState) {
 
-		//	If autoplaying and update is not from change of page
+		//	If updating then exit
+		if (this.updating) return;
+
+		//	If autoplaying
 		if (this.state.autoPlay) {
 
 			//	If element is visible on screen
-			if ((this.props.event.type == 'start' || this.props.event.type == 'end') && this.state.pause) {
+			if ((this.props.event.type == 'start' || this.props.event.type == 'end') && !this.state.visible) {
 
 				//	Clear all previous autoplay functions
 				clearInterval(this.autoplay_index); 
@@ -146,31 +164,26 @@ class Slideshow extends React.Component {
 				//	Set new autoplay index so we can clear this function on render
 				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
 
-				//	Unpause
-				this.setState({pause: false});
+				//	Visible
+				this.setState({visible: true});
+
+				//	Reset countdown
+				this.reset_countdown(this.state.page);
 
 			}
 
 			//	If not visible
-			if (this.props.event.type == 'leave' && !this.state.pause) {
+			else if (this.props.event.type == 'leave' && this.state.visible) {
 
 				//	Clear all previous autoplay functions
 				clearInterval(this.autoplay_index);
 
-				//	Pause
-				this.setState({pause: true});
+				//	Not visible
+				this.setState({visible: false});
 
-			}
+				//	Reset countdown
+				this.reset_countdown(this.state.page);
 
-			//	If updating page and not paused
-			if (this.reset_countdown && !this.state.pause) {
-
-				//	Clear all previous autoplay functions
-				clearInterval(this.autoplay_index); 
-
-				//	Set new autoplay index so we can clear this function on render
-				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
-				
 			}
 
 		}
@@ -260,7 +273,7 @@ class Slideshow extends React.Component {
 
 		//	Generate countdown if option is enabled and if not resetting countdown
 		var countdown;
-		if (this.state.autoPlayIndicator && !this.reset_countdown && this.state.autoPlay) {
+		if (this.state.autoPlayIndicator && !this.is_reset_countdown && this.state.autoPlay && !this.state.pause) {
 
 			//	Generate class name
 			var class_name = `${this.state.autoPlayIndicatorPosition} countdown`;
