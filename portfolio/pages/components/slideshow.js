@@ -43,7 +43,7 @@ class Slideshow extends React.Component {
 			itemScale			: props.options ? (props.options.itemScale || 1) : 1,
 			maxWidth			: props.options ? (props.options.maxWidth || '') : '',
 			maxHeight			: props.options ? (props.options.maxHeight || '') : '',
-			padding				: props.options ? (props.options.padding || '') : '',
+			padding				: props.options ? (props.options.padding || 0) : 0,
 			autoPlayIndicatorPosition	: props.options ? (props.options.autoPlayIndicatorPosition || 'bottom') : 'bottom'
 		}
 
@@ -193,8 +193,7 @@ class Slideshow extends React.Component {
 		//	Generate slides styling
 		var slide_style = {
 			maxWidth	: this.state.maxWidth,
-			maxHeight	: this.state.maxHeight,
-			padding		: this.state.padding
+			maxHeight	: this.state.maxHeight
 		}
 
 		//	Generate image elements
@@ -202,7 +201,7 @@ class Slideshow extends React.Component {
 		elements = images.map((source, i) => { 
 
 			//	Calculate offset
-			var offset = (i - this.state.page) * 100;
+			var offset = ((i - this.state.page) * 100) + ((i - this.state.page) * this.state.padding);
 
 			//	Calculate scale
 			var scale = i == this.state.page ? 1 : this.state.itemScale;
@@ -222,7 +221,7 @@ class Slideshow extends React.Component {
 		children.forEach((element, i) => { 
 
 			//	Calculate offset
-			var offset = ((i + images.length) - this.state.page) * 100;
+			var offset = (((i + images.length) - this.state.page) * 100) + (((i + images.length) - this.state.page) * this.state.padding);
 
 			//	Calculate scale
 			var scale = (i + images.length) == this.state.page ? 1 : this.state.itemScale;
