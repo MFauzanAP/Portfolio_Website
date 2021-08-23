@@ -569,10 +569,13 @@ function Home () {
 					<div className={styles.subheader}>Game Development</div>
 
 					{/* Slideshow */}
-					<div className={styles.slideshow}><Slideshow options={{autoPlay: false, invertArrows: true, padding: 10, maxWidth: '700px', maxHeight: '500px', itemScale: 0.8}}>
+					<div className={styles.slideshow}><Slideshow options={{autoPlay: false, invertArrows: true, padding: 10, maxWidth: '700px', maxHeight: '500px', itemScale: 0.8, itemOpacity: 0.5}}>
 						
 						{/* Cards */}
 						<div className={styles.card}>
+
+							{/* Label */}
+							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'gamepad']}/></div>
 							
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
 							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
@@ -583,6 +586,9 @@ function Home () {
 
 						</div>
 						<div className={styles.card}>
+
+							{/* Label */}
+							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'mobile']}/></div>
 							
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
 							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
@@ -593,6 +599,9 @@ function Home () {
 
 						</div>
 						<div className={styles.card}>
+
+							{/* Label */}
+							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'globe']}/></div>
 							
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
 							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 

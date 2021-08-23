@@ -41,6 +41,7 @@ class Slideshow extends React.Component {
 			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator !== undefined ? props.options.autoPlayIndicator : true) : true,
 			invertArrows			: props.options ? (props.options.invertArrows !== undefined ? props.options.invertArrows : false) : false,
 			itemScale			: props.options ? (props.options.itemScale || 1) : 1,
+			itemOpacity			: props.options ? (props.options.itemOpacity || 1) : 1,
 			maxWidth			: props.options ? (props.options.maxWidth || '') : '',
 			maxHeight			: props.options ? (props.options.maxHeight || '') : '',
 			padding				: props.options ? (props.options.padding || 0) : 0,
@@ -208,7 +209,8 @@ class Slideshow extends React.Component {
 
 			//	Create styles
 			var style = {
-				transform	: `translateX(${offset}%) scale(${scale})`
+				transform	: `translateX(${offset}%) scale(${scale})`,
+				opacity		: (i + images.length) == this.state.page ? 1 : this.state.itemOpacity
 			};
 
 			//	Add element
@@ -228,7 +230,8 @@ class Slideshow extends React.Component {
 
 			//	Create styles
 			var style = {
-				transform	: `translateX(${offset}%) scale(${scale})`
+				transform	: `translateX(${offset}%) scale(${scale})`,
+				opacity		: (i + images.length) == this.state.page ? 1 : this.state.itemOpacity
 			};
 
 			//	Add element
