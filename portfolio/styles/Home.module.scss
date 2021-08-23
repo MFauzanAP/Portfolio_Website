@@ -276,9 +276,11 @@ $marker-size		: 9px;
 			font-style		: normal;
 			font-weight		: 300;
 			font-size		: 18px;
-			line-height		: 23px;
+			line-height		: 1.8;
 			text-align		: center;
 			word-break		: break-all;
+			letter-spacing		: 0.03em;
+			text-rendering		: optimizeLegibility;
 
 			color			: #EEEEEE;
 
@@ -373,6 +375,12 @@ $marker-size		: 9px;
 				margin-top		: 0;
 				margin-bottom		: 2em;
 				
+				font-weight		: 400;
+				font-size		: 1rem;
+				line-height		: 1.5;
+				letter-spacing		: 0.03em;
+				text-rendering		: optimizeLegibility;
+
 				opacity			: 0;
 
 				transform		: translateX(25%);
@@ -623,6 +631,15 @@ $marker-size		: 9px;
 			/* Title */
 			h3 {
 				margin			: 0;
+			}
+
+			/* Text */
+			p {
+				font-weight		: 400;
+				font-size		: 1rem;
+				line-height		: 1.5;
+				letter-spacing		: 0.03em;
+				text-rendering		: optimizeLegibility;
 			}
 
 			/* Call to Action */
@@ -1008,6 +1025,12 @@ $marker-size		: 9px;
 				padding			: $card-padding;
 				padding-left		: $card-padding + 10px;
 				padding-right		: $card-padding + 10px;
+
+				font-weight		: 400;
+				font-size		: 1rem;
+				line-height		: 1.5;
+				letter-spacing		: 0.03em;
+				text-rendering		: optimizeLegibility;
 
 				/* Tags */
 				.tags {
