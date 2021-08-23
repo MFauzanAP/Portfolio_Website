@@ -41,11 +41,16 @@ class Slideshow extends React.Component {
 			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator !== undefined ? props.options.autoPlayIndicator : true) : true,
 			invertArrows			: props.options ? (props.options.invertArrows !== undefined ? props.options.invertArrows : false) : false,
 			itemScale			: props.options ? (props.options.itemScale || 1) : 1,
+			maxWidth			: props.options ? (props.options.maxWidth || '') : '',
+			maxHeight			: props.options ? (props.options.maxHeight || '') : '',
+			padding				: props.options ? (props.options.padding || '') : '',
 			autoPlayIndicatorPosition	: props.options ? (props.options.autoPlayIndicatorPosition || 'bottom') : 'bottom'
 		}
 
 		//	Store number of images
-		if (props.options && props.options.images) this.count = props.options.images.length;
+		var image_count = (props.options && props.options.images) ? props.options.images.length : 0;
+		var child_count = props.children ? (props.children.length ? props.children.length : 1) : 0;
+		this.count = image_count + child_count;
 
 	}
 
@@ -182,9 +187,19 @@ class Slideshow extends React.Component {
 	/* ==================================================== On Render =================================================== */
 	render () {
 
+		//	Declare variable to store slide elements
+		var elements;
+
+		//	Generate slides styling
+		var slide_style = {
+			maxWidth	: this.state.maxWidth,
+			maxHeight	: this.state.maxHeight,
+			padding		: this.state.padding
+		}
+
 		//	Generate image elements
 		var images = this.props.options ? (this.props.options.images || []) : [];
-		images = images.map((source, i) => { 
+		elements = images.map((source, i) => { 
 
 			//	Calculate offset
 			var offset = (i - this.state.page) * 100;
@@ -202,9 +217,29 @@ class Slideshow extends React.Component {
 
 		});
 
+		//	Add any child elements
+		var children = this.props.children ? (this.props.children.length ? this.props.children : [this.props.children]) : [];
+		children.forEach((element, i) => { 
+
+			//	Calculate offset
+			var offset = ((i + images.length) - this.state.page) * 100;
+
+			//	Calculate scale
+			var scale = (i + images.length) == this.state.page ? 1 : this.state.itemScale;
+
+			//	Create styles
+			var style = {
+				transform	: `translateX(${offset}%) scale(${scale})`
+			};
+
+			//	Add element
+			elements.push(React.cloneElement(element, { style }));
+
+		});
+
 		//	Generate pagination
 		var pagination = [];
-		for (let i = 0; i < this.count; i++) {
+		for (let i = 0; i < elements.length; i++) {
 
 			//	Generate class name
 			var class_name = i == this.state.page ? 'active page' : 'page';
@@ -238,9 +273,8 @@ class Slideshow extends React.Component {
 			<div className="slideshow">
 
 				{/* Slideshow */}
-				<div className="slides">
-					{images}
-					{this.props.children}
+				<div className="slides" style={slide_style}>
+					{elements}
 				</div>
 
 				{/* Arrows */}
