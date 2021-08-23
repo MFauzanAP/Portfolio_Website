@@ -35,15 +35,15 @@ class Slideshow extends React.Component {
 		this.state = {
 			page				: 0,
 			pause				: true,
-			loop				: props.options ? (props.options.loop || true) : true,
-			autoPlay			: props.options ? (props.options.autoPlay || true) : true,
+			loop				: props.options ? (props.options.loop !== undefined ? props.options.loop : true) : true,
+			autoPlay			: props.options ? (props.options.autoPlay !== undefined ? props.options.autoPlay : true) : true,
 			autoPlayDelay			: props.options ? (props.options.autoPlayDelay || 5000) : 5000,
-			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator || true) : true,
+			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator !== undefined ? props.options.autoPlayIndicator : true) : true,
 			autoPlayIndicatorPosition	: props.options ? (props.options.autoPlayIndicatorPosition || 'bottom') : 'bottom'
 		}
 
 		//	Store number of images
-		if (props.options && props.options.images.length) this.count = props.options.images.length;
+		if (props.options && props.options.images) this.count = props.options.images.length;
 
 	}
 
@@ -181,7 +181,7 @@ class Slideshow extends React.Component {
 	render () {
 
 		//	Generate image elements
-		var images = this.props.options ? this.props.options.images : [];
+		var images = this.props.options ? (this.props.options.images || []) : [];
 		images = images.map((source, i) => { 
 
 			//	Calculate offset
@@ -228,9 +228,9 @@ class Slideshow extends React.Component {
 
 		}
 
-		//	Return html
-		return (
-			<Controller><Scene duration={500} classToggle="active"><div className="slideshow">
+		//	Declare slideshow content
+		var content = (
+			<div className="slideshow">
 
 				{/* Slideshow */}
 				{images}
@@ -245,8 +245,15 @@ class Slideshow extends React.Component {
 				{/* Countdown */}
 				{countdown}
 
-			</div></Scene></Controller>
+			</div>);
+
+		//	Return html when there is autoplay
+		if (this.state.autoPlay) return (
+			<Controller><Scene duration={500} classToggle="active">{content}</Scene></Controller>
 		);
+
+		//	Return html if there is no autoplay
+		return (content);
 
 	}
 
