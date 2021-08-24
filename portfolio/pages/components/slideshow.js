@@ -87,7 +87,7 @@ class Slideshow extends React.Component {
 	}
 
 	/* Next Page */
-	next_page () {
+	next_page (callback) {
 
 		//	Calculate page
 		var page = this.state.page + 1 >= this.count ? (this.state.loop ? 0 : this.state.page) : this.state.page + 1;
@@ -95,10 +95,13 @@ class Slideshow extends React.Component {
 		//	Reset countdown and update page
 		this.reset_countdown(page);
 
+		//	Call callback method if there is
+		if (callback) callback(page);
+
 	}
 
 	/* Previous Page */
-	prev_page () {
+	prev_page (callback) {
 
 		//	Calculate page
 		var page = this.state.page - 1 < 0 ? (this.state.loop ? this.count - 1 : this.state.page) : this.state.page - 1;
@@ -106,10 +109,13 @@ class Slideshow extends React.Component {
 		//	Reset countdown and update page
 		this.reset_countdown(page);
 
+		//	Call callback method if there is
+		if (callback) callback(page);
+
 	}
 
 	/* Change Page */
-	change_page (page) {
+	change_page (page, callback) {
 
 		//	Check if same page
 		if (page == this.state.page) {
@@ -141,6 +147,9 @@ class Slideshow extends React.Component {
 
 		//	Reset countdown and update page
 		this.reset_countdown(page);
+
+		//	Call callback method if there is
+		if (callback) callback(page);
 
 	}
 
@@ -270,7 +279,7 @@ class Slideshow extends React.Component {
 			
 			//	Add element
 			pagination.push(
-				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i)}>
+				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i, this.props.options.callback)}>
 					<FontAwesomeIcon icon={icon}/>
 				</div>
 			);
@@ -299,8 +308,8 @@ class Slideshow extends React.Component {
 				</div>
 
 				{/* Arrows */}
-				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} arrow`} onClick={this.prev_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
-				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} arrow`} onClick={this.next_page.bind(this)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
+				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} arrow`} onClick={this.prev_page.bind(this, this.props.options.callback)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
+				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} arrow`} onClick={this.next_page.bind(this, this.props.options.callback)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 				{/* Pagination */}
 				<div className="pagination" id="pagination">{pagination}</div>
