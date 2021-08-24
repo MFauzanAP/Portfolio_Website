@@ -388,6 +388,15 @@ $marker-size		: 9px;
 
 	background		: #221E41;
 	color			: #FFFFFF;
+
+	/* Hover */
+	&:hover {
+
+		/* Grid */
+		.grid {
+			visibility		: visible;
+		}
+	}
 	
 
 	
@@ -439,6 +448,8 @@ $marker-size		: 9px;
 		grid-template-columns	: repeat(4, minmax(140px, 1fr));
 		grid-auto-flow		: row;
 
+		visibility		: hidden;
+
 		/* Details */
 		.details {
 			aspect-ratio		: 1/1;
@@ -451,6 +462,8 @@ $marker-size		: 9px;
 			background		: #332D61;
 			border			: 2px solid #201C3B;
 			border-radius		: 20px;
+
+			visibility		: visible;
 
 			/* Icon */
 			img {
@@ -581,6 +594,15 @@ $marker-size		: 9px;
 
 			transition		: 0.5s ease;
 
+			/* Hover */
+			&:hover {
+
+				/* Container */
+				.container {
+					visibility		: visible;
+				}
+			}
+
 			/* Label */
 			.label {
 				position		: absolute;
@@ -620,13 +642,22 @@ $marker-size		: 9px;
 				height			: 100%;
 				width			: 100%;
 
+				padding-right		: 10px;
+
 				overflow-y		: auto;
+
+				visibility		: hidden;
 
 				font-weight		: 400;
 				font-size		: 1rem;
 				line-height		: 1.8;
 				letter-spacing		: 0.03em;
 				text-rendering		: optimizeLegibility;
+
+				/* Text */
+				p {
+					visibility		: visible;
+				}
 			}
 		}
 	}
