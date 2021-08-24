@@ -222,8 +222,11 @@ class Slideshow extends React.Component {
 
 			//	Create styles
 			var style = {
+				pointerEvents	: i == this.state.page ? 'all' : 'none',
+
 				transform	: `translateX(${offset}%) scale(${scale})`,
-				opacity		: (i + images.length) == this.state.page ? 1 : this.state.itemOpacity
+
+				opacity		: i == this.state.page ? 1 : this.state.itemOpacity
 			};
 
 			//	Add element
@@ -243,7 +246,10 @@ class Slideshow extends React.Component {
 
 			//	Create styles
 			var style = {
+				pointerEvents	: (i + images.length) == this.state.page ? 'all' : 'none',
+
 				transform	: `translateX(${offset}%) scale(${scale})`,
+
 				opacity		: (i + images.length) == this.state.page ? 1 : this.state.itemOpacity
 			};
 
