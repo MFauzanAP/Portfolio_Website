@@ -641,7 +641,7 @@ function Home () {
 									but I had other plans in mind. I asked her if I could instead create an app for her that people could use 
 									to revise. She agreed and so I started to work on it. After a week of hard work, I had managed to create
 									the application which I then shared with her and my classmates. You can see a few screenshots of the app
-									&nbsp;<a style={{color: 'blue', textDecoration: 'underline'}} href="/projects">here.</a>
+									<a style={{color: 'blue'}} href="/projects"> here</a>.
 								</p>
 							</div>
 
