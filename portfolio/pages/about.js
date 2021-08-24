@@ -566,7 +566,7 @@ function Home () {
 					<div className={styles.header}>EXPERIENCE</div>
 
 					{/* Subheader */}
-					<div className={styles.subheader} id="subheader">Game Development</div>
+					<div className={styles.subheader} id="experience_subheader">Game Development</div>
 
 					{/* Slideshow */}
 					<div className={styles.slideshow}><Slideshow options={{
@@ -579,7 +579,7 @@ function Home () {
 							itemOpacity	: 0.5,
 							callback	: function (page) {
 								var names = ['Game Development', 'App Development', 'Web Development'];
-								var subheader = document.getElementById('subheader');
+								var subheader = document.getElementById('experience_subheader');
 								subheader.innerHTML = names[page];
 							}}}>
 						
@@ -666,6 +666,103 @@ function Home () {
 									updates on the app I was working on as well as suggesting some of the things I found that could be improved. 
 									Eventually however, he decided it would be better to instead have me work on the actual website and so a week 
 									later, I started interning as a Full Stack Developer, despite being very new to web development.
+								</p>
+							</div>
+
+						</div>
+
+					</Slideshow></div>
+
+				</div>
+
+
+
+				{/* ==================================================== Education =================================================== */}
+				<div className={styles.education}>
+
+					{/* Background */}
+					<div className={styles.background}></div>
+
+					{/* Header */}
+					<div className={styles.header}>EDUCATION</div>
+
+					{/* Subheader */}
+					<div className={styles.subheader} id="education_subheader">Al Khor International School</div>
+
+					{/* Slideshow */}
+					<div className={styles.slideshow}><Slideshow options={{
+							autoPlay	: false, 
+							invertArrows	: true, 
+							padding		: 10, 
+							maxWidth	: '700px', 
+							maxHeight	: '500px', 
+							itemScale	: 0.8, 
+							itemOpacity	: 0.5,
+							callback	: function (page) {
+								var names = ['Al Khor International School', 'Qatar University'];
+								var subheader = document.getElementById('education_subheader');
+								subheader.innerHTML = names[page];
+							}}}>
+						
+						{/* Cards */}
+						<div className={styles.card}>
+
+							{/* Label */}
+							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'gamepad']}/></div>
+							
+							{/* Container */}
+							<div className={styles.container}>
+								<p>
+									&emsp; My first experience with programming was with Scratch. My then middle school teacher
+									introduced me to it, and I instantly fell in love. Back then I was always curious about
+									how the games I regularly played worked. Scratch was my gateway into the mystical world
+									of Computer Programming, and I would often spend hours after school creating games as well
+									as trying to replicate many of the games I often saw on the website.
+								</p>
+								<p>
+									&emsp; Skip ahead a few months to when I first found the Unity game engine. Back then a game I used to
+									often play had been shutdown (Fusion Fall), leading me to use my newly learnt skills to try my hand
+									at recreating this very game in Unity, the same game engine in which it had been built with. 
+									However back then I knew barely anything about the Unity game engine and the only learning I did was
+									online and self taught and so I quickly became burnt out.
+								</p>
+								<p>
+									&emsp; However not long after, I met a few people online that wanted to recreate the game but with
+									Nickelodeon characters instead of the original Cartoon Network ones. I decided to apply for the job and
+									joined the fan project, despite only having around a year of experience with Unity. At first I struggled
+									since I was the only person working on the game itself, but with time I got used to it and actually
+									enjoyed the challenge. Unfortunately after a year of work, the group disbanded and I was back to
+									creating games solo.
+								</p>
+							</div>
+
+						</div>
+						<div className={styles.card}>
+
+							{/* Label */}
+							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'mobile']}/></div>
+							
+							{/* Container */}
+							<div className={styles.container}>
+								<p>
+									&emsp; I first started creating desktop applications a couple of years back when I decided
+									to take a break from game development to work on something different. One of my first ever desktop 
+									applications was a time management software where I planned on having the software try and track
+									what type of application you were running and log the hours spent on that app. The plan was to give
+									points based on how little you used a non-beneficial app and how often you did something productive. 
+									However the project didn't go far and I stopped before I got anything meaningful done.
+								</p>
+								<p>
+									&emsp; It wasn't until a year later when I started my GCSEs that I got back to working on desktop apps
+									again. This time I had planned on making a utility software that would help me revise for my GCSEs. But 
+									again this project didn't go far as it was too much to work and I had to focus on my GCSEs.
+								</p>
+								<p>
+									&emsp; However in my final year, my chemistry teacher had asked me to organize some flash cards for her, 
+									but I had other plans in mind. I asked her if I could instead create an app for her that people could use 
+									to revise. She agreed and so I started to work on it. After a week of hard work, I had managed to create
+									the application which I then shared with her and my classmates. You can see a few screenshots of the app
+									<a style={{color: 'blue'}} href="/projects"> here</a>.
 								</p>
 							</div>
 
