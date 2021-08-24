@@ -639,12 +639,23 @@ function Home () {
 							{/* Label */}
 							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'globe']}/></div>
 							
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
-							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
-							tortor vel rhoncus. Integer dignissim varius auctor. Vivamus tristique lacinia eros ut pretium. Aenean 
-							a metus ligula. Maecenas sit amet ligula tincidunt, maximus enim at, ultricies erat. Vestibulum eu enim 
-							sed magna congue efficitur eget eget eros. In placerat ut eros nec mattis. Vivamus cursus felis sit amet 
-							est vulputate semper. Aliquam laoreet maximus felis id convallis. In quis nisi vel quam fermentum lobortis.
+							{/* Container */}
+							<div className={styles.container}>
+								<p>
+									&emsp; I was first exposed to web development back in 9th grade as it was the subject I was studying at 
+									the time. However we only did very basic work and I was honestly more attracted to game development, 
+									so I quickly lost interest and forgot about the whole thing. It wasn't until I got a job as a Data Entry 
+									Operator at Malvor that my interest in web development grew.
+								</p>
+								<p>
+									&emsp; Whenever I was entering data into the system, I always noticed things that I felt could be done better 
+									for a better user expereience. And so I decided I wanted to try creating a desktop application that could 
+									do the same job but be more user-friendly and easier to use. During development, I would send my boss 
+									updates on the app I was working on as well as suggesting some of the things I found that could be improved. 
+									Eventually however, he decided it would be better to instead have me work on the actual website and so a week 
+									later, I started interning as a Full Stack Developer, despite being very new to web development.
+								</p>
+							</div>
 
 						</div>
 
