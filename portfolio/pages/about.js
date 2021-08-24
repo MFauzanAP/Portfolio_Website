@@ -577,12 +577,31 @@ function Home () {
 							{/* Label */}
 							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'gamepad']}/></div>
 							
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mattis libero. Proin est velit, 
-							iaculis eget ante maximus, pulvinar eleifend neque. Suspendisse potenti. Vivamus ultricies consequat 
-							tortor vel rhoncus. Integer dignissim varius auctor. Vivamus tristique lacinia eros ut pretium. Aenean 
-							a metus ligula. Maecenas sit amet ligula tincidunt, maximus enim at, ultricies erat. Vestibulum eu enim 
-							sed magna congue efficitur eget eget eros. In placerat ut eros nec mattis. Vivamus cursus felis sit amet 
-							est vulputate semper. Aliquam laoreet maximus felis id convallis. In quis nisi vel quam fermentum lobortis.
+							{/* Container */}
+							<div className={styles.container}>
+								<p>
+									&emsp; My first experience with programming was with Scratch. My then middle school teacher
+									introduced me to it, and I instantly fell in love. Back then I was always curious about
+									how the games I regularly played worked. Scratch was my gateway into the mystical world
+									of Computer Programming, and I would often spend hours after school creating games as well
+									as trying to replicate many of the games I often saw on the website.
+								</p>
+								<p>
+									&emsp; Skip ahead a few months to when I first found the Unity game engine. Back then a game I used to
+									often play had been shutdown (Fusion Fall), leading me to use my newly learnt skills to try my hand
+									at recreating this very game in Unity, the same game engine in which it had been built with. 
+									However back then I knew barely anything about the Unity game engine and the only learning I did was
+									online and self taught and so I quickly became burnt out.
+								</p>
+								<p>
+									&emsp; However not long after, I met a few people online that wanted to recreate the game but with
+									Nickelodeon characters instead of the original Cartoon Network ones. I decided to apply for the job and
+									joined the fan project, despite only having around a year of experience with Unity. At first I struggled
+									since I was the only person working on the game itself, but with time I got used to it and actually
+									enjoyed the challenge. Unfortunately after a year of work, the group disbanded and I was back to
+									creating games solo.
+								</p>
+							</div>
 
 						</div>
 						<div className={styles.card}>
@@ -599,6 +618,18 @@ function Home () {
 									what type of application you were running and log the hours spent on that app. The plan was to give
 									points based on how little you used a non-beneficial app and how often you did something productive. 
 									However the project didn't go far and I stopped before I got anything meaningful done.
+								</p>
+								<p>
+									&emsp; It wasn't until a year later when I started my GCSEs that I got back to working on desktop apps
+									again. This time I had planned on making a utility software that would help me revise for my GCSEs. But 
+									again this project didn't go far as it was too much to work and I had to focus on my GCSEs.
+								</p>
+								<p>
+									&emsp; However in my final year, my chemistry teacher had asked me to organize some flash cards for her, 
+									but I had other plans in mind. I asked her if I could instead create an app for her that people could use 
+									to revise. She agreed and so I started to work on it. After a week of hard work, I had managed to create
+									the application which I then shared with her and my classmates. You can see a few screenshots of the app
+									&nbsp;<a style={{color: 'blue', textDecoration: 'underline'}} href="/projects">here.</a>
 								</p>
 							</div>
 
