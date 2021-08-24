@@ -474,6 +474,27 @@ button {
 
 
 
+/* ==================================================== Scrollbar =================================================== */
+div {
+	/* Total Scrollbar */
+	::-webkit-scrollbar {
+		width			: 10px;
+	}
+
+	/* Scrollbar Thumb */
+	::-webkit-scrollbar-thumb {
+		background-color	: #BBBBBB;
+		border-radius		: 5px;
+
+		/* Hover */
+		&:hover { 
+			background		: #AAAAAA;
+		}
+	}
+}
+
+
+
 /* ================================================ Radial Scrollbar ================================================ */
 .radial_scrollbar {
 	position		: fixed;
