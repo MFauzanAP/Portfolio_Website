@@ -566,10 +566,22 @@ function Home () {
 					<div className={styles.header}>EXPERIENCE</div>
 
 					{/* Subheader */}
-					<div className={styles.subheader}>Game Development</div>
+					<div className={styles.subheader} id="subheader">Game Development</div>
 
 					{/* Slideshow */}
-					<div className={styles.slideshow}><Slideshow options={{autoPlay: false, invertArrows: true, padding: 10, maxWidth: '700px', maxHeight: '500px', itemScale: 0.8, itemOpacity: 0.5}}>
+					<div className={styles.slideshow}><Slideshow options={{
+							autoPlay	: false, 
+							invertArrows	: true, 
+							padding		: 10, 
+							maxWidth	: '700px', 
+							maxHeight	: '500px', 
+							itemScale	: 0.8, 
+							itemOpacity	: 0.5,
+							callback	: function (page) {
+								var names = ['Game Development', 'App Development', 'Web Development'];
+								var subheader = document.getElementById('subheader');
+								subheader.innerHTML = names[page];
+							}}}>
 						
 						{/* Cards */}
 						<div className={styles.card}>
