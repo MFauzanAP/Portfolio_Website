@@ -528,10 +528,10 @@ function Home () {
 					</div>
 
 					{/* Learn More */}
-					<a href="/about"><div className={styles.call_to_action}>
+					<a href="/about" className={styles.call_to_action}>
 						<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['far', 'address-card']}></FontAwesomeIcon>
 						Learn More
-					</div></a>
+					</a>
 
 				</div></Scene></Controller>
 

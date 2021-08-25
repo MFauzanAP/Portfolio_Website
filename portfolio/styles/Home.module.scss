@@ -751,6 +751,7 @@ $marker-size		: 9px;
 			opacity			: 1;
 	
 			transform		: scaleY(1);
+			transform-origin	: center;
 		}
 
 	}
@@ -1125,10 +1126,17 @@ $marker-size		: 9px;
 
 		opacity			: 0;
 
-		transition		: 0.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 1s;
+		transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
 
 		transform		: scaleY(0);
 		transform-origin	: top;
+
+		/* Hover */
+		&:hover {
+			background-color	: #DADADA;
+
+			transform		: scale(1.1);
+		}
 	}
 
 }
