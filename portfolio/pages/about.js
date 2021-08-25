@@ -735,32 +735,27 @@ function Home () {
 						</div>
 						<div className={styles.card}>
 
-							{/* Label */}
-							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'mobile']}/></div>
-							
+							{/* Logo */}
+							<div className={styles.logo}><img src='/qu_logo.svg'/></div>
+
+							{/* Meta */}
+							<div className={styles.meta}>August 2021 - Present</div>
+
 							{/* Container */}
 							<div className={styles.container}>
+
+								{/* Description */}
 								<p>
-									&emsp; I first started creating desktop applications a couple of years back when I decided
-									to take a break from game development to work on something different. One of my first ever desktop 
-									applications was a time management software where I planned on having the software try and track
-									what type of application you were running and log the hours spent on that app. The plan was to give
-									points based on how little you used a non-beneficial app and how often you did something productive. 
-									However the project didn't go far and I stopped before I got anything meaningful done.
+									Currently enrolled in the college of engineering at Qatar University.
 								</p>
-								<p>
-									&emsp; It wasn't until a year later when I started my GCSEs that I got back to working on desktop apps
-									again. This time I had planned on making a utility software that would help me revise for my GCSEs. But 
-									again this project didn't go far as it was too much to work and I had to focus on my GCSEs.
-								</p>
-								<p>
-									&emsp; However in my final year, my chemistry teacher had asked me to organize some flash cards for her, 
-									but I had other plans in mind. I asked her if I could instead create an app for her that people could use 
-									to revise. She agreed and so I started to work on it. After a week of hard work, I had managed to create
-									the application which I then shared with her and my classmates. You can see a few screenshots of the app
-									<a style={{color: 'blue'}} href="/projects"> here</a>.
-								</p>
+
 							</div>
+
+							{/* Call To Action */}
+							<a target="_blank" href="https://www.qu.edu.qa/" className={styles.call_to_action}>
+								<FontAwesomeIcon icon={['fas', 'external-link-alt']} style={{marginRight: '10px'}}/>
+								View Website
+							</a>
 
 						</div>
 
