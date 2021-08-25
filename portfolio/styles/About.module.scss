@@ -761,9 +761,16 @@ $marker-size		: 9px;
 
 			padding			: 50px 100px;
 
-			background-color	: #F8F8F8;
+			overflow		: hidden;
+
+			background-color	: #FFFFFF;
 			color			: #3D3D3D;
 			border-radius		: 10px;
+
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: center;
+			align-items		: center;
 
 			box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
 
@@ -778,61 +785,73 @@ $marker-size		: 9px;
 				}
 			}
 
-			/* Label */
-			.label {
-				position		: absolute;
-				height			: 35px;
-				width			: 60px;
-				top			: 10%;
-				left			: -25px;
+			/* Logo */
+			.logo {
+				position		: relative;
+				height			: 64px;
+				width			: 64px;
 
-				background		: #221E41;
-				border-radius		: 5px 0 0 5px;
-				color			: #FFFFFF;
+				margin-bottom		: 25px;
 
-				box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
+				/* Image */
+				img {
+					height			: 100%;
+					width			: 100%;
 
-				display			: flex;
-				align-items		: center;
-				justify-content		: center;
+					background-color	: #FFFFFF;
 
-				/* Before */
-				&::before {
-					position		: absolute;
-					width			: 0;
-					height			: 0;
-					top			: calc(100% - 1px);
-					left			: 5px;
-
-					border-style		: solid;
-					border-color		: transparent #000000 transparent transparent;
-					border-width		: 0 20px 7.5px 0;
-
-					content			: '';
+					object-fit		: contain;
 				}
+			}
+
+			/* Meta */
+			.meta {
+				color			: #AAAAAA;
+
+				font-size		: 14px;
+				font-weight		: 400;
+				letter-spacing		: 0.1em;
+				text-align		: center;
+			}
+
+			/* Underline */
+			.underline {
+				width			: 100%;
+
+				margin-bottom		: 25px;
+
+				border-top		: 2px solid transparent;
+
+				box-shadow		: 0 4px 4px rgba(0, 0, 0, 0.05);
 			}
 
 			/* Container */
 			.container {
-				height			: 100%;
 				width			: 100%;
+				height			: auto;
 
-				padding-right		: 10px;
-
-				overflow-y		: auto;
-
-				visibility		: hidden;
+				margin-bottom		: 50px;
 
 				font-weight		: 400;
-				font-size		: 1rem;
+				font-size		: 1.25rem;
 				line-height		: 1.8;
 				letter-spacing		: 0.03em;
 				text-rendering		: optimizeLegibility;
+				text-align		: center;
+			}
 
-				/* Text */
-				p {
-					visibility		: visible;
-				}
+			/* Call to Action */
+			.call_to_action {
+				background-color	: #9B5AE6;
+				color			: #FFFFFF;
+
+				font-family		: Lato;
+				font-style		: normal;
+				font-weight		: 500;
+				font-size		: 14px;
+				letter-spacing		: 1px;
+				line-height		: 18px;
+				text-align		: center;
 			}
 		}
 	}

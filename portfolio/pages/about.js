@@ -709,34 +709,28 @@ function Home () {
 						{/* Cards */}
 						<div className={styles.card}>
 
-							{/* Label */}
-							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'gamepad']}/></div>
-							
+							{/* Logo */}
+							<div className={styles.logo}><img src='/akis_logo.svg'/></div>
+
+							{/* Meta */}
+							<div className={styles.meta}>August 2009 - July 2021</div>
+
 							{/* Container */}
 							<div className={styles.container}>
+
+								{/* Description */}
 								<p>
-									&emsp; My first experience with programming was with Scratch. My then middle school teacher
-									introduced me to it, and I instantly fell in love. Back then I was always curious about
-									how the games I regularly played worked. Scratch was my gateway into the mystical world
-									of Computer Programming, and I would often spend hours after school creating games as well
-									as trying to replicate many of the games I often saw on the website.
+									I acquired my high school diploma from Al Khor International School after having 
+									studied there for 12 years.
 								</p>
-								<p>
-									&emsp; Skip ahead a few months to when I first found the Unity game engine. Back then a game I used to
-									often play had been shutdown (Fusion Fall), leading me to use my newly learnt skills to try my hand
-									at recreating this very game in Unity, the same game engine in which it had been built with. 
-									However back then I knew barely anything about the Unity game engine and the only learning I did was
-									online and self taught and so I quickly became burnt out.
-								</p>
-								<p>
-									&emsp; However not long after, I met a few people online that wanted to recreate the game but with
-									Nickelodeon characters instead of the original Cartoon Network ones. I decided to apply for the job and
-									joined the fan project, despite only having around a year of experience with Unity. At first I struggled
-									since I was the only person working on the game itself, but with time I got used to it and actually
-									enjoyed the challenge. Unfortunately after a year of work, the group disbanded and I was back to
-									creating games solo.
-								</p>
+
 							</div>
+
+							{/* Call To Action */}
+							<a target="_blank" href="high_school_transcript.pdf" className={styles.call_to_action}>
+								<FontAwesomeIcon icon={['fas', 'download']} style={{marginRight: '10px'}}/>
+								View Transcript
+							</a>
 
 						</div>
 						<div className={styles.card}>
