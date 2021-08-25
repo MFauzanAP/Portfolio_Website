@@ -281,24 +281,6 @@ button {
 
 			order			: 1;
 
-			/* Hover */
-			&:hover {
-
-				/* Button */
-				.button {
-					color			: #9b5ae6;
-					
-					transform		: scale(1.15);
-				}
-
-				/* Menu */
-				.menu {
-					width			: auto;
-
-					transform		: scaleY(1);
-				}
-			}
-
 			/* Menu */
 			.menu {
 				cursor			: default;
@@ -335,6 +317,20 @@ button {
 				transform-origin	: top;
 
 				transition		: 0.15s ease;
+
+				/* Hover */
+				&:hover {
+					width			: auto;
+
+					transform		: scaleY(1);
+
+					/* Button */
+					+ .button {
+						color			: #9B5AE6;
+						
+						transform		: scale(1.15);
+					}
+				}
 
 				/* Underline */
 				.underline {
@@ -402,6 +398,20 @@ button {
 				text-align		: center;
 
 				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+				/* Hover */
+				&:hover {
+					color			: #9B5AE6;
+						
+					transform		: scale(1.15);
+
+					/* Menu */
+					+ .menu {
+						width			: auto;
+
+						transform		: scaleY(1);
+					}
+				}
 			}
 		}
 
