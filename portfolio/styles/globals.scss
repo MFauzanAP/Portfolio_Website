@@ -617,6 +617,16 @@ div {
 			font-size		: 24px;
 		}
 
+		/* Black */
+		&.black {
+			color			: #221E41;
+		}
+
+		/* White */
+		&.white {
+			color			: #FFFFFF;
+		}
+
 		/* Left */
 		&.left {
 			left			: 0;
@@ -634,8 +644,6 @@ div {
 		/* Invert */
 		&.inverted {
 			background		: transparent;
-
-			color			: #3D3D3D;
 		}
 	}
 
@@ -687,17 +695,35 @@ div {
 
 			/* Active */
 			&.active {
-				background-color	: #9B5AE6;
-				color			: #9B5AE6;
-
 				transform		: scale(1.25);
 
 				/* Hover */
 				&:hover {
-					background-color	: #7C52CA;
-					color			: #FFFFFF;
-
 					transform		: scale(1.3);
+
+					/* Black */
+					&.black {
+						background-color	: #221E41;
+						color			: #FFFFFF;
+					}
+
+					/* Purple */
+					&.purple {
+						background-color	: #7C52CA;
+						color			: #FFFFFF;
+					}
+				}
+
+				/* Black */
+				&.black {
+					background-color	: #221E41;
+					color			: #221E41;
+				}
+				
+				/* Purple */
+				&.purple {
+					background-color	: #9B5AE6;
+					color			: #9B5AE6;
 				}
 			}
 		}

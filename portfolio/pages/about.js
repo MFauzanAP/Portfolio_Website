@@ -691,14 +691,16 @@ function Home () {
 
 					{/* Slideshow */}
 					<div className={styles.slideshow}><Slideshow options={{
-							autoPlay	: false, 
-							invertArrows	: true, 
-							padding		: 10, 
-							maxWidth	: '700px', 
-							maxHeight	: '500px', 
-							itemScale	: 0.8, 
-							itemOpacity	: 0.5,
-							callback	: function (page) {
+							autoPlay		: false, 
+							invertArrows		: true, 
+							arrowColor		: 'white',
+							paginationColor		: 'black',
+							padding			: 10, 
+							maxWidth		: '700px', 
+							maxHeight		: '500px', 
+							itemScale		: 0.8, 
+							itemOpacity		: 0.5,
+							callback		: function (page) {
 								var names = ['Al Khor International School', 'Qatar University'];
 								var subheader = document.getElementById('education_subheader');
 								subheader.innerHTML = names[page];
