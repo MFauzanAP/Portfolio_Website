@@ -170,10 +170,13 @@ button {
 
 			/* Hover */
 			&:hover {
+				color			: #9B5AE6;
 
 				/* Underline */
 				&::after {
 					transform		: scaleX(0.9);
+
+					background-color	: #9B5AE6;
 				}
 			}
 
