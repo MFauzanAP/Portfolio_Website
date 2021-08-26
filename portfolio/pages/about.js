@@ -572,6 +572,7 @@ function Home () {
 					<div className={styles.slideshow}><Slideshow options={{
 							autoPlay	: false, 
 							invertArrows	: true, 
+							arrowColor	: 'black',
 							padding		: 10, 
 							maxWidth	: '700px', 
 							maxHeight	: '500px', 

@@ -44,7 +44,7 @@ class Slideshow extends React.Component {
 			autoPlayDelay			: props.options ? (props.options.autoPlayDelay || 5000) : 5000,
 			autoPlayIndicator		: props.options ? (props.options.autoPlayIndicator !== undefined ? props.options.autoPlayIndicator : true) : true,
 			invertArrows			: props.options ? (props.options.invertArrows !== undefined ? props.options.invertArrows : false) : false,
-			arrowColor			: props.options ? (props.options.arrowColor || 'black') : 'black',
+			arrowColor			: props.options ? (props.options.arrowColor || 'white') : 'white',
 			paginationColor			: props.options ? (props.options.paginationColor || 'purple') : 'purple',
 			itemScale			: props.options ? (props.options.itemScale || 1) : 1,
 			itemOpacity			: props.options ? (props.options.itemOpacity || 1) : 1,
