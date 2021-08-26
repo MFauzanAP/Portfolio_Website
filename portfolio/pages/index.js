@@ -146,8 +146,46 @@ function Home () {
 						</svg>
 					</div>
 
-					{/* Stripes */}
-					<div className={styles.stripes}></div>
+					{/* Background Circles */}
+					<Particles className={styles.circles} id="circles"
+						params={{
+							particles	: {
+								number		: {
+									value		: 5,
+									density		: {
+										enable		: true,
+										value_area	: 2000
+									}
+								},
+								color		: {
+									value		: '#BBBBBB'
+								},
+								opacity		: {
+									value		: 0.1,
+									anim		: {
+										enable		: true,
+										speed		: 3
+									}
+								},
+								size		: {
+									value		: 250,
+									random		: true,
+									anim		: {
+										enable		: true,
+										speed		: 3
+									}
+								},
+								line_linked	: {
+									enable		: false
+								},
+								move		: {
+									speed		: 1,
+									bounce		: false,
+									noise		: true
+								}
+							}
+						}}>
+					</Particles>
 
 					{/* Header */}
 					<div className={styles.sideline}></div>

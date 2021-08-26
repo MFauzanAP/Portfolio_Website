@@ -541,7 +541,12 @@ $marker-size		: 9px;
 		}
 	}
 
-	/* Stripes */
+	/* Circles */
+	.circles {
+		position		: absolute;
+		width			: 100%;
+		height			: 100%;
+	}
 
 	/* Header */
 	h2 {
