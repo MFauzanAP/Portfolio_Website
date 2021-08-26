@@ -1,7 +1,5 @@
 import styles from '../styles/About.module.scss'
 import Head from 'next/head'
-import Image from 'next/image'
-import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
@@ -81,6 +79,8 @@ function Home () {
 
 						{/* Profile Picture */}
 						<div className={styles.profile_picture}><img src="/profile_picture.jpeg"/></div>
+
+						{/* Stripes */}
 
 						{/* Text */}
 						<div className={styles.text}>

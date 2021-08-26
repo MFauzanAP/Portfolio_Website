@@ -1,6 +1,5 @@
 import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
-import Image from 'next/image'
 import Particles from 'react-particles-js'
 import Lottie from 'react-lottie';
 import codeAnimation from '../public/code_animation.json';
@@ -10,7 +9,6 @@ import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Slideshow from './components/slideshow';
-import RadialScrollbar from './components/radial_scrollbar';
 
 //	Declare output function
 function Home () {
