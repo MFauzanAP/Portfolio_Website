@@ -421,7 +421,7 @@ $marker-size		: 9px;
 
 			flex			: 1 1 100%;
 
-			background		: #DDDDDD;
+			background		: transparent;
 			border-radius		: 10px;
 
 			font-size		: 5em;
@@ -436,6 +436,12 @@ $marker-size		: 9px;
 			opacity			: 0;
 
 			transition		: 1s ease 2.5s;
+
+			/* Animation */
+			div {
+				width			: 125% !important;
+				height			: 125% !important;
+			}
 		}
 	}
 

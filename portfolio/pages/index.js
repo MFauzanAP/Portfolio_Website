@@ -2,6 +2,8 @@ import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import Image from 'next/image'
 import Particles from 'react-particles-js'
+import Lottie from 'react-lottie';
+import codeAnimation from '../public/code_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
@@ -118,8 +120,15 @@ function Home () {
 
 						{/* Image */}
 						<div className={styles.image}>
-							<FontAwesomeIcon className={styles.icon} style={{width: '50px'}} icon={['fas', 'image']}></FontAwesomeIcon>
-							<img></img>
+							<Lottie options={{
+								loop			: true,
+								autoPlay		: true,
+								animationData		: codeAnimation,
+								rendererSettings	: {
+									className		: styles.player,
+									progressiveLoad		: true
+								}
+							}}/>
 						</div>
 
 					</div>
