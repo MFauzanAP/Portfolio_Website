@@ -860,6 +860,109 @@ $marker-size		: 9px;
 
 
 
+/* ===================================================== Hobbies ==================================================== */
+.hobbies {
+	position		: relative;
+	width			: 100%;
+
+	margin-top		: 100px;
+	margin-bottom		: 100px;
+	padding			: 50px;
+	padding-top		: 0;
+	padding-bottom		: 150px;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: flex-start;
+	align-items		: center;
+
+	color			: #3D3D3D;
+	
+
+	
+	/* ==================================================== Children ==================================================== */
+
+	/* Header */
+	.header {
+		margin-bottom		: 50px;
+		padding			: 20px 100px;
+
+		background-color	: #3D3D3D;
+		color			: #FFFFFF;
+
+		text-align		: center;
+		font-size		: 16px;
+		letter-spacing		: 2.5px;
+		word-spacing		: 5px;
+	}
+
+	/* Grid */
+	.grid {
+		width			: 80%;
+
+		margin-top		: 100px;
+
+		display			: grid;
+		grid-template-columns	: repeat(4, minmax(200px, 1fr));
+		gap			: 50px;
+
+		/* Details */
+		.details {
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: flex-start;
+			align-items		: center;
+
+			color			: #3D3D3D;
+
+			text-align		: center;
+			font-size		: 16px;
+
+			/* Icon */
+			.icon {
+				margin-bottom		: 20px;
+
+				color			: #9B5AE6;
+
+				font-size		: 48px;
+			}
+
+			/* Title */
+			.title {
+				text-align		: center;
+				font-size		: 24px;
+				font-weight		: 500;
+				letter-spacing		: 2.5px;
+			}
+
+			/* Underline */
+			.underline {
+				width			: 75px;
+				height			: 0px;
+
+				margin-top		: 5px;
+				margin-bottom		: 20px;
+
+				border			: 1px solid #DDDDDD;
+				border-radius		: 1px;
+			}
+
+			/* Description */
+			.description {
+				font-weight		: 400;
+				font-size		: 1.25rem;
+				line-height		: 1.8;
+				letter-spacing		: 0.03em;
+				text-rendering		: optimizeLegibility;
+				text-align		: center;
+			}
+		}
+	}
+
+}
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------ */

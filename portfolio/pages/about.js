@@ -765,6 +765,100 @@ function Home () {
 
 
 
+				{/* ===================================================== Hobbies ==================================================== */}
+				<div className={styles.hobbies}>
+
+					{/* Header */}
+					<div className={styles.header}>IN MY FREE TIME</div>
+
+					{/* Grid */}
+					<div className={styles.grid}>
+
+						{/* Coding */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'code']} />
+
+							{/* Title */}
+							<div className={styles.title}>CODING</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Description */}
+							<div className={styles.description}>
+								I enjoy coding in my spare time, often working on my side projects or starting new ones 
+								whenever I get bored of my old projects.
+							</div>
+
+						</div>
+
+						{/* Watching */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'film']} />
+
+							{/* Title */}
+							<div className={styles.title}>MOVIES</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Description */}
+							<div className={styles.description}>
+								Favourite movie genres are Action, Horror, Thriller and Mystery. 
+								I also watch k-dramas from time to time.
+							</div>
+
+						</div>
+						
+						{/* Volleyball */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'volleyball-ball']} />
+
+							{/* Title */}
+							<div className={styles.title}>VOLLEYBALL</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Description */}
+							<div className={styles.description}>
+								I play casual volleyball often with my friends, usually playing 
+								as setter.
+							</div>
+
+						</div>
+
+						{/* Watching */}
+						<div className={styles.details}>
+
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'gamepad']} />
+
+							{/* Title */}
+							<div className={styles.title}>VIDEO GAMES</div>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Description */}
+							<div className={styles.description}>
+								Games I play are League of Legends, Minecraft and Satisfactory.
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
 				{/* ===================================================== Footer ===================================================== */}
 				<Footer/>
 				
