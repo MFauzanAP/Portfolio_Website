@@ -439,6 +439,8 @@ $marker-size		: 9px;
 
 			/* Animation */
 			div {
+				pointer-events		: none;
+				
 				width			: 150% !important;
 				height			: 150% !important;
 			}

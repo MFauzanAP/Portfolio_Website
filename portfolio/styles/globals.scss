@@ -785,6 +785,8 @@ div {
 
 	/* Animation */
 	.animation {
+		pointer-events		: none;
+		
 		width			: 40%;
 		height			: 40%;
 	}
