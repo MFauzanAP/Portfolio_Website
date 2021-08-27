@@ -593,7 +593,7 @@ function Home () {
 
 
 				{/* =================================================== Contact Me =================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className='contact_me'>
+				<Controller><Scene classToggle='active' reverse={false}><div className='contact_me'>
 
 					{/* Animation */}
 					<div className='animation'><Lottie options={{
@@ -620,6 +620,14 @@ function Home () {
 
 					</div>
 					
+					{/* Load Animation */}
+					<div className='load_animation'>
+						<span className='load'></span>
+						<span className='load'></span>
+						<span className='load'></span>
+						<span className='load'></span>
+					</div>
+
 				</div></Scene></Controller>
 
 
