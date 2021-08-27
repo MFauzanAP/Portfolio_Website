@@ -376,6 +376,22 @@
 				color			: #8A4FCE;
 			}
 
+			/* Header */
+			h3 {
+				margin-bottom		: 5px;
+			}
+
+			/* Underline */
+			.underline {
+				width			: 70px;
+				height			: 0px;
+
+				margin-bottom		: 10px;
+
+				border			: 1px solid #DDDDDD;
+				border-radius		: 1px;
+			}
+
 			/* Description */
 			p {
 				margin-top		: 0;

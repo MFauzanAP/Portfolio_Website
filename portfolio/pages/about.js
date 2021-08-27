@@ -72,7 +72,7 @@ function Home () {
 
 
 
-				{/* ===================================================== Footer ===================================================== */}
+				{/* ================================================== Personal Info ================================================= */}
 				<div className={styles.personal_info}>
 
 					{/* Details */}
@@ -119,6 +119,9 @@ function Home () {
 							{/* Title */}
 							<h3>Experience</h3>
 
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
 							{/* Description */}
 							<p>
 								Approx. 6 years of experience in Game Development,
@@ -136,6 +139,9 @@ function Home () {
 							{/* Title */}
 							<h3>Education</h3>
 
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
 							{/* Description */}
 							<p>Bachelor's Degree in Engineering @ Qatar University
 							High School Diploma @ Al Khor International School.</p>
@@ -150,6 +156,9 @@ function Home () {
 							
 							{/* Title */}
 							<h3>Nationality</h3>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
 
 							{/* Description */}
 							<p>
@@ -167,6 +176,9 @@ function Home () {
 							
 							{/* Title */}
 							<h3>Language</h3>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
 
 							{/* Description */}
 							<table><tbody>
@@ -197,7 +209,10 @@ function Home () {
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar-alt']}/>
 							
 							{/* Title */}
-							<h3>Age</h3>
+							<h3>Birthdate</h3>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
 
 							{/* Description */}
 							<p>
@@ -214,6 +229,9 @@ function Home () {
 							
 							{/* Title */}
 							<h3>Hobbies</h3>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
 
 							{/* Description */}
 							<p>Coding<br/>
