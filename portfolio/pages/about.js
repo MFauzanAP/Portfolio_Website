@@ -24,8 +24,8 @@ function Home () {
 
 			</Head>
 
-			{/* Homepage */}
-			<div className={styles.home}>
+			{/* About Page */}
+			<div className={styles.about}>
 
 				{/* ================================================== Landing Page ================================================== */}
 				<div className={styles.background_mask}>
