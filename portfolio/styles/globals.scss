@@ -772,20 +772,28 @@ div {
 
 /* =================================================== Contact Me =================================================== */
 .contact_me {
+	width			: 80%;
+
 	display			: flex;
-	flex-direction		: column;
-	justify-content		: center;
+	flex-direction		: row;
+	justify-content		: space-evenly;
 	align-items		: center;
 
 	color			: #3D3D3D;
 
 	/* ==================================================== Children ==================================================== */
 
+	/* Animation */
+	.animation {
+		width			: 40%;
+		height			: 40%;
+	}
+
 	/* Meta */
 	.meta {
 		color			: #646464;
 
-		text-align		: center;
+		text-align		: left;
 		font-weight		: 500;
 		font-size		: 1.25em;
 		letter-spacing		: 1px;
@@ -799,26 +807,25 @@ div {
 		position		: relative;
 
 		margin-top		: 10px;
-		margin-bottom		: 200px;
 
-		text-align		: center;
+		text-align		: left;
 		font-size		: 32px;
 		font-weight		: bold;
 		letter-spacing		: 5px;
 		word-spacing		: 5px;
 
-		transition		: 0.35s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		transition		: 0.35s ease-in-out;
 
 		/* Underline */
 		&::before {
 			position		: absolute;
 			width			: 95%;
 			height			: 0.1em;
-			left			: 2.5%;
+			left			: 0;
 			top			: (($navbar-height-2 / 2) + 12px);
 
 			transform		: scaleX(0);
-			transform-origin	: center;
+			transform-origin	: left;
 
 			background-color	: #3D3D3D;
 			border-radius		: 0.075em;
@@ -826,7 +833,7 @@ div {
 
 			content			: '';
 
-			transition		: 0.35s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+			transition		: 0.35s ease-in-out;
 		}
 
 		/* Hover */
