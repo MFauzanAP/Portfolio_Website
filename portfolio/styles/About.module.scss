@@ -276,6 +276,17 @@
 
 		margin-bottom		: 100px;
 
+		/* Animation */
+		.animation {
+			pointer-events		: none;
+
+			position		: absolute;
+			width			: 45%;
+			height			: 45%;
+			left			: 0%;
+			top			: -5%;
+		}
+
 		/* Profile Picture */
 		.profile_picture {
 			flex			: 0 1 300px;
@@ -290,7 +301,10 @@
 
 			overflow		: hidden;
 
+			border			: 3px solid #9B5AE6;
 			border-radius		: 50%;
+
+			z-index			: 1;
 
 			/* Image */
 			img {
