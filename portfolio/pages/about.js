@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Slideshow from './components/slideshow';
+import ContactMe from './components/contact_me';
 
 //	Declare output function
 function Home () {
@@ -857,6 +858,11 @@ function Home () {
 					</div>
 
 				</div>
+
+
+
+				{/* =================================================== Contact Me =================================================== */}
+				<ContactMe/>
 
 
 
