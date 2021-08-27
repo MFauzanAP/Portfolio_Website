@@ -770,6 +770,82 @@ div {
 
 
 
+/* =================================================== Contact Me =================================================== */
+.contact_me {
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
+
+	color			: #3D3D3D;
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Meta */
+	.meta {
+		color			: #646464;
+
+		text-align		: center;
+		font-weight		: 500;
+		font-size		: 1.25em;
+		letter-spacing		: 1px;
+		word-spacing		: 1px;
+	}
+
+	/* Call to Action */
+	.call_to_action {
+		cursor			: pointer;
+
+		position		: relative;
+
+		margin-top		: 10px;
+		margin-bottom		: 200px;
+
+		text-align		: center;
+		font-size		: 32px;
+		font-weight		: bold;
+		letter-spacing		: 5px;
+		word-spacing		: 5px;
+
+		transition		: 0.35s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+		/* Underline */
+		&::before {
+			position		: absolute;
+			width			: 95%;
+			height			: 0.1em;
+			left			: 2.5%;
+			top			: (($navbar-height-2 / 2) + 12px);
+
+			transform		: scaleX(0);
+			transform-origin	: center;
+
+			background-color	: #3D3D3D;
+			border-radius		: 0.075em;
+			opacity			: 1;
+
+			content			: '';
+
+			transition		: 0.35s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		}
+
+		/* Hover */
+		&:hover {
+			color			: #9B5AE6;
+
+			/* Underline */
+			&::before {
+				transform		: scaleX(1);
+
+				background-color	: #9B5AE6;
+			}
+		}
+	}
+
+}
+
+
+
 /* ===================================================== Footer ===================================================== */
 .footer {
 	width			: 100%;

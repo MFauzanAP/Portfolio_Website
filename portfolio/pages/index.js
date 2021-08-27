@@ -591,6 +591,22 @@ function Home () {
 
 
 
+				{/* =================================================== Contact Me =================================================== */}
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className='contact_me'>
+					
+					{/* Header */}
+					<div className='meta'>Interested?</div>
+
+					{/* Call to Action */}
+					<a href='/contact' className='call_to_action'>
+						LET'S WORK TOGETHER
+						<FontAwesomeIcon style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}/>
+					</a>
+					
+				</div></Scene></Controller>
+
+
+
 				{/* ===================================================== Footer ===================================================== */}
 				<Footer/>
 				
