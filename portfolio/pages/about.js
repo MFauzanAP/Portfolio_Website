@@ -829,7 +829,7 @@ function Home () {
 							{/* Description */}
 							<div className={styles.description}>
 								I play casual volleyball often with my friends, usually playing 
-								as setter.
+								as the setter.
 							</div>
 
 						</div>
@@ -848,7 +848,7 @@ function Home () {
 
 							{/* Description */}
 							<div className={styles.description}>
-								Games I play are League of Legends, Minecraft and Satisfactory.
+								Some games I play are League of Legends, Minecraft and Satisfactory.
 							</div>
 
 						</div>
