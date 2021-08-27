@@ -857,6 +857,9 @@ function Home () {
 
 					</div>
 
+					{/* Divider */}
+					<div className={styles.divider}></div>
+
 				</div>
 
 
