@@ -3,13 +3,13 @@ import Head from 'next/head'
 import Particles from 'react-particles-js'
 import Lottie from 'react-lottie';
 import codeAnimation from '../public/code_animation.json';
-import contactAnimation from '../public/contact_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Slideshow from './components/slideshow';
+import ContactMe from './components/contact_me';
 
 //	Declare output function
 function Home () {
@@ -593,42 +593,7 @@ function Home () {
 
 
 				{/* =================================================== Contact Me =================================================== */}
-				<Controller><Scene classToggle='active' reverse={false}><div className='contact_me'>
-
-					{/* Animation */}
-					<div className='animation'><Lottie options={{
-						loop			: true,
-						autoPlay		: true,
-						animationData		: contactAnimation,
-						rendererSettings	: {
-							className		: styles.player,
-							progressiveLoad		: true
-						}
-					}}/></div>
-
-					{/* Description */}
-					<div className="description">
-					
-						{/* Header */}
-						<div className='meta'>Interested?</div>
-
-						{/* Call to Action */}
-						<a href='/contact' className='call_to_action'>
-							LET'S WORK TOGETHER
-							<FontAwesomeIcon style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}/>
-						</a>
-
-					</div>
-					
-					{/* Load Animation */}
-					<div className='load_animation'>
-						<span className='load'></span>
-						<span className='load'></span>
-						<span className='load'></span>
-						<span className='load'></span>
-					</div>
-
-				</div></Scene></Controller>
+				<ContactMe/>
 
 
 
