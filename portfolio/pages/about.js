@@ -81,7 +81,8 @@ function Home () {
 						{/* Profile Picture */}
 						<div className={styles.profile_picture}><img src="/profile_picture.jpeg"/></div>
 
-						{/* Stripes */}
+						{/* Label */}
+						<div className={styles.label}><FontAwesomeIcon icon={['fas', 'user']}/></div>
 
 						{/* Text */}
 						<div className={styles.text}>
@@ -98,9 +99,6 @@ function Home () {
 								nec dapibus eros blandit ut. Aliquam convallis consectetur ante, eget ullamcorper ipsum auctor nec. <br/>
 								Mauris pellentesque vel odio ac ornare. Sed sed velit at risus aliquam pellentesque.
 							</p>
-
-							{/* Contact Me */}
-							<button style={{borderColor: '#8a4fce'}}>Contact Me</button>
 
 						</div>
 
