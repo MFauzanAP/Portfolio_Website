@@ -795,6 +795,8 @@ div {
 
 	/* Load Animation */
 	.load_animation {
+		pointer-events		: none;
+
 		position		: absolute;
 		width			: 100vw;
 		height			: 90%;
