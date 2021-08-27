@@ -376,15 +376,6 @@
 
 	background		: #221E41;
 	color			: #FFFFFF;
-
-	/* Hover */
-	&:hover {
-
-		/* Grid */
-		.grid {
-			visibility		: visible;
-		}
-	}
 	
 
 	
@@ -437,6 +428,22 @@
 		grid-auto-flow		: row;
 
 		visibility		: hidden;
+
+		/* Hover */
+		&:hover {
+			visibility		: visible;
+		}
+
+		/* Scrollbar Thumb */
+		&::-webkit-scrollbar-thumb {
+			background-color	: #3E3A56;
+			border-radius		: 5px;
+
+			/* Hover */
+			&:hover { 
+				background		: #322F46;
+			}
+		}
 
 		/* Details */
 		.details {
