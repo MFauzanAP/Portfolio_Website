@@ -51,7 +51,7 @@ function Error () {
 					</div>
 
 					{/* Call to Action */}
-					<div className={styles.call_to_action}>Return Home</div>
+					<a href='/' className={styles.call_to_action}>Return Home</a>
 
 				</div>
 
