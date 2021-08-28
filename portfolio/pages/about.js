@@ -799,7 +799,7 @@ function Home () {
 
 
 				{/* ===================================================== Hobbies ==================================================== */}
-				<div className={styles.hobbies}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hobbies}>
 
 					{/* Header */}
 					<div className={styles.header}>IN MY FREE TIME</div>
@@ -891,7 +891,7 @@ function Home () {
 					{/* Divider */}
 					<div className={styles.divider}></div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
