@@ -123,10 +123,10 @@ function Home () {
 						<div className={styles.details}>
 							
 							{/* Icon */}
-							<FontAwesomeIcon className={styles.icon} icon={['fas', 'laptop-code']}/>
+							<a className={styles.icon} href='#experience'><FontAwesomeIcon icon={['fas', 'laptop-code']}/></a>
 							
 							{/* Title */}
-							<h3>Experience</h3>
+							<a className={styles.title} href='#experience'>Experience</a>
 
 							{/* Underline */}
 							<div className={styles.underline}></div>
@@ -143,10 +143,10 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<FontAwesomeIcon className={styles.icon} icon={['fas', 'book-open']}/>
+							<a className={styles.icon} href='#education'><FontAwesomeIcon icon={['fas', 'book-open']}/></a>
 							
 							{/* Title */}
-							<h3>Education</h3>
+							<a className={styles.title} href='#education'>Education</a>
 
 							{/* Underline */}
 							<div className={styles.underline}></div>
@@ -157,23 +157,23 @@ function Home () {
 
 						</div>
 
-						{/* Nationality */}
+						{/* Hobbies */}
 						<div className={styles.details}>
-							
+
 							{/* Icon */}
-							<FontAwesomeIcon className={styles.icon} icon={['fas', 'globe-asia']}/>
+							<a className={styles.icon} href='#hobbies'><FontAwesomeIcon icon={['fas', 'gamepad']}/></a>
 							
 							{/* Title */}
-							<h3>Nationality</h3>
+							<a className={styles.title} href='#hobbies'>Hobbies</a>
 
 							{/* Underline */}
 							<div className={styles.underline}></div>
 
 							{/* Description */}
-							<p>
-								Born in Indonesia 🇮🇩, raised and brought up 
-								in Qatar 🇶🇦.
-							</p>
+							<p>Coding<br/>
+							Watching Movies/Dramas<br/>
+							Volleyball<br/>
+							Video Games</p>
 
 						</div>
 
@@ -211,6 +211,26 @@ function Home () {
 
 						</div>
 
+						{/* Nationality */}
+						<div className={styles.details}>
+							
+							{/* Icon */}
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'globe-asia']}/>
+							
+							{/* Title */}
+							<h3>Nationality</h3>
+
+							{/* Underline */}
+							<div className={styles.underline}></div>
+
+							{/* Description */}
+							<p>
+								Born in Indonesia 🇮🇩, raised and brought up 
+								in Qatar 🇶🇦.
+							</p>
+
+						</div>
+
 						{/* Age */}
 						<div className={styles.details}>
 							
@@ -227,26 +247,6 @@ function Home () {
 							<p>
 								Born on the 4th of May 2004 (04/05/2004) in Jakarta, Indonesia.
 							</p>
-
-						</div>
-						
-						{/* Hobbies */}
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<FontAwesomeIcon className={styles.icon} icon={['fas', 'gamepad']}/>
-							
-							{/* Title */}
-							<h3>Hobbies</h3>
-
-							{/* Underline */}
-							<div className={styles.underline}></div>
-
-							{/* Description */}
-							<p>Coding<br/>
-							Watching Movies/Dramas<br/>
-							Volleyball<br/>
-							Video Games</p>
 
 						</div>
 
@@ -588,6 +588,9 @@ function Home () {
 				{/* =================================================== Experience =================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.experience}>
 
+					{/* Anchor */}
+					<a id="experience"/>
+
 					{/* Header */}
 					<div className={styles.header}>EXPERIENCE</div>
 
@@ -707,6 +710,9 @@ function Home () {
 				{/* ==================================================== Education =================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.education}>
 
+					{/* Anchor */}
+					<a id="education"/>
+
 					{/* Background */}
 					<div className={styles.background}></div>
 
@@ -800,6 +806,9 @@ function Home () {
 
 				{/* ===================================================== Hobbies ==================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hobbies}>
+
+					{/* Anchor */}
+					<a id="hobbies"/>
 
 					{/* Header */}
 					<div className={styles.header}>IN MY FREE TIME</div>

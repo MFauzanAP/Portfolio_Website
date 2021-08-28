@@ -411,11 +411,49 @@
 				font-size		: 32px;
 
 				color			: #8A4FCE;
+
+				/* Hover */
+				&:hover {
+
+					/* Title */
+					~.title {
+						color			: #8A4FCE !important;
+
+						transform		: scale(1.1) !important;
+					}
+
+					/* Underline */
+					~.underline {
+						transform		: scaleX(1.1) !important;
+
+						border			: 1px solid #8A4FCE !important;
+					}
+				}
 			}
 
-			/* Header */
-			h3 {
+			/* Title */
+			.title, h3 {
+				margin-top		: 1em;
 				margin-bottom		: 5px;
+
+				font-weight		: 700;
+				font-size		: 1.15em;
+
+				transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38);
+
+				/* Hover */
+				&.title:hover {
+					color			: #8A4FCE;
+
+					transform		: scale(1.1);
+
+					/* Underline */
+					~.underline {
+						transform		: scaleX(1.1);
+
+						border			: 1px solid #8A4FCE;
+					}
+				}
 			}
 
 			/* Underline */
@@ -427,6 +465,8 @@
 
 				border			: 1px solid #DDDDDD;
 				border-radius		: 1px;
+
+				transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38);
 			}
 
 			/* Description */
