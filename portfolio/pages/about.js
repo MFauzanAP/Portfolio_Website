@@ -234,7 +234,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<FontAwesomeIcon className={styles.icon} icon={['fas', 'volleyball-ball']}/>
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'gamepad']}/>
 							
 							{/* Title */}
 							<h3>Hobbies</h3>
