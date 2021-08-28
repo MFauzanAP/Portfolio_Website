@@ -586,7 +586,7 @@ function Home () {
 
 
 				{/* =================================================== Experience =================================================== */}
-				<div className={styles.experience}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.experience}>
 
 					{/* Header */}
 					<div className={styles.header}>EXPERIENCE</div>
@@ -700,7 +700,7 @@ function Home () {
 
 					</Slideshow></div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
