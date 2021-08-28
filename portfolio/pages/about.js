@@ -257,7 +257,7 @@ function Home () {
 
 
 				{/* =================================================== Tech Stack =================================================== */}
-				<div className={styles.tech_stack}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.tech_stack}>
 
 					{/* Background */}
 					<div className={styles.background}>
@@ -581,7 +581,7 @@ function Home () {
 						</svg>
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
