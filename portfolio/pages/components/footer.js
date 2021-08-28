@@ -59,22 +59,10 @@ class Navbar extends React.Component {
 
 					{/* Links */}
 					<ul className="links">
-						<a href="/"><li>
-							<FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'home']}></FontAwesomeIcon>
-							Home
-						</li></a>
-						<a href="/projects"><li>
-							<FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'project-diagram']}></FontAwesomeIcon>
-							Projects
-						</li></a>
-						<a href="/about"><li>
-							<FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'address-card']}></FontAwesomeIcon>
-							About
-						</li></a>
-						<a href="/contact"><li>
-							<FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'phone']}></FontAwesomeIcon>
-							Contact
-						</li></a>
+						<a href="/"><li>Home</li></a>
+						<a href="/projects"><li>Projects</li></a>
+						<a href="/about"><li>About</li></a>
+						<a href="/contact"><li>Contact</li></a>
 					</ul>
 
 				</div>
