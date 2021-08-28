@@ -921,6 +921,10 @@ function Home () {
 					<div className="navbar_container"><Navbar pathname="about"/></div>
 				</Scene></Controller>
 
+				{/* WIP Indicator */}
+				<div className='wip1'>WORK IN PROGRESS</div>
+				<div className='wip2'>WORK IN PROGRESS</div>
+
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 3}}/>
 

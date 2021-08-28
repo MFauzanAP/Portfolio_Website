@@ -37,6 +37,10 @@ function Contact () {
 
 				{/* ================================================== Miscellaneous ================================================= */}
 
+				{/* WIP Indicator */}
+				<div className='wip1'>WORK IN PROGRESS</div>
+				<div className='wip2'>WORK IN PROGRESS</div>
+
 				{/* Navbar */}
 				<div className="navbar_container"><Navbar pathname="contact"/></div>
 
