@@ -244,11 +244,12 @@
 /* ============================================== Personal Information ============================================== */
 .personal_info {
 	position		: relative;
+	max-height		: 2px;
 	width			: 80%;
 
 	margin-top		: 60vh;
 	margin-bottom		: 100px;
-	padding			: 50px;
+	padding			: 0px;
 	padding-bottom		: 0;
 
 	display			: flex;
@@ -256,12 +257,30 @@
 	justify-content		: flex-start;
 	align-items		: center;
 
+	overflow		: hidden;
+
 	box-shadow		: 0 0 15px rgba(0, 0, 0, 0.15);
 
 	background		: #F8F8F8;
 	color			: #3D3D3D;
 	border-top		: 2px solid #8A4FCE;
 	border-radius		: 5px;
+
+	transform		: scaleX(0);
+
+	transition		: transform 0.5s ease-in-out,
+				  max-height 1s ease-in-out 0.5s,
+				  padding 1s ease-in-out 0.5s;
+
+	/* Active */
+	&.active {
+		max-height		: 200vh;
+
+		padding			: 50px;
+		padding-bottom		: 0;
+
+		transform		: scaleX(1);
+	}
 	
 
 	

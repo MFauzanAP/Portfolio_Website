@@ -75,7 +75,7 @@ function Home () {
 
 
 				{/* ================================================== Personal Info ================================================= */}
-				<div className={styles.personal_info}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.personal_info}>
 
 					{/* Details */}
 					<div className={styles.details}>
@@ -252,7 +252,7 @@ function Home () {
 
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
