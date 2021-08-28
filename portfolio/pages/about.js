@@ -705,7 +705,7 @@ function Home () {
 
 
 				{/* ==================================================== Education =================================================== */}
-				<div className={styles.education}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.education}>
 
 					{/* Background */}
 					<div className={styles.background}></div>
@@ -759,6 +759,9 @@ function Home () {
 								View Transcript
 							</a>
 
+							{/* Cover */}
+							<div className={styles.cover}></div>
+
 						</div>
 						<div className={styles.card}>
 
@@ -784,11 +787,14 @@ function Home () {
 								View Website
 							</a>
 
+							{/* Cover */}
+							<div className={styles.cover}></div>
+
 						</div>
 
 					</Slideshow></div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
