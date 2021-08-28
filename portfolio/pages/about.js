@@ -97,7 +97,7 @@ function Home () {
 						<div className={styles.text}>
 
 							{/* Title */}
-							<h2>Hey, I'm Fauzan</h2>
+							<h2>Hey, I&apos;m Fauzan</h2>
 
 							{/* Description */}
 							<p>
@@ -152,7 +152,7 @@ function Home () {
 							<div className={styles.underline}></div>
 
 							{/* Description */}
-							<p>Bachelor's Degree in Engineering @ Qatar University
+							<p>Bachelor&apos;s Degree in Engineering @ Qatar University
 							High School Diploma @ Al Khor International School.</p>
 
 						</div>
@@ -659,12 +659,12 @@ function Home () {
 									applications was a time management software where I planned on having the software try and track
 									what type of application you were running and log the hours spent on that app. The plan was to give
 									points based on how little you used a non-beneficial app and how often you did something productive. 
-									However the project didn't go far and I stopped before I got anything meaningful done.
+									However the project didn&apos;t go far and I stopped before I got anything meaningful done.
 								</p>
 								<p>
-									&emsp; It wasn't until a year later when I started my GCSEs that I got back to working on desktop apps
+									&emsp; It wasn&apos;t until a year later when I started my GCSEs that I got back to working on desktop apps
 									again. This time I had planned on making a utility software that would help me revise for my GCSEs. But 
-									again this project didn't go far as it was too much to work and I had to focus on my GCSEs.
+									again this project didn&apos;t go far as it was too much to work and I had to focus on my GCSEs.
 								</p>
 								<p>
 									&emsp; However in my final year, my chemistry teacher had asked me to organize some flash cards for her, 
@@ -686,7 +686,7 @@ function Home () {
 								<p>
 									&emsp; I was first exposed to web development back in 9th grade as it was the subject I was studying at 
 									the time. However we only did very basic work and I was honestly more attracted to game development, 
-									so I quickly lost interest and forgot about the whole thing. It wasn't until I got a job as a Data Entry 
+									so I quickly lost interest and forgot about the whole thing. It wasn&apos;t until I got a job as a Data Entry 
 									Operator at Malvor that my interest in web development grew.
 								</p>
 								<p>
@@ -788,7 +788,7 @@ function Home () {
 							</div>
 
 							{/* Call To Action */}
-							<a target="_blank" href="https://www.qu.edu.qa/" className={styles.call_to_action}>
+							<a target="_blank" rel="noreferrer" href="https://www.qu.edu.qa/" className={styles.call_to_action}>
 								<FontAwesomeIcon icon={['fas', 'external-link-alt']} style={{marginRight: '10px'}}/>
 								View Website
 							</a>

@@ -2,8 +2,9 @@
 /*                                                       Imports                                                      */
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
+import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import copy_to_clipboard from '../utils/copy_to_clipboard';
+import CopyToClipboard from '../utils/copy_to_clipboard';
 
 
 
@@ -40,7 +41,7 @@ class Navbar extends React.Component {
 
 					{/* Description */}
 					<p>
-						Hey there, my name's Fauzan and I'm an <br/>
+						Hey there, my name&apos;s Fauzan and I&apos;m an <br/>
 						undergraduate student studying at Qatar University <br/>
 						with a keen interest in all things tech. <br/>
 						Nice to meet you!
@@ -59,10 +60,10 @@ class Navbar extends React.Component {
 
 					{/* Links */}
 					<ul className="links">
-						<a href="/"><li>Home</li></a>
-						<a href="/projects"><li>Projects</li></a>
-						<a href="/about"><li>About</li></a>
-						<a href="/contact"><li>Contact</li></a>
+						<Link href="/"><a><li>Home</li></a></Link>
+						<Link href="/projects"><a><li>Projects</li></a></Link>
+						<Link href="/about"><a><li>About</li></a></Link>
+						<Link href="/contact"><a><li>Contact</li></a></Link>
 					</ul>
 
 				</div>
@@ -78,10 +79,10 @@ class Navbar extends React.Component {
 
 					{/* Links */}
 					<ul className="links">
-						<a href="https://github.com/MFauzanAP" target="_blank"><li><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></li></a>
-						<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank"><li><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
-						<a href="https://www.instagram.com/fow_zen/" target="_blank"><li><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
-						<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={copy_to_clipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
+						<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></li></a>
+						<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
+						<a href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
+						<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
 					</ul>
 
 				</div>

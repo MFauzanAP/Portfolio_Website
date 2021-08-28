@@ -1,5 +1,6 @@
 import styles from '../styles/Contact.module.scss'
 import Head from 'next/head'
+import Link from 'next/link';
 import Lottie from 'react-lottie';
 import animation from '../public/404_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

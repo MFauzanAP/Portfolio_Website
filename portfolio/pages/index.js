@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
+import Link from 'next/link';
 import Particles from 'react-particles-js'
 import Lottie from 'react-lottie';
 import codeAnimation from '../public/code_animation.json';
@@ -103,17 +104,17 @@ function Home () {
 
 						{/* Description */}
 						<div className={styles.description}>
-							<p style={{transitionDelay: '2s'}}>Are you an aspiring entrepreneur with an idea in mind, but just don't have anyone to help you accomplish it?</p>
+							<p style={{transitionDelay: '2s'}}>Are you an aspiring entrepreneur with an idea in mind, but just don&apos;t have anyone to help you accomplish it?</p>
 							<p style={{transitionDelay: '2.25s'}}>Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?</p>
 							<p style={{transitionDelay: '2.5s'}}>
-								Well if you fall into any of these categories then congrats! You've come to the right place 😊. 
+								Well if you fall into any of these categories then congrats! You&apos;ve come to the right place 😊. 
 								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. 
-								To me, satisfactory just wont cut it. If you're interested, click the link below 👇.
+								To me, satisfactory just wont cut it. If you&apos;re interested, click the link below 👇.
 							</p>
-							<a href="/contact"><button>
+							<Link href="/contact"><a><button>
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'user-plus']}></FontAwesomeIcon>
 								Hire Me
-							</button></a>
+							</button></a></Link>
 						</div>
 
 						{/* Image */}
@@ -350,7 +351,7 @@ function Home () {
 								{/* Header */}
 								<h2>
 									<span>08/2021</span>
-									Engineering Bachelor's Degree
+									Engineering Bachelor&apos;s Degree
 								</h2>
 
 							</div>
@@ -377,7 +378,7 @@ function Home () {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://www.qu.edu.qa/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="https://www.qu.edu.qa/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
@@ -455,7 +456,7 @@ function Home () {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="https://malvor.com/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
@@ -509,7 +510,7 @@ function Home () {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://malvor.com/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="https://malvor.com/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
@@ -564,11 +565,11 @@ function Home () {
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="high_school_transcript.pdf" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="high_school_transcript.pdf" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
 									View Transcript
 								</button></a>
-								<a href="https://akis.sch.qa/" target="_blank"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="https://akis.sch.qa/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
@@ -583,10 +584,10 @@ function Home () {
 					</div>
 
 					{/* Learn More */}
-					<a href="/about" className={styles.call_to_action}>
+					<Link href="/about"><a className={styles.call_to_action}>
 						<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['far', 'address-card']}></FontAwesomeIcon>
 						Learn More
-					</a>
+					</a></Link>
 
 				</div></Scene></Controller>
 

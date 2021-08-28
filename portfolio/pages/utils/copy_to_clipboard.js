@@ -1,17 +1,29 @@
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-nextjs-toast';
 
 //	Function used to copy data to clipboard
-function copy_to_clipboard (data, message = '') {
+function CopyToClipboard (data, message = '') {
 
-	//	Copy to clipboard
-	navigator.clipboard.writeText(data);
+	//	Use Effect
+	useEffect(() => {
 
-	//	Show toast
-	toast.notify(`${message} Copied to Clipboard`, {
-		duration	: 2,
-		title		: 'Success',
+		//	Copy to clipboard
+		navigator.clipboard.writeText(data);
+
+		//	Show toast
+		toast.notify(`${message} Copied to Clipboard`, {
+			duration	: 2,
+			title		: 'Success',
+		});
+
+		//	Return nothing
+		return null; 
+
 	});
+
+	//	Return nothing
+	return null; 
 
 }
 
-export default copy_to_clipboard
+export default CopyToClipboard

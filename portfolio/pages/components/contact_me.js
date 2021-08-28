@@ -2,6 +2,7 @@
 /*                                                       Imports                                                      */
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
+import Link from 'next/link';
 import Lottie from 'react-lottie';
 import contactAnimation from '../../public/contact_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,10 +39,10 @@ class ContactMe extends React.Component {
 				<div className='meta'>Interested?</div>
 
 				{/* Call to Action */}
-				<a href='/contact' className='call_to_action'>
-					LET'S WORK TOGETHER
+				<Link href='/contact'><a className='call_to_action'>
+					LET&apos;S WORK TOGETHER
 					<FontAwesomeIcon style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}/>
-				</a>
+				</a></Link>
 
 			</div>
 			

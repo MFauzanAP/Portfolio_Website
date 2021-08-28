@@ -126,7 +126,7 @@ class Slideshow extends React.Component {
 			if (!this.state.pause) {
 
 				//	Pause the slideshow
-				this.state.pause = true;
+				this.setState({pause: true});
 
 				//	Clear all previous autoplay functions
 				clearInterval(this.autoplay_index); 
@@ -135,7 +135,7 @@ class Slideshow extends React.Component {
 			else {
 
 				//	Unpause the slideshow
-				this.state.pause = false;
+				this.setState({pause: false});
 
 				//	Clear all previous autoplay functions
 				clearInterval(this.autoplay_index); 
@@ -215,6 +215,9 @@ class Slideshow extends React.Component {
 		//	Declare variable to store slide elements
 		var elements;
 
+		//	Get callback
+		var callback = this.props.options ? this.props.options.callback : null;
+
 		//	Generate slides styling
 		var slide_style = {
 			maxWidth	: this.state.maxWidth,
@@ -281,7 +284,7 @@ class Slideshow extends React.Component {
 			
 			//	Add element
 			pagination.push(
-				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i, this.props.options.callback)}>
+				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i, callback)}>
 					<FontAwesomeIcon icon={icon}/>
 				</div>
 			);
@@ -310,8 +313,8 @@ class Slideshow extends React.Component {
 				</div>
 
 				{/* Arrows */}
-				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.prev_page.bind(this, this.props.options.callback)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
-				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.next_page.bind(this, this.props.options.callback)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
+				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.prev_page.bind(this, callback)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
+				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.next_page.bind(this, callback)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 				{/* Pagination */}
 				<div className="pagination" id="pagination">{pagination}</div>

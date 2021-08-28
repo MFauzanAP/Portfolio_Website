@@ -1,5 +1,6 @@
-import styles from '../styles/Error.module.scss'
-import Head from 'next/head'
+import styles from '../styles/Error.module.scss';
+import Head from 'next/head';
+import Link from 'next/link';
 import Lottie from 'react-lottie';
 import animation from '../public/404_animation.json';
 import Navbar from "./components/navbar";
@@ -48,7 +49,7 @@ function Error () {
 					</div>
 
 					{/* Call to Action */}
-					<a href='/' className={styles.call_to_action}>Return Home</a>
+					<Link href='/'><a className={styles.call_to_action}>Return Home</a></Link>
 
 				</div>
 
