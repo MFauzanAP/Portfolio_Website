@@ -1125,6 +1125,98 @@ div {
 		margin-top		: 20px;
 	}
 
+	/* Mobile */
+	@include media ("<=mobilel") {
+		padding			: 25px;
+
+		.background {
+			height			: 100%;
+
+			overflow		: visible;
+
+			&::before {
+				height			: 100%;
+			}
+
+			svg {
+				height			: 25px;
+				top			: 100%;
+			}
+		}
+
+		.content {
+			width			: 100%;
+
+			flex-direction		: column;
+			
+			padding-top		: 25px;
+		}
+
+		.divider {
+			width			: 90%;
+		}
+	}
+
+	/* Tablet */
+	@include media (">mobilel", "<=tablet") {
+		padding			: 25px;
+
+		.background {
+			height			: 100%;
+
+			overflow		: visible;
+
+			&::before {
+				height			: 90%;
+			}
+
+			svg {
+				height			: 60px;
+				top			: 90%;
+			}
+		}
+
+		.content {
+			width			: 100%;
+			
+			padding-top		: 25px;
+		}
+
+		.divider {
+			width			: 90%;
+		}
+	}
+
+	/* Laptop */
+	@include media (">tablet", "<=laptop") {
+		padding			: 25px;
+
+		.background {
+			height			: 100%;
+
+			overflow		: visible;
+
+			&::before {
+				height			: 80%;
+			}
+
+			svg {
+				height			: 100px;
+				top			: 80%;
+			}
+		}
+
+		.content {
+			width			: 100%;
+			
+			padding-top		: 25px;
+		}
+
+		.divider {
+			width			: 90%;
+		}
+	}
+
 }
 
 

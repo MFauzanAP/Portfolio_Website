@@ -1056,7 +1056,7 @@ $marker-size		: 9px;
 		}
 
 		/* Laptop L */
-		@include media("<=laptopl", ">laptop") { 
+		@include media("<=laptopl", ">=laptop") { 
 			aspect-ratio		: auto;
 			max-width		: 60%;
 
