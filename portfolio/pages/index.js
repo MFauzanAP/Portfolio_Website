@@ -1,7 +1,7 @@
-import styles from '../styles/Home.module.scss'
-import Head from 'next/head'
+import styles from '../styles/Home.module.scss';
+import Head from 'next/head';
 import Link from 'next/link';
-import Particles from 'react-particles-js'
+import Particles from 'react-particles-js';
 import Lottie from 'react-lottie';
 import codeAnimation from '../public/code_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -218,9 +218,7 @@ function Home () {
 							{/* Slideshow */}
 							<Controller><Scene duration={500} triggerElement="#media_container_1">{(progress, event) => (
 								<Slideshow id={event} event={event} options={{
-									images: [
-										""
-									]
+									images: []
 								}}/>
 							)}</Scene></Controller>
 

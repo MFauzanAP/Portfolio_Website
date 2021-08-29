@@ -2,6 +2,7 @@
 /*                                                       Imports                                                      */
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React, { createRef, useRef } from 'react';
+import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 
@@ -237,14 +238,20 @@ class Slideshow extends React.Component {
 			//	Create styles
 			var style = {
 				pointerEvents	: i == this.state.page ? 'all' : 'none',
+				
+				position	: 'absolute',
+				width		: '100%',
+				height		: '100%',
 
 				transform	: `translateX(${offset}%) scale(${scale})`,
+
+				transition	: '0.5s ease',
 
 				opacity		: i == this.state.page ? 1 : this.state.itemOpacity
 			};
 
 			//	Add element
-			return <img key={i.toString()} style={style} src={source}/> 
+			return <div key={i.toString()} style={style}><Image layout='fill' placeholder='blur' blurDataURL={source} src={source}/></div>
 
 		});
 
