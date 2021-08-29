@@ -900,6 +900,7 @@ $marker-size		: 9px;
 				margin-top		: 10px;
 				margin-bottom		: 5px;
 
+				background		: #9B5AE6;
 				border			: 2px solid #9B5AE6;
 				border-radius		: 1px;
 
@@ -1153,6 +1154,16 @@ $marker-size		: 9px;
 				opacity			: 1;
 	
 				transform		: scaleX(1);
+
+				/* Mobile */
+				@include media (">=mobiles", "<=mobilel") {
+					transform		: scaleY(1);
+				}
+
+				/* Laptop */
+				@include media (">mobilel", "<=laptop") {
+					transform		: scaleY(1);
+				}
 			}
 		}
 
@@ -1447,19 +1458,22 @@ $marker-size		: 9px;
 				/* Title */
 				h2 {
 					margin			: 0;
+					margin-right		: 10px;
 					margin-bottom		: 6px;
 
 					font-weight		: inherit;
-					line-height		: 1rem;
+					line-height		: 1.75rem;
 
 					/* Subtitle */
 					span {
 						display			: block;
 
 						margin			: 0;
-						margin-bottom		: 6px;
 
+						color			: #EEEEEE;
+						
 						font-size		: 0.8rem;
+						line-height		: 1rem;
 					}
 				}
 			}
@@ -1531,6 +1545,70 @@ $marker-size		: 9px;
 				margin-right		: 5px;
 				margin-top		: 20px;
 				margin-bottom		: 20px;
+			}
+
+			/* Mobile */
+			@include media (">=mobiles", "<=mobilel") {
+				width			: 95vw !important;
+
+				margin-left		: 0 !important;
+				margin-right		: 0 !important;
+				margin-top		: 2 * $card-margin !important;
+				margin-bottom		: 0 !important;
+
+				transform		: scaleY(0);
+				transform-origin	: top !important;
+
+				.head::before {
+					top			: -10px;
+					left			: calc(50% - 9px) !important;
+					right			: calc(50% - 9px) !important;
+
+					border-color		: transparent transparent #B252FF transparent !important;
+					border-width		: 0 10px 10px 10px !important;
+					border-style		: solid !important;
+				}
+
+				.head::after {
+					top			: -25px;
+					left			: calc(50% - 4px) !important;
+					right			: calc(50% - 4px) !important;
+				}
+
+				.body {
+					width			: 95vw !important;
+				}
+
+				.card_footer {
+					width			: 95vw !important;
+				}
+			}
+
+			/* Laptop */
+			@include media (">mobilel", "<=laptop") {
+				margin-left		: 0 !important;
+				margin-right		: 0 !important;
+				margin-top		: 2 * $card-margin !important;
+				margin-bottom		: 0 !important;
+
+				transform		: scaleY(0);
+				transform-origin	: top !important;
+
+				.head::before {
+					top			: -10px;
+					left			: calc(50% - 9px) !important;
+					right			: calc(50% - 9px) !important;
+
+					border-color		: transparent transparent #B252FF transparent !important;
+					border-width		: 0 10px 10px 10px !important;
+					border-style		: solid !important;
+				}
+
+				.head::after {
+					top			: -25px;
+					left			: calc(50% - 4px) !important;
+					right			: calc(50% - 4px) !important;
+				}
 			}
 		}
 		@for $i from 1 through $num-cards {
