@@ -1,5 +1,32 @@
-import styles from '../styles/About.module.scss'
-import Head from 'next/head'
+import styles from '../styles/About.module.scss';
+import Head from 'next/head';
+import Image from 'next/Image';
+import profilePicture from '../public/profile_picture.png';
+import htmlLogo from '../public/html_logo.png';
+import cssLogo from '../public/css_logo.png';
+import jsLogo from '../public/js_logo.png';
+import sassLogo from '../public/sass_logo.png';
+import jqueryLogo from '../public/jquery_logo.png';
+import reactLogo from '../public/react_logo.png';
+import nextLogo from '../public/next_logo.png';
+import nodeLogo from '../public/node_logo.png';
+import expressLogo from '../public/express_logo.png';
+import mongodbLogo from '../public/mongodb_logo.png';
+import elasticsearchLogo from '../public/elasticsearch_logo.png';
+import handlebarsLogo from '../public/handlebars_logo.png';
+import chaiLogo from '../public/chai_logo.png';
+import lodashLogo from '../public/lodash_logo.png';
+import githubLogo from '../public/github_logo.png';
+import figmaLogo from '../public/figma_logo.png';
+import unityLogo from '../public/unity_logo.png';
+import csharpLogo from '../public/csharp_logo.png';
+import vbLogo from '../public/vb_logo.png';
+import pythonLogo from '../public/python_logo.png';
+import blenderLogo from '../public/blender_logo.png';
+import asepriteLogo from '../public/aseprite_logo.png';
+import photoshopLogo from '../public/photoshop_logo.png';
+import akisLogo from '../public/akis_logo.png';
+import quLogo from '../public/qu_logo.png';
 import Lottie from 'react-lottie';
 import animation from '../public/profile_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -91,7 +118,7 @@ function Home () {
 						}}/></div>
 
 						{/* Profile Picture */}
-						<div className={styles.profile_picture}><img src="/profile_picture.jpeg"/></div>
+						<div className={styles.profile_picture}><Image placeholder='blur' src={profilePicture}/></div>
 
 						{/* Text */}
 						<div className={styles.text}>
@@ -276,7 +303,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="html_logo.png"/>
+							<div className={styles.image}><Image src={htmlLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>HTML</div>
@@ -289,7 +316,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="css_logo.png"/>
+							<div className={styles.image}><Image src={cssLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>CSS</div>
@@ -302,7 +329,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="js_logo.png"/>
+							<div className={styles.image}><Image src={jsLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>JavaScript</div>
@@ -315,7 +342,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="sass_logo.png"/>
+							<div className={styles.image}><Image src={sassLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Sass</div>
@@ -328,7 +355,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="jquery_logo.png"/>
+							<div className={styles.image}><Image src={jqueryLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>jQuery</div>
@@ -341,7 +368,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="react_logo.png"/>
+							<div className={styles.image}><Image src={reactLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>ReactJS</div>
@@ -354,7 +381,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="next_logo.png"/>
+							<div className={styles.image}><Image src={nextLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>NextJS</div>
@@ -366,7 +393,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="node_logo.png"/>
+							<div className={styles.image}><Image src={nodeLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>NodeJS</div>
@@ -379,7 +406,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="express_logo.png"/>
+							<div className={styles.image}><Image src={expressLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>ExpressJS</div>
@@ -392,7 +419,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="mongodb_logo.png"/>
+							<div className={styles.image}><Image src={mongodbLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>MongoDB</div>
@@ -405,7 +432,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="elasticsearch_logo.png"/>
+							<div className={styles.image}><Image src={elasticsearchLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>ElasticSearch</div>
@@ -418,7 +445,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="handlebars_logo.png"/>
+							<div className={styles.image}><Image src={handlebarsLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Handlebars</div>
@@ -431,7 +458,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="chai_logo.png"/>
+							<div className={styles.image}><Image src={chaiLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>ChaiJS</div>
@@ -444,7 +471,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="lodash_logo.png"/>
+							<div className={styles.image}><Image src={lodashLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Lodash</div>
@@ -457,7 +484,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="github_logo.png"/>
+							<div className={styles.image}><Image src={githubLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>GitHub</div>
@@ -470,7 +497,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="figma_logo.png"/>
+							<div className={styles.image}><Image src={figmaLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Figma</div>
@@ -483,7 +510,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="unity_logo.png"/>
+							<div className={styles.image}><Image src={unityLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Unity3D</div>
@@ -496,7 +523,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="csharp_logo.png"/>
+							<div className={styles.image}><Image src={csharpLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>C#</div>
@@ -509,7 +536,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="vb_logo.png"/>
+							<div className={styles.image}><Image src={vbLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>VB.net</div>
@@ -522,7 +549,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="python_logo.png"/>
+							<div className={styles.image}><Image src={pythonLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Python</div>
@@ -535,7 +562,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="blender_logo.png"/>
+							<div className={styles.image}><Image src={blenderLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Blender</div>
@@ -548,7 +575,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="aseprite_logo.png"/>
+							<div className={styles.image}><Image src={asepriteLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Aseprite</div>
@@ -561,7 +588,7 @@ function Home () {
 						<div className={styles.details}>
 
 							{/* Icon */}
-							<img src="photoshop_logo.png"/>
+							<div className={styles.image}><Image src={photoshopLogo}/></div>
 
 							{/* Description */}
 							<div className={styles.title}>Photoshop</div>
@@ -743,7 +770,7 @@ function Home () {
 						<div className={styles.card}>
 
 							{/* Logo */}
-							<div className={styles.logo}><img src='/akis_logo.svg'/></div>
+							<div className={styles.logo}><Image layout='fill' src={akisLogo}/></div>
 
 							{/* Meta */}
 							<div className={styles.meta}>August 2009 - July 2021</div>
@@ -772,7 +799,7 @@ function Home () {
 						<div className={styles.card}>
 
 							{/* Logo */}
-							<div className={styles.logo}><img src='/qu_logo.svg'/></div>
+							<div className={styles.logo}><Image layout='fill' src={quLogo}/></div>
 
 							{/* Meta */}
 							<div className={styles.meta}>August 2021 - Present</div>
