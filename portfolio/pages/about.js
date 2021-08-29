@@ -1,6 +1,6 @@
 import styles from '../styles/About.module.scss';
 import Head from 'next/head';
-import Image from 'next/Image';
+import Image from 'next/image';
 import profilePicture from '../public/profile_picture.png';
 import htmlLogo from '../public/html_logo.png';
 import cssLogo from '../public/css_logo.png';
