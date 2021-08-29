@@ -72,7 +72,7 @@ function Home () {
 								<div className={styles.underline} id="underline"></div>
 
 								{/* Meta */}
-								<div className={styles.meta} id="meta">First year undergraduate student at Qatar University,</div>
+								<div className={styles.meta} id="meta">First year student at Qatar University,</div>
 								<div className={styles.meta} style={{animationDelay: '4s'}} id="meta">Full Stack Developer by day,</div>
 								<div className={styles.meta} style={{animationDelay: '5.25s'}} id="meta">Game Developer by night.</div>
 
@@ -82,6 +82,13 @@ function Home () {
 
 					{/* Background End */}
 					<div style={{position: 'absolute', bottom: "10%"}} id="fade_end"></div>
+
+					{/* Footer */}
+					<div className={styles.footer}>
+						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1918 258" preserveAspectRatio="none">
+							<path className={styles.shape_fill} d="M0.5 257.5H1918C1184.5 257.5 732.5 0.5 0.5 0.5V257.5Z"></path>
+						</svg>
+					</div>
 
 				</div>
 
