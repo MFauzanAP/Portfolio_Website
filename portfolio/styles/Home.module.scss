@@ -187,7 +187,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile */
-		@include media(">=mobiles", "<=mobilel") { 
+		@include media("<=mobilel") { 
 			display			: none;
 		}
 	}
@@ -227,7 +227,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile Small */
-		@include media(">=mobiles", "<=mobiles") { 
+		@include media("<=mobiles") { 
 			top				: 50px;
 
 			svg {
@@ -354,7 +354,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile Small */
-		@include media(">=mobiles", "<=mobiles") { 
+		@include media("<=mobiles") { 
 			.title {
 				font-size		: 28px;
 			}
@@ -401,7 +401,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile Small */
-		@include media(">=mobiles", "<=mobiles") { 
+		@include media("<=mobiles") { 
 			bottom			: 69px;
 
 			svg {
@@ -474,7 +474,7 @@ $marker-size		: 9px;
 			animation		: typewriter 4s steps(100, end) 0s 1 normal both;
 
 			/* All Mobile */
-			@include media(">=mobiles", "<=tablet") { 
+			@include media("<=tablet") { 
 				animation		: none;
 
 				opacity			: 1;
@@ -609,7 +609,7 @@ $marker-size		: 9px;
 	}
 
 	/* Mobile Small */
-	@include media(">=mobiles", "<=mobiles") { 
+	@include media("<=mobiles") { 
 		width			: 95%;
 
 		h1 {
@@ -781,7 +781,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile */
-		@include media(">=mobiles", "<=mobilel") { 
+		@include media("<=mobilel") { 
 			top			: -49px;
 
 			svg {
@@ -806,7 +806,7 @@ $marker-size		: 9px;
 		height			: 100%;
 
 		/* Mobile */
-		@include media(">=mobiles", "<=mobilel") { 
+		@include media("<=mobilel") { 
 			display			: none;
 		}
 	}
@@ -957,7 +957,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile */
-		@include media(">=mobiles", "<=mobilel") { 
+		@include media("<=mobilel") { 
 			aspect-ratio		: auto;
 			width			: 95%;
 
@@ -1156,7 +1156,7 @@ $marker-size		: 9px;
 				transform		: scaleX(1);
 
 				/* Mobile */
-				@include media (">=mobiles", "<=mobilel") {
+				@include media ("<=mobilel") {
 					transform		: scaleY(1);
 				}
 
@@ -1184,7 +1184,7 @@ $marker-size		: 9px;
 	/* Background */
 	.background {
 		position		: absolute;
-		width			: 150%;
+		width			: 200%;
 		height			: 100%;
 
 		transform		: rotate(-2.5deg);
@@ -1548,7 +1548,7 @@ $marker-size		: 9px;
 			}
 
 			/* Mobile */
-			@include media (">=mobiles", "<=mobilel") {
+			@include media ("<=mobilel") {
 				width			: 95vw !important;
 
 				margin-left		: 0 !important;
