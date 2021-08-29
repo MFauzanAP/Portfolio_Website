@@ -472,6 +472,13 @@ $marker-size		: 9px;
 		/* Header */
 		h1 {
 			animation		: typewriter 4s steps(100, end) 0s 1 normal both;
+
+			/* All Mobile */
+			@include media(">=mobiles", "<=tablet") { 
+				animation		: none;
+
+				opacity			: 1;
+			}
 		}
 
 		/* Description Text */
@@ -598,6 +605,83 @@ $marker-size		: 9px;
 				width			: 150% !important;
 				height			: 150% !important;
 			}
+		}
+	}
+
+	/* Mobile Small */
+	@include media(">=mobiles", "<=mobiles") { 
+		width			: 95%;
+
+		h1 {
+			max-height		: none;
+			width			: 100%;
+
+			word-break		: normal;
+
+			opacity			: 0;
+
+			transition		: 1.5s ease;
+		}
+
+		.meta {
+			max-width		: 100%;
+
+			flex-direction		: column-reverse;
+
+			.description {
+				margin			: 20px;
+			}
+		}
+	}
+
+	/* Mobile */
+	@include media(">mobiles", "<=mobilel") { 
+		width			: 95%;
+
+		h1 {
+			max-height		: none;
+			width			: 100%;
+
+			word-break		: normal;
+			
+			opacity			: 0;
+
+			transition		: 1.5s ease;
+		}
+
+		.meta {
+			max-width		: 100%;
+
+			flex-direction		: column-reverse;
+		}
+	}
+
+	/* Tablet */
+	@include media(">mobilel", "<=tablet") { 
+		width			: calc(100% - 200px);
+
+		h1 {
+			max-height		: none;
+			width			: 100%;
+
+			word-break		: normal;
+			
+			opacity			: 0;
+
+			transition		: 1.5s ease;
+		}
+
+		.meta {
+			max-width		: 100%;
+
+			flex-direction		: column-reverse;
+		}
+	}
+
+	/* Laptop */
+	@include media(">tablet", "<=laptop") { 
+		.meta {
+			max-width		: 90%;
 		}
 	}
 
