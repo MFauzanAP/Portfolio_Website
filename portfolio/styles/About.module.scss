@@ -5,6 +5,9 @@
 /* Import sass selector */
 @use "sass:selector";
 
+/* Import media queries */
+@use "./media.scss" as *;
+
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
@@ -293,7 +296,7 @@
 		display			: flex;
 		flex-direction		: row;
 		align-items		: center;
-		justify-content		: center;
+		justify-content		: space-evenly;
 
 		margin-bottom		: 100px;
 
@@ -304,14 +307,14 @@
 			position		: absolute;
 			width			: 45%;
 			height			: 45%;
-			left			: 0%;
+			left			: -2.5%;
 			top			: -5%;
 		}
 
 		/* Profile Picture */
 		.profile_picture {
+			aspect-ratio		: 1/1;
 			flex			: 0 1 300px;
-			height			: 300px;
 
 			margin-right		: 50px;
 
@@ -333,16 +336,24 @@
 			div {
 				overflow		: visible !important;
 				position		: relative !important;
+
+				object-fit		: cover;
 			}
 		}
 
 		/* Text */
-		p {
-			font-weight		: 400;
-			font-size		: 1rem;
-			line-height		: 1.8;
-			letter-spacing		: 0.03em;
-			text-rendering		: optimizeLegibility;
+		.text {
+			flex			: 0 1 60%;
+			max-width		: 60%;
+
+			/* Description */
+			p {
+				font-weight		: 400;
+				font-size		: 1rem;
+				line-height		: 1.8;
+				letter-spacing		: 0.03em;
+				text-rendering		: optimizeLegibility;
+			}
 		}
 	}
 
@@ -478,6 +489,182 @@
 
 				text-align		: center;
 			}
+		}
+	}
+
+	/* Mobile */
+	@include media ("<=mobilel") {
+		width			: 100% !important;
+
+		padding			: 10px !important;
+
+		.details {
+			margin			: 25px !important;
+
+			flex-direction		: column !important;
+			justify-content		: center !important;
+			align-items		: flex-start !important;
+
+			.animation {
+				width			: 100% !important;
+				height			: 100% !important;
+				left			: 0% !important;
+				top			: -40% !important;
+			}
+
+			.profile_picture {
+				flex			: 0 1 250px !important;
+
+				margin-bottom		: 50px !important;
+			}
+
+			.text {
+				max-width		: 100% !important;
+
+				h2 {
+					font-size		: 1em !important;
+
+					margin-bottom		: 0 !important;
+				}
+	
+				p {
+					font-size		: 0.9em !important;
+				}
+			}
+		}
+
+		.divider {
+			margin-bottom		: 50px !important;
+		}
+
+		.grid {
+			width			: 100%;
+
+			overflow-x		: auto;
+
+			grid-template-columns	: repeat(6, 1fr);
+			grid-template-rows	: repeat(1, 1fr);
+
+			/* Scrollbar Thumb */
+			&::-webkit-scrollbar {
+				height			: 5px;
+			}
+
+			.details {
+				width			: 250px;
+
+				margin			: 0 !important;
+
+				justify-content		: flex-start !important;
+				align-items		: center !important;
+
+				font-size		: 0.9em !important;
+			}
+		}
+	}
+
+	/* Tablet */
+	@include media (">mobilel", "<=tablet") {
+		width			: 90% !important;
+
+		padding			: 10px !important;
+
+		.details {
+			margin			: 50px !important;
+
+			flex-direction		: column !important;
+			justify-content		: center !important;
+			align-items		: flex-start !important;
+
+			.animation {
+				width			: 50% !important;
+				height			: 50% !important;
+				left			: 2.5% !important;
+				top			: -10% !important;
+			}
+
+			.profile_picture {
+				flex			: 0 1 250px !important;
+			}
+
+			.text {
+				max-width		: 100% !important;
+
+				h2 {
+					font-size		: 1em !important;
+
+					margin-bottom		: 0 !important;
+				}
+	
+				p {
+					font-size		: 0.9em !important;
+				}
+			}
+		}
+
+		.divider {
+			margin-bottom		: 50px !important;
+		}
+
+		.grid {
+			.details {
+				margin			: 0 !important;
+
+				justify-content		: flex-start !important;
+				align-items		: center !important;
+
+				font-size		: 0.9em !important;
+			}
+		}
+	}
+
+	/* Laptop */
+	@include media (">tablet", "<=laptop") {
+		width			: 90% !important;
+
+		padding			: 10px !important;
+
+		.details {
+			margin-top		: 50px !important;
+			margin-bottom		: 50px !important;
+
+			justify-content		: center !important;
+
+			.animation {
+				width			: 40% !important;
+				height			: 40% !important;
+				left			: 0% !important;
+				top			: -2.5% !important;
+			}
+
+			.profile_picture {
+				flex			: 0 1 250px !important;
+			}
+
+			h2 {
+				font-size		: 1em !important;
+			}
+
+			p {
+				font-size		: 0.9em !important;
+			}
+		}
+
+		.divider {
+			margin-bottom		: 50px !important;
+		}
+	}
+
+	/* Laptop Large */
+	@include media (">laptop", "<=laptopl") {
+		.animation {
+			width			: 40% !important;
+			height			: 40% !important;
+			left			: 0% !important;
+		}
+
+		.profile_picture {
+			margin-right		: 75px !important;
 		}
 	}
 
