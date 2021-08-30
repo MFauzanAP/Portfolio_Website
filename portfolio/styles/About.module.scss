@@ -1646,6 +1646,66 @@
 		}
 	}
 
+	/* Mobile */
+	@include media ("<=mobilel") {
+		padding-left		: 0;
+		padding-right		: 0;
+
+		.slideshow {
+			.card {
+				width			: calc(100% - 25px) !important;
+
+				padding			: 50px !important;
+
+				.meta {
+					font-size		: 0.8rem !important;
+				}
+
+				.container {
+					font-size		: 0.9rem !important;
+				}
+
+				.call_to_action {
+					font-size		: 0.8rem !important;
+				}
+
+				.cover {
+					width			: 250% !important;
+				}
+			}
+		}
+	}
+
+	/* Tablets */
+	@include media ("<610px", ">mobilel") {
+		padding-left		: 0;
+		padding-right		: 0;
+
+		.slideshow {
+			.card {
+				width			: calc(100% - 50px) !important;
+
+				padding			: 50px !important;
+
+				.meta {
+					font-size		: 0.9rem !important;
+				}
+
+				.container {
+					font-size		: 1rem !important;
+				}
+
+				.call_to_action {
+					font-size		: 0.9rem !important;
+				}
+
+				.cover {
+					width			: 250% !important;
+				}
+			}
+		}
+	}
+
 }
 
 
