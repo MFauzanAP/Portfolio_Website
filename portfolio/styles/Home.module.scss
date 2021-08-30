@@ -616,6 +616,7 @@ $marker-size		: 9px;
 			max-height		: none;
 			width			: 100%;
 
+			font-size		: 1.75rem;
 			word-break		: normal;
 
 			opacity			: 0;
@@ -629,7 +630,12 @@ $marker-size		: 9px;
 			flex-direction		: column-reverse;
 
 			.description {
-				margin			: 20px;
+				margin			: 25px;
+
+				p {
+					font-size		: 0.9rem;
+					line-height		: 1.25rem;
+				}
 			}
 		}
 	}
@@ -641,7 +647,8 @@ $marker-size		: 9px;
 		h1 {
 			max-height		: none;
 			width			: 100%;
-
+			
+			font-size		: 1.75rem;
 			word-break		: normal;
 			
 			opacity			: 0;
@@ -653,6 +660,15 @@ $marker-size		: 9px;
 			max-width		: 100%;
 
 			flex-direction		: column-reverse;
+
+			.description {
+				margin			: 25px;
+
+				p {
+					font-size		: 0.9rem;
+					line-height		: 1.25rem;
+				}
+			}
 		}
 	}
 
@@ -910,6 +926,8 @@ $marker-size		: 9px;
 			/* Title */
 			h3 {
 				margin			: 0;
+
+				font-size		: 16px;
 			}
 
 			/* Text */
@@ -980,6 +998,22 @@ $marker-size		: 9px;
 				align-items		: center;
 
 				text-align		: center;
+
+				h3 {
+					font-size		: 1rem;
+				}
+
+				p {
+					font-size		: 0.9rem;
+				}
+
+				.call_to_action {
+					width			: 150px;
+
+					margin 			: 10px 0;
+
+					font-size		: 0.9rem;
+				}
 			}
 
 			/* Media Container */
@@ -1436,6 +1470,8 @@ $marker-size		: 9px;
 
 				/* Icon Box */
 				.icon_box {
+					aspect-ratio		: 1/1;
+
 					display			: inline;
 					float			: left;
 					width			: 50px;
@@ -1559,6 +1595,10 @@ $marker-size		: 9px;
 				transform		: scaleY(0);
 				transform-origin	: top !important;
 
+				.head {
+					font-size		: 0.9rem;
+				}
+
 				.head::before {
 					top			: -10px;
 					left			: calc(50% - 9px) !important;
@@ -1577,6 +1617,8 @@ $marker-size		: 9px;
 
 				.body {
 					width			: 95vw !important;
+
+					font-size		: 0.9rem;
 				}
 
 				.card_footer {
