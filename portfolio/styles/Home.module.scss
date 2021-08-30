@@ -1090,7 +1090,7 @@ $marker-size		: 9px;
 		}
 
 		/* Laptop L */
-		@include media("<=laptopl", ">=laptop") { 
+		@include media("<=1875px", ">=laptop") { 
 			aspect-ratio		: auto;
 			max-width		: 60%;
 
