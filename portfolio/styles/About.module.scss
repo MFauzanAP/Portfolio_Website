@@ -905,7 +905,7 @@
 	}
 
 	/* Mobile Medium */
-	@include media ("<=mobilem") {
+	@include media ("<mobilel") {
 		padding			: 40px;
 		padding-bottom		: 150px;
 
@@ -944,7 +944,7 @@
 	}
 
 	/* Mobile */
-	@include media (">mobilem", "<=mobilel") {
+	@include media (">=mobilel", "<tablet") {
 		padding			: 25px;
 		padding-bottom		: 150px;
 
@@ -983,7 +983,7 @@
 	}
 
 	/* Tablet */
-	@include media (">mobilel", "<=tablet") {
+	@include media (">=tablet", "<laptop") {
 		.background {
 			top			: -79px;
 
@@ -1017,7 +1017,7 @@
 	}
 
 	/* Laptop */
-	@include media (">tablet", "<=laptop") {
+	@include media (">=laptop", "<laptopl") {
 		.background {
 			top			: -99px;
 
@@ -1049,7 +1049,7 @@
 	}
 
 	/* Laptop Large */
-	@include media (">laptop", "<=laptopl") {
+	@include media (">=laptopl", "<1875px") {
 		.grid {
 			width			: 85%;
 
