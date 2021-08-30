@@ -134,7 +134,7 @@
 	/* Background */
 	.background {
 		position		: absolute;
-		bottom			: -1px;
+		bottom			: -2px;
 		left			: 0;
 		width			: 100%;
 
@@ -828,14 +828,7 @@
 
 		opacity			: 0;
 
-		visibility		: hidden;
-
 		transition		: 0.5s ease-in-out;
-
-		/* Hover */
-		&:hover {
-			visibility		: visible;
-		}
 
 		/* Scrollbar Thumb */
 		&::-webkit-scrollbar-thumb {
@@ -909,6 +902,164 @@
 		width			: 100%;
 		height			: 320px;
 		bottom			: -320px;
+	}
+
+	/* Mobile Medium */
+	@include media ("<=mobilem") {
+		padding			: 40px;
+		padding-bottom		: 150px;
+
+		.background {
+			width			: 175%;
+			left			: -37.5%;
+			top			: -59px;
+
+			svg {
+				height		: 60px;
+			}
+		}
+
+		.grid {
+			width			: 100%;
+
+			grid-template-columns	: repeat(1, minmax(140px, 1fr));
+
+			.details {
+				.image	{
+					width			: 64px;
+					height			: 64px;
+
+					margin-top		: 25px;
+				}
+
+				.title {
+					font-size		: 14px;
+				}
+
+				.description {
+					font-size		: 14px;
+				}
+			}
+		}
+	}
+
+	/* Mobile */
+	@include media (">mobilem", "<=mobilel") {
+		padding			: 25px;
+		padding-bottom		: 150px;
+
+		.background {
+			width			: 150%;
+			left			: -25%;
+			top			: -79px;
+
+			svg {
+				height		: 80px;
+			}
+		}
+
+		.grid {
+			width			: 100%;
+
+			grid-template-columns	: repeat(2, minmax(140px, 1fr));
+
+			.details {
+				.image	{
+					width			: 48px;
+					height			: 48px;
+
+					margin-top		: 25px;
+				}
+
+				.title {
+					font-size		: 12px;
+				}
+
+				.description {
+					font-size		: 12px;
+				}
+			}
+		}
+	}
+
+	/* Tablet */
+	@include media (">mobilel", "<=tablet") {
+		.background {
+			top			: -79px;
+
+			svg {
+				height		: 80px;
+			}
+		}
+
+		.grid {
+			width			: 100%;
+
+			grid-template-columns	: repeat(3, minmax(140px, 1fr));
+
+			.details {
+				.image	{
+					width			: 64px;
+					height			: 64px;
+
+					margin-top		: 35px;
+				}
+
+				.title {
+					font-size		: 14px;
+				}
+
+				.description {
+					font-size		: 14px;
+				}
+			}
+		}
+	}
+
+	/* Laptop */
+	@include media (">tablet", "<=laptop") {
+		.background {
+			top			: -99px;
+
+			svg {
+				height		: 100px;
+			}
+		}
+
+		.grid {
+			width			: 100%;
+
+			.details {
+				.image	{
+					width			: 64px;
+					height			: 64px;
+
+					margin-top		: 45px;
+				}
+
+				.title {
+					font-size		: 14px;
+				}
+
+				.description {
+					font-size		: 14px;
+				}
+			}
+		}
+	}
+
+	/* Laptop Large */
+	@include media (">laptop", "<=laptopl") {
+		.grid {
+			width			: 85%;
+
+			.details {
+				.image	{
+					width			: 96px;
+					height			: 96px;
+				}
+			}
+		}
 	}
 
 }
