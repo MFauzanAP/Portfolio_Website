@@ -1784,6 +1784,11 @@
 		grid-template-columns	: repeat(4, minmax(200px, 1fr));
 		gap			: 50px;
 
+		/* Scrollbar Thumb */
+		&::-webkit-scrollbar {
+			height			: 5px;
+		}
+
 		/* Details */
 		.details {
 			display			: flex;
@@ -1858,6 +1863,55 @@
 		border-top		: 2px solid transparent;
 
 		box-shadow		: 0 4px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	/* Mobile */
+	@include media ("<tablet") {
+		padding			: 25px;
+
+		.header {
+			padding			: 20px 50px !important;
+
+			font-size		: 1rem !important;
+		}
+
+		.grid {
+			width			: 100%;
+
+			padding-bottom		: 50px;
+
+			overflow-x		: auto;
+
+			.title {
+				font-size		: 1rem;
+			}
+
+			.underline {
+				width			: 50px;
+			}
+
+			.description {
+				font-size		: 0.9rem;
+			}
+		}
+	}
+
+	/* Tablet */
+	@include media ("<laptop", ">=tablet") {
+		.grid {
+			width			: 100%;
+
+			grid-template-columns	: repeat(2, minmax(200px, 1fr));
+			grid-template-rows	: repeat(2, minmax(200px, 1fr));
+		}
+	}
+
+	/* Laptop */
+	@include media ("<laptopl", ">=laptop") {
+		.grid {
+			grid-template-columns	: repeat(2, minmax(200px, 1fr));
+			grid-template-rows	: repeat(2, minmax(200px, 1fr));
+		}
 	}
 
 }
