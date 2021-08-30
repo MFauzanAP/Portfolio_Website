@@ -814,6 +814,14 @@ div {
 			display			: none;
 		}
 	}
+
+	/* Tablets and Mobile */
+	@include media ("<=tablet") {
+		.arrow {
+			display			: none;
+		}
+	}
+
 }
 
 
