@@ -797,7 +797,7 @@ $marker-size		: 9px;
 		}
 
 		/* Mobile */
-		@include media("<=mobilel") { 
+		@include media("<tablet") { 
 			top			: -49px;
 
 			svg {
@@ -1024,7 +1024,7 @@ $marker-size		: 9px;
 		}
 
 		/* Tablet */
-		@include media(">=tablet", "<laptop") { 
+		@include media("<=tablet", ">mobilel") { 
 			aspect-ratio		: auto;
 			max-width		: 80%;
 

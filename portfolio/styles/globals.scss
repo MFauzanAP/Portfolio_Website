@@ -1140,7 +1140,7 @@ div {
 
 			svg {
 				height			: 25px;
-				top			: 100%;
+				top			: calc(100% - 1px);
 			}
 		}
 
