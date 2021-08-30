@@ -134,7 +134,7 @@
 	/* Background */
 	.background {
 		position		: absolute;
-		bottom			: 0;
+		bottom			: -1px;
 		left			: 0;
 		width			: 100%;
 
@@ -238,6 +238,63 @@
 			animation-delay		: 1s;
 		}
 
+	}
+
+	/* Mobile */
+	@include media ("<=mobilel") { 
+		.background {
+			svg {
+				height			: 75px;
+			}
+		}
+
+		.welcome_text {
+			.meta {
+				font-size		: 1em;
+			}
+
+			.title {
+				font-size		: 1.75em;
+				line-height		: 1.25em;
+			}
+
+			.underline {
+				width			: 160px;
+			}
+		}
+	}
+
+	/* Tablet */
+	@include media ("<=tablet", ">mobilel") { 
+		.background {
+			svg {
+				height			: 100px;
+			}
+		}
+		
+		.welcome_text {
+			.meta {
+				font-size		: 1.2em;
+			}
+
+			.title {
+				font-size		: 1.95em;
+				line-height		: 1.25em;
+			}
+
+			.underline {
+				width			: 170px;
+			}
+		}
+	}
+
+	/* Laptop */
+	@include media ("<=laptop", ">tablet") { 
+		.background {
+			svg {
+				height			: 130px;
+			}
+		}
 	}
 
 }
