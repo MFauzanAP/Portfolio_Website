@@ -503,6 +503,21 @@ button {
 				top			: 30%;
 			}
 		}
+
+		/* Laptop Large */
+		@include media('<=laptop', '>tablet') {
+			max-width		: 80%;
+
+			a {
+				margin-left		: 40px;
+				margin-right		: 40px;
+			}
+		}
+
+		/* Laptop Large */
+		@include media('<=laptopl', '>laptop') {
+			max-width		: 75%;
+		}
 	}
 
 	/* On Active */
