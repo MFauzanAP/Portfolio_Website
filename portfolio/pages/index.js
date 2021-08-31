@@ -435,7 +435,7 @@ function Home () {
 								</div>
 								<div>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
-									07/2021 - Present
+									07/2021 - 08/2021
 								</div>
 								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
 
@@ -514,7 +514,7 @@ function Home () {
 								</div>
 								<div>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
-									06/2021 - Present
+									06/2021 - 08/2021
 								</div>
 								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
 
