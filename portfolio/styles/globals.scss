@@ -210,6 +210,9 @@ button {
 			justify-content		: flex-start;
 			align-items		: center;
 
+			animation-duration	: 1.5s;
+			animation-name		: navbar_children_hide;
+
 			/* Logo */
 			.logo {
 				cursor			: pointer;
@@ -244,6 +247,9 @@ button {
 			align-items		: center;
 
 			order			: 1;
+
+			animation-duration	: 1.5s;
+			animation-name		: navbar_children_hide;
 
 			/* Active */
 			&.active {
@@ -434,6 +440,9 @@ button {
 			text-decoration		: none;
 
 			color			: #3D3D3D;
+
+			animation-duration	: 1.5s;
+			animation-name		: navbar_children_hide;
 
 			/* Hover */
 			&:hover {
@@ -782,6 +791,7 @@ button {
 		/* Mobile */
 		@include media('<=tablet') {
 			max-height		: $navbar-height-2 * 0.75;
+			height			: $navbar-height-2 * 0.75;
 
 			justify-content		: flex-end;
 		}
@@ -1513,7 +1523,6 @@ div {
 	0% {
 		position		: fixed;
 		max-width		: 100%;
-		max-height		: $navbar-height-2;
 		height			: $navbar-height-2;
 		top			: 0;
 
@@ -1528,7 +1537,6 @@ div {
 	50% {
 		position		: fixed;
 		max-width		: 100%;
-		max-height		: 0;
 		height			: 0;
 		top			: -$navbar-height-2;
 
@@ -1543,7 +1551,6 @@ div {
 	51% {
 		position		: absolute;
 		max-width		: 70%;
-		max-height		: 0;
 		height			: 0;
 		top			: 0;
 
@@ -1556,9 +1563,20 @@ div {
 		align-items		: flex-start;
 	}
 	100% {
-		max-height		: $navbar-height-1;
 		height			: $navbar-height-1;
 		top			: 35px;
+	}
+}
+
+@keyframes navbar_children_hide {
+	0% {
+		opacity			: 0;
+	}
+	51% {
+		opacity			: 0;
+	}
+	100% {
+		opacity			: 1;
 	}
 }
 
