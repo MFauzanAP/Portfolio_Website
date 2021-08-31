@@ -324,20 +324,6 @@ button {
 
 				transition		: 0.15s ease;
 
-				/* Hover */
-				&:hover {
-					width			: auto;
-
-					transform		: scaleY(1);
-
-					/* Button */
-					+ .button {
-						color			: #9B5AE6;
-						
-						transform		: scale(1.15);
-					}
-				}
-
 				/* Underline */
 				.underline {
 					width			: 75px;
@@ -406,6 +392,8 @@ button {
 
 				font-size		: 1.25em;
 				text-align		: center;
+
+				transform		: scale(0.75);
 
 				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
@@ -793,6 +781,8 @@ button {
 
 		/* Mobile */
 		@include media('<=tablet') {
+			max-height		: $navbar-height-2 * 0.75;
+
 			justify-content		: flex-end;
 		}
 	}
