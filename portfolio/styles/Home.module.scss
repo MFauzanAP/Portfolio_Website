@@ -254,7 +254,11 @@ $marker-size		: 9px;
 
 		/* Tablet */
 		@include media(">mobilel", "<=tablet") { 
+			width				: 110%;
 			top				: 25px;
+			left				: -5%;
+
+			transform			: scaleX(-1);
 
 			svg {
 				height			: 90px;

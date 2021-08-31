@@ -15,6 +15,46 @@ import CopyToClipboard from '../utils/copy_to_clipboard';
 /* ------------------------------------------------------------------------------------------------------------------ */
 class Navbar extends React.Component {
 
+	/* ==================================================== Variables =================================================== */
+
+	//	Reference to navigation menu
+	nav_menu_ref = React.createRef();
+
+
+
+	/* ===================================================== On Load ==================================================== */
+	constructor (props) {
+		super(props);
+	}
+
+
+
+	/* ==================================================== Functions =================================================== */
+
+	//	Function to toggle the navigation menu
+	ToggleMenu () {
+
+		//	Get menu element
+		var menu = this.nav_menu_ref.current;
+
+		//	Check if menu is already active
+		if (menu.className.includes('active')) {
+
+			//	Close menu
+			menu.className = 'navigation';
+
+		}
+
+		//	If menu is closed
+		else {
+
+			//	Add active class to menu
+			menu.className += ' active';
+
+		}
+
+	}
+
 	/* ==================================================== On Render =================================================== */
 	render () {
 
@@ -28,19 +68,19 @@ class Navbar extends React.Component {
 		return (<div className="navbar" id="navbar">
 
 			{/* Home */}
-			<Link href="/"><a className={home}>Home</a></Link>
+			<Link href="/"><a className={`${home} desktop laptop`}>Home</a></Link>
 
 			{/* Projects */}
-			<Link href="/projects"><a className={projects}>Projects</a></Link>
+			<Link href="/projects"><a className={`${projects} desktop laptop`}>Projects</a></Link>
 
 			{/* Logo */}
 			<div className="logo_container"><img className="logo" src="/logo.svg"/></div>
 
 			{/* About */}
-			<Link href="/about"><a className={about}>About</a></Link>
+			<Link href="/about"><a className={`${about} desktop laptop`}>About</a></Link>
 
 			{/* Contact */}
-			<Link href="/contact"><a className={contact}>Contact</a></Link>
+			<Link href="/contact"><a className={`${contact} desktop laptop`}>Contact</a></Link>
 
 			{/* Social Media Contact */}
 			<div className="social_media">
@@ -63,6 +103,35 @@ class Navbar extends React.Component {
 						<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
 					</ul>
 
+				</div>
+
+			</div>
+
+			{/* Navigation */}
+			<div className="navigation" ref={this.nav_menu_ref}>
+			
+				{/* Menu */}
+				<div className="menu">
+
+					{/* Header */}
+					<h3>Social Media</h3>
+					<div className="underline"></div>
+
+					{/* Links */}
+					<ul style={{listStyleType: 'none', paddingInlineStart: '0', display: "flex", flexDirection: "row"}}>
+						<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></li></a>
+						<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
+						<a href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
+						<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
+					</ul>
+
+				</div>
+
+				{/* Button */}
+				<div className="button" onClick={this.ToggleMenu.bind(this)}>
+					<div className="bar"></div>
+					<div className="bar"></div>
+					<div className="bar"></div>
 				</div>
 
 			</div>
