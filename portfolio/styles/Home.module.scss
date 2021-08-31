@@ -827,9 +827,16 @@ $marker-size		: 9px;
 
 	/* Circles */
 	.circles {
+		pointer-events		: none !important;
+
 		position		: absolute;
 		width			: 100%;
 		height			: 100%;
+
+		/* Canvas */
+		canvas {
+			pointer-events		: none !important;
+		}
 
 		/* Mobile */
 		@include media("<=mobilel") { 
