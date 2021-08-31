@@ -1,14 +1,30 @@
+import React, { useRef } from 'react';
 import styles from '../styles/Error.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
-import Lottie from 'react-lottie';
-import animation from '../public/404_animation.json';
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
 //	Declare output function
 function Error () {
 
+	/* ==================================================== Variables =================================================== */
+
+	//	Reference
+	const ref = useRef(null);
+
+
+
+	/* =================================================== Use Effect =================================================== */
+	React.useEffect(() => {
+
+		// 	Import lottie
+		import("@lottiefiles/lottie-player");
+
+	})
+
+
+	
 	/* ================================================ Output final html =============================================== */
 	return (
 		<div className={styles.container}>
@@ -30,15 +46,13 @@ function Error () {
 				<div className={styles.body}>
 
 					{/* Animation */}
-					<div className={styles.animation}><Lottie options={{
-						loop			: true,
-						autoPlay		: true,
-						animationData		: animation,
-						rendererSettings	: {
-							className		: styles.player,
-							progressiveLoad		: true
-						}
-					}}/></div>
+					<div className={styles.animation}><lottie-player 
+							src='./404_animation.json' 
+							ref={ref}
+							speed="1" 
+							loop 
+							autoplay
+					/></div>
 
 					{/* Header */}
 					<div className={styles.header}>PAGE NOT FOUND</div>

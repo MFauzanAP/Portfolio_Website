@@ -1,3 +1,4 @@
+import React, { useRef } from 'react';
 import styles from '../styles/About.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -27,8 +28,6 @@ import asepriteLogo from '../public/aseprite_logo.png';
 import photoshopLogo from '../public/photoshop_logo.png';
 import akisLogo from '../public/akis_logo.png';
 import quLogo from '../public/qu_logo.png';
-import Lottie from 'react-lottie';
-import animation from '../public/profile_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
@@ -39,6 +38,23 @@ import ContactMe from './components/contact_me';
 
 //	Declare output function
 function Home () {
+
+	/* ==================================================== Variables =================================================== */
+
+	//	Reference
+	const ref = useRef(null);
+
+
+
+	/* =================================================== Use Effect =================================================== */
+	React.useEffect(() => {
+
+		// 	Import lottie
+		import("@lottiefiles/lottie-player");
+
+	})
+
+
 
 	/* ================================================ Output final html =============================================== */
 	return (
@@ -108,14 +124,13 @@ function Home () {
 					<div className={styles.details}>
 
 						{/* Animation */}
-						<div className={styles.animation}><Lottie options={{
-							loop			: true,
-							autoPlay		: true,
-							animationData		: animation,
-							rendererSettings	: {
-								progressiveLoad		: true
-							}
-						}}/></div>
+						<div className={styles.animation}><lottie-player 
+							src='./profile_animation.json' 
+							ref={ref}
+							speed="1" 
+							loop 
+							autoplay
+						/></div>
 
 						{/* Profile Picture */}
 						<div className={styles.profile_picture}><Image placeholder='blur' src={profilePicture}/></div>

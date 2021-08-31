@@ -3,8 +3,6 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
 import Link from 'next/link';
-import Lottie from 'react-lottie';
-import contactAnimation from '../../public/contact_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 
@@ -23,14 +21,12 @@ class ContactMe extends React.Component {
 		<Controller><Scene classToggle='active' reverse={false}><div className='contact_me'>
 
 			{/* Animation */}
-			<div className='animation'><Lottie options={{
-				loop			: true,
-				autoPlay		: true,
-				animationData		: contactAnimation,
-				rendererSettings	: {
-					progressiveLoad		: true
-				}
-			}}/></div>
+			<div className='animation'><lottie-player 
+				src='./contact_animation.json'
+				speed="1" 
+				loop 
+				autoplay
+			/></div>
 
 			{/* Description */}
 			<div className="description">

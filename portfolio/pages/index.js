@@ -1,9 +1,8 @@
+import React, { useRef } from 'react';
 import styles from '../styles/Home.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
 import Particles from 'react-particles-js';
-import Lottie from 'react-lottie';
-import codeAnimation from '../public/code_animation.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
@@ -14,6 +13,23 @@ import ContactMe from './components/contact_me';
 
 //	Declare output function
 function Home () {
+
+	/* ==================================================== Variables =================================================== */
+
+	//	Reference
+	const ref = useRef(null);
+
+
+
+	/* =================================================== Use Effect =================================================== */
+	React.useEffect(() => {
+
+		// 	Import lottie
+		import("@lottiefiles/lottie-player");
+
+	})
+
+
 
 	/* ================================================ Output final html =============================================== */
 	return (
@@ -125,17 +141,13 @@ function Home () {
 						</div>
 
 						{/* Image */}
-						<div className={styles.image}>
-							<Lottie options={{
-								loop			: true,
-								autoPlay		: true,
-								animationData		: codeAnimation,
-								rendererSettings	: {
-									className		: styles.player,
-									progressiveLoad		: true
-								}
-							}}/>
-						</div>
+						<div className={styles.image}><lottie-player 
+							src='./code_animation.json' 
+							ref={ref}
+							speed="1" 
+							loop 
+							autoplay
+						/></div>
 
 					</div>
 
