@@ -318,6 +318,7 @@ button {
 
 				display			: flex;
 				flex-direction		: column;
+				justify-content		: center;
 				align-items		: center;
 
 				opacity			: 0;
@@ -347,14 +348,15 @@ button {
 
 				/* Underline */
 				.underline {
-					width			: 75px;
+					width			: 150px;
 					height			: 0px;
 
-					margin-top		: -10px;
-					margin-bottom		: -10px;
+					margin-top		: 50px;
+					margin-bottom		: 50px;
 
-					border			: 1px solid #DDDDDD;
-					border-radius		: 1px;
+					background		: #FFFFFF;
+					border			: 2px solid #FFFFFF;
+					border-radius		: 2px;
 				}
 
 				/* Links */
@@ -393,6 +395,57 @@ button {
 					/* Underline */
 					&::after {
 						display			: none;
+					}
+				}
+
+				/* Link */
+				.link {
+					position		: relative;
+					height			: auto;
+
+					/* Hover */
+					&:hover {
+						color			: #FFFFFF;
+
+						/* Underline */
+						&::after {
+							transform		: scaleX(0.9);
+
+							background-color	: #FFFFFF;
+						}
+					}
+
+					/* Underline */
+					&::after {
+						position		: absolute;
+						bottom			: 0.75em;
+						left			: 12.5%;
+						width			: 75%;
+						height			: 0.2em;
+
+						transform		: scaleX(0);
+						transform-origin	: center;
+
+						background-color	: #FFFFFF;
+						opacity			: 1;
+
+						content			: '';
+
+						transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+					}
+
+					/* Active */
+					&.active {
+						
+						/* Underline */
+						&::after {
+							transform		: scaleX(0.7);
+						}
+
+						/* Hover */
+						&:hover::after {
+							transform		: scaleX(0.9);
+						}
 					}
 				}
 			}
