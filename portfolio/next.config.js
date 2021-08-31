@@ -1,10 +1,9 @@
-const withImages = require('next-images');
-const withCSS = require('@zeit/next-css');
-const config = {};
+const config = {
+        reactStrictMode         : true,
+        onDemandEntries         : {
+                maxInactiveAge          : 60 * 1000,
+                pagesBufferLength       : 5,
+        }
+};
 
-// module.exports = withCSS(withImages({
-//   	cssLoaderOptions	: {
-// 		url			: false
-// 	}
-// }))
 module.exports = config
