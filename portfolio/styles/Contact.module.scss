@@ -5,6 +5,9 @@
 /* Import sass selector */
 @use "sass:selector";
 
+/* Import media queries */
+@use "./media.scss" as *;
+
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
@@ -101,8 +104,144 @@
 
 
 
+/* ======================================================= Map ====================================================== */
+.map {
+	position		: relative;
+	width			: 100%;
+	height			: 100vh;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
+
+	overflow		: hidden;
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Background */
+	.background {
+		position		: absolute;
+		width			: 200%;
+		height			: 200%;
+		left			: 0;
+		top			: 0;
+		
+		background		: #FAFAFA;
+
+		animation		: background_gradient 30s ease 1s infinite;
+		
+		z-index			: -1;
+	}
+
+	/* Navbar Background */
+	.navbar_background {
+		position		: absolute;
+		top			: 0;
+		left			: 0;
+		width			: 100%;
+
+		transform		: scaleX(-1);
+
+		line-height		: 0;
+
+		&::before {
+			position		: absolute;
+			width			: 100%;
+			height			: 100%;
+			bottom			: 100%;
+			
+			background		: #FFFFFF;
+
+			content			: '';
+		}
+		    
+		svg {
+			position		: relative;
+			width			: calc(100% + 1.3px);
+			height			: 160px;
+
+			display			: block;
+
+			filter			: drop-shadow(4px 4px 25px rgba(0, 0, 0, .15));
+		}
+		    
+		.shape_fill {
+			fill			: #FFFFFF;
+		}
+
+		/* Mobile Small */
+		@include media("<=mobiles") { 
+			top			: 50px;
+
+			svg {
+				height			: 50px;
+				width			: 125%;
+				left			: -12.5%;
+
+				filter			: none;
+			}
+		}
+
+		/* Mobile */
+		@include media(">mobiles", "<=mobilel") { 
+			top			: 40px;
+
+			svg {
+				height			: 70px;
+				width			: 125%;
+				left			: -12.5%;
+
+				filter			: none;
+			}
+		}
+
+		/* Tablet */
+		@include media(">mobilel", "<=tablet") { 
+			width			: 110%;
+			top			: 25px;
+			left			: -5%;
+
+			transform			: scaleX(1);
+
+			svg {
+				height			: 90px;
+
+				filter			: none;
+			}
+		}
+
+		/* Laptop */
+		@include media(">tablet", "<=laptop") { 
+			top			: 15px;
+
+			svg {
+				height			: 120px;
+
+				filter			: none;
+			}
+		}
+	}
+}
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                      Keyframes                                                     */
 /* ------------------------------------------------------------------------------------------------------------------ */
+
+@keyframes background_gradient {
+	0% {
+		transform		: translateX(0%);
+	}
+	50% {
+		transform		: translateX(-25%);
+	}
+	100% {
+		transform		: translateX(0%);
+	}
+}
