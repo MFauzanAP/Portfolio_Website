@@ -68,7 +68,7 @@ function Contact () {
 					/></div>
 
 					{/* Description */}
-					<div class={styles.description}>
+					<div className={styles.description}>
 
 						{/* Title */}
 						<div className={styles.title}>REACH ME</div>
