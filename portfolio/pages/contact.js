@@ -67,6 +67,31 @@ function Contact () {
 						autoplay
 					/></div>
 
+					{/* Description */}
+					<div class={styles.description}>
+
+						{/* Title */}
+						<div className={styles.title}>REACH ME</div>
+
+						{/* Email */}
+						<div className={styles.details}>
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'envelope']}/>
+							<span className={styles.bold}>Email - </span>
+							<span className={styles.text}>muhammadfauzanaristyaputra@gmail.com</span>
+						</div>
+
+						{/* Address */}
+						<div className={styles.details}>
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'map-marker-alt']}/>
+							<span className={styles.bold}>Address - </span>
+							<span className={styles.text}>Al Khor Community, Al Khor, Qatar</span>
+						</div>
+						
+					</div>
+
+					{/* Map */}
+					<div className={styles.map}><iframe src="https://maps.google.com/maps?q=Al%20Khor%20Community&amp;z=15&amp;ie=UTF8&amp;output=embed"/></div>
+
 					{/* Background End */}
 					<div style={{position: 'absolute', bottom: "10%"}} id="background_end"></div>
 
