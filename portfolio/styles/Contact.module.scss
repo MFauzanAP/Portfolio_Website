@@ -245,10 +245,17 @@
 	.description {
 		margin-right		: 100px;
 
+		background-color	: #F8F8F8;
+		border-radius		: 50px;
+
+		box-shadow		: 0 0 50px 50px #F8F8F8;
+
 		display			: flex;
 		flex-direction		: column;
 		justify-content		: center;
 		align-items		: flex-start;
+
+		z-index			: 0;
 
 		letter-spacing		: 0.25px;
 		
@@ -256,9 +263,9 @@
 		.title {
 			position		: relative;
 
-			margin-bottom		: 35px;
+			margin-bottom		: 50px;
 
-			color			: #9B5AE6;
+			color			: #3D3D3D;
 
 			font-family		: Work Sans;
 			font-size		: 2.5rem;
@@ -270,12 +277,13 @@
 				position		: absolute;
 				width			: 75%;
 				height			: 0.1em;
-				left			: -5%;
+				left			: 0;
 				bottom			: -0.5rem;
 
 				margin-left		: 20px;
 
-				background-color	: #9B5AE6;
+				background-color	: #3D3D3D;
+				border-radius		: 0.05em;
 				opacity			: 1;
 
 				content			: '';
@@ -299,7 +307,7 @@
 
 			/* Bold */
 			.bold {
-				color			: #9B5AE6;
+				color			: #3D3D3D;
 
 				font-family		: Lato;
 				font-size		: 1.25rem;
@@ -317,6 +325,34 @@
 				letter-spacing		: 1.5px;
 			}
 		}
+
+		/* Social Media */
+		.social_media {
+			width			: 100%;
+
+			padding			: 0;
+
+			/* Social Media Link */
+			li {
+				cursor			: pointer;
+
+				display			: inline-block;
+
+				font-size		: 2em;
+				text-align		: center;
+
+				margin			: 5px 25px;
+
+				transition		: 0.1s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+				/* Hover */
+				&:hover {
+					color			: #9B5AE6;
+					
+					transform		: scale(1.25);
+				}
+			}
+		}
 	}
 
 	/* Map */
@@ -326,7 +362,7 @@
 
 		overflow		: visible;
 
-		opacity			: 0.85;
+		opacity			: 0.75;
 
 		box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
 
@@ -377,6 +413,8 @@
 		iframe {
 			width			: 100%;
 			height			: 100%;
+
+			background		: #F8F8F8;
 
 			border			: none;
 

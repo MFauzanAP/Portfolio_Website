@@ -86,6 +86,13 @@ function Contact () {
 							<span className={styles.bold}>Address - </span>
 							<span className={styles.text}>Al Khor Community, Al Khor, Qatar</span>
 						</div>
+
+						{/* Social Media */}
+						<ul className={styles.social_media}>
+							<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'github']}/></li></a>
+							<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'linkedin']}/></li></a>
+							<a href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'instagram']}/></li></a>
+						</ul>
 						
 					</div>
 
