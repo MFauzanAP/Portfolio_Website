@@ -6,10 +6,10 @@ import Particles from 'react-particles-js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
-import Slideshow from './components/slideshow';
-import ContactMe from './components/contact_me';
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import Slideshow from '../components/slideshow';
+import ContactMe from '../components/contact_me';
 
 //	Declare output function
 function Home () {
