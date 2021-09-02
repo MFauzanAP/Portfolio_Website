@@ -237,18 +237,17 @@
 		top			: 10%;
 
 		opacity			: 0.25;
-
-		filter			: blur(0px);
 	}
 
 	/* Description */
 	.description {
 		margin-right		: 100px;
+		padding			: 25px;
 
-		background-color	: #F8F8F8;
-		border-radius		: 50px;
+		background-color	: #FFFFFF;
+		border-radius		: 25px;
 
-		box-shadow		: 0 0 50px 50px #F8F8F8;
+		box-shadow		: 0 0 50px 50px #FFFFFF;
 
 		display			: flex;
 		flex-direction		: column;
@@ -419,6 +418,27 @@
 			border			: none;
 
 			z-index			: 0;
+		}
+	}
+
+	/* Divider */
+	.divider {
+		position		: absolute;
+		bottom			: 0;
+		left			: 0;
+		width			: 100%;
+
+		transform		: rotate(180deg);
+
+		svg {
+			position	: relative;
+			display		: block;
+			width		: calc(100% + 1.3px);
+			height		: 150px;
+		}
+
+		.shape_fill {
+			fill		: #FFFFFF;
 		}
 	}
 }

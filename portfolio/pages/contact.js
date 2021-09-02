@@ -71,7 +71,7 @@ function Contact () {
 					<div className={styles.description}>
 
 						{/* Title */}
-						<div className={styles.title}>REACH ME</div>
+						<div className={styles.title}>CONTACT ME</div>
 
 						{/* Email */}
 						<div className={styles.details}>
@@ -101,6 +101,13 @@ function Contact () {
 
 					{/* Background End */}
 					<div style={{position: 'absolute', bottom: "10%"}} id="background_end"></div>
+
+					{/* Divider */}
+					<div className={styles.divider}>
+						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+							<path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" className={styles.shape_fill}></path>
+						</svg>
+					</div>
 
 				</div>
 
