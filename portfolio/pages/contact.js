@@ -87,7 +87,7 @@ function Contact () {
 
 				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#background_end">
-					<div className="navbar_container"><Navbar pathname=""/></div>
+					<div className="navbar_container"><Navbar pathname="contact"/></div>
 				</Scene></Controller>
 
 			</div>
