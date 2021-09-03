@@ -237,7 +237,7 @@
 
 		/* Grid */
 		.grid {
-			max-height		: 100vh;
+			transform		: scaleY(1);
 		}
 	}
 	
@@ -396,7 +396,6 @@
 
 	/* Grid */
 	.grid {
-		max-height		: 0;
 		width			: 100%;
 
 		overflow		: hidden;
@@ -406,7 +405,10 @@
 		grid-template-columns	: repeat(3, 1fr);
 		grid-template-rows	: repeat(2, 1fr);
 
-		transition		: 1.5s ease-in-out 3.75s;
+		transform		: scaleY(0);
+		transform-origin	: top;
+
+		transition		: 0.5s ease-in-out 3.75s;
 
 		/* Item */
 		.item {
@@ -414,6 +416,8 @@
 			flex-direction		: column;
 			justify-content		: flex-start;
 			align-items		: center;
+
+			margin-bottom		: 50px;
 
 			/* Icon */
 			.icon {
