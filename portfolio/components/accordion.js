@@ -1,10 +1,8 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                       Imports                                                      */
 /* ------------------------------------------------------------------------------------------------------------------ */
-import React, { createRef, useRef } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Controller, Scene } from "react-scrollmagic";
 
 
 

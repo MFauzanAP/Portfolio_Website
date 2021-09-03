@@ -510,6 +510,13 @@
 		/* Description */
 		.description {
 			flex			: 0 1 40%;
+
+			/* Links */
+			a {
+				color			: #FDCD48;
+
+				font-weight		: bold;
+			}
 		}
 	}
 }

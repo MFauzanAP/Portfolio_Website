@@ -137,34 +137,33 @@ function Contact () {
 							{/* Accordions */}
 							<Accordion options={{title: 'What services do you offer?'}}>
 								<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
-								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
-								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
-								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+									Right now I offer web design and game development services. Prices for these services will be decided 
+									after contact and differs depending on the size of the project. However please note that I may not 
+									be able to accept all requests since I may be busy with school during that time.
+								</p>
+								<p>
+									If you would like to learn more, feel free to send me a message through the <a href="#form">form below </a>
+									or click here to <a href="#form">check out my other projects.</a>
 								</p>
 							</Accordion>
 							<Accordion options={{title: 'How often are you available?'}}>
 								<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
-								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
-								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
-								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+									Depends on my current situation and whether or not I have exams/other projects. However I'm usually
+									free so don't be afraid to reach out to me.
+								</p>
+								<p>
+									But do note that if I am unavailable, I will notify you through email.
 								</p>
 							</Accordion>
 							<Accordion options={{title: 'What game engine do you use?'}}>
 								<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
-								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
-								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
-								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+									Currently I use the Unity game engine since it's what I started out with, but I'm always open 
+									to learning new things.
 								</p>
 							</Accordion>
 							<Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
 								<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
-								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
-								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
-								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+									Click here to <a href="/about#tech_stack">view a list of the languages and tools I use. </a>
 								</p>
 							</Accordion>
 
