@@ -406,7 +406,7 @@
 		grid-template-columns	: repeat(3, 1fr);
 		grid-template-rows	: repeat(2, 1fr);
 
-		transition		: 1.5s cubic-bezier(0.34,-0.39, 0.68, 1.38) 4.25s;
+		transition		: 1.5s ease-in-out 3.75s;
 
 		/* Item */
 		.item {

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import styles from '../styles/About.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import profilePicture from '../public/profile_picture.png';
 import htmlLogo from '../public/html_logo.png';
 import cssLogo from '../public/css_logo.png';
@@ -130,10 +131,10 @@ function Home () {
 						<div className={styles.item}>
 							
 							{/* Icon */}
-							<a className={styles.icon} href='#experience'><FontAwesomeIcon icon={['fas', 'laptop-code']}/></a>
+							<Link href='#experience'><a className={styles.icon}><FontAwesomeIcon icon={['fas', 'laptop-code']}/></a></Link>
 							
 							{/* Title */}
-							<a className={styles.title} href='#experience'>Experience</a>
+							<Link href='#experience'><a className={styles.title}>Experience</a></Link>
 
 							{/* Underline */}
 							<div className={styles.underline}></div>
@@ -150,10 +151,10 @@ function Home () {
 						<div className={styles.item}>
 
 							{/* Icon */}
-							<a className={styles.icon} href='#education'><FontAwesomeIcon icon={['fas', 'book-open']}/></a>
+							<Link href='#education'><a className={styles.icon}><FontAwesomeIcon icon={['fas', 'book-open']}/></a></Link>
 							
 							{/* Title */}
-							<a className={styles.title} href='#education'>Education</a>
+							<Link href='#education'><a className={styles.title}>Education</a></Link>
 
 							{/* Underline */}
 							<div className={styles.underline}></div>
@@ -168,10 +169,10 @@ function Home () {
 						<div className={styles.item}>
 
 							{/* Icon */}
-							<a className={styles.icon} href='#hobbies'><FontAwesomeIcon icon={['fas', 'gamepad']}/></a>
+							<Link href='#hobbies'><a className={styles.icon}><FontAwesomeIcon icon={['fas', 'gamepad']}/></a></Link>
 							
 							{/* Title */}
-							<a className={styles.title} href='#hobbies'>Hobbies</a>
+							<Link href='#hobbies'><a className={styles.title}>Hobbies</a></Link>
 
 							{/* Underline */}
 							<div className={styles.underline}></div>

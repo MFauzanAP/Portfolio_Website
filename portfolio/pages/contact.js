@@ -142,14 +142,14 @@ function Contact () {
 									be able to accept all requests since I may be busy with school during that time.
 								</p>
 								<p>
-									If you would like to learn more, feel free to send me a message through the <a href="#form">form below </a>
-									or click here to <a href="#form">check out my other projects.</a>
+									If you would like to learn more, feel free to send me a message through the <Link href="#form"><a>form below </a></Link>
+									or click here to <Link href="/projects"><a>check out my other projects.</a></Link>
 								</p>
 							</Accordion>
 							<Accordion options={{title: 'How often are you available?'}}>
 								<p>
-									Depends on my current situation and whether or not I have exams/other projects. However I'm usually
-									free so don't be afraid to reach out to me.
+									Depends on my current situation and whether or not I have exams/other projects. However I&apos;m usually
+									free so don&apos;t be afraid to reach out to me.
 								</p>
 								<p>
 									But do note that if I am unavailable, I will notify you through email.
@@ -157,13 +157,13 @@ function Contact () {
 							</Accordion>
 							<Accordion options={{title: 'What game engine do you use?'}}>
 								<p>
-									Currently I use the Unity game engine since it's what I started out with, but I'm always open 
+									Currently I use the Unity game engine since it&apos;s what I started out with, but I&apos;m always open 
 									to learning new things.
 								</p>
 							</Accordion>
 							<Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
 								<p>
-									Click here to <a href="/about#tech_stack">view a list of the languages and tools I use. </a>
+									Click here to <Link href="/about#tech_stack"><a>view a list of the languages and tools I use. </a></Link>
 								</p>
 							</Accordion>
 
