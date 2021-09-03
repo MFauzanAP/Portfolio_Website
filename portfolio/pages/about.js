@@ -103,8 +103,8 @@ function Home () {
 						{/* Text */}
 						<div className={styles.text}>
 
-							{/* Title */}
-							<div className={styles.title}>Hey, I&apos;m Fauzan</div>
+							{/* Header */}
+							<div className={styles.header}>Hey, I&apos;m Fauzan</div>
 
 							{/* Description */}
 							<p>
@@ -127,7 +127,7 @@ function Home () {
 					<div className={styles.grid} id="grid">
 
 						{/* Experience */}
-						<div className={styles.details}>
+						<div className={styles.item}>
 							
 							{/* Icon */}
 							<a className={styles.icon} href='#experience'><FontAwesomeIcon icon={['fas', 'laptop-code']}/></a>
@@ -147,7 +147,7 @@ function Home () {
 						</div>
 
 						{/* Education */}
-						<div className={styles.details}>
+						<div className={styles.item}>
 
 							{/* Icon */}
 							<a className={styles.icon} href='#education'><FontAwesomeIcon icon={['fas', 'book-open']}/></a>
@@ -165,7 +165,7 @@ function Home () {
 						</div>
 
 						{/* Hobbies */}
-						<div className={styles.details}>
+						<div className={styles.item}>
 
 							{/* Icon */}
 							<a className={styles.icon} href='#hobbies'><FontAwesomeIcon icon={['fas', 'gamepad']}/></a>
@@ -185,7 +185,7 @@ function Home () {
 						</div>
 
 						{/* Language */}
-						<div className={styles.details}>
+						<div className={styles.item}>
 							
 							{/* Icon */}
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'language']}/>
@@ -219,7 +219,7 @@ function Home () {
 						</div>
 
 						{/* Nationality */}
-						<div className={styles.details}>
+						<div className={styles.item}>
 							
 							{/* Icon */}
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'globe-asia']}/>
@@ -239,7 +239,7 @@ function Home () {
 						</div>
 
 						{/* Age */}
-						<div className={styles.details}>
+						<div className={styles.item}>
 							
 							{/* Icon */}
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar-alt']}/>

@@ -200,8 +200,10 @@
 	position		: relative;
 	width			: 100%;
 
-	margin-bottom		: 1500px;
-	padding			: 0px;
+	margin-bottom		: 0;
+	padding			: 250px;
+	padding-bottom		: 150px;
+	padding-top		: 300px;
 
 	display			: flex;
 	flex-direction		: column;
@@ -211,21 +213,39 @@
 	background		: #F8F8F8;
 	color			: #3D3D3D;
 
-	transition		: transform 0.5s ease-in-out,
-				  max-height 1s ease-in-out 0.5s,
-				  padding 1s ease-in-out 0.5s,
-				  margin-bottom 1s ease-in-out 0.5s;
-
 	/* Active */
 	&.active {
-		max-height		: 200vh;
+		
+		/* Details */
+		.details {
 
-		margin-bottom		: 0;
-		padding			: 250px;
-		padding-bottom		: 150px;
-		padding-top		: 300px;
+			/* Animation */
+			.animation {
+				opacity			: 1;
+			}
 
-		transform		: scaleX(1);
+			/* Profile Picture */
+			.profile_picture {
+				opacity			: 1;
+			}
+
+			/* Text */
+			p {
+				transform		: translateX(0) !important;
+
+				opacity			: 1 !important;
+			}
+		}
+
+		/* Divider */
+		.divider {
+			transform		: scaleX(1);
+		}
+
+		/* Grid */
+		.grid {
+			max-height		: 100vh;
+		}
 	}
 	
 
@@ -251,6 +271,10 @@
 			width			: 450px;
 			height			: 450px;
 			left			: 50px;
+
+			opacity			: 0;
+
+			transition		: 0.5s ease-in-out 2.5s;
 		}
 
 		/* Profile Picture */
@@ -265,12 +289,15 @@
 			justify-content		: center;
 			align-items		: center;
 
+			opacity			: 0;
+
 			overflow		: hidden;
 
 			border			: 3px solid #9B5AE6;
 			border-radius		: 30% 70% 70% 30% / 30% 30% 70% 70%;
 
 			animation		: profile_blob 30s infinite ease-in-out;
+			transition		: 0.5s ease-in-out 2.5s;
 
 			z-index			: 1;
 
@@ -283,9 +310,12 @@
 			}
 		}
 
-		/* Title */
-		.title {
+		/* Header */
+		.header {
 			position		: relative;
+			height			: 4rem;
+
+			overflow		: hidden;
 
 			margin-bottom		: 25px;
 
@@ -295,6 +325,11 @@
 			font-size		: 2.5rem;
 			font-weight		: bold;
 			letter-spacing		: 2.5px;
+			line-height		: 1.8;
+			word-break		: break-all;
+			letter-spacing		: 0.03em;
+
+			animation		: typewriter 2s steps(100, end) 1s 1 normal both;
 		}
 
 		/* Text */
@@ -309,6 +344,12 @@
 				line-height		: 1.8;
 				letter-spacing		: 0.03em;
 				text-rendering		: optimizeLegibility;
+
+				transform		: translateX(100px);
+
+				opacity			: 0;
+
+				transition		: 1s ease-in-out 2.5s;
 			}
 		}
 	}
@@ -356,19 +397,28 @@
 		border-top		: 2px solid transparent;
 
 		box-shadow		: 0 4px 4px rgba(0, 0, 0, 0.05);
+
+		transform		: scaleX(0);
+
+		transition		: 1s ease-in-out 3s;
 	}
 
 	/* Grid */
 	.grid {
+		max-height		: 0;
 		width			: 100%;
+
+		overflow		: hidden;
 
 		display			: grid;
 
 		grid-template-columns	: repeat(3, 1fr);
 		grid-template-rows	: repeat(2, 1fr);
 
-		/* Details */
-		.details {
+		transition		: 1.5s ease-in-out 4.25s;
+
+		/* Item */
+		.item {
 			display			: flex;
 			flex-direction		: column;
 			justify-content		: flex-start;
