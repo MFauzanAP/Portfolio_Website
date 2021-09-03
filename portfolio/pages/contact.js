@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import Accordion from "../components/accordion";
 
 //	Declare output function
 function Contact () {
@@ -107,6 +108,68 @@ function Contact () {
 						<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
 							<path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" className={styles.shape_fill}></path>
 						</svg>
+					</div>
+
+				</div>
+
+
+
+				{/* ======================================================= FAQ ====================================================== */}
+				<div className={styles.faq}>
+
+					{/* Title */}
+					<div className={styles.title}>Frequently Asked Questions</div>
+
+					{/* Content */}
+					<div className={styles.content}>
+
+						{/* Animation */}
+						<div className={styles.animation}><lottie-player 
+							src='./faq_animation.json'
+							speed="1" 
+							loop 
+							autoplay
+						/></div>
+
+						{/* Description */}
+						<div className={styles.description}>
+							
+							{/* Accordions */}
+							<Accordion options={{title: 'What services do you offer?'}}>
+								<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
+								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
+								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
+								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+								</p>
+							</Accordion>
+							<Accordion options={{title: 'How often are you available?'}}>
+								<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
+								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
+								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
+								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+								</p>
+							</Accordion>
+							<Accordion options={{title: 'What game engine do you use?'}}>
+								<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
+								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
+								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
+								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+								</p>
+							</Accordion>
+							<Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
+								<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec justo pretium, gravida leo et, 
+								commodo sem. Duis tortor nunc, suscipit at ultricies a, vehicula id massa. In hac habitasse platea dictumst. 
+								Fusce vestibulum ipsum purus, non tincidunt felis semper ut. Interdum et malesuada fames ac ante ipsum primis 
+								in faucibus. Nulla imperdiet bibendum risus, sit amet viverra velit rhoncus eget. Nunc et leo lorem.
+								</p>
+							</Accordion>
+
+						</div>
+
 					</div>
 
 				</div>

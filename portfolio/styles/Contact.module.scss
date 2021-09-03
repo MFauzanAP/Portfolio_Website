@@ -445,6 +445,85 @@
 
 
 
+/* ======================================================= FAQ ====================================================== */
+.faq {
+	position		: relative;
+	width			: 100%;
+	height			: auto;
+
+	padding			: 100px 0;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
+
+	overflow		: hidden;
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Title */
+	.title {
+		position		: relative;
+
+		margin-bottom		: 50px;
+
+		color			: #3D3D3D;
+
+		font-family		: Work Sans;
+		font-size		: 2.5rem;
+		font-weight		: bold;
+		letter-spacing		: 2.5px;
+
+		/* Underline */
+		&::after {
+			position		: absolute;
+			width			: 85%;
+			height			: 0.1em;
+			left			: 5%;
+			bottom			: -1rem;
+
+			margin-left		: 20px;
+
+			background-color	: #3D3D3D;
+			border-radius		: 0.05em;
+			opacity			: 1;
+
+			content			: '';
+
+			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		}
+	}
+
+	/* Content */
+	.content {
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: center;
+		align-items		: center;
+
+		/* Animation */
+		.animation {
+			pointer-events		: none;
+
+			flex			: 0 1 30%;
+			width			: 30%;
+			height			: 30%;
+
+			margin-right		: 100px;
+		}
+
+		/* Description */
+		.description {
+			flex			: 0 1 40%;
+		}
+	}
+}
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------ */
