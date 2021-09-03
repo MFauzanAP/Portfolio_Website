@@ -603,11 +603,13 @@ $marker-size		: 9px;
 			transition		: 1s ease 2.5s;
 
 			/* Animation */
-			div {
+			lottie-player {
 				pointer-events		: none;
 
-				width			: 150% !important;
-				height			: 150% !important;
+				width			: 100% !important;
+				height			: 125% !important;
+
+				margin-top		: -12.5%;
 			}
 		}
 	}
