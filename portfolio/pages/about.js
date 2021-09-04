@@ -99,7 +99,7 @@ function Home () {
 						/></div>
 
 						{/* Profile Picture */}
-						<div className={styles.profile_picture}><Image placeholder='blur' src={profilePicture}/></div>
+						<div className={styles.profile_picture}><span className={styles.blob}/><span className={styles.blob}/><Image placeholder='blur' src={profilePicture}/></div>
 
 						{/* Text */}
 						<div className={styles.text}>
