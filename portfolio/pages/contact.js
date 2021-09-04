@@ -223,7 +223,7 @@ function Contact () {
 
 								{/* Checkbox */}
 								<div className={styles.checkbox}>
-									<input type="checkbox" id="checkbox" required/>
+									<input type="checkbox" id="checkbox"/>
 									<label htmlFor="checkbox">Send me a copy of this message</label>
 								</div>
 

@@ -571,7 +571,7 @@ $marker-size		: 9px;
 
 				opacity			: 0;
 
-				transition		: opacity 1s ease 1.5s,
+				transition		: opacity 1s ease 1.25s,
 						  	  background-color 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s,
 						  	  transform 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
@@ -604,7 +604,7 @@ $marker-size		: 9px;
 
 			transform		: scale(0);
 
-			transition		: 1s ease 2.5s;
+			transition		: 1s ease 1s;
 
 			/* Animation */
 			lottie-player {
