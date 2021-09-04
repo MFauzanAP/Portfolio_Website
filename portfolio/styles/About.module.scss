@@ -231,8 +231,6 @@
 
 			/* Button */
 			button {
-				transform		: translateX(0) !important;
-
 				opacity			: 1 !important;
 			}
 		}
@@ -399,9 +397,8 @@
 
 				opacity			: 0;
 
-				transform		: translateX(100px);
-
-				transition		: 1s ease-in-out 2.75s;
+				transition		: opacity 1s ease-in-out 2.75s,
+							  transform 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
 			}
 		}
 	}

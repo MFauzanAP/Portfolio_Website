@@ -193,25 +193,42 @@ function Contact () {
 						<div className={styles.description}>
 
 							{/* Title */}
-							<div className={styles.title}>Get in Touch</div>
+							<div className={styles.title}>GET IN TOUCH</div>
 							
 							{/* Form */}
 							<form className={styles.form}>
 
-								{/* Full Name */}
-								<input type="text" placeholder="Full Name"/>
+								{/* Name */}
+								<div className={styles.input}>
+									<input type="text" id="name" required/>
+									<label htmlFor="name">Name*</label>
+								</div>
 
 								{/* Email */}
-								<input type="text" placeholder="Email"/>
+								<div className={styles.input}>
+									<input type="text" id="email" required/>
+									<label htmlFor="email">Email*</label>
+								</div>
+
+								{/* Title */}
+								<div className={styles.input} style={{gridColumnStart: 'span 2'}}>
+									<input type="text" id="title" required/>
+									<label htmlFor="title">Title*</label>
+								</div>
 
 								{/* Message */}
-								<textarea type="text" placeholder="Write your message here"/>
+								<div className={styles.input} style={{gridColumnStart: 'span 2'}}>
+									<textarea type="text" id="message" required/>
+								</div>
 
 								{/* Checkbox */}
-								<input type="checkbox" placeholder="Send me a copy of this message"/>
+								<div className={styles.checkbox}>
+									<input type="checkbox" id="checkbox" required/>
+									<label htmlFor="checkbox">Send me a copy of this message</label>
+								</div>
 
 								{/* Button */}
-								<button>Submit</button>
+								<button className={styles.call_to_action}>SUBMIT</button>
 
 							</form>
 
