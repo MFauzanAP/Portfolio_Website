@@ -112,25 +112,32 @@ function Home () {
 				{/* ===================================================== Hire Me ==================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hire_me}>
 
-					{/* Title */}
-					<h1>Looking for a Web Designer or Game Developer?</h1>
-
 					{/* Meta */}
 					<div className={styles.meta}>
 
 						{/* Description */}
 						<div className={styles.description}>
-							<p style={{transitionDelay: '2s'}}>Are you an aspiring entrepreneur with an idea in mind, but just don&apos;t have anyone to help you accomplish it?</p>
-							<p style={{transitionDelay: '2.25s'}}>Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?</p>
-							<p style={{transitionDelay: '2.5s'}}>
+
+							{/* Title */}
+							<h1>Looking for a Web Designer or Game Developer?</h1>
+
+							{/* Description */}
+							<p style={{transitionDelay: '0.5s'}}>
+								Are you an aspiring entrepreneur with an idea in mind, but just don&apos;t have anyone to help you accomplish it?
+								Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?
+							</p>
+							<p style={{transitionDelay: '0.75s'}}>
 								Well if you fall into any of these categories then congrats! You&apos;ve come to the right place 😊. 
 								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. 
 								To me, satisfactory just wont cut it. If you&apos;re interested, click the link below 👇.
 							</p>
-							<Link href="/contact"><a><button>
+
+							{/* Call to Action */}
+							<Link href="/contact"><a><div className={styles.call_to_action}>
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'user-plus']}></FontAwesomeIcon>
 								Hire Me
-							</button></a></Link>
+							</div></a></Link>
+
 						</div>
 
 						{/* Image */}
