@@ -117,6 +117,9 @@ function Home () {
 								Mauris pellentesque vel odio ac ornare. Sed sed velit at risus aliquam pellentesque.
 							</p>
 
+							{/* Resume */}
+							<button><FontAwesomeIcon icon={['fas', 'download']} style={{marginRight: '10px'}}/>View Resume</button>
+
 						</div>
 
 					</div>
