@@ -629,6 +629,26 @@
 			.profile_picture {
 				flex			: 0 1 250px !important;
 				width			: 250px !important;
+
+				.blob {
+					&:nth-child(1) {
+						width			: 265px;
+						height			: 265px;
+	
+						opacity			: 0.75;
+	
+						animation-delay		: 10s;
+					}
+
+					&:nth-child(2) {
+						width			: 280px;
+						height			: 280px;
+	
+						opacity			: 0.5;
+	
+						animation-delay		: 20s;
+					}
+				}
 			}
 
 			.text {
@@ -689,6 +709,26 @@
 
 			.profile_picture {
 				flex			: 0 1 250px !important;
+
+				.blob {
+					&:nth-child(1) {
+						width			: 265px;
+						height			: 265px;
+	
+						opacity			: 0.75;
+	
+						animation-delay		: 10s;
+					}
+
+					&:nth-child(2) {
+						width			: 280px;
+						height			: 280px;
+	
+						opacity			: 0.5;
+	
+						animation-delay		: 20s;
+					}
+				}
 			}
 
 			.header {
