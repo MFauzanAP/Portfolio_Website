@@ -14,13 +14,6 @@ import ContactMe from '../components/contact_me';
 //	Declare output function
 function Home () {
 
-	/* ==================================================== Variables =================================================== */
-
-	//	Reference
-	const ref = useRef(null);
-
-
-
 	/* =================================================== Use Effect =================================================== */
 	React.useEffect(() => {
 
@@ -143,7 +136,6 @@ function Home () {
 						{/* Image */}
 						<div className={styles.image}><lottie-player 
 							src='./code_animation.json' 
-							ref={ref}
 							speed="1" 
 							loop 
 							autoplay
@@ -362,13 +354,13 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/qu_logo.svg"></img>
+									<img src="/akis_logo.png"></img>
 								</div>
 
 								{/* Header */}
 								<h2>
-									<span>08/2021</span>
-									Engineering Bachelor&apos;s Degree
+									<span>07/2008</span>
+									High School Diploma
 								</h2>
 
 							</div>
@@ -379,11 +371,11 @@ function Home () {
 								{/* Details */}
 								<div style={{marginBottom: '5px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
-									Qatar University
+									Al Khor International School
 								</div>
 								<div>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
-									08/2021 - Present
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									08/2008 - 07/2021
 								</div>
 								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
 
@@ -391,14 +383,75 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								Enrolled at Qatar University for a bachelors degree in Engineering with plans on migrating to Electronic Engineering.
+								I studied at AKIS my whole school life, from 2008 to 2021 where I graduated with my AS Level grades at age 17. 
+								During my time there I was able to consistently get among the top grades including an average of A in both my IGCSE and
+								AS Level grades.
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://www.qu.edu.qa/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="high_school_transcript.pdf" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									View Transcript
+								</button></a>
+								<a href="https://akis.sch.qa/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
+
+							</div>
+
+							{/* Footer */}
+							<div className={styles.card_footer}></div>
+
+						</div>
+
+						{/* Card */}
+						<div className={styles.card}>
+
+							{/* Head */}
+							<div className={styles.head}>
+
+								{/* Logo */}
+								<div className={styles.icon_box}>
+									<img src="/malvor_logo.svg"></img>
+								</div>
+
+								{/* Header */}
+								<h2>
+									<span>06/2021</span>
+									Data Entry Operator Internship
+								</h2>
+
+							</div>
+
+							{/* Body */}
+							<div className={styles.body}>
+
+								{/* Details */}
+								<div style={{marginBottom: '5px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									Malvor
+								</div>
+								<div>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
+									06/2021 - 08/2021
+								</div>
+								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
+
+								{/* Description */}
+								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
+								Description
+								<div style={{height: '10px'}}></div>
+								Landed an internship job during my last month of highschool at a local e-commerce startup. Here I was responsible for
+								inputting lists of product data into the store database accurately and quickly.
+								<div className={styles.divider}></div>
+
+								{/* Action */}
+								<a href="https://malvor.com/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
+									View Website
+								</button></a>
+
 							</div>
 
 							{/* Footer */}
@@ -493,13 +546,13 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/malvor_logo.svg"></img>
+									<img src="/qu_logo.svg"></img>
 								</div>
 
 								{/* Header */}
 								<h2>
-									<span>06/2021</span>
-									Data Entry Operator Internship
+									<span>08/2021</span>
+									Engineering Bachelor&apos;s Degree
 								</h2>
 
 							</div>
@@ -510,11 +563,11 @@ function Home () {
 								{/* Details */}
 								<div style={{marginBottom: '5px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
-									Malvor
+									Qatar University
 								</div>
 								<div>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
-									06/2021 - 08/2021
+									08/2021 - Present
 								</div>
 								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
 
@@ -522,75 +575,14 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								Landed an internship job during my last month of highschool at a local e-commerce startup. Here I was responsible for
-								inputting lists of product data into the store database accurately and quickly.
+								Enrolled at Qatar University for a bachelors degree in Engineering with plans on migrating to Electronic Engineering.
 								<div className={styles.divider}></div>
 
 								{/* Action */}
-								<a href="https://malvor.com/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
+								<a href="https://www.qu.edu.qa/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
-
-							</div>
-
-							{/* Footer */}
-							<div className={styles.card_footer}></div>
-
-						</div>
-
-						{/* Card */}
-						<div className={styles.card}>
-
-							{/* Head */}
-							<div className={styles.head}>
-
-								{/* Logo */}
-								<div className={styles.icon_box}>
-									<img src="/akis_logo.png"></img>
-								</div>
-
-								{/* Header */}
-								<h2>
-									<span>07/2008</span>
-									High School Diploma
-								</h2>
-
-							</div>
-
-							{/* Body */}
-							<div className={styles.body}>
-
-								{/* Details */}
-								<div style={{marginBottom: '5px'}}>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
-									Al Khor International School
-								</div>
-								<div>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
-									08/2008 - 07/2021
-								</div>
-								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
-
-								{/* Description */}
-								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
-								Description
-								<div style={{height: '10px'}}></div>
-								I studied at AKIS my whole school life, from 2008 to 2021 where I graduated with my AS Level grades at age 17. 
-								During my time there I was able to consistently get among the top grades including an average of A in both my IGCSE and
-								AS Level grades.
-								<div className={styles.divider}></div>
-
-								{/* Action */}
-								<a href="high_school_transcript.pdf" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
-									View Transcript
-								</button></a>
-								<a href="https://akis.sch.qa/" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
-									View Website
-								</button></a>
-
 							</div>
 
 							{/* Footer */}
