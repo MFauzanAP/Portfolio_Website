@@ -861,6 +861,15 @@
 					letter-spacing		: 1px;
 
 					justify-self		: end;
+
+					/* Loading */
+					&.loading {
+						pointer-events		: none;
+						
+						width			: 50px;
+
+						font-size		: 1.25em;
+					}
 				}
 			}
 		}

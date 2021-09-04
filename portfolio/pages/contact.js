@@ -7,6 +7,7 @@ import { Controller, Scene } from "react-scrollmagic";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Accordion from "../components/accordion";
+import { toast } from 'react-nextjs-toast';
 
 //	Declare output function
 function Contact () {
@@ -21,6 +22,75 @@ function Contact () {
 
 
 
+	/* ==================================================== Functions =================================================== */
+	const sendEmail = async (event) => {
+
+		//	Stop page from refreshing
+		event.preventDefault();
+
+		//	Show loading indicator
+		event.target.button.className = `${styles.loading} ${styles.call_to_action}`;
+		event.target.button.innerHTML = `<i class="fa fa-spinner fa-spin"></i>`;
+
+		//	Extract data from form
+		var data = {
+			name		: event.target.name.value,
+			email		: event.target.email.value,
+			subject		: event.target.subject.value,
+			message		: event.target.message.value,
+			cc		: event.target.cc.checked
+		}
+
+		//	Try sending api call to send email
+		try {
+
+			//	Send api request and wait for response
+			var result = await fetch('/api/email', {
+				method		: 'POST',
+				headers		: { 'Content-Type': 'application/json' },
+				body		: JSON.stringify(data)
+			})
+
+			//	Extract response json
+			result = await result.json();
+
+			//	Hide loading indicator
+			event.target.button.className = styles.call_to_action;
+			event.target.button.innerHTML = `SUBMIT`;
+
+			//	If the email was successfully sent
+			if (result.type == 'success') {
+
+				//	Show toast
+				toast.notify(`Email Sent Successfully!`, {
+					duration	: 2,
+					title		: 'Success',
+				});
+
+			}
+
+			//	If failed to send email
+			else if (result.type == 'failure') {
+
+				//	Show toast
+				toast.notify(`Email Failed to Send`, {
+					duration	: 2,
+					title		: 'Error',
+				});
+				
+			}
+
+		} catch (e) {
+
+			//	Output errors
+			console.log(e);
+
+		}
+
+	}
+
+
+
 	/* ================================================ Output final html =============================================== */
 	return (
 		<div className={styles.container}>
@@ -32,6 +102,9 @@ function Contact () {
 				<title>Contact | Muhammad Fauzan Aristya Putra</title>
 				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
+
+				{/* Font Awesome */}
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
 			</Head>
 
@@ -196,39 +269,39 @@ function Contact () {
 							<div className={styles.title}>GET IN TOUCH</div>
 							
 							{/* Form */}
-							<form className={styles.form}>
+							<form className={styles.form} onSubmit={sendEmail}>
 
 								{/* Name */}
 								<div className={styles.input}>
-									<input type="text" id="name" required/>
+									<input type="text" id="name" name="name" required/>
 									<label htmlFor="name">Name*</label>
 								</div>
 
 								{/* Email */}
 								<div className={styles.input}>
-									<input type="text" id="email" required/>
+									<input type="text" id="email" name="email" required/>
 									<label htmlFor="email">Email*</label>
 								</div>
 
-								{/* Title */}
+								{/* Subject */}
 								<div className={styles.input} style={{gridColumnStart: 'span 2'}}>
-									<input type="text" id="title" required/>
-									<label htmlFor="title">Title*</label>
+									<input type="text" id="subject" name="subject" required/>
+									<label htmlFor="subject">Subject*</label>
 								</div>
 
 								{/* Message */}
 								<div className={styles.input} style={{gridColumnStart: 'span 2'}}>
-									<textarea type="text" id="message" required/>
+									<textarea type="text" id="message" name="message" required/>
 								</div>
 
 								{/* Checkbox */}
 								<div className={styles.checkbox}>
-									<input type="checkbox" id="checkbox"/>
+									<input type="checkbox" name="cc" id="checkbox"/>
 									<label htmlFor="checkbox">Send me a copy of this message</label>
 								</div>
 
 								{/* Button */}
-								<button className={styles.call_to_action}>SUBMIT</button>
+								<button className={styles.call_to_action} name="button">SUBMIT</button>
 
 							</form>
 
