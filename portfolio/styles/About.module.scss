@@ -228,6 +228,13 @@
 
 				opacity			: 1 !important;
 			}
+
+			/* Button */
+			button {
+				transform		: translateX(0) !important;
+
+				opacity			: 1 !important;
+			}
 		}
 
 		/* Divider */
@@ -389,6 +396,12 @@
 
 				font-size		: 0.9rem;
 				letter-spacing		: 0.03em;
+
+				opacity			: 0;
+
+				transform		: translateX(100px);
+
+				transition		: 1s ease-in-out 2.75s;
 			}
 		}
 	}
