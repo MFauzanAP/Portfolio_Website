@@ -11,13 +11,6 @@ import Accordion from "../components/accordion";
 //	Declare output function
 function Contact () {
 
-	/* ==================================================== Variables =================================================== */
-
-	//	Reference
-	const ref = useRef(null);
-
-
-
 	/* =================================================== Use Effect =================================================== */
 	React.useEffect(() => {
 
@@ -166,6 +159,61 @@ function Contact () {
 									Click here to <Link href="/about#tech_stack"><a>view a list of the languages and tools I use. </a></Link>
 								</p>
 							</Accordion>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				{/* ================================================== Contact Form ================================================== */}
+				<div className={styles.contact_form}>
+
+					{/* Divider */}
+					<div className={styles.divider}><div className={styles.connectors}>
+						<div className={styles.connector}></div>
+						<div className={styles.connector}></div>
+						<div className={styles.connector}></div>
+					</div></div>
+
+					{/* Content */}
+					<div className={styles.content}>
+
+						{/* Animation */}
+						<div className={styles.animation}><lottie-player 
+							src='./contact_form_animation.json'
+							speed="1" 
+							loop 
+							autoplay
+						/></div>
+
+						{/* Description */}
+						<div className={styles.description}>
+
+							{/* Title */}
+							<div className={styles.title}>Get in Touch</div>
+							
+							{/* Form */}
+							<form className={styles.form}>
+
+								{/* Full Name */}
+								<input type="text" placeholder="Full Name"/>
+
+								{/* Email */}
+								<input type="text" placeholder="Email"/>
+
+								{/* Message */}
+								<textarea type="text" placeholder="Write your message here"/>
+
+								{/* Checkbox */}
+								<input type="checkbox" placeholder="Send me a copy of this message"/>
+
+								{/* Button */}
+								<button>Submit</button>
+
+							</form>
 
 						</div>
 

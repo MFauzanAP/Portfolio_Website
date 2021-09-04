@@ -443,7 +443,7 @@
 	width			: 100%;
 	height			: auto;
 
-	padding			: 100px 0;
+	padding-top		: 100px;
 
 	display			: flex;
 	flex-direction		: column;
@@ -523,6 +523,130 @@
 
 
 
+/* ================================================== Contact Form ================================================== */
+.contact_form {
+	position		: relative;
+	width			: 100%;
+	height			: auto;
+
+	padding-top		: 100px;
+	padding-bottom		: 100px;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Divider */
+	.divider {
+		width			: 80%;
+		height			: 0;
+
+		margin-bottom		: 150px;
+
+		border			: 1px solid #EEEEEE;
+
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: center;
+		align-items		: center;
+
+		/* Connectors */
+		.connectors {
+			width			: 100px;
+			height			: 100px;
+
+			background		: #FFFFFF;
+
+			display			: flex;
+			flex-direction		: row;
+			justify-content		: center;
+			align-items		: center;
+
+			/* Connector */
+			.connector {
+				position		: absolute;
+				height			: 100px;
+				width			: 10px;
+
+				background		: #9B5AE6;
+				border-radius		: 5px;
+
+				animation		: connector 5s cubic-bezier(0.34,-0.39, 0.68, 1.38) infinite 0.35s;
+
+				/* Third */
+				&:nth-of-type(1) {
+					height			: 80px;
+
+					margin-right		: 50px;
+
+					animation-delay		: 0.25s;
+				}
+
+				/* Fifth */
+				&:nth-of-type(3) {
+					height			: 80px;
+
+					margin-left		: 50px;
+
+					animation-delay		: 0.45s;
+				}
+			}
+		}
+	}
+
+	/* Content */
+	.content {
+		display			: flex;
+		flex-direction		: row-reverse;
+		justify-content		: center;
+		align-items		: center;
+
+		/* Animation */
+		.animation {
+			pointer-events		: none;
+
+			flex			: 0 1 30%;
+			width			: 30%;
+			height			: 30%;
+
+			margin-right		: 100px;
+		}
+
+		/* Description */
+		.description {
+			flex			: 0 1 40%;
+
+			/* Title */
+			.title {
+				position		: relative;
+
+				margin-bottom		: 50px;
+
+				color			: #3D3D3D;
+
+				font-family		: Work Sans;
+				font-size		: 2.5rem;
+				font-weight		: bold;
+				letter-spacing		: 2.5px;
+			}
+
+			/* Links */
+			a {
+				color			: #FDCD48;
+
+				font-weight		: bold;
+			}
+		}
+	}
+}
+
+
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------ */
@@ -538,5 +662,20 @@
 	}
 	100% {
 		transform		: translateX(0%);
+	}
+}
+
+@keyframes connector {
+	0% {
+		transform		: scaleY(1);
+	}
+	5% {
+		transform		: scaleY(0.5);
+	}
+	10% {
+		transform		: scaleY(1);
+	}
+	100% {
+		transform		: scaleY(1);
 	}
 }
