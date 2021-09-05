@@ -291,8 +291,6 @@
 				opacity			: 1;
 
 				content			: '';
-
-				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 			}
 		}
 
@@ -346,8 +344,6 @@
 				text-align		: center;
 
 				margin			: 5px 25px;
-
-				transition		: 0.1s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 
 				/* Hover */
 				&:hover {
@@ -444,6 +440,155 @@
 
 		.shape_fill {
 			fill		: #FFFFFF;
+		}
+	}
+
+	/* Mobile */
+	@include media ("<=mobilel") {
+		height			: 150vh;
+
+		flex-direction		: column;
+
+		padding-top		: 100px;
+
+		.description {
+			align-items		: center;
+
+			margin			: 0;
+			margin-bottom		: 25px;
+
+			font-size		: 0.8em;
+
+			.title {
+				font-size		: 2em !important;
+
+				&::after {
+					left			: 12.5%;
+
+					margin			: 0;
+				}
+			}
+
+			.details {
+				text-align		: center;
+
+				.bold {
+					font-size		: 1.1em !important;
+				}
+	
+				.text {
+					font-size		: 1em !important;
+				}
+			}
+
+			ul {
+				display			: flex;
+				justify-content		: center;
+			}
+		}
+
+		.map {
+			width			: 80%;
+
+			padding			: 0;
+		}
+
+		.divider {
+			svg {
+				height			: 50px;
+			}
+		}
+	}
+
+	/* Tablet */
+	@include media ("<=tablet", ">mobilel") {
+		height			: 150vh;
+
+		flex-direction		: column;
+
+		padding-top		: 100px;
+
+		.description {
+			align-items		: center;
+
+			margin			: 0;
+			margin-bottom		: 25px;
+
+			font-size		: 0.8em;
+
+			.title {
+				font-size		: 2em !important;
+
+				&::after {
+					left			: 12.5%;
+
+					margin			: 0;
+				}
+			}
+
+			.bold {
+				font-size		: 1.25em !important;
+			}
+
+			.text {
+				font-size		: 1.1em !important;
+			}
+
+			ul {
+				display			: flex;
+				justify-content		: center;
+			}
+		}
+
+		.map {
+			width			: 80%;
+
+			padding			: 0;
+		}
+
+		.divider {
+			svg {
+				height			: 80px;
+			}
+		}
+	}
+
+	/* Laptop */
+	@include media ("<=laptopl", ">tablet") {
+		height			: 150vh;
+
+		flex-direction		: column;
+
+		padding-top		: 100px;
+
+		.description {
+			align-items		: center;
+
+			margin			: 0;
+			margin-bottom		: 25px;
+
+			.title::after {
+				left			: 12.5%;
+
+				margin			: 0;
+			}
+
+			ul {
+				display			: flex;
+				justify-content		: center;
+			}
+		}
+
+		.map {
+			width			: 80%;
+
+			padding			: 0;
+		}
+
+		.divider {
+			svg {
+				height			: 120px;
+			}
 		}
 	}
 }
