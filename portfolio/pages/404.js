@@ -59,7 +59,7 @@ function Error () {
 
 					{/* Description */}
 					<div className={styles.description}>
-						Unfortunately this page does not exist. Please click the link <br/> below to return home.
+						Unfortunately, this page does not exist. Please click the link <br/> below to return home.
 					</div>
 
 					{/* Call to Action */}

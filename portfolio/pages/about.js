@@ -636,26 +636,26 @@ function Home () {
 							{/* Container */}
 							<div className={styles.container}>
 								<p>
-									&emsp; My first experience with programming was with Scratch. My then middle school teacher
-									introduced me to it, and I instantly fell in love. Back then I was always curious about
-									how the games I regularly played worked. Scratch was my gateway into the mystical world
-									of Computer Programming, and I would often spend hours after school creating games as well
-									as trying to replicate many of the games I often saw on the website.
+									&emsp; My first experience with programming was with Scratch. My then middle school teacher introduced 
+									me to it, and I instantly fell in love. Back then, I was always curious about how the games 
+									I regularly played worked. Scratch was my gateway into the mystical world of Computer Programming, 
+									and I would often spend hours after school creating games and trying to replicate many of the games 
+									I often saw on the website.
 								</p>
 								<p>
-									&emsp; Skip ahead a few months to when I first found the Unity game engine. Back then a game I used to
-									often play had been shutdown (Fusion Fall), leading me to use my newly learnt skills to try my hand
-									at recreating this very game in Unity, the same game engine in which it had been built with. 
-									However back then I knew barely anything about the Unity game engine and the only learning I did was
-									online and self taught and so I quickly became burnt out.
+									&emsp; Skip ahead a few months to when I first found the Unity game engine. Back then, a game I often 
+									played got shut down (Fusion Fall), leading me to use my newly learnt skills to try my hand at 
+									recreating this very game in Unity, the same game engine the original had used. However, back then, 
+									I barely knew anything about the Unity game engine, and the only learning I did was online and 
+									self-taught, so I quickly became burnt out.
 								</p>
 								<p>
-									&emsp; However not long after, I met a few people online that wanted to recreate the game but with
-									Nickelodeon characters instead of the original Cartoon Network ones. I decided to apply for the job and
-									joined the fan project, despite only having around a year of experience with Unity. At first I struggled
-									since I was the only person working on the game itself, but with time I got used to it and actually
-									enjoyed the challenge. Unfortunately after a year of work, the group disbanded and I was back to
-									creating games solo.
+									&emsp; However, not long after, I met a few people online that wanted to recreate the game but with 
+									Nickelodeon characters instead of the original Cartoon Network ones. So, I decided to apply for the 
+									job and joined the fan project, despite only having around a year of experience with Unity. 
+									At first, I struggled since I was the only person working on the game itself, 
+									but I got used to it with time and enjoyed the challenge. Unfortunately, after a year of work, 
+									the group disbanded, and I was back to creating games solo.
 								</p>
 							</div>
 
@@ -668,24 +668,26 @@ function Home () {
 							{/* Container */}
 							<div className={styles.container}>
 								<p>
-									&emsp; I first started creating desktop applications a couple of years back when I decided
-									to take a break from game development to work on something different. One of my first ever desktop 
-									applications was a time management software where I planned on having the software try and track
-									what type of application you were running and log the hours spent on that app. The plan was to give
-									points based on how little you used a non-beneficial app and how often you did something productive. 
-									However the project didn&apos;t go far and I stopped before I got anything meaningful done.
+									&emsp; I started creating desktop applications a couple of years back when I decided to take a break 
+									from game development to work on something different. One of my first ever desktop applications was 
+									a time management software where I planned on having the software try and track what type of application 
+									you were running and log the hours spent on that app. The plan was to give points based on how little 
+									you used a non-beneficial app and how often you did something productive. 
+									However, the project didn&apos;t go far, and I stopped before I got anything meaningful done.
 								</p>
 								<p>
-									&emsp; It wasn&apos;t until a year later when I started my GCSEs that I got back to working on desktop apps
-									again. This time I had planned on making a utility software that would help me revise for my GCSEs. But 
-									again this project didn&apos;t go far as it was too much to work and I had to focus on my GCSEs.
+									&emsp; It wasn&apos;t until a year later, when I started my GCSEs, that I got back to working on 
+									desktop apps again. This time I had planned on making a utility software that would help me revise 
+									for my GCSEs. But once again, nothing much came out of this effort.
+
 								</p>
 								<p>
-									&emsp; However in my final year, my chemistry teacher had asked me to organize some flash cards for her, 
-									but I had other plans in mind. I asked her if I could instead create an app for her that people could use 
-									to revise. She agreed and so I started to work on it. After a week of hard work, I had managed to create
-									the application which I then shared with her and my classmates. You can see a few screenshots of the app
-									<a style={{color: 'blue'}} href="/projects"> here</a>.
+									&emsp; However, in my final year of high school, my chemistry teacher asked me to organize some 
+									flashcards for her, but I had other plans. So I asked her if I could instead create an app that 
+									people could use to revise. She agreed, and so I started to work on it. After a week of hard work, 
+									I created the application, which I shared with her and my classmates. 
+									You can see a few screenshots of the app
+									<Link href="/projects"><a style={{color: 'blue'}}> here</a></Link>.
 								</p>
 							</div>
 
@@ -698,18 +700,21 @@ function Home () {
 							{/* Container */}
 							<div className={styles.container}>
 								<p>
-									&emsp; I was first exposed to web development back in 9th grade as it was the subject I was studying at 
-									the time. However we only did very basic work and I was honestly more attracted to game development, 
-									so I quickly lost interest and forgot about the whole thing. It wasn&apos;t until I got a job as a Data Entry 
-									Operator at Malvor that my interest in web development grew.
+									&emsp; I was first exposed to web development back in 9th grade as it was the subject I was studying at the time. 
+									However, we only learnt the basics, and I was honestly more attracted to game development, so I quickly lost 
+									interest and forgot about the whole thing. It wasn&apos;t until three years later that I picked up web development 
+									again and discovered what you could do with it.
 								</p>
 								<p>
-									&emsp; Whenever I was entering data into the system, I always noticed things that I felt could be done better 
-									for a better user expereience. And so I decided I wanted to try creating a desktop application that could 
-									do the same job but be more user-friendly and easier to use. During development, I would send my boss 
-									updates on the app I was working on as well as suggesting some of the things I found that could be improved. 
-									Eventually however, he decided it would be better to instead have me work on the actual website and so a week 
-									later, I started interning as a Full Stack Developer, despite being very new to web development.
+									&emsp; Whenever I was inputting data into the system, I noticed things that I felt could be done better for a better 
+									user experience. So, I started keeping a record of all these little things for later use. Then, one morning I decided, 
+									why not try and improve on this? And so, I decided I wanted to create a desktop application that could do the same job 
+									but in a more user-friendly and efficient way.
+								</p>
+								<p>
+									&emsp; During development, I would send my boss updates on the app I was working on and give my thought process behind 
+									each improvement/feature. Eventually, however, he decided it would be better to have me work part-time on the actual website, 
+									and so began my journey into web development.
 								</p>
 							</div>
 
@@ -796,7 +801,8 @@ function Home () {
 
 								{/* Description */}
 								<p>
-									Currently enrolled in the college of engineering at Qatar University.
+									Currently enrolled in the college of engineering at Qatar University with
+									plans on majoring in Mechanical Engineering and minoring in Computer Science.
 								</p>
 
 							</div>
@@ -844,8 +850,8 @@ function Home () {
 
 							{/* Description */}
 							<div className={styles.description}>
-								I enjoy coding in my spare time, often working on my side projects or starting new ones 
-								whenever I get bored of my old projects.
+								I enjoy coding in my spare time, often working on side projects or starting new ones 
+								whenever I get bored of the old ones.
 							</div>
 
 						</div>
@@ -864,8 +870,8 @@ function Home () {
 
 							{/* Description */}
 							<div className={styles.description}>
-								Favourite movie genres are Action, Horror, Thriller and Mystery. 
-								I also watch k-dramas from time to time.
+							I also watch movies from time to time. My favourite genres are Action, Thriller, Mystery 
+							and Horror. I also tend to watch K-Dramas whenever a new one I&apos;m interested in comes out.
 							</div>
 
 						</div>
@@ -884,13 +890,13 @@ function Home () {
 
 							{/* Description */}
 							<div className={styles.description}>
-								I play casual volleyball often with my friends, usually playing 
-								as the setter.
+								Back in high school, I was an avid volleyball player and was part of the school volleyball team 
+								when we won bronze and silver medals in under 15 and 19 national competitions.
 							</div>
 
 						</div>
 
-						{/* Watching */}
+						{/* Video Games */}
 						<div className={styles.details}>
 
 							{/* Icon */}
@@ -904,7 +910,8 @@ function Home () {
 
 							{/* Description */}
 							<div className={styles.description}>
-								Some games I play are League of Legends, Minecraft and Satisfactory.
+								I play video games from time to time, but nowadays, I don't play as much. Some games I 
+								play are League of Legends and Minecraft.
 							</div>
 
 						</div>

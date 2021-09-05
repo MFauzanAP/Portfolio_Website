@@ -123,13 +123,13 @@ function Home () {
 
 							{/* Description */}
 							<p style={{transitionDelay: '0.5s'}}>
-								Are you an aspiring entrepreneur with an idea in mind, but just don&apos;t have anyone to help you accomplish it?
-								Or are you an established business looking to hire a passionate new employee to work on a website / game of yours?
+								Are you an aspiring entrepreneur with an idea in mind but don&apos;t have anyone to help you accomplish it? 
+								Or are you an established business looking to hire a passionate new employee to work on a website/game of yours?
 							</p>
 							<p style={{transitionDelay: '0.75s'}}>
-								Well if you fall into any of these categories then congrats! You&apos;ve come to the right place 😊. 
-								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. 
-								To me, satisfactory just wont cut it. If you&apos;re interested, click the link below 👇.
+								Well, if you fall into any of these categories, then congrats! You&apos;ve come to the right place 😊. 
+								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. To me, 
+								satisfactory just won&apos;t cut it. So, if you&apos;re interested, click the link below 👇.
 							</p>
 
 							{/* Call to Action */}
@@ -390,9 +390,9 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								I studied at AKIS my whole school life, from 2008 to 2021 where I graduated with my AS Level grades at age 17. 
-								During my time there I was able to consistently get among the top grades including an average of A in both my IGCSE and
-								AS Level grades.
+								I studied at AKIS my whole school life, from 2008 to 2021, where I graduated with my AS Level grades at age 17. 
+								During my time there, I consistently got among the top scores. Some of my strongest subjects included Mathematics, 
+								Physics and Computer Science. For these subjects, I was able to achieve an average grade of A.
 								<div className={styles.divider}></div>
 
 								{/* Action */}
@@ -449,8 +449,8 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								Landed an internship job during my last month of highschool at a local e-commerce startup. Here I was responsible for
-								inputting lists of product data into the store database accurately and quickly.
+								In the last few months of high school, I applied for a local startup&apos;s data entry position and got accepted. 
+								Here I was responsible for inputting lists of product data into the store database quickly and accurately.
 								<div className={styles.divider}></div>
 
 								{/* Action */}
@@ -503,20 +503,23 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								Got promoted to full stack developer one month after starting as a data entry operator at the same company.
-								During this time, I sharpened my html and css skills and quickly learnt web development using tools like NodeJS, ElasticSearch,
-								MongoDB, etc.
+								Almost a month after starting my job at this company, my boss gave me the chance to work as a full-stack developer intern. 
+								During this time, I sharpened my HTML and CSS skills and quickly learnt web development using tools like NodeJS, 
+								ElasticSearch, MongoDB, etc.
 								<div style={{height: '20px'}}></div>
 								Some of my improvements include: 
 
 								{/* List */}
 								<ul>
-									<li>Implement a WYSIWYG editor for a more in depth data entry experience</li>
-									<li>Used ElasticSearch to filter for products by location</li>
-									<li>Complete overhaul of product categories</li>
-									<li>Improved product search page front-end</li>
-									<li>Implement a new and more efficient way of inputting data</li>
+									<li>Implementing a WYSIWYG editor for a more in depth data entry experience</li>
+									<li>Using ElasticSearch to filter for products by location</li>
+									<li>Doing a complete overhaul of the product category system</li>
+									<li>Improving the product search page</li>
+									<li>Discovering and implementing new and more efficient ways of inputting data</li>
 								</ul>
+
+								{/* Link */}
+								<Link href="/about#experience"><a>Click here to learn more</a></Link>
 								<div className={styles.divider}></div>
 
 								{/* Skills */}
@@ -582,7 +585,9 @@ function Home () {
 								<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>
 								Description
 								<div style={{height: '10px'}}></div>
-								Enrolled at Qatar University for a bachelors degree in Engineering with plans on migrating to Electronic Engineering.
+								I applied to the college of Engineering at Qatar University during my last summer at high school and got accepted. 
+								Currently studying as a general engineering student with plans on majoring in Mechanical Engineering 
+								and minoring in Computer Science.
 								<div className={styles.divider}></div>
 
 								{/* Action */}

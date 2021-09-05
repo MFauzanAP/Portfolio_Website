@@ -41,7 +41,7 @@ class Navbar extends React.Component {
 
 					{/* Description */}
 					<p>
-						Hey there, my name&apos;s Fauzan and I&apos;m an <br/>
+						Hey there, my name&apos;s Fauzan, and I&apos;m an <br/>
 						undergraduate student studying at Qatar University <br/>
 						with a keen interest in all things tech. <br/>
 						Nice to meet you!
@@ -91,7 +91,10 @@ class Navbar extends React.Component {
 			
 			{/* Copyright */}
 			<div className="divider"></div>
-			<p className="copyright">Copyright © 2021 Muhammad Fauzan Aristya Putra</p>
+			<p className="copyright">
+				Copyright © 2021 Muhammad Fauzan Aristya Putra <br/>
+				Built with ❤️ in Next JS React
+			</p>
 
 		</div>)
 	}

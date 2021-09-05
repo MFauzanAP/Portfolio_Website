@@ -203,8 +203,8 @@ function Contact () {
 							{/* Accordions */}
 							<div className={styles.accordion}><Accordion options={{title: 'Are you available for full time work?'}}>
 								<p>
-									Yes, although I&apos;m a student, I usually always spend many hours a day working on code.
-									However this number may fluctuate throughout the year due to exams and such.
+									Yes. Although I&apos;m a student, I regularly spend north of 6 hours a day working on code. 
+									However, this number may fluctuate throughout the year due to exams and such.
 								</p>
 								<p>
 									If you would like to check out how often I work, or if you&apos;re curious about the
@@ -214,19 +214,20 @@ function Contact () {
 							</Accordion></div>
 							<div className={styles.accordion} style={{transitionDelay: '1.95s'}}><Accordion options={{title: 'What services do you offer?'}}>
 								<p>
-									Right now I offer web design and game development services. Prices for these services will be decided 
-									after contact and differs depending on the size of the project. However please note that I may not 
-									be able to accept all requests since I may be busy with school during that time.
+									Currently, I&apos;m open to game development or web design requests. Prices for these services will be decided 
+									after contact and differ depending on the project&apos;s size, but a rough estimate would be around 50-100 USD 
+									per hour. However, please note that I may not be able to accept all requests since I may be busy with school 
+									during that time.
 								</p>
 								<p>
-									If you would like to learn more, feel free to send me a message through the <Link href="#form"><a>form below </a></Link>
+									If you would like to learn more, please send me a message through the <Link href="#form"><a>form below </a></Link>
 									or click here to <Link href="/projects"><a>check out my other projects.</a></Link>
 								</p>
 							</Accordion></div>
 							<div className={styles.accordion} style={{transitionDelay: '2.15s'}}><Accordion options={{title: 'How often are you available?'}}>
 								<p>
-									Depends on my current situation and whether or not I have exams/other projects. However I&apos;m usually
-									free so don&apos;t be afraid to reach out to me.
+									It depends on my current situation and whether or not I have exams/other projects. 
+									However, I&apos;m usually free, so don&apos;t be afraid to reach out to me.
 								</p>
 								<p>
 									But do note that if I am unavailable, I will notify you through email.
