@@ -112,7 +112,7 @@ function Contact () {
 			<div className={styles.contact}>
 
 				{/* ======================================================= Map ====================================================== */}
-				<div className={styles.map}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.map}>
 
 					{/* Background */}
 					<div className={styles.background}></div>
@@ -176,12 +176,12 @@ function Contact () {
 						</svg>
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
 				{/* ======================================================= FAQ ====================================================== */}
-				<div className={styles.faq}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.faq}>
 
 					{/* Title */}
 					<div className={styles.title}>Frequently Asked Questions</div>
@@ -201,7 +201,7 @@ function Contact () {
 						<div className={styles.description}>
 							
 							{/* Accordions */}
-							<Accordion options={{title: 'Are you available for full time work?'}}>
+							<div className={styles.accordion}><Accordion options={{title: 'Are you available for full time work?'}}>
 								<p>
 									Yes, although I'm a student, I usually always spend many hours a day working on code.
 									However this number may fluctuate throughout the year due to exams and such.
@@ -211,8 +211,8 @@ function Contact () {
 									quality of my code, please feel free to visit 
 									<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"> my GitHub page.</a>
 								</p>
-							</Accordion>
-							<Accordion options={{title: 'What services do you offer?'}}>
+							</Accordion></div>
+							<div className={styles.accordion} style={{transitionDelay: '1.95s'}}><Accordion options={{title: 'What services do you offer?'}}>
 								<p>
 									Right now I offer web design and game development services. Prices for these services will be decided 
 									after contact and differs depending on the size of the project. However please note that I may not 
@@ -222,8 +222,8 @@ function Contact () {
 									If you would like to learn more, feel free to send me a message through the <Link href="#form"><a>form below </a></Link>
 									or click here to <Link href="/projects"><a>check out my other projects.</a></Link>
 								</p>
-							</Accordion>
-							<Accordion options={{title: 'How often are you available?'}}>
+							</Accordion></div>
+							<div className={styles.accordion} style={{transitionDelay: '2.15s'}}><Accordion options={{title: 'How often are you available?'}}>
 								<p>
 									Depends on my current situation and whether or not I have exams/other projects. However I&apos;m usually
 									free so don&apos;t be afraid to reach out to me.
@@ -231,29 +231,29 @@ function Contact () {
 								<p>
 									But do note that if I am unavailable, I will notify you through email.
 								</p>
-							</Accordion>
-							<Accordion options={{title: 'What game engine do you use?'}}>
+							</Accordion></div>
+							<div className={styles.accordion} style={{transitionDelay: '2.35s'}}><Accordion options={{title: 'What game engine do you use?'}}>
 								<p>
 									Currently I use the Unity game engine since it&apos;s what I started out with, but I&apos;m always open 
 									to learning new things.
 								</p>
-							</Accordion>
-							<Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
+							</Accordion></div>
+							<div className={styles.accordion} style={{transitionDelay: '2.55s'}}><Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
 								<p>
 									Click here to <Link href="/about#tech_stack"><a>view a list of the languages and tools I use. </a></Link>
 								</p>
-							</Accordion>
+							</Accordion></div>
 
 						</div>
 
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 
 
 				{/* ================================================== Contact Form ================================================== */}
-				<div className={styles.contact_form}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.contact_form}>
 
 					{/* Divider */}
 					<div className={styles.divider}><div className={styles.connectors}>
@@ -320,7 +320,10 @@ function Contact () {
 
 					</div>
 
-				</div>
+					{/* Cover */}
+					<div className={styles.cover}></div>
+
+				</div></Scene></Controller>
 
 
 
