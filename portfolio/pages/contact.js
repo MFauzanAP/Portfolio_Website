@@ -203,11 +203,11 @@ function Contact () {
 							{/* Accordions */}
 							<div className={styles.accordion}><Accordion options={{title: 'Are you available for full time work?'}}>
 								<p>
-									Yes, although I'm a student, I usually always spend many hours a day working on code.
+									Yes, although I&apos;m a student, I usually always spend many hours a day working on code.
 									However this number may fluctuate throughout the year due to exams and such.
 								</p>
 								<p>
-									If you would like to check out how often I work, or if you're curious about the
+									If you would like to check out how often I work, or if you&apos;re curious about the
 									quality of my code, please feel free to visit 
 									<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"> my GitHub page.</a>
 								</p>
