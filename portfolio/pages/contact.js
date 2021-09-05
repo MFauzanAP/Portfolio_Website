@@ -322,7 +322,12 @@ function Contact () {
 					</div>
 
 					{/* Cover */}
-					<div className={styles.cover}></div>
+					<div className={styles.cover}>
+						<span className={styles.curtain}></span>
+						<span className={styles.curtain}></span>
+						<span className={styles.curtain}></span>
+						<span className={styles.curtain}></span>
+					</div>
 
 				</div></Scene></Controller>
 
