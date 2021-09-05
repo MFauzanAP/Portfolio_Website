@@ -201,6 +201,17 @@ function Contact () {
 						<div className={styles.description}>
 							
 							{/* Accordions */}
+							<Accordion options={{title: 'Are you available for full time work?'}}>
+								<p>
+									Yes, although I'm a student, I usually always spend many hours a day working on code.
+									However this number may fluctuate throughout the year due to exams and such.
+								</p>
+								<p>
+									If you would like to check out how often I work, or if you're curious about the
+									quality of my code, please feel free to visit 
+									<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"> my GitHub page.</a>
+								</p>
+							</Accordion>
 							<Accordion options={{title: 'What services do you offer?'}}>
 								<p>
 									Right now I offer web design and game development services. Prices for these services will be decided 
