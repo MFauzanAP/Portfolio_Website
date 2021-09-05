@@ -43,6 +43,9 @@ class Navbar extends React.Component {
 			//	Close menu
 			menu.className = 'navigation';
 
+			//	Re enable scrolling
+			document.querySelector('body').classList.remove('fixed');
+
 		}
 
 		//	If menu is closed
@@ -50,6 +53,9 @@ class Navbar extends React.Component {
 
 			//	Add active class to menu
 			menu.className += ' active';
+
+			//	Disable scrolling
+			document.querySelector('body').classList.add('fixed');
 
 		}
 
