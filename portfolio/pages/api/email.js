@@ -14,12 +14,13 @@ export default async function handler (req, res) {
 		to			: 'muhammadfauzanaristyaputra@gmail.com',
 		cc			: cc && email != 'muhammadfauzanaristyaputra@gmail.com' ? email : '',
 		from			: 'portfolio@muhammadfauzan.me',
-		subject			: 'Message From Portfolio Website',
-		text			: message,
-		html			: `<b>Name<b/> - ${name}<br/>
-					   <b>Email<b/> - ${email}<br/>
-					   <b>Subject<b/> - ${subject}<br/>
-					   <b>Message<b/> - ${message}<br/>`
+		templateId		: 'd-13e027db87e043a994975d5f80478e36',
+		dynamicTemplateData	: {
+			name			: name,
+			email			: email,
+			subject			: subject,
+			message			: message
+		}
 	}
 
 	//	Send email
