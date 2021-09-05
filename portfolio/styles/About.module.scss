@@ -2005,43 +2005,6 @@
 	}
 }
 
-@keyframes background_fade {
-	0% {
-		transform		: scale(1);
-		opacity			: 0;
-	}
-	10% {
-		transform		: scale(1);
-		opacity			: 1;
-	}
-	90% {
-		transform		: scale(1.5);
-		opacity			: 0;
-	}
-	100% {
-		transform		: scale(1);
-		opacity			: 0;
-	}
-}
-
-@keyframes background_title {
-	0% {
-		opacity			: 0;
-	}
-	100% {
-		opacity			: 1;
-	}
-}
-
-@keyframes background_underline {
-	0% {
-		transform		: scaleX(0);
-	}
-	100% {
-		transform		: scaleX(1);
-	}
-}
-
 @keyframes profile_blob {
 	0% {
 		border-radius		: 30% 70% 70% 30% / 30% 30% 70% 70%;

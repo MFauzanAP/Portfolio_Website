@@ -195,7 +195,7 @@ button {
 		justify-content		: center;
 		align-items		: flex-start;
 
-		animation-duration	: 1.5s;
+		animation-duration	: 1s;
 		animation-name		: navbar_hide;
 
 
@@ -250,9 +250,6 @@ button {
 
 			order			: 1;
 
-			animation-duration	: 1.5s;
-			animation-name		: navbar_children_hide;
-
 			/* Active */
 			&.active {
 
@@ -260,11 +257,13 @@ button {
 				.menu {
 					transform		: scale(1);
 
-					opacity			: 1;
+					opacity			: 0.95;
 
 					clip-path		: circle(150% at 100% 0%);
 
-					animation		: navbar_menu_show 0.5s linear forwards;
+					transition		: transform 0.25s linear,
+								  opacity 0.25s linear,
+								  clip-path 0.5s linear;
 				}
 
 				/* Button */
@@ -298,11 +297,6 @@ button {
 						transform-origin	: right;
 						transform		: translateX(-7px) rotate(45deg);
 					}
-				}
-
-				/* Cover */
-				.cover {
-					transform		: scale(0);
 				}
 			}
 
@@ -346,7 +340,9 @@ button {
 				transform		: scale(0);
 				transform-origin	: top right;
 
-				animation		: navbar_menu_hide 0.5s linear forwards;
+				transition		: transform 0.25s linear 0.25s,
+							  opacity 0.25s linear 0.25s,
+							  clip-path 0.5s linear;
 
 				/* Underline */
 				.underline {
@@ -608,7 +604,7 @@ button {
 		justify-content		: center;
 		align-items		: center;
 
-		animation-duration	: 0.75s;
+		animation-duration	: 0.5s;
 		animation-name		: navbar_show;
 		
 		transform-origin	: top;
@@ -1693,10 +1689,10 @@ div {
 
 @keyframes navbar_show {
 	0% {
-		max-height		: 0;
+		transform		: translateY(-100%);
 	}
 	100% {
-		max-height		: 100px;
+		transform		: translateY(0);
 	}
 }
 
@@ -1705,12 +1701,13 @@ div {
 		position		: fixed;
 		max-width		: 100%;
 		height			: $navbar-height-2;
-		top			: 0;
 
 		background		: #FFFFFF;
 		color			: #3D3D3D;
 
 		box-shadow		: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+		transform		: translateY(0);
 
 		justify-content		: flex-start;
 		align-items		: center;
@@ -1719,12 +1716,13 @@ div {
 		position		: fixed;
 		max-width		: 100%;
 		height			: 0;
-		top			: -$navbar-height-2;
 
 		background		: #FFFFFF;
 		color			: #3D3D3D;
 
 		box-shadow		: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+		transform		: translateY(-100%);
 
 		justify-content		: flex-start;
 		align-items		: center;
@@ -1740,12 +1738,16 @@ div {
 
 		box-shadow		: none;
 
+		transform		: translateY(-100%);
+
 		justify-content		: center;
 		align-items		: flex-start;
 	}
 	100% {
 		height			: $navbar-height-1;
 		top			: 35px;
+
+		transform		: translateY(0);
 	}
 }
 
@@ -1758,41 +1760,6 @@ div {
 	}
 	100% {
 		opacity			: 1;
-	}
-}
-
-@keyframes navbar_menu_show {
-	0% {
-		transform		: scale(0);
-
-		opacity			: 0;
-
-		clip-path		: circle(0% at 100% 0%);
-	}
-	50% {
-		transform		: scale(1);
-
-		opacity			: 1;
-	}
-	100% {
-		clip-path		: circle(150% at 100% 0%);
-	}
-}
-
-@keyframes navbar_menu_hide {
-	0% {
-		transform		: scale(1);
-
-		opacity			: 1;
-
-		clip-path		: circle(100% at 100% 0%);
-	}
-	100% {
-		transform		: scale(0);
-
-		opacity			: 0;
-
-		clip-path		: circle(0% at 100% 0%);
 	}
 }
 

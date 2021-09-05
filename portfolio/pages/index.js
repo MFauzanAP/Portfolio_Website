@@ -44,7 +44,7 @@ function Home () {
 				{/* ================================================== Landing Page ================================================== */}
 
 				{/* Background Mask */}
-				<div className={styles.background_mask} id="background_mask">
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.background_mask} id="background_mask">
 
 					{/* Background */}
 					<div className={styles.background} id="background"></div>
@@ -82,8 +82,8 @@ function Home () {
 
 								{/* Meta */}
 								<div className={styles.meta} id="meta">First year student at Qatar University,</div>
-								<div className={styles.meta} style={{animationDelay: '4s'}} id="meta">Full Stack Developer by day,</div>
-								<div className={styles.meta} style={{animationDelay: '5.25s'}} id="meta">Game Developer by night.</div>
+								<div className={styles.meta} style={{animationDelay: '3.5s'}} id="meta">Full Stack Developer by day,</div>
+								<div className={styles.meta} style={{animationDelay: '4.75s'}} id="meta">Game Developer by night.</div>
 
 							</div>
 						)}
@@ -99,7 +99,7 @@ function Home () {
 						</svg>
 					</div>
 
-				</div>
+				</div></Scene></Controller>
 
 				{/* Call to Action */}
 				<a href="/projects" className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">

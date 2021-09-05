@@ -146,6 +146,24 @@ $marker-size		: 9px;
 	
 	z-index			: -1;
 
+	/* Active */
+	&.active {
+
+		/* Welcome Text */
+		.welcome_text {
+
+			/* Title */
+			.title {
+				opacity			: 1;
+			}
+
+			/* Underline */
+			.underline {
+				transform		: scaleX(1);
+			}
+		}
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -320,7 +338,7 @@ $marker-size		: 9px;
 
 			color			: #FFFFFF;
 			
-			animation		: background_title 1s cubic-bezier(0.34,-0.39, 0.68, 1.38) forwards;
+			transition		: 1s cubic-bezier(0.34,-0.39, 0.68, 1.38) forwards;
 		}
 
 		/* Underline */
@@ -337,8 +355,7 @@ $marker-size		: 9px;
 
 			transform		: scaleX(0);
 
-			animation		: background_underline 1s ease forwards;
-			animation-delay		: 1s;
+			transition		: 1s ease 1s;
 		}
 
 		/* Meta */
@@ -1807,43 +1824,6 @@ $marker-size		: 9px;
 	}
 	100% {
 		transform		: translateX(0%);
-	}
-}
-
-@keyframes background_fade {
-	0% {
-		transform		: scale(1);
-		opacity			: 0;
-	}
-	10% {
-		transform		: scale(1);
-		opacity			: 1;
-	}
-	90% {
-		transform		: scale(1.5);
-		opacity			: 0;
-	}
-	100% {
-		transform		: scale(1);
-		opacity			: 0;
-	}
-}
-
-@keyframes background_title {
-	0% {
-		opacity			: 0;
-	}
-	100% {
-		opacity			: 1;
-	}
-}
-
-@keyframes background_underline {
-	0% {
-		transform		: scaleX(0);
-	}
-	100% {
-		transform		: scaleX(1);
 	}
 }
 
