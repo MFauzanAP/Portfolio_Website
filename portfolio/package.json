@@ -23,7 +23,6 @@
     "npm": "^7.20.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-lottie": "^1.2.3",
     "react-nextjs-toast": "^1.2.5",
     "react-particles-js": "^3.5.3",
     "react-scrollmagic": "^2.3.0",
