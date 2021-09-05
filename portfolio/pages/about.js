@@ -910,7 +910,7 @@ function Home () {
 
 							{/* Description */}
 							<div className={styles.description}>
-								I play video games from time to time, but nowadays, I don't play as much. Some games I 
+								I play video games from time to time, but nowadays, I don&apos;t play as much. Some games I 
 								play are League of Legends and Minecraft.
 							</div>
 
