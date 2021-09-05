@@ -1239,9 +1239,99 @@
 		width			: 150%;
 
 		background		: #FFFFFF;
+		border			: 1px solid #3D3D3D;
 		border-radius		: 50%;
 
 		transition		: 1.5s ease-in-out;
+	}
+
+	/* Tablet */
+	@include media ("<=tablet") {
+
+		.content {
+			width			: 90%;
+
+			justify-content		: flex-end;
+
+			font-size		: 0.9em;
+
+			.animation {
+				display			: none;
+			}
+
+			.description {
+				flex			: 1 1 100%;
+
+				.title {
+					font-size		: 2rem;
+				}
+
+				.form {
+					grid-template-columns	: repeat(1, 1fr);
+
+					.input {
+						grid-column-start	: 1 !important;
+
+						margin-bottom		: 15px;
+
+						input, textarea {
+							font-size		: 0.9rem;
+						}
+
+						label {
+							font-size		: 0.8rem;
+						}
+					}
+
+					.checkbox {
+						grid-column-start	: 1 !important;
+
+						label {
+							width			: 70px;
+							height			: 35px;
+
+							font-size		: 0.9rem;
+							text-indent		: 300px;
+
+							&::after {
+								width			: 25px;
+								height			: 25px;
+							}
+						}
+					}
+
+					.call_to_action {
+						grid-column-start	: 1 !important;
+						justify-self		: start;
+					}
+				}
+			}
+		}
+
+		.cover {
+			width			: auto;
+			height			: 150%;
+		}
+	}
+
+	/* Laptop */
+	@include media ("<=laptop", ">tablet") {
+
+		.content {
+			width			: 90%;
+
+			justify-content		: space-between;
+
+			.description {
+
+				.form {
+
+					.checkbox {
+						grid-column-start	: span 2;
+					}
+				}
+			}
+		}
 	}
 }
 
