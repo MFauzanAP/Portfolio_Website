@@ -646,6 +646,21 @@ function Home () {
 					<div className="navbar_container"><Navbar pathname=""/></div>
 				</Scene></Controller>
 
+				{/* Scrollbar */}
+				<div className="scrollbar">
+
+					{/* Container */}
+					<div className="container">
+
+						{/* Links */}
+						<Link href="/#hire_me"><a className="pass"><div className="text">Hire Me</div></a></Link>
+						<Link href="/#showcase"><a className="active"><div className="active text">Showcase</div></a></Link>
+						<Link href="/#career_timeline"><a className=""><div className="text">Career Timeline</div></a></Link>
+
+					</div>
+					
+				</div>
+
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>
 				<div className='wip2'>WORK IN PROGRESS</div>

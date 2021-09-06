@@ -445,6 +445,7 @@ button {
 							/* Title */
 							.title {
 								padding			: 25px 20px;
+								padding-left		: 10px;
 
 								/* Anchor */
 								a {
@@ -1004,15 +1005,27 @@ div {
 
 
 
-/* ================================================ Radial Scrollbar ================================================ */
-.radial_scrollbar {
+/* ==================================================== Scrollbar =================================================== */
+.scrollbar {
 	position		: fixed;
+	width			: 50px;
+	height			: 300px;
+	top			: calc(50% - 150px);
+	right			: 25px;
 
-	background		: transparent;
-	border			: 2px dashed #FFFFFF;
-	border-radius		: 50%;
+	overflow		: hidden;
 
-	transform		: rotate();
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: center;
+	align-items		: center;
+
+	transition		: 0.15s ease-in-out;
+
+	/* Hover */
+	&:hover {
+		opacity			: 1;
+	}
 
 
 
@@ -1020,37 +1033,50 @@ div {
 
 	/* Container */
 	.container {
-		position		: relative;
-		width			: 100%;
-		height			: 100%;
+		width			: 250px;
 
-		/* Secondary Color */
-		.secondary {
-			position		: absolute;
-			width			: 100%;
-			height			: 100%;
+		display			: flex;
+		flex-direction		: column;
+		justify-content		: center;
+		align-items		: center;
 
-			background		: transparent;
-			border			: 2px dashed #674EB6;
-			border-radius		: 50%;
-		}
+		/* Link */
+		a {
+			width			: 20px;
+			height			: 20px;
 
-		/* Section */
-		.section {
-			position		: absolute;
-
-			overflow		: visible;
+			margin			: 10px 0;
 
 			background		: transparent;
-			border			: 2px solid #000;
-			border-radius		: 50%;
+			border			: 3px solid #9B5AE6;
+			border-radius		: 10px;
+
+			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
+
+			/* Hover */
+			&:hover {
+				background		: #9B5AE6;
+
+				transform		: scale(1.25);
+			}
+
+			/* Pass */
+			&.pass {
+				background		: #9B5AE6;
+			}
+
+			/* Active */
+			&.active {
+				height			: 100px;
+
+				background		: linear-gradient(to bottom, #9B5AE6 0%, #9B5AE6 50%, transparent 50%, transparent 100%);
+				background-position	: 0 100%;
+				background-size		: 100% 200%;
+			}
 
 			/* Text */
 			.text {
-				position		: absolute;
-				width			: 500px;
-				left			: 10px;
-				top			: 0px;
+				opacity			: 0;
 			}
 		}
 	}
