@@ -108,7 +108,7 @@ function Home () {
 				</div></Scene></Controller>
 
 				{/* Call to Action */}
-				<a href="/projects" className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">
+				<a href="/#showcase" className={`${styles.call_to_action} ${styles.landing_page}`} id="landing_page">
 					VIEW PROJECTS
 					<FontAwesomeIcon className={styles.icon} style={{marginLeft: '10px'}} icon={['fas', 'arrow-right']}></FontAwesomeIcon>
 				</a>
