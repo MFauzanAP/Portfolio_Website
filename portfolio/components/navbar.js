@@ -135,7 +135,7 @@ class Navbar extends React.Component {
 					<div className="links">
 
 						{/* Home */}
-						<div className={`${home} link`}><Accordion options={{title: <Link href="/"><a>Home</a></Link>}}>
+						<div className={`${home} link`}><Accordion options={{title: <Link href="/"><a><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'home']}/>Home</a></Link>}}>
 							
 							{/* Links */}
 							<Link href="/#hire_me"><a>Hire Me</a></Link>
@@ -145,7 +145,7 @@ class Navbar extends React.Component {
 						</Accordion></div>
 						
 						{/* Projects */}
-						<div className={`${projects} link`}><Accordion options={{title: <Link href="/projects"><a>Projects</a></Link>}}>
+						<div className={`${projects} link`}><Accordion options={{title: <Link href="/projects"><a><FontAwesomeIcon style={{marginLeft: '4px', marginRight: '15px'}} icon={['fas', 'lightbulb']}/>Projects</a></Link>}}>
 							
 							{/* Links */}
 							<Link href="/projects#hire_me"><a>Hire Me</a></Link>
@@ -155,7 +155,7 @@ class Navbar extends React.Component {
 						</Accordion></div>
 
 						{/* About */}
-						<div className={`${about} link`}><Accordion options={{title: <Link href="/about"><a>About</a></Link>}}>
+						<div className={`${about} link`}><Accordion options={{title: <Link href="/about"><a><FontAwesomeIcon style={{marginLeft: '3px', marginRight: '13px'}} icon={['fas', 'user']}/>About</a></Link>}}>
 
 							{/* Links */}
 							<Link href="/about#profile"><a>Profile</a></Link>
@@ -167,7 +167,7 @@ class Navbar extends React.Component {
 						</Accordion></div>
 
 						{/* Contact */}
-						<div className={`${contact} link`}><Accordion options={{title: <Link href="/contact"><a>Contact</a></Link>}}>
+						<div className={`${contact} link`}><Accordion options={{title: <Link href="/contact"><a><FontAwesomeIcon style={{marginLeft: '2px', marginRight: '11px'}} icon={['fas', 'phone']}/>Contact</a></Link>}}>
 							
 							{/* Links */}
 							<Link href="/contact#contact_details"><a>Contact Details</a></Link>
