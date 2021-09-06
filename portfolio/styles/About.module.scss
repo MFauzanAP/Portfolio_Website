@@ -564,7 +564,7 @@
 
 			flex-direction		: column !important;
 			justify-content		: center !important;
-			align-items		: flex-start !important;
+			align-items		: center !important;
 
 			.animation {
 				width			: 100% !important;
@@ -581,7 +581,14 @@
 			}
 
 			.text {
-				max-width		: 100% !important;
+				max-width		: 90% !important;
+
+				text-align		: center !important;
+
+				display			: flex;
+				flex-direction		: column;
+				justify-content		: flex-start;
+				align-items		: center;
 
 				.header {
 					height			: 1.8rem !important;
