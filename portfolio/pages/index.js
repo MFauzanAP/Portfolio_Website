@@ -115,6 +115,9 @@ function Home () {
 				{/* ===================================================== Hire Me ==================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hire_me}>
 
+					{/* Anchor */}
+					<a id="hire_me"/>
+
 					{/* Meta */}
 					<div className={styles.meta}>
 
@@ -159,6 +162,9 @@ function Home () {
 
 				{/* ==================================================== Showcase ==================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.showcase}>
+
+					{/* Anchor */}
+					<a id="showcase"/>
 
 					{/* Background */}
 					<div className={styles.background}>
@@ -338,6 +344,9 @@ function Home () {
 
 				{/* ================================================= Career Timeline ================================================ */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.career_timeline}>
+
+					{/* Anchor */}
+					<a id="career_timeline"/>
 
 					{/* Background */}
 					<div className={styles.background}></div>

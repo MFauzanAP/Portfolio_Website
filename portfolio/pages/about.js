@@ -89,6 +89,9 @@ function Home () {
 				{/* ================================================== Personal Info ================================================= */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.personal_info}>
 
+					{/* Anchor */}
+					<a id="profile"/>
+
 					{/* Details */}
 					<div className={styles.details}>
 

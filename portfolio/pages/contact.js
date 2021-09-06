@@ -117,6 +117,9 @@ function Contact () {
 				{/* ======================================================= Map ====================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.map}>
 
+					{/* Anchor */}
+					<a id="contact_details"/>
+
 					{/* Background */}
 					<div className={styles.background}></div>
 
@@ -186,6 +189,9 @@ function Contact () {
 				{/* ======================================================= FAQ ====================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.faq}>
 
+					{/* Anchor */}
+					<a id="faq"/>
+
 					{/* Title */}
 					<div className={styles.title}>Frequently Asked Questions</div>
 
@@ -223,7 +229,7 @@ function Contact () {
 									during that time.
 								</p>
 								<p>
-									If you would like to learn more, please send me a message through the <Link href="#form"><a>form below </a></Link>
+									If you would like to learn more, please send me a message through the <Link href="#contact_form"><a>form below </a></Link>
 									or click here to <Link href="/projects"><a>check out my other projects.</a></Link>
 								</p>
 							</Accordion></div>
@@ -258,6 +264,9 @@ function Contact () {
 
 				{/* ================================================== Contact Form ================================================== */}
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.contact_form}>
+
+					{/* Anchor */}
+					<a id="contact_form"/>
 
 					{/* Divider */}
 					<div className={styles.divider}><div className={styles.connectors}>
