@@ -115,9 +115,20 @@ class Navbar extends React.Component {
 
 			{/* Navigation */}
 			<div className="navigation" ref={this.nav_menu_ref}>
+
+				{/* Overlay */}
+				<div className="overlay"></div>
 			
 				{/* Menu */}
 				<div className="menu">
+
+					{/* Header */}
+					<div className="header">
+
+						{/* Title */}
+						<div className="title">Menu</div>
+
+					</div>
 
 					{/* Site Links */}
 					<div className={`${home} link`}><Link href="/"><a>Home</a></Link></div>
