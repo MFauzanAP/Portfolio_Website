@@ -274,6 +274,10 @@ button {
 
 				/* Button */
 				.button {
+					position		: fixed;
+
+					margin-right		: 15px;
+
 					transform		: translateY(5px) scale(0.8); 
 
 					/* Bars */
@@ -300,6 +304,8 @@ button {
 
 			/* Overlay */
 			.overlay {
+				pointer-events		: none;
+
 				position		: fixed;
 				width			: 100vw;
 				height			: 100vh;
@@ -362,19 +368,6 @@ button {
 					}
 				}
 
-				/* Underline */
-				.underline {
-					width			: 150px;
-					height			: 0px;
-
-					margin-top		: 50px;
-					margin-bottom		: 50px;
-
-					background		: #3D3D3D;
-					border			: 2px solid #3D3D3D;
-					border-radius		: 2px;
-				}
-
 				/* Links */
 				a {
 					cursor			: pointer;
@@ -390,7 +383,7 @@ button {
 					font-family		: Lato;
 					font-style		: normal;
 					font-weight		: bold;
-					font-size		: 1.5em;
+					font-size		: 1.25em;
 					line-height		: 18px;
 					text-align		: center;
 					text-decoration		: none;
@@ -414,54 +407,78 @@ button {
 					}
 				}
 
-				/* Link */
-				.link {
-					position		: relative;
-					height			: auto;
+				/* Footer */
+				.footer {
+					position		: absolute;
+					bottom			: 0;
 
-					/* Hover */
-					&:hover {
-						color			: #3D3D3D;
+					padding			: 10px;
 
-						/* Underline */
-						&::after {
-							transform		: scaleX(0.9);
+					background-color	: #FFFFFF;
 
-							background-color	: #3D3D3D;
+					/* List */
+					ul {
+						margin			: 0;
+
+						/* Link */
+						.link {
+							position		: relative;
+							height			: auto;
+
+							font-size		: 1.5em;
+
+							/* Hover */
+							&:hover {
+								color			: #3D3D3D;
+
+								/* Underline */
+								&::after {
+									transform		: scaleX(0.9);
+
+									background-color	: #3D3D3D;
+								}
+							}
+
+							/* Underline */
+							&::after {
+								position		: absolute;
+								bottom			: 0.75em;
+								left			: 12.5%;
+								width			: 75%;
+								height			: 0.2em;
+
+								transform		: scaleX(0);
+								transform-origin	: center;
+
+								background-color	: #3D3D3D;
+								opacity			: 1;
+
+								content			: '';
+
+								transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+							}
+
+							/* Active */
+							&.active {
+								
+								/* Underline */
+								&::after {
+									transform		: scaleX(0.7);
+								}
+
+								/* Hover */
+								&:hover::after {
+									transform		: scaleX(0.9);
+								}
+							}
 						}
 					}
 
-					/* Underline */
-					&::after {
-						position		: absolute;
-						bottom			: 0.75em;
-						left			: 12.5%;
-						width			: 75%;
-						height			: 0.2em;
+					/* Copyright */
+					.copyright {
+						margin-top		: 0;
 
-						transform		: scaleX(0);
-						transform-origin	: center;
-
-						background-color	: #3D3D3D;
-						opacity			: 1;
-
-						content			: '';
-
-						transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-					}
-
-					/* Active */
-					&.active {
-						
-						/* Underline */
-						&::after {
-							transform		: scaleX(0.7);
-						}
-
-						/* Hover */
-						&:hover::after {
-							transform		: scaleX(0.9);
-						}
+						color			: #AAAAAA;
 					}
 				}
 			}
