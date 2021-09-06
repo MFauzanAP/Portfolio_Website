@@ -53,6 +53,9 @@ function Home () {
 		// 	Import lottie
 		import("@lottiefiles/lottie-player");
 
+		//	Re enable scrolling
+		document.querySelector('body').classList.remove('fixed');
+
 	})
 
 
