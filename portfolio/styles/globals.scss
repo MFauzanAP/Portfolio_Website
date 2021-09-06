@@ -330,7 +330,13 @@ button {
 				top			: 0;
 				right			: 0;
 
-				overflow		: hidden;
+				display			: flex;
+				flex-direction		: column;
+				justify-content		: flex-start;
+				align-items		: flex-start;
+
+				overflow-x		: hidden;
+				overflow-y		: auto;
 
 				background-color	: #F8F8F8;
 				color			: #3D3D3D;
@@ -345,8 +351,11 @@ button {
 
 				/* Header */
 				.header {
+					flex			: 0 0 70px;
 					width			: 100%;
 					height			: 70px;
+
+					margin-bottom		: 15px;
 
 					background-color	: #FFFFFF;
 					color			: #3D3D3D;
@@ -369,47 +378,130 @@ button {
 				}
 
 				/* Links */
-				a {
-					cursor			: pointer;
+				.links {
+					flex			: 1 1 100%;
+					width			: 100%;
 
-					flex			: 0 1 auto;
+					display			: flex;
+					flex-direction		: column;
+					justify-content		: flex-start;
+					align-items		: flex-start;
 
-					display			: inline-block;
-					
-					padding			: (math.div($navbar-height-2, 2) - 12px) 0;
-					margin-left		: 25px;
-					margin-right		: 25px;
-		
-					font-family		: Lato;
-					font-style		: normal;
-					font-weight		: bold;
-					font-size		: 1.25em;
-					line-height		: 18px;
-					text-align		: center;
-					text-decoration		: none;
-		
-					color			: #3D3D3D;
+					/* Link */
+					.link {
+						width			: calc(100% - 15px);
 
-					transform-origin	: center;
+						margin			: 0 15px;
+						margin-top		: 10px;
 
-					transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-		
-					/* Hover */
-					&:hover {
-						color			: #3D3D3D;
-		
-						transform		: scale(1.25);
-					}
+						/* Active */
+						&.active {
+							margin-top		: 20px;
 
-					/* Underline */
-					&::after {
-						display			: none;
+							/* Accordion */
+							.accordion {
+
+								/* Title */
+								.title {
+									background		: #9B5AE6;
+									color			: #FFFFFF !important;
+									border-radius		: 50px 0 0 50px;
+
+									padding			: 20px;
+
+									/* Anchor */
+									a {
+										color			: #FFFFFF;
+									}
+								}
+
+								/* Content */
+								.content {
+									margin-top		: 15px;
+								}
+							}
+						}
+
+						/* Accordion */
+						.accordion {
+							margin			: 0;
+							padding-bottom		: 0;
+
+							box-shadow		: none;
+
+							background		: transparent !important;
+
+							transform		: none !important;
+
+							/* Active */
+							&.active {
+
+								/* Title */
+								.title {
+									color			: #3D3D3D;
+								}
+							}
+
+							/* Title */
+							.title {
+								padding			: 25px 20px;
+
+								/* Anchor */
+								a {
+									cursor			: pointer;
+
+									flex			: 0 1 auto;
+
+									display			: inline-block;
+
+									padding			: 0;
+									margin			: 0;
+									margin-left		: 10px;
+						
+									font-family		: Lato;
+									font-style		: normal;
+									font-weight		: bold;
+									font-size		: 1em;
+									line-height		: 18px;
+									text-align		: center;
+									text-decoration		: none;
+						
+									color			: #3D3D3D;
+
+									/* Underline */
+									&::after {
+										transform		: scale(0) !important;
+									}
+								}
+							}
+
+							/* Content */
+							.content {
+								display			: flex;
+								flex-direction		: column;
+								justify-content		: flex-start;
+								align-items		: flex-start;
+
+								/* Anchors */
+								a {
+									margin			: 0;
+									padding			: 10px 25px;
+
+									color			: #646464;
+
+									/* Underline */
+									&::after {
+										transform		: scale(0) !important;
+									}
+								}
+							}
+						}
 					}
 				}
 
 				/* Footer */
 				.footer {
-					position		: absolute;
+					position		: relative;
 					bottom			: 0;
 
 					padding			: 10px;
@@ -420,57 +512,31 @@ button {
 					ul {
 						margin			: 0;
 
-						/* Link */
-						.link {
-							position		: relative;
-							height			: auto;
+						/* Anchor */
+						a {
+							cursor			: pointer;
 
+							flex			: 0 1 auto;
+
+							display			: inline-block;
+							
+							padding			: (math.div($navbar-height-2, 2) - 12px) 0;
+							margin-left		: 25px;
+							margin-right		: 25px;
+				
+							font-family		: Lato;
+							font-style		: normal;
+							font-weight		: bold;
 							font-size		: 1.5em;
+							line-height		: 18px;
+							text-align		: center;
+							text-decoration		: none;
+				
+							color			: #3D3D3D;
 
-							/* Hover */
-							&:hover {
-								color			: #3D3D3D;
+							transform-origin	: center;
 
-								/* Underline */
-								&::after {
-									transform		: scaleX(0.9);
-
-									background-color	: #3D3D3D;
-								}
-							}
-
-							/* Underline */
-							&::after {
-								position		: absolute;
-								bottom			: 0.75em;
-								left			: 12.5%;
-								width			: 75%;
-								height			: 0.2em;
-
-								transform		: scaleX(0);
-								transform-origin	: center;
-
-								background-color	: #3D3D3D;
-								opacity			: 1;
-
-								content			: '';
-
-								transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
-							}
-
-							/* Active */
-							&.active {
-								
-								/* Underline */
-								&::after {
-									transform		: scaleX(0.7);
-								}
-
-								/* Hover */
-								&:hover::after {
-									transform		: scaleX(0.9);
-								}
-							}
+							transition		: 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 						}
 					}
 

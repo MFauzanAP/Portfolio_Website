@@ -4,6 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Accordion from "../components/accordion";
 import CopyToClipboard from './utils/copy_to_clipboard';
 
 
@@ -130,11 +131,52 @@ class Navbar extends React.Component {
 
 					</div>
 
-					{/* Site Links */}
-					<div className={`${home} link`}><Link href="/"><a>Home</a></Link></div>
-					<div className={`${projects} link`}><Link href="/projects"><a>Projects</a></Link></div>
-					<div className={`${about} link`}><Link href="/about"><a>About</a></Link></div>
-					<div className={`${contact} link`}><Link href="/contact"><a>Contact</a></Link></div>
+					{/* Links */}
+					<div className="links">
+
+						{/* Home */}
+						<div className={`${home} link`}><Accordion options={{title: <Link href="/"><a>Home</a></Link>}}>
+							
+							{/* Links */}
+							<Link href="/#hire_me"><a>Hire Me</a></Link>
+							<Link href="/#showcase"><a>Side Projects</a></Link>
+							<Link href="/#career_timeline"><a>Career Timeline</a></Link>
+
+						</Accordion></div>
+						
+						{/* Projects */}
+						<div className={`${projects} link`}><Accordion options={{title: <Link href="/projects"><a>Projects</a></Link>}}>
+							
+							{/* Links */}
+							<Link href="/projects#hire_me"><a>Hire Me</a></Link>
+							<Link href="/projects#showcase"><a>Side Projects</a></Link>
+							<Link href="/projects#career_timeline"><a>Career Timeline</a></Link>
+
+						</Accordion></div>
+
+						{/* About */}
+						<div className={`${about} link`}><Accordion options={{title: <Link href="/about"><a>About</a></Link>}}>
+
+							{/* Links */}
+							<Link href="/about#profile"><a>Profile</a></Link>
+							<Link href="/about#tech_stack"><a>Tech Stack</a></Link>
+							<Link href="/about#experience"><a>Experience</a></Link>
+							<Link href="/about#education"><a>Education</a></Link>
+							<Link href="/about#hobbies"><a>Hobbies</a></Link>
+
+						</Accordion></div>
+
+						{/* Contact */}
+						<div className={`${contact} link`}><Accordion options={{title: <Link href="/contact"><a>Contact</a></Link>}}>
+							
+							{/* Links */}
+							<Link href="/contact#contact_details"><a>Contact Details</a></Link>
+							<Link href="/contact#faq"><a>FAQ</a></Link>
+							<Link href="/contact#contact_form"><a>Contact Form</a></Link>
+
+						</Accordion></div>
+
+					</div>
 
 					{/* Footer */}
 					<div className="footer">
