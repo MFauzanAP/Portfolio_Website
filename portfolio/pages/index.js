@@ -22,6 +22,9 @@ function Home () {
 
 		//	Re enable scrolling
 		document.querySelector('body').classList.remove('fixed');
+		
+		//	Hide navigation menu
+		document.querySelector('.navigation').classList.remove('active');
 
 	})
 
