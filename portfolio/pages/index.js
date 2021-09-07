@@ -652,10 +652,38 @@ function Home () {
 					{/* Container */}
 					<div className="container">
 
-						{/* Links */}
-						<Link href="/#hire_me"><a className="pass"><div className="text">Hire Me</div></a></Link>
-						<Link href="/#showcase"><a className="active"><div className="active text">Showcase</div></a></Link>
-						<Link href="/#career_timeline"><a className=""><div className="text">Career Timeline</div></a></Link>
+						{/* Hire Me */}
+						<Controller><Scene duration={750} triggerElement="#hire_me">
+							{progress => (
+								<Link href="/#hire_me"><a className={progress == 1 ? `pass` : (progress == 0 ? `` : `active`)} style={{backgroundPosition: `0 ${100 - (progress * 100)}%`}}>
+
+									<div className="text">Hire Me</div>
+
+								</a></Link>
+							)}
+						</Scene></Controller>
+						
+						{/* Showcase */}
+						<Controller><Scene duration={2365} triggerElement="#showcase">
+							{progress => (
+								<Link href="/#showcase"><a className={progress == 1 ? `pass` : (progress == 0 ? `` : `active`)} style={{backgroundPosition: `0 ${100 - (progress * 100)}%`}}>
+
+									<div className="text">Showcase</div>
+
+								</a></Link>
+							)}
+						</Scene></Controller>
+
+						{/* Career Timeline */}
+						<Controller><Scene duration={3000} triggerElement="#career_timeline">
+							{progress => (
+								<Link href="/#career_timeline"><a className={progress == 1 ? `pass` : (progress == 0 ? `` : `active`)} style={{backgroundPosition: `0 ${100 - (progress * 100)}%`}}>
+
+									<div className="text">Career Timeline</div>
+
+								</a></Link>
+							)}
+						</Scene></Controller>
 
 					</div>
 					

@@ -1011,7 +1011,7 @@ div {
 	width			: 50px;
 	height			: 300px;
 	top			: calc(50% - 150px);
-	right			: 25px;
+	right			: 15px;
 
 	overflow		: hidden;
 
@@ -1042,8 +1042,8 @@ div {
 
 		/* Link */
 		a {
-			width			: 20px;
-			height			: 20px;
+			width			: 15px;
+			height			: 15px;
 
 			margin			: 10px 0;
 
@@ -1054,7 +1054,7 @@ div {
 			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
 
 			/* Hover */
-			&:hover {
+			&:hover:not(.active) {
 				background		: #9B5AE6;
 
 				transform		: scale(1.25);
@@ -1067,11 +1067,14 @@ div {
 
 			/* Active */
 			&.active {
-				height			: 100px;
+				height			: 60px;
 
 				background		: linear-gradient(to bottom, #9B5AE6 0%, #9B5AE6 50%, transparent 50%, transparent 100%);
 				background-position	: 0 100%;
 				background-size		: 100% 200%;
+				
+				transition		: transform 0.25s ease-in-out,
+							  height 0.25s ease-in-out;
 			}
 
 			/* Text */
