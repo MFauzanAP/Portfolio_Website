@@ -1135,6 +1135,11 @@ div {
 		}
 	}
 
+	/* Mobile */
+	@include media('<=tablet') {
+		display			: none;
+	}
+
 }
 
 
