@@ -1025,7 +1025,8 @@ div {
 	justify-content		: center;
 	align-items		: center;
 
-	transition		: 0.15s ease-in-out;
+	transition		: 0.15s ease-in-out,
+				  opacity 0.25s ease-in-out;
 
 	/* Hover */
 	&:hover {

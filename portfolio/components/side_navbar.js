@@ -18,6 +18,9 @@ class SideNavbar extends React.Component {
 	//	Variable to hold scroll progress of each section
 	progresses = [];
 
+	//	Variable to store whether to show the progress bar
+	active = false;
+
 	//	Variable to hold href
 	href = '';
 
@@ -66,6 +69,13 @@ class SideNavbar extends React.Component {
 	//	Function to update scroll
 	UpdateScroll () {
 
+		//	Declare temporary variables
+		var top = 0;
+		var bot = 0;
+
+		//	Reset active
+		this.active = true;
+
 		//	Update href
 		this.href = window.location.pathname.replace('/', '').replace('\\', '');
 
@@ -73,7 +83,7 @@ class SideNavbar extends React.Component {
 		var scroll_pos = document.body.scrollTop + (window.innerHeight / 2);
 
 		//	Calculate scroll position for each section
-		this.progresses = this.props.options.sections.map(section => {
+		this.progresses = this.props.options.sections.map((section, index) => {
 
 			//	Get element
 			var element = document.querySelector(`.${section.class}`);
@@ -85,10 +95,17 @@ class SideNavbar extends React.Component {
 			var start = element.getBoundingClientRect().top;
 			var height = element.getBoundingClientRect().height;
 
+			//	Store top and bottom of sections
+			if (index == 0) top = start;
+			if (index == this.props.options.sections.length - 1) bot = start + height;
+
 			//	Return progress
 			return Math.min(Math.max((scroll_pos - start) / height, 0), 1);
 
 		});
+
+		//	If scroll position is out of bounds then hide navbar
+		if (scroll_pos < top || scroll_pos > bot) this.active = false;
 
 		//	Set state
 		this.setState({scrolled: scroll_pos});
@@ -120,7 +137,7 @@ class SideNavbar extends React.Component {
 		});
 
 		//	Return html
-		return (<div className="scrollbar">
+		return (<div className="scrollbar" style={{opacity: this.active ? '1' : '0'}}>
 
 				{/* Container */}
 				<div className="container">{links}</div>
