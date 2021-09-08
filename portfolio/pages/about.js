@@ -756,7 +756,7 @@ function Home () {
 							autoPlay		: false, 
 							invertArrows		: true, 
 							arrowColor		: 'white',
-							paginationColor		: 'black',
+							paginationColor		: 'purple',
 							padding			: 10, 
 							maxWidth		: '700px', 
 							maxHeight		: '500px', 
