@@ -45,107 +45,6 @@
 
 	/* ==================================================== Children ==================================================== */
 
-	/* Call to Action */
-	.call_to_action {
-		cursor			: pointer;
-
-		width			: 200px;
-		height			: 50px;
-		
-		margin			: 10px;
-		padding			: 12px;
-
-		background		: #FFFFFF;
-		color			: #3D3D3D;
-		border			: 3px solid transparent;
-
-		font-family		: Lato;
-		font-style		: normal;
-		font-weight		: bold;
-		font-size		: 13px;
-		line-height		: 18px;
-		text-align		: center;
-
-		box-sizing		: border-box;
-		box-shadow		: 4px 4px 80px rgba(0, 0, 0, 0.25);
-		border-radius		: 50px;
-
-		transition		: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-
-		/* Hover */
-		&:hover {
-			background		: #EEEEEE;
-
-			transform		: scale(1.1);
-		}
-
-		/* Landing Page */
-		&.landing_page {
-			margin-top		: 85vh;
-
-			color			: #6C47B1;
-			border			: 3px solid #6C47B1;
-			background-image	: linear-gradient(to left, #FFFFFF, #FFFFFF 50%, #6C47B1 50%, #6C47B1);
-			background-position	: 100% 0;
-			background-size		: 200% 200%;
-
-			font-size		: 13px;
-			font-weight		: bolder;
-
-			/* Hover */
-			&:hover {
-				background-position	: 0 0;
-				color			: #FFFFFF;
-
-				transform		: scale(1.1);
-			}
-		}
-	}
-}
-
-
-
-/* ======================================================= Map ====================================================== */
-.map {
-	position		: relative;
-	width			: 100%;
-	height			: 110vh;
-
-	display			: flex;
-	flex-direction		: row;
-	justify-content		: center;
-	align-items		: center;
-
-	overflow		: hidden;
-
-	/* Active */
-	&.active {
-
-		/* Description */
-		.description {
-			opacity			: 1;
-		}
-	}
-
-
-
-	/* ==================================================== Children ==================================================== */
-
-	/* Background */
-	.background {
-		position		: absolute;
-		width			: 200%;
-		height			: 200%;
-		left			: 0;
-		top			: 0;
-		
-		background		: #F8F8F8;
-
-		animation		: background_gradient 30s ease 1s infinite;
-		
-		z-index			: -1;
-	}
-
 	/* Navbar Background */
 	.navbar_background {
 		position		: absolute;
@@ -225,6 +124,104 @@
 				height			: 120px;
 			}
 		}
+	}
+
+	/* Call to Action */
+	.call_to_action {
+		cursor			: pointer;
+
+		width			: 200px;
+		height			: 50px;
+		
+		margin			: 10px;
+		padding			: 12px;
+
+		background		: #FFFFFF;
+		color			: #3D3D3D;
+		border			: 3px solid transparent;
+
+		font-family		: Lato;
+		font-style		: normal;
+		font-weight		: bold;
+		font-size		: 13px;
+		line-height		: 18px;
+		text-align		: center;
+
+		box-sizing		: border-box;
+		box-shadow		: 4px 4px 80px rgba(0, 0, 0, 0.25);
+		border-radius		: 50px;
+
+		transition		: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+
+		/* Hover */
+		&:hover {
+			background		: #EEEEEE;
+
+			transform		: scale(1.1);
+		}
+
+		/* Landing Page */
+		&.landing_page {
+			margin-top		: 85vh;
+
+			color			: #6C47B1;
+			border			: 3px solid #6C47B1;
+			background-image	: linear-gradient(to left, #FFFFFF, #FFFFFF 50%, #6C47B1 50%, #6C47B1);
+			background-position	: 100% 0;
+			background-size		: 200% 200%;
+
+			font-size		: 13px;
+			font-weight		: bolder;
+
+			/* Hover */
+			&:hover {
+				background-position	: 0 0;
+				color			: #FFFFFF;
+
+				transform		: scale(1.1);
+			}
+		}
+	}
+}
+
+
+
+/* ======================================================= Map ====================================================== */
+.map {
+	width			: 100%;
+	height			: 110vh;
+
+	display			: flex;
+	flex-direction		: row;
+	justify-content		: center;
+	align-items		: center;
+
+	overflow		: hidden;
+
+	/* Active */
+	&.active {
+
+		/* Description */
+		.description {
+			opacity			: 1;
+		}
+	}
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Background */
+	.background {
+		position		: absolute;
+		width			: 100%;
+		height			: 100%;
+		left			: 0;
+		top			: 0;
+		
+		background		: #F8F8F8;
+		
+		z-index			: -1;
 	}
 
 	/* Animation */
@@ -357,6 +354,7 @@
 
 	/* Map */
 	.map {
+		position		: relative;
 		width			: 50%;
 		height			: 50%;
 
@@ -1365,18 +1363,6 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                      Keyframes                                                     */
 /* ------------------------------------------------------------------------------------------------------------------ */
-
-@keyframes background_gradient {
-	0% {
-		transform		: translateX(0%);
-	}
-	50% {
-		transform		: translateX(-25%);
-	}
-	100% {
-		transform		: translateX(0%);
-	}
-}
 
 @keyframes connector {
 	0% {
