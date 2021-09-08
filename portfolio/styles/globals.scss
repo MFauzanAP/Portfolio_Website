@@ -1018,8 +1018,6 @@ div {
 	top			: calc(50% - 150px);
 	right			: 15px;
 
-	overflow		: hidden;
-
 	display			: flex;
 	flex-direction		: column;
 	justify-content		: center;
@@ -1066,6 +1064,15 @@ div {
 				background		: #9B5AE6;
 
 				transform		: scale(1.25);
+
+				/* Text */
+				.text {
+					right			: 20px;
+
+					opacity			: 1;
+
+					transform		: scale(0.8) translate(0, calc(-50% + 0.4em));
+				}
 			}
 
 			/* Pass */
@@ -1085,11 +1092,45 @@ div {
 				
 				transition		: transform 0.25s ease-in-out,
 							  height 0.25s ease-in-out;
+
+				/* Hover */
+				&:hover {
+					transform		: scale(1.1);
+
+					/* Text */
+					.text {
+						right			: 30px;
+
+						opacity			: 1;
+
+						transform		: scale(0.95) translate(0, calc(50% - 0.4em));
+					}
+				}
 			}
 
 			/* Text */
 			.text {
+				pointer-events		: none;
+
+				position		: absolute;
+				right			: 0;
+
+				padding			: 10px;
+
+				background		: #9B5AE6;
+				color			: #FFFFFF;
+				border-radius		: 10px;
+
 				opacity			: 0;
+
+				font-size		: 0.8em;
+				text-align		: right;
+				line-height		: 1em;
+				white-space		: nowrap;
+
+				transform		: scale(0.8) translate(0, calc(-50% + 0.4em));
+
+				transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
 			}
 		}
 	}
