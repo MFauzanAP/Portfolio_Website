@@ -61,7 +61,7 @@ a {
 
 	/* Anchor */
 	&.anchor {
-		transform		: translateY(-25vh);
+		transform		: translateY(-12.5vh);
 	}
 }
 
@@ -1050,7 +1050,7 @@ div {
 			width			: 15px;
 			height			: 15px;
 
-			margin			: 10px 0;
+			margin			: 7.5px 0;
 
 			background		: transparent;
 			border			: 3px solid #9B5AE6;
@@ -1073,6 +1073,8 @@ div {
 			/* Active */
 			&.active {
 				height			: 60px;
+
+				margin			: 10px 0;
 
 				background		: linear-gradient(to bottom, #9B5AE6 0%, #9B5AE6 50%, transparent 50%, transparent 100%);
 				background-position	: 0 100%;
