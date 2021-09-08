@@ -34,6 +34,7 @@ import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import SideNavbar from '../components/side_navbar';
 import Slideshow from '../components/slideshow';
 import ContactMe from '../components/contact_me';
 
@@ -950,6 +951,37 @@ function Home () {
 				<Controller><Scene classToggle="active" triggerElement="#grid">
 					<div className="navbar_container"><Navbar pathname="about"/></div>
 				</Scene></Controller>
+
+				{/* Scrollbar */}
+				<SideNavbar options={{
+					sections	: [
+						{
+							id		: 'profile',
+							class		: styles.personal_info,
+							name		: 'Profile'
+						},
+						{
+							id		: 'tech_stack',
+							class		: styles.tech_stack,
+							name		: 'Tech Stack'
+						},
+						{
+							id		: 'experience',
+							class		: styles.experience,
+							name		: 'Experience'
+						},
+						{
+							id		: 'education',
+							class		: styles.education,
+							name		: 'Education'
+						},
+						{
+							id		: 'hobbies',
+							class		: styles.hobbies,
+							name		: 'Hobbies'
+						}
+					]
+				}}/>
 
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>
