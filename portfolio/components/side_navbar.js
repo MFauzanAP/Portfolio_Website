@@ -18,6 +18,9 @@ class SideNavbar extends React.Component {
 	//	Variable to hold scroll progress of each section
 	progresses = [];
 
+	//	Variable to hold href
+	href = '';
+
 
 
 	/* ===================================================== On Load ==================================================== */
@@ -41,6 +44,9 @@ class SideNavbar extends React.Component {
 		//	Add event listener for scroll event
 		window.addEventListener('scroll', this.UpdateScroll.bind(this));
 
+		//	Update scroll
+		this.UpdateScroll();
+
 	}
 
 
@@ -60,15 +66,24 @@ class SideNavbar extends React.Component {
 	//	Function to update scroll
 	UpdateScroll () {
 
+		//	Update href
+		this.href = window.location.pathname.replace('/', '').replace('\\', '');
+
 		//	Calculate scroll position
 		var scroll_pos = document.body.scrollTop + (window.innerHeight / 2);
 
 		//	Calculate scroll position for each section
 		this.progresses = this.props.options.sections.map(section => {
 
+			//	Get element
+			var element = document.querySelector(`.${section.class}`);
+
+			//	If element is not found then skip
+			if (!element) return;
+
 			//	Get section start and end
-			var start = document.getElementsByClassName(section.class)[0].getBoundingClientRect().top;
-			var height = document.getElementsByClassName(section.class)[0].getBoundingClientRect().height;
+			var start = element.getBoundingClientRect().top;
+			var height = element.getBoundingClientRect().height;
 
 			//	Return progress
 			return Math.min(Math.max((scroll_pos - start) / height, 0), 1);
@@ -96,7 +111,7 @@ class SideNavbar extends React.Component {
 			var style = {backgroundPosition: `0 ${100 - (progress * 100)}%`};
 
 			//	Add link to list of links
-			return (<Link key={index} href={`/#${section.id}`}><a className={class_name} style={style}>
+			return (<Link key={index} href={`/${this.href}#${section.id}`}><a className={class_name} style={style}>
 
 					<div className="text">{section.name}</div>
 
