@@ -83,8 +83,6 @@ class SideNavbar extends React.Component {
 	/* ==================================================== On Render =================================================== */
 	render () {
 
-		console.log(this.progresses);
-
 		//	Generate section links
 		var links = this.props.options.sections.map((section, index) => {
 

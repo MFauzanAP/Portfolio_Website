@@ -93,7 +93,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.personal_info}>
 
 					{/* Anchor */}
-					<a id="profile"/>
+					<a className="anchor" id="profile"/>
 
 					{/* Details */}
 					<div className={styles.details}>
@@ -280,7 +280,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.tech_stack}>
 
 					{/* Anchor */}
-					<a id="tech_stack"/>
+					<a className="anchor" id="tech_stack"/>
 
 					{/* Background */}
 					<div className={styles.background}>
@@ -612,7 +612,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.experience}>
 
 					{/* Anchor */}
-					<a id="experience"/>
+					<a className="anchor" id="experience"/>
 
 					{/* Header */}
 					<div className={styles.header}>EXPERIENCE</div>
@@ -739,7 +739,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.education}>
 
 					{/* Anchor */}
-					<a id="education"/>
+					<a className="anchor" id="education"/>
 
 					{/* Background */}
 					<div className={styles.background}></div>
@@ -837,7 +837,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hobbies}>
 
 					{/* Anchor */}
-					<a id="hobbies"/>
+					<a className="anchor" id="hobbies"/>
 
 					{/* Header */}
 					<div className={styles.header}>IN MY FREE TIME</div>

@@ -121,7 +121,7 @@ function Contact () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.map}>
 
 					{/* Anchor */}
-					<a id="contact_details"/>
+					<a className="anchor" id="contact_details"/>
 
 					{/* Background */}
 					<div className={styles.background}></div>
@@ -193,7 +193,7 @@ function Contact () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.faq}>
 
 					{/* Anchor */}
-					<a id="faq"/>
+					<a className="anchor" id="faq"/>
 
 					{/* Title */}
 					<div className={styles.title}>Frequently Asked Questions</div>
@@ -269,7 +269,7 @@ function Contact () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.contact_form}>
 
 					{/* Anchor */}
-					<a id="contact_form"/>
+					<a className="anchor" id="contact_form"/>
 
 					{/* Divider */}
 					<div className={styles.divider}><div className={styles.connectors}>
