@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { forwardRef } from 'react';
 import styles from '../styles/Home.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -8,6 +8,7 @@ import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import SideNavbar from '../components/side_navbar';
 import Slideshow from '../components/slideshow';
 import ContactMe from '../components/contact_me';
 
@@ -647,47 +648,25 @@ function Home () {
 				</Scene></Controller>
 
 				{/* Scrollbar */}
-				<div className="scrollbar">
-
-					{/* Container */}
-					<div className="container">
-
-						{/* Hire Me */}
-						<Controller><Scene duration={750} triggerElement="#hire_me">
-							{progress => (
-								<Link href="/#hire_me"><a className={progress == 1 ? `pass` : (progress == 0 ? `` : `active`)} style={{backgroundPosition: `0 ${100 - (progress * 100)}%`}}>
-
-									<div className="text">Hire Me</div>
-
-								</a></Link>
-							)}
-						</Scene></Controller>
-						
-						{/* Showcase */}
-						<Controller><Scene duration={2365} triggerElement="#showcase">
-							{progress => (
-								<Link href="/#showcase"><a className={progress == 1 ? `pass` : (progress == 0 ? `` : `active`)} style={{backgroundPosition: `0 ${100 - (progress * 100)}%`}}>
-
-									<div className="text">Showcase</div>
-
-								</a></Link>
-							)}
-						</Scene></Controller>
-
-						{/* Career Timeline */}
-						<Controller><Scene duration={3000} triggerElement="#career_timeline">
-							{progress => (
-								<Link href="/#career_timeline"><a className={progress == 1 ? `pass` : (progress == 0 ? `` : `active`)} style={{backgroundPosition: `0 ${100 - (progress * 100)}%`}}>
-
-									<div className="text">Career Timeline</div>
-
-								</a></Link>
-							)}
-						</Scene></Controller>
-
-					</div>
-					
-				</div>
+				<SideNavbar options={{
+					sections	: [
+						{
+							id		: 'hire_me',
+							class		: styles.hire_me,
+							name		: 'Hire Me'
+						},
+						{
+							id		: 'showcase',
+							class		: styles.showcase,
+							name		: 'Showcase'
+						},
+						{
+							id		: 'career_timeline',
+							class		: styles.career_timeline,
+							name		: 'Career Timeline'
+						}
+					]
+				}}/>
 
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>
