@@ -105,21 +105,16 @@ function Projects () {
 
 				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#background_end">
-					<div className="navbar_container"><Navbar pathname="contact"/></div>
+					<div className="navbar_container"><Navbar pathname="projects"/></div>
 				</Scene></Controller>
 
 				{/* Scrollbar */}
 				<SideNavbar options={{
 					sections	: [
 						{
-							id		: 'contact_details',
-							class		: styles.map,
-							name		: 'Contact Details',
-						},
-						{
-							id		: 'faq',
-							class		: styles.faq,
-							name		: 'FAQ',
+							id		: 'project_list',
+							class		: styles.project_list,
+							name		: 'Project Showcase',
 						}
 					]
 				}}/>

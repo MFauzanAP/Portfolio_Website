@@ -528,7 +528,7 @@ function Home () {
 								{/* List */}
 								<ul>
 									<li>Implementing a WYSIWYG editor for a more in depth data entry experience</li>
-									<li>Using ElasticSearch to filter for products by location</li>
+									<li>Using ElasticSearch to filter for orders by location</li>
 									<li>Doing a complete overhaul of the product category system</li>
 									<li>Improving the product search page</li>
 									<li>Discovering and implementing new and more efficient ways of inputting data</li>
