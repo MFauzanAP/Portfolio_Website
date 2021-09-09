@@ -340,7 +340,7 @@ function Home () {
 					</div>
 
 					{/* Call to Action */}
-					<a href="/projects" className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'search']}/>View All</a>
+					<Link href="/projects"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'search']}/>View All</a></Link>
 
 				</div></Scene></Controller>
 
