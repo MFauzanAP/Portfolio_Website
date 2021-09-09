@@ -1,6 +1,7 @@
 import styles from '../styles/Projects.module.scss'
 import React, { useRef } from 'react';
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
@@ -61,8 +62,8 @@ function Projects () {
 					{/* Anchor */}
 					<a className="anchor" id="project_list"/>
 
-					{/* Title */}
-					<div className={styles.title}>PROJECT SHOWCASE</div>
+					{/* Header */}
+					<div className={styles.header}>PROJECT SHOWCASE</div>
 
 					{/* Meta */}
 					<div className={styles.meta}>
@@ -74,7 +75,24 @@ function Projects () {
 					<div className={styles.grid}>
 
 						{/* Cards */}
-						<div className={styles.card}></div>
+						<div className={styles.card}>
+
+							{/* Background */}
+							<div className={styles.background}><Image layout='fill' placeholder='blur' blurDataURL={'/top_down_project_image_1.png'} src={'/top_down_project_image_1.png'}/></div>
+
+							{/* Title */}
+							<div className={styles.title}>Top Down Project</div>
+
+							{/* Description */}
+							<div className={styles.description}>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet enim neque, 
+								ac condimentum lorem lacinia at. Maecenas id neque eros. Morbi a velit at orci egestas.
+							</div>
+
+							{/* Call to Action */}
+							<div className={styles.call_to_action}>LEARN MORE</div>
+
+						</div>
 						<div className={styles.card}></div>
 						<div className={styles.card}></div>
 						<div className={styles.card}></div>
