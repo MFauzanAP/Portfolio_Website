@@ -249,7 +249,7 @@
 		position		: relative;
 
 		margin			: 10px 50px;
-		margin-bottom		: 50px;
+		margin-bottom		: 60px;
 
 		color			: #3D3D3D;
 
@@ -259,12 +259,116 @@
 		text-align		: center;
 	}
 
+	/* Toolbar */
+	.toolbar {
+		width			: calc(80% - 100px);
+
+		padding			: 25px;
+
+		background		: #FFFFFF;
+		color			: #3D3D3D;
+		border-radius		: 15px;
+
+		box-shadow		: 0 0 10px rgba(0, 0, 0, 0.05);
+
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: center;
+		align-items		: center;
+
+		/* Search Results */
+		.search_results {
+			flex			: 0 1 100%;
+		}
+
+		/* Search Tools */
+		.search_tools {
+			flex			: 0 1 80%;
+
+			display			: flex;
+			flex-direction		: row;
+			justify-content		: flex-end;
+			align-items		: center;
+
+			/* Sarch Bar */
+			.search_bar {
+				position		: relative;
+				flex			: 1 1 100%;
+
+				/* Hover */
+				&:hover {
+					/* Input Element */
+					input {
+						border			: 2px solid #9B5AE6;
+
+						color			: #9B5AE6;
+					}
+				}
+
+				/* Input Element */
+				input {
+					width			: 100%;
+
+					padding			: 0.75rem 1.25rem;
+
+					color			: #3D3D3D;
+					border			: 2px solid #DDDDDD;
+					border-radius		: 1.5rem;
+
+					font-size		: 0.9rem;
+					font-family		: Lato;
+					letter-spacing		: 0.03em;
+					text-rendering		: optimizeLegibility;
+
+					outline			: none;
+
+					transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+
+					/* Focus */
+					&:focus, &:not(:focus):valid {
+						border			: 2px solid #9B5AE6;
+
+						/* Label */
+						~ label {
+							opacity			: 0;
+						}
+					}
+
+					/* Autofill */
+					&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active {
+						-webkit-box-shadow	: 0 0 0 30px white inset !important;
+						box-shadow		: 0 0 0 30px white inset !important;
+					}
+				}
+
+				/* Label */
+				label {
+					pointer-events		: none;
+
+					position		: absolute;
+					left			: 0;
+					top			: 0;
+
+					margin			: 0.75rem 1.25rem;
+
+					color			: #AAAAAA;
+
+					font-size		: 0.8rem;
+					line-height		: 1.25rem;
+					letter-spacing		: 0.05rem;
+
+					transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				}
+			}
+		}
+	}
+
 	/* Grid */
 	.grid {
 		width			: 80%;
 
 		margin-bottom		: 100px;
-		padding			: 50px;
+		padding			: 40px 60px;
 
 		display			: grid;
 

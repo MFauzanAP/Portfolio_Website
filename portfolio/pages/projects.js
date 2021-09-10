@@ -128,6 +128,31 @@ export default function Projects () {
 						web development and game design.
 					</div>
 
+					{/* Toolbar */}
+					<div className={styles.toolbar}>
+
+						{/* Search Results */}
+						<div className={styles.search_results}>100 Projects Found</div>
+
+						{/* Search Tools */}
+						<div className={styles.search_tools}>
+
+							{/* Search Bar */}
+							<div className={styles.search_bar}>
+								<input type="text" id="search" name="search" required/>
+								<label htmlFor="search">Search Projects</label>
+							</div>
+
+							{/* Sort By Dropdown */}
+							<div className={styles.dropdown}></div>
+
+							{/* Filter By Dropdown */}
+							<div className={styles.dropdown}></div>
+
+						</div>
+
+					</div>
+
 					{/* Grid */}
 					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects}}>
 
