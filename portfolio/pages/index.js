@@ -163,7 +163,7 @@ function Home () {
 							<p style={{transitionDelay: '0.75s'}}>
 								Well, if you fall into any of these categories, then congrats! You&apos;ve come to the right place. 
 								I have a passion for creating games and websites, always putting my best foot forward and always 
-								eager to learn new things. If you're interested, click the link below.
+								eager to learn new things. If you&apos;re interested, click the link below.
 							</p>
 
 							{/* Call to Action */}
