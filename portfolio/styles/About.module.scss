@@ -245,6 +245,66 @@
 			transform		: scaleY(1);
 		}
 	}
+
+	/* Preload */
+	&.preload {
+		
+		/* Details */
+		.details {
+
+			/* Animation */
+			.animation {
+				opacity			: 1;
+
+				transition		: none;
+			}
+
+			/* Profile Picture */
+			.profile_picture {
+				opacity			: 1;
+
+				transition		: none;
+			}
+
+			/* Header */
+			.header {
+				animation		: none;
+
+				width			: 100%;
+			}
+
+			/* Text */
+			p {
+				transform		: translateX(0) !important;
+
+				opacity			: 1 !important;
+
+				transition		: none;
+			}
+
+			/* Button */
+			button {
+				opacity			: 1 !important;
+
+				transition		: opacity none,
+							  transform 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
+			}
+		}
+
+		/* Divider */
+		.divider {
+			transform		: scaleX(1);
+
+			transition		: none;
+		}
+
+		/* Grid */
+		.grid {
+			transform		: scaleY(1);
+
+			transition		: none;
+		}
+	}
 	
 
 	
@@ -837,6 +897,33 @@
 			}
 		}
 	}
+
+	/* Preload */
+	&.preload {
+
+		/* Header */
+		.header {
+			opacity			: 1;
+
+			transition		: none;
+		}
+
+		/* Grid */
+		.grid {
+			opacity			: 1;
+
+			transition		: none;
+
+			/* Details */
+			.details {
+				opacity			: 1;
+
+				transform		: scale(1);
+
+				transition		: none;
+			}
+		}
+	}
 	
 
 	
@@ -1209,6 +1296,83 @@
 			}
 		}
 	}
+
+	/* Preload */
+	&.preload {
+
+		/* Header */
+		.header {
+			opacity			: 1;
+
+			transform		: translateY(0);
+
+			transition		: none;
+		}
+
+		/* Subheader */
+		.subheader {
+			opacity			: 1;
+
+			transform		: translateY(0);
+
+			transition		: none;
+
+			/* Left Line */
+			&::before {
+				opacity			: 1;
+
+				transform		: scaleX(1);
+
+				transition		: none;
+			}
+
+			/* Right Line */
+			&::after {
+				opacity			: 1;
+
+				transform		: scaleX(1);
+
+				transition		: none;
+			}
+		}
+
+		/* Slideshow */
+		.slideshow {
+			opacity			: 1;
+
+			transition		: none;
+
+			/* Card */
+			.card {
+				background		: #F8F8F8;
+
+				box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
+
+				transition		: none;
+
+				/* Label */
+				.label {
+					left			: -25px !important;
+
+					transition		: none;
+
+					/* Before */
+					&::before {
+						transform		: scaleX(1) !important;
+
+						transition		: none;
+					}
+				}
+
+				/* Container */
+				.container {
+					opacity			: 1;
+
+					transition		: none;
+				}
+			}
+		}
+	}
 	
 
 	
@@ -1499,6 +1663,60 @@
 			/* Cover */
 			.cover {
 				transform		: scale(0);
+			}
+		}
+	}
+
+	/* Preload */
+	&.preload {
+
+		/* Header */
+		.header {
+			opacity			: 1;
+
+			transform		: translateY(0);
+
+			transition		: none;
+		}
+
+		/* Subheader */
+		.subheader {
+			opacity			: 1;
+
+			transform		: translateY(0);
+
+			transition		: none;
+
+			/* Left Line */
+			&::before {
+				opacity			: 1;
+
+				transform		: scaleX(1);
+
+				transition		: none;
+			}
+
+			/* Right Line */
+			&::after {
+				opacity			: 1;
+
+				transform		: scaleX(1);
+
+				transition		: none;
+			}
+		}
+
+		/* Card */
+		.card {
+			box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
+
+			transition		: none;
+
+			/* Cover */
+			.cover {
+				transform		: scale(0);
+
+				transition		: none;
 			}
 		}
 	}
@@ -1810,6 +2028,30 @@
 			opacity				: 1 !important;
 
 			transform			: scale(1) !important;
+		}
+	}
+
+	/* Preload */
+	&.preload {
+
+		/* Header */
+		.header {
+			max-width		: 100vw;
+
+			padding			: 20px 100px;
+
+			color			: #FFFFFF;
+
+			transition		: none;
+		}
+
+		/* Details */
+		.details {
+			opacity				: 1 !important;
+
+			transform			: scale(1) !important;
+
+			transition			: none;
 		}
 	}
 	

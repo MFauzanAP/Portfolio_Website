@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from '../styles/About.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -46,6 +46,9 @@ function Home () {
 	//	Reference
 	const ref = useRef(null);
 
+	//	Preloading
+	const [preload, setPreload] = useState(0);
+
 
 
 	/* =================================================== Use Effect =================================================== */
@@ -59,6 +62,22 @@ function Home () {
 
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
+
+		//	Check if not first time visitting page
+		if (sessionStorage.getItem('about_visit')) {
+
+			//	Get all sections
+			document.querySelectorAll(`.load_animation`).forEach(() => {
+				
+				//	Disable load animation
+				setPreload(styles.preload);
+
+			});
+
+		}
+
+		//	Set cookie
+		sessionStorage.setItem('about_visit', true);
 
 	})
 
@@ -91,7 +110,7 @@ function Home () {
 				</div>
 
 				{/* ================================================== Personal Info ================================================= */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.personal_info}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.personal_info} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="profile"/>
@@ -278,7 +297,7 @@ function Home () {
 
 
 				{/* =================================================== Tech Stack =================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.tech_stack}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.tech_stack} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="tech_stack"/>
@@ -610,7 +629,7 @@ function Home () {
 
 
 				{/* =================================================== Experience =================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.experience}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.experience} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="experience"/>
@@ -737,7 +756,7 @@ function Home () {
 
 
 				{/* ==================================================== Education =================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.education}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.education} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="education"/>
@@ -835,7 +854,7 @@ function Home () {
 
 
 				{/* ===================================================== Hobbies ==================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hobbies}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.hobbies} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="hobbies"/>
