@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/Home.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -11,9 +11,17 @@ import Footer from "../components/footer";
 import SideNavbar from '../components/side_navbar';
 import Slideshow from '../components/slideshow';
 import ContactMe from '../components/contact_me';
+import { set_cookies, get_cookies, delete_cookies } from '../components/utils/cookies';
 
 //	Declare output function
 function Home () {
+
+	/* ==================================================== Variables =================================================== */
+
+	//	Preloading
+	const [preload, setPreload] = useState(0);
+
+
 
 	/* =================================================== Use Effect =================================================== */
 	React.useEffect(() => {
@@ -27,7 +35,23 @@ function Home () {
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
 
-	})
+		//	Check if not first time visitting page
+		if (sessionStorage.getItem('home_visit')) {
+
+			//	Get all sections
+			document.querySelectorAll(`.load_animation`).forEach(() => {
+				
+				//	Disable load animation
+				setPreload(styles.preload);
+
+			});
+
+		}
+
+		//	Set cookie
+		sessionStorage.setItem('home_visit', true);
+
+	}, [])
 
 
 
@@ -51,7 +75,7 @@ function Home () {
 				{/* ================================================== Landing Page ================================================== */}
 
 				{/* Background Mask */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.background_mask} id="background_mask">
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.background_mask} ${preload} load_animation`} id="background_mask">
 
 					{/* Background */}
 					<div className={styles.background} id="background"></div>
@@ -117,7 +141,7 @@ function Home () {
 
 
 				{/* ===================================================== Hire Me ==================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.hire_me}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.hire_me} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="hire_me"/>
@@ -165,7 +189,7 @@ function Home () {
 
 
 				{/* ==================================================== Showcase ==================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.showcase}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.showcase} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="showcase"/>
@@ -347,7 +371,7 @@ function Home () {
 
 
 				{/* ================================================= Career Timeline ================================================ */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.career_timeline}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.career_timeline} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="career_timeline"/>

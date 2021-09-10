@@ -164,6 +164,35 @@ $marker-size		: 9px;
 		}
 	}
 
+	/* Preload */
+	&.preload {
+
+		/* Welcome Text */
+		.welcome_text {
+
+			/* Title */
+			.title {
+				opacity			: 1;
+
+				transition		: none;
+			}
+
+			/* Underline */
+			.underline {
+				transform		: scaleX(1);
+
+				transition		: none;
+			}
+
+			/* Meta */
+			.meta {
+				width			: 100%;
+
+				animation		: none;
+			}
+		}
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -525,6 +554,49 @@ $marker-size		: 9px;
 		}
 	}
 
+	/* On Preload */
+	&.preload {
+		opacity			: 1;
+
+		transition		: none;
+
+		/* Header */
+		.meta .description h1 {
+			opacity			: 1;
+
+			transform		: translateX(0);
+
+			transition		: none;
+		}
+
+		/* Description Text */
+		.meta .description p {
+			opacity			: 1;
+
+			transform		: translateX(0);
+
+			transition		: none;
+		}
+
+		/* Description Button */
+		.meta .description .call_to_action {
+			opacity			: 1;
+
+			transition		: none,
+						  background-color 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s,
+						  transform 0.05s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+		}
+
+		/* Image */
+		.meta .image {
+			opacity			: 1;
+
+			transform		: scale(1);
+
+			transition		: none;
+		}
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -838,6 +910,35 @@ $marker-size		: 9px;
 			opacity			: 1;
 
 			transform		: translateX(0);
+		}
+	}
+
+	/* Preload */
+	&.preload {
+
+		/* Header */
+		h2 {
+			opacity			: 1;
+
+			transition		: none;
+		}
+
+		/* Sideline */
+		.sideline {
+			opacity			: 1;
+
+			transform		: translateX(0);
+
+			transition		: none;
+		}
+
+		/* Section */
+		.section {
+			opacity			: 1;
+
+			transform		: translateX(0);
+
+			transition		: none;
 		}
 	}
 
@@ -1269,6 +1370,63 @@ $marker-size		: 9px;
 				opacity			: 1;
 	
 				transform		: scaleX(1);
+
+				/* Mobile */
+				@include media ("<=mobilel") {
+					transform		: scaleY(1);
+				}
+
+				/* Laptop */
+				@include media (">mobilel", "<=laptop") {
+					transform		: scaleY(1);
+				}
+			}
+		}
+
+		/* Call to Action */
+		.call_to_action {
+			opacity			: 1;
+	
+			transform		: scaleY(1);
+			transform-origin	: center;
+		}
+
+	}
+
+	/* On Preload */
+	&.preload {
+
+		/* Title */
+		.title {
+			opacity			: 1;
+	
+			transform		: translateY(0);
+
+			transition		: none;
+		}
+
+		/* Underline */
+		.underline {
+			opacity			: 1;
+	
+			transform		: translateY(0);
+
+			transition		: none;
+		}
+
+		/* Timeline */
+		.timeline {
+			transform		: scaleY(1);
+
+			transition		: none;
+
+			/* Card */
+			.card {
+				opacity			: 1;
+	
+				transform		: scaleX(1);
+
+				transition		: none;
 
 				/* Mobile */
 				@include media ("<=mobilel") {
