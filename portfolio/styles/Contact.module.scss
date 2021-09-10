@@ -207,6 +207,17 @@
 		}
 	}
 
+	/* Preload */
+	&.preload {
+
+		/* Description */
+		.description {
+			opacity			: 1;
+
+			transition		: none;
+		}
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -685,6 +696,42 @@
 		}
 	}
 
+	/* Preload */
+	&.preload {
+
+		/* Title */
+		.title {
+			opacity			: 1;
+
+			transition		: none;
+
+			/* Underline */
+			&::after {
+				transform		: scaleX(1);
+
+				transition		: none;
+			}
+		}
+
+		/* Animation */
+		.animation {
+			opacity			: 1 !important;
+
+			transform		: scale(1) !important;
+
+			transition		: none;
+		}
+
+		/* Accordion */
+		.accordion {
+			opacity			: 1 !important;
+
+			transform		: translateX(0) !important;
+
+			transition		: none;
+		}
+	}
+
 
 
 	/* ==================================================== Children ==================================================== */
@@ -888,6 +935,17 @@
 		/* Curtain */
 		.curtain {
 			transform		: scaleX(0) !important;
+		}
+	}
+
+	/* Preload */
+	&.preload {
+
+		/* Curtain */
+		.curtain {
+			transform		: scaleX(0) !important;
+
+			transition		: none;
 		}
 	}
 

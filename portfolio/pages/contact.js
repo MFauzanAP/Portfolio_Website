@@ -1,5 +1,5 @@
 import styles from '../styles/Contact.module.scss'
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +13,13 @@ import { toast } from 'react-nextjs-toast';
 //	Declare output function
 function Contact () {
 
+	/* ==================================================== Variables =================================================== */
+
+	//	Preloading
+	const [preload, setPreload] = useState(0);
+
+	
+
 	/* =================================================== Use Effect =================================================== */
 	React.useEffect(() => {
 
@@ -24,6 +31,22 @@ function Contact () {
 
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
+
+		//	Check if not first time visitting page
+		if (sessionStorage.getItem('contact_visit')) {
+
+			//	Get all sections
+			document.querySelectorAll(`.load_animation`).forEach(() => {
+				
+				//	Disable load animation
+				setPreload(styles.preload);
+
+			});
+
+		}
+
+		//	Set cookie
+		sessionStorage.setItem('contact_visit', true);
 
 	})
 
@@ -128,7 +151,7 @@ function Contact () {
 				</div>
 
 				{/* ======================================================= Map ====================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.map}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.map} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="contact_details"/>
@@ -191,7 +214,7 @@ function Contact () {
 
 
 				{/* ======================================================= FAQ ====================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.faq}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.faq} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="faq"/>
@@ -267,7 +290,7 @@ function Contact () {
 
 
 				{/* ================================================== Contact Form ================================================== */}
-				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.contact_form}>
+				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.contact_form} ${preload} load_animation`}>
 
 					{/* Anchor */}
 					<a className="anchor" id="contact_form"/>
