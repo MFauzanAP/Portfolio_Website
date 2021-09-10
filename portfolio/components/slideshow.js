@@ -95,6 +95,10 @@ class Slideshow extends React.Component {
 		//	Calculate page
 		var page = this.state.page + 1 >= this.count ? (this.state.loop ? 0 : this.state.page) : this.state.page + 1;
 
+		//	Pause and clear all previous autoplay functions
+		this.setState({pause: true});
+		clearInterval(this.autoplay_index); 
+
 		//	Reset countdown and update page
 		this.reset_countdown(page);
 
@@ -108,6 +112,10 @@ class Slideshow extends React.Component {
 
 		//	Calculate page
 		var page = this.state.page - 1 < 0 ? (this.state.loop ? this.count - 1 : this.state.page) : this.state.page - 1;
+
+		//	Pause and clear all previous autoplay functions
+		this.setState({pause: true});
+		clearInterval(this.autoplay_index); 
 
 		//	Reset countdown and update page
 		this.reset_countdown(page);
@@ -142,7 +150,7 @@ class Slideshow extends React.Component {
 				clearInterval(this.autoplay_index); 
 
 				//	Set new autoplay index so we can clear this function on render
-				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
+				this.autoplay_index = setInterval(this.change_page.bind(this, this.state.page + 1), this.state.autoPlayDelay);
 				
 			}
 
@@ -174,7 +182,7 @@ class Slideshow extends React.Component {
 				clearInterval(this.autoplay_index); 
 
 				//	Set new autoplay index so we can clear this function on render
-				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
+				this.autoplay_index = setInterval(this.change_page.bind(this, this.state.page + 1), this.state.autoPlayDelay);
 
 				//	Visible
 				this.setState({visible: true});
