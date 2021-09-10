@@ -161,9 +161,9 @@ function Home () {
 								Or are you an established business looking to hire a passionate new employee to work on a website/game of yours?
 							</p>
 							<p style={{transitionDelay: '0.75s'}}>
-								Well, if you fall into any of these categories, then congrats! You&apos;ve come to the right place 😊. 
-								I treat all projects with passion, always putting in hard work in hopes of satisfying my clients. To me, 
-								satisfactory just won&apos;t cut it. So, if you&apos;re interested, click the link below 👇.
+								Well, if you fall into any of these categories, then congrats! You&apos;ve come to the right place. 
+								I have a passion for creating games and websites, always putting my best foot forward and always 
+								eager to learn new things. If you're interested, click the link below.
 							</p>
 
 							{/* Call to Action */}
