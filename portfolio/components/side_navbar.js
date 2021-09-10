@@ -137,7 +137,7 @@ class SideNavbar extends React.Component {
 		});
 
 		//	Return html
-		return (<div className="scrollbar" style={{opacity: this.active ? '1' : '0'}}>
+		return (<div className="scrollbar" style={{opacity: this.active ? '1' : '0', pointerEvents: this.active ? 'all' : 'none'}}>
 
 				{/* Container */}
 				<div className="container">{links}</div>
