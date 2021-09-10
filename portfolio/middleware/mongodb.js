@@ -10,7 +10,7 @@ let cachedClient = null;
 let cachedDb = null;
 
 //	Function used to connect to the databse
-export async function connectToDatabase() {
+export async function connect_to_database() {
 
 	//	Check if there is a cached client or database
 	if (cachedClient && cachedDb) {
