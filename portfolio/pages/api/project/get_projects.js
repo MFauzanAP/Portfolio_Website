@@ -8,7 +8,7 @@ export default async function (req, res) {
 	const { db } = await connectToDatabase();
 
 	//      Get collection data
-	const projects = await db.collection('projects').find({}).toArray();
+	const projects = await db.collection('projects').find({}).sort({'date': -1}).toArray();
 
 	//      Return projects
 	res.json(projects);

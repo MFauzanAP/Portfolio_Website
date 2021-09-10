@@ -1,5 +1,5 @@
 import styles from '../styles/Projects.module.scss'
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
@@ -12,10 +12,17 @@ import Accordion from "../components/accordion";
 import { toast } from 'react-nextjs-toast';
 
 //	Declare output function
-function Projects () {
+export default function Projects () {
+
+	/* ==================================================== Variables =================================================== */
+
+	//	Projects data
+	const [projects, setProjects] = useState(0);
+
+
 
 	/* =================================================== Use Effect =================================================== */
-	React.useEffect(() => {
+	React.useEffect(async () => {
 
 		// 	Import lottie
 		import("@lottiefiles/lottie-player");
@@ -26,11 +33,61 @@ function Projects () {
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
 
-	})
+		//	Load projects
+		setProjects(await get_projects());
+
+	}, []);
 
 
 
-	/* ================================================ Output final html =============================================== */
+	/* ==================================================== Functions =================================================== */
+
+	//	Retrieve projects from the database
+	async function get_projects () {
+
+		//	Try calling api route
+		try {
+
+			//	Call api
+			var results = await fetch('/api/project/get_projects', {
+				method		: 'GET',
+				headers		: { 'Content-Type': 'application/json' }
+			})
+
+			//	Extract response
+			results = await results.json();
+
+			//	For each project
+			var projects = results.map(project => {
+
+				//	Return html
+				return `<div class=${styles.card}>
+						<div class=${styles.background}><img src=${project.images[0]}/></div>
+						<div class=${styles.title}>${project.name}</div>
+						<div class=${styles.description}>${project.description.short}</div>
+						<div class=${styles.call_to_action}>LEARN MORE</div>
+					</div>`;
+
+			})
+
+			//	Concatenate projects into one string
+			projects = projects.join('');
+
+			//	Return projects html
+			return projects;
+
+		} catch (e) {
+
+			//	Print error
+			console.log(e);
+
+		}
+
+	}
+
+	
+
+	/* ================================================ Output Final HTML =============================================== */
 	return (
 		<div className={styles.container}>
 
@@ -72,34 +129,7 @@ function Projects () {
 					</div>
 
 					{/* Grid */}
-					<div className={styles.grid}>
-
-						{/* Cards */}
-						<div className={styles.card}>
-
-							{/* Background */}
-							<div className={styles.background}><Image layout='fill' placeholder='blur' blurDataURL={'/top_down_project_image_1.png'} src={'/top_down_project_image_1.png'}/></div>
-
-							{/* Title */}
-							<div className={styles.title}>Top Down Project</div>
-
-							{/* Description */}
-							<div className={styles.description}>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur imperdiet enim neque, 
-								ac condimentum lorem lacinia at. Maecenas id neque eros. Morbi a velit at orci egestas.
-							</div>
-
-							{/* Call to Action */}
-							<div className={styles.call_to_action}>LEARN MORE</div>
-
-						</div>
-						<div className={styles.card}></div>
-						<div className={styles.card}></div>
-						<div className={styles.card}></div>
-						<div className={styles.card}></div>
-						<div className={styles.card}></div>
-						<div className={styles.card}></div>
-						<div className={styles.card}></div>
+					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects}}>
 
 					</div>
 
@@ -143,5 +173,3 @@ function Projects () {
 	);
 
 }
-
-export default Projects
