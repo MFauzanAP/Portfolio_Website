@@ -3,6 +3,7 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
 import Link from 'next/link';
+import check_mobile_tablet from '../components/utils/is_mobile';
 
 
 
@@ -44,11 +45,16 @@ class SideNavbar extends React.Component {
 	/* ==================================================== On Mount ==================================================== */
 	componentDidMount () {
 
-		//	Add event listener for scroll event
-		window.addEventListener('scroll', this.UpdateScroll.bind(this));
+		//	If not mobile
+		if (!check_mobile_tablet()) {
 
-		//	Update scroll
-		this.UpdateScroll();
+			//	Add event listener for scroll event
+			window.addEventListener('scroll', this.UpdateScroll.bind(this));
+
+			//	Update scroll
+			this.UpdateScroll();
+
+		}
 
 	}
 
