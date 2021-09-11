@@ -57,6 +57,9 @@ export default function Projects () {
 			//	Extract response
 			results = await results.json();
 
+			//	Keep track of number of projects
+			var count = results.length;
+
 			//	For each project
 			var projects = results.map(project => {
 
@@ -74,7 +77,7 @@ export default function Projects () {
 			projects = projects.join('');
 
 			//	Return projects html
-			return projects;
+			return {length: count, data: projects};
 
 		} catch (e) {
 
@@ -132,7 +135,7 @@ export default function Projects () {
 					<div className={styles.toolbar}>
 
 						{/* Search Results */}
-						<div className={styles.search_results}>100 Projects Found</div>
+						<div className={styles.search_results}>{projects.length || 0} Projects Found</div>
 
 						{/* Search Tools */}
 						<div className={styles.search_tools}>
@@ -146,7 +149,7 @@ export default function Projects () {
 							{/* Sort By Dropdown */}
 							<div className={styles.dropdown}></div>
 
-							{/* Filter By Dropdown */}
+							{/* Sort By Dropdown */}
 							<div className={styles.dropdown}></div>
 
 						</div>
@@ -154,7 +157,7 @@ export default function Projects () {
 					</div>
 
 					{/* Grid */}
-					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects}}>
+					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects.data}}>
 
 					</div>
 
