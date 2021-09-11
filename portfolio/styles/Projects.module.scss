@@ -249,12 +249,26 @@
 		position		: relative;
 
 		margin			: 10px 50px;
-		margin-bottom		: 60px;
 
 		color			: #3D3D3D;
 
 		font-family		: Lato;
 		font-size		: 1.25rem;
+		letter-spacing		: 0.5px;
+		text-align		: center;
+	}
+
+	/* Disclaimer */
+	.disclaimer {
+		position		: relative;
+
+		margin			: 10px 50px;
+		margin-bottom		: 60px;
+
+		color			: #AAAAAA;
+
+		font-family		: Lato;
+		font-size		: 1rem;
 		letter-spacing		: 0.5px;
 		text-align		: center;
 	}

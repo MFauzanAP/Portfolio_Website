@@ -131,6 +131,11 @@ export default function Projects () {
 						web development and game design.
 					</div>
 
+					{/* Disclaimer */}
+					<div className={styles.disclaimer}>
+						This list does not represent all my projects. Some have no documentation or are lost.
+					</div>
+
 					{/* Toolbar */}
 					<div className={styles.toolbar}>
 
