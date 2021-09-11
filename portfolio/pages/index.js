@@ -244,7 +244,7 @@ function Home () {
 
 					{/* Header */}
 					<div className={styles.sideline}></div>
-					<h2>Latest Side Projects</h2>
+					<h2>Featured Side Projects</h2>
 
 					{/* Section */}
 					<div className={styles.section} style={{transitionDelay: '0.75s'}}>

@@ -161,13 +161,11 @@ export default function Projects () {
 
 					</div>
 
-					{/* Grid */}
-					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects.data}}>
-
-					</div>
-
 					{/* Background End */}
 					<div id="background_end"></div>
+
+					{/* Grid */}
+					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects.data}}></div>
 
 				</div></Scene></Controller>
 
