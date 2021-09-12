@@ -90,14 +90,19 @@ class Slideshow extends React.Component {
 	}
 
 	/* Next Page */
-	next_page (callback) {
+	next_page (callback, user = false) {
 
 		//	Calculate page
 		var page = this.state.page + 1 >= this.count ? (this.state.loop ? 0 : this.state.page) : this.state.page + 1;
 
-		//	Pause and clear all previous autoplay functions
-		this.setState({pause: true});
-		clearInterval(this.autoplay_index); 
+		//	Check if user input
+		if (user) {
+
+			//	Pause and clear all previous autoplay functions
+			this.setState({pause: true});
+			clearInterval(this.autoplay_index);
+
+		}
 
 		//	Reset countdown and update page
 		this.reset_countdown(page);
@@ -108,14 +113,19 @@ class Slideshow extends React.Component {
 	}
 
 	/* Previous Page */
-	prev_page (callback) {
+	prev_page (callback, user = false) {
 
 		//	Calculate page
 		var page = this.state.page - 1 < 0 ? (this.state.loop ? this.count - 1 : this.state.page) : this.state.page - 1;
 
-		//	Pause and clear all previous autoplay functions
-		this.setState({pause: true});
-		clearInterval(this.autoplay_index); 
+		//	Check if user input
+		if (user) {
+
+			//	Pause and clear all previous autoplay functions
+			this.setState({pause: true});
+			clearInterval(this.autoplay_index);
+			
+		}
 
 		//	Reset countdown and update page
 		this.reset_countdown(page);
@@ -126,7 +136,7 @@ class Slideshow extends React.Component {
 	}
 
 	/* Change Page */
-	change_page (page, callback) {
+	change_page (page, callback, user = false) {
 
 		//	Check if same page
 		if (page == this.state.page) {
@@ -150,10 +160,17 @@ class Slideshow extends React.Component {
 				clearInterval(this.autoplay_index); 
 
 				//	Set new autoplay index so we can clear this function on render
-				this.autoplay_index = setInterval(this.change_page.bind(this, this.state.page + 1), this.state.autoPlayDelay);
+				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
 				
 			}
 
+		}
+		else if (user) {
+
+			//	Pause and clear all previous autoplay functions
+			this.setState({pause: true});
+			clearInterval(this.autoplay_index);
+			
 		}
 
 		//	Reset countdown and update page
@@ -182,7 +199,7 @@ class Slideshow extends React.Component {
 				clearInterval(this.autoplay_index); 
 
 				//	Set new autoplay index so we can clear this function on render
-				this.autoplay_index = setInterval(this.change_page.bind(this, this.state.page + 1), this.state.autoPlayDelay);
+				this.autoplay_index = setInterval(this.next_page.bind(this), this.state.autoPlayDelay);
 
 				//	Visible
 				this.setState({visible: true});
@@ -299,7 +316,7 @@ class Slideshow extends React.Component {
 			
 			//	Add element
 			pagination.push(
-				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i, callback)}>
+				<div className={class_name} key={i.toString()} onClick={this.change_page.bind(this, i, callback, true)}>
 					<FontAwesomeIcon icon={icon}/>
 				</div>
 			);
@@ -328,8 +345,8 @@ class Slideshow extends React.Component {
 				</div>
 
 				{/* Arrows */}
-				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.prev_page.bind(this, callback)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
-				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.next_page.bind(this, callback)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
+				<div className={`left ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.prev_page.bind(this, callback, true)}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></div>
+				<div className={`right ${this.state.invertArrows ? 'inverted' : ''} ${this.state.arrowColor} arrow`} onClick={this.next_page.bind(this, callback, true)}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 				{/* Pagination */}
 				<div className="pagination" id="pagination">{pagination}</div>
