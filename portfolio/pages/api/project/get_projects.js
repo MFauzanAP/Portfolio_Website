@@ -1,5 +1,5 @@
 //      Imports
-import { connect_to_database } from '../../../middleware/mongodb';
+import { connect_to_database } from '@/middleware/mongodb';
 
 //	Function used to retrieve projects from the database
 export default async function (req, res) {
