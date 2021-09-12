@@ -692,7 +692,7 @@ function Home () {
 						<div className={styles.card}>
 
 							{/* Label */}
-							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'mobile']}/></div>
+							<div className={styles.label}><FontAwesomeIcon icon={['fas', 'desktop']}/></div>
 							
 							{/* Container */}
 							<div className={styles.container}>
