@@ -1037,6 +1037,8 @@ div {
 
 	/* Container */
 	.container {
+		pointer-events		: none;
+
 		width			: 250px;
 
 		display			: flex;
@@ -1046,6 +1048,8 @@ div {
 
 		/* Link */
 		a {
+			pointer-events		: all;
+
 			width			: 15px;
 			height			: 15px;
 
