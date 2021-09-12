@@ -68,7 +68,7 @@ export default function Projects () {
 						<div class=${styles.background}><img src=${project.images[0]}/></div>
 						<div class=${styles.title}>${project.name}</div>
 						<div class=${styles.description}>${project.description.short}</div>
-						<div class=${styles.call_to_action}>LEARN MORE</div>
+						<a href="/projects/${project.name.toLowerCase().replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
 					</div>`;
 
 			})
