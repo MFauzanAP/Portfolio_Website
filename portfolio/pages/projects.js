@@ -63,9 +63,31 @@ export default function Projects () {
 			//	For each project
 			var projects = results.map(project => {
 
+				//	Declare status classes
+				var status_classes = {
+					'Complete'		: styles.complete,
+					'In Progress'		: styles.in_progress,
+					'Incomplete'		: styles.incomplete
+				}
+
+				//	Declare category html
+				var category_html = {
+					'Game Development'	: `<div class="${styles.tag}"><i class="fa fa-gamepad"></i></div>`,
+					'App Development'	: `<div class="${styles.tag}"><i class="fa fa-desktop"></i></div>`,
+					'Web Development'	: `<div class="${styles.tag}"><i class="fa fa-globe"></i></div>`,
+					'3D Modelling'		: `<div class="${styles.tag}"><i class="fa fa-cube"></i></div>`,
+				}
+
+				//	Generate class names
+				var status = status_classes[project.status];
+				var featured = project.featured ? styles.featured : '';
+				var category = category_html[project.category];
+
 				//	Return html
-				return `<div class=${styles.card}>
+				return `<div class="${styles.card}">
 						<div class=${styles.background}><img src=${project.images[0]}/></div>
+						<div class=${featured}><i class="fa fa-star"></i></div>
+						${category}
 						<div class=${styles.title}>${project.name}</div>
 						<div class=${styles.description}>${project.description.short}</div>
 						<a href="/projects/${project.name.toLowerCase().replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
@@ -101,6 +123,9 @@ export default function Projects () {
 				<title>Projects | Muhammad Fauzan Aristya Putra</title>
 				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
+
+				{/* Font Awesome */}
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
 			</Head>
 
