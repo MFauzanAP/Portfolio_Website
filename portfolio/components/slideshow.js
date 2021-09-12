@@ -231,6 +231,11 @@ class Slideshow extends React.Component {
 
 		}
 
+		//	Update image count
+		var image_count = (this.props.options && this.props.options.images) ? this.props.options.images.length : 0;
+		var child_count = this.props.children ? (this.props.children.length ? this.props.children.length : 1) : 0;
+		this.count = image_count + child_count;
+
 	}
 
 
