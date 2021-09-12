@@ -1,13 +1,13 @@
-import styles from '../styles/Contact.module.scss'
+import styles from '@/styles/Contact.module.scss'
 import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import SideNavbar from '../components/side_navbar';
-import Accordion from "../components/accordion";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import SideNavbar from '@/components/side_navbar';
+import Accordion from "@/components/accordion";
 import { toast } from 'react-nextjs-toast';
 
 //	Declare output function
@@ -18,7 +18,7 @@ function Contact () {
 	//	Preloading
 	const [preload, setPreload] = useState(0);
 
-	
+
 
 	/* =================================================== Use Effect =================================================== */
 	React.useEffect(() => {
@@ -275,7 +275,7 @@ function Contact () {
 									to learning new things.
 								</p>
 							</Accordion></div>
-							<div className={styles.accordion} style={{transitionDelay: '2.55s'}}><Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
+							<div className={styles.accordion} style={{transitionDelay: '2.55s'}}><Accordion options={{title: 'Are you fluent in (@.) language or tool?'}}>
 								<p>
 									Click here to <Link href="/about#tech_stack"><a>view a list of the languages and tools I use. </a></Link>
 								</p>

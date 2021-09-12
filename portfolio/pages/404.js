@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import styles from '../styles/Error.module.scss';
+import styles from '@/styles/Error.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 //	Declare output function
 function Error () {

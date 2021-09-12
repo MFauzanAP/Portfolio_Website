@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import styles from '../styles/Home.module.scss';
+import styles from '@/styles/Home.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
 import Particles from 'react-particles-js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import SideNavbar from '../components/side_navbar';
-import Slideshow from '../components/slideshow';
-import ContactMe from '../components/contact_me';
-import { set_cookies, get_cookies, delete_cookies } from '../components/utils/cookies';
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import SideNavbar from '@/components/side_navbar';
+import Slideshow from '@/components/slideshow';
+import ContactMe from '@/components/contact_me';
+import { set_cookies, get_cookies, delete_cookies } from '@/components/utils/cookies';
 
 //	Declare output function
 function Home () {
