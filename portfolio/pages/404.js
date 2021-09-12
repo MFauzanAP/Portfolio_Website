@@ -53,7 +53,7 @@ function Error () {
 
 					{/* Animation */}
 					<div className={styles.animation}><lottie-player 
-							src='./404_animation.json' 
+							src='/404_animation.json' 
 							ref={ref}
 							speed="1" 
 							loop 
