@@ -275,7 +275,7 @@ function Contact () {
 									to learning new things.
 								</p>
 							</Accordion></div>
-							<div className={styles.accordion} style={{transitionDelay: '2.55s'}}><Accordion options={{title: 'Are you fluent in (@.) language or tool?'}}>
+							<div className={styles.accordion} style={{transitionDelay: '2.55s'}}><Accordion options={{title: 'Are you fluent in (...) language or tool?'}}>
 								<p>
 									Click here to <Link href="/about#tech_stack"><a>view a list of the languages and tools I use. </a></Link>
 								</p>
