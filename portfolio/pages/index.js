@@ -421,7 +421,7 @@ function Home () {
 									Al Khor International School
 								</div>
 								<div>
-									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'building']}></FontAwesomeIcon>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'clock']}></FontAwesomeIcon>
 									08/2008 - 07/2021
 								</div>
 								<div className={styles.divider} style={{marginBottom: '10px'}}></div>
