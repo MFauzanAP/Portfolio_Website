@@ -63,40 +63,47 @@ export default function Projects () {
 			//	For each project
 			var projects = results.map(project => {
 
-				//	Declare status classes
-				var status_classes = {
-					'Complete'		: styles.complete,
-					'In Progress'		: styles.in_progress,
-					'Incomplete'		: styles.incomplete
+				//	If project is visible
+				if (project.visible) {
+
+					//	Declare status classes
+					var status_classes = {
+						'Complete'		: styles.complete,
+						'In Progress'		: styles.in_progress,
+						'Incomplete'		: styles.incomplete
+					}
+
+					//	Declare category html
+					var category_html = {
+						'Game Development'	: `<div class="${styles.tag}"><i class="fa fa-gamepad"></i></div>`,
+						'App Development'	: `<div class="${styles.tag}"><i class="fa fa-desktop"></i></div>`,
+						'Web Development'	: `<div class="${styles.tag}"><i class="fa fa-globe"></i></div>`,
+						'3D Modelling'		: `<div class="${styles.tag}"><i class="fa fa-cube"></i></div>`,
+					}
+
+					//	Generate class names
+					var status = status_classes[project.status];
+					var featured = project.featured ? styles.featured : '';
+					var category = category_html[project.category];
+
+					//	Return html
+					return `<div class="${styles.card}">
+							<div class=${styles.background}><img src=${project.images[0]}/></div>
+							<div class=${featured}><i class="fa fa-star"></i></div>
+							${category}
+							<div class=${styles.title}>${project.name}</div>
+							<div class=${styles.description}>${project.description.short}</div>
+							<a href="/projects/${project.name.replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
+						</div>`;
+
 				}
-
-				//	Declare category html
-				var category_html = {
-					'Game Development'	: `<div class="${styles.tag}"><i class="fa fa-gamepad"></i></div>`,
-					'App Development'	: `<div class="${styles.tag}"><i class="fa fa-desktop"></i></div>`,
-					'Web Development'	: `<div class="${styles.tag}"><i class="fa fa-globe"></i></div>`,
-					'3D Modelling'		: `<div class="${styles.tag}"><i class="fa fa-cube"></i></div>`,
-				}
-
-				//	Generate class names
-				var status = status_classes[project.status];
-				var featured = project.featured ? styles.featured : '';
-				var category = category_html[project.category];
-
-				//	Return html
-				return `<div class="${styles.card}">
-						<div class=${styles.background}><img src=${project.images[0]}/></div>
-						<div class=${featured}><i class="fa fa-star"></i></div>
-						${category}
-						<div class=${styles.title}>${project.name}</div>
-						<div class=${styles.description}>${project.description.short}</div>
-						<a href="/projects/${project.name.replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
-					</div>`;
 
 			})
 
 			//	Concatenate projects into one string
+			console.log(projects);
 			projects = projects.join('');
+			console.log(projects);
 
 			//	Return projects html
 			return { length: count, data: projects };
