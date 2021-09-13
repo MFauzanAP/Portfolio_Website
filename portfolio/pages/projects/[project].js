@@ -153,6 +153,20 @@ export default function Projects () {
 					{/* Background */}
 					<div className={styles.background}></div>
 
+					{/* Breadcrumbs */}
+					<div className={styles.breadcrumbs}>
+
+						{/* Project Home */}
+						<div className={styles.link}><Link href="/projects"><a>Projects</a></Link></div>
+
+						{/* Chevron */}
+						<div className={styles.divider}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
+
+						{/* Project Name */}
+						<div className={`${styles.link} ${styles.active}`}><Link href="/projects"><a>{project_data.name || ''}</a></Link></div>
+
+					</div>
+
 					{/* Header */}
 					<div className={styles.header}>{project_data.name || ''}</div>
 

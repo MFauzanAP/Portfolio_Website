@@ -82,7 +82,6 @@ export default function Projects () {
 					}
 
 					//	Generate class names
-					var status = status_classes[project.status];
 					var featured = project.featured ? styles.featured : '';
 					var category = category_html[project.category];
 
@@ -101,9 +100,7 @@ export default function Projects () {
 			})
 
 			//	Concatenate projects into one string
-			console.log(projects);
 			projects = projects.join('');
-			console.log(projects);
 
 			//	Return projects html
 			return { length: count, data: projects };
