@@ -128,6 +128,16 @@
 		}
 	}
 
+	/* Banner */
+	.banner {
+		position		: absolute;
+		width			: 100%;
+		height			: 500px;
+		top			: 0;
+
+		background		: #9B5AE6;
+	}
+
 	/* Call to Action */
 	.call_to_action {
 		cursor			: pointer;
@@ -581,6 +591,216 @@
 			}
 		}
 	}
+}
+
+
+
+/* ================================================= Project Details ================================================ */
+.project_details {
+	position		: relative;
+	width			: 70%;
+	height			: auto;
+
+	margin-top		: 250px;
+	margin-bottom		: 100px;
+	padding			: 10%;
+
+	display			: flex;
+	flex-direction		: column;
+	justify-content		: flex-start;
+	align-items		: flex-start;
+
+
+
+	/* ==================================================== Children ==================================================== */
+
+	/* Background */
+	.background {
+		position		: absolute;
+		width			: 100%;
+		height			: 100%;
+		left			: 0;
+		top			: 0;
+
+		background		: #FFFFFF;
+		border-radius		: 10px;
+
+		box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
+	}
+
+	/* Header */
+	.header {
+		position		: relative;
+
+		margin			: 0;
+		margin-top		: -50px;
+
+		color			: #3D3D3D;
+
+		font-family		: Work Sans;
+		font-size		: 2.5rem;
+		font-weight		: bold;
+		letter-spacing		: 1.5px;
+		text-align		: left;
+	}
+
+	/* Meta */
+	.meta {
+		position		: relative;
+
+		margin			: 10px 0;
+		margin-bottom		: 50px;
+
+		color			: #646464;
+
+		font-family		: Lato;
+		font-size		: 1.5rem;
+		letter-spacing		: 0.5px;
+		text-align		: center;
+	}
+
+	/* Slideshow */
+	.slideshow {
+		aspect-ratio		: 13/10;
+		width			: 100%;
+		height			: 600px;
+
+		margin-bottom		: 50px;
+
+		overflow		: hidden;
+
+		border-radius		: 10px;
+
+		display			: flex;
+		justify-content		: center;
+		align-items		: center;
+	}
+
+	/* Title */
+	.title {
+		margin-bottom		: 25px;
+
+		color			: #3D3D3D;
+
+		font-family		: Work Sans;
+		font-size		: 1.5em;
+		font-weight		: bold;
+	}
+
+	/* Details */
+	.details {
+		position		: relative;
+		width			: 100%;
+
+		margin			: 25px 0;
+
+		color			: #646464;
+
+		font-family		: Lato;
+		font-size		: 1em;
+		letter-spacing		: 0.5px;
+		text-align		: left;
+
+		/* Icon */
+		.icon {
+			color			: #646464;
+
+			margin-right		: 10px;
+		}
+	}
+
+	/* Description */
+	.description {
+		position		: relative;
+		width			: 100%;
+
+		margin			: 25px 0;
+
+		color			: #646464;
+
+		font-family		: Lato;
+		font-size		: 1em;
+		letter-spacing		: 0.5px;
+		text-align		: left;
+
+		/* Text */
+		.text {
+			color			: #3D3D3D;
+
+			font-size		: 1em;
+			font-family		: Lato;
+			line-height		: 1.8;
+			letter-spacing		: 0.03em;
+			text-rendering		: optimizeLegibility;
+		}
+	}
+
+	/* Tech Stack */
+	.tech_stack {
+		position		: relative;
+		width			: 100%;
+
+		margin			: 25px 0;
+
+		color			: #646464;
+
+		font-family		: Lato;
+		font-size		: 1em;
+		letter-spacing		: 0.5px;
+		text-align		: left;
+
+		/* List */
+		.list {
+			color			: #3D3D3D;
+			
+			list-style		: circle;
+
+			font-size		: 1.25em;
+			font-family		: Lato;
+			line-height		: 1.8;
+			letter-spacing		: 0.03em;
+			text-rendering		: optimizeLegibility;
+		}
+	}
+
+	/* Links */
+	.links {
+		position		: relative;
+		width			: 100%;
+
+		margin			: 25px 0;
+
+		color			: #646464;
+
+		font-family		: Lato;
+		font-size		: 1em;
+		letter-spacing		: 0.5px;
+		text-align		: left;
+
+		/* List */
+		.list {
+			color			: #3D3D3D;
+			
+			list-style		: circle;
+
+			font-size		: 1em;
+			font-family		: Lato;
+			line-height		: 1.8;
+			letter-spacing		: 0.03em;
+			text-rendering		: optimizeLegibility;
+
+			/* Link */
+			a {
+				color			: blue;
+
+				font-family		: Lato;
+				font-size		: 1.25em;
+				letter-spacing		: 0.5px;
+				text-align		: left;
+			}
+		}
+	}
+
 }
 
 
