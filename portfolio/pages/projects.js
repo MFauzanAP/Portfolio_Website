@@ -90,7 +90,7 @@ export default function Projects () {
 						${category}
 						<div class=${styles.title}>${project.name}</div>
 						<div class=${styles.description}>${project.description.short}</div>
-						<a href="/projects/${project.name.toLowerCase().replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
+						<a href="/projects/${project.name.replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
 					</div>`;
 
 			})
@@ -99,7 +99,7 @@ export default function Projects () {
 			projects = projects.join('');
 
 			//	Return projects html
-			return {length: count, data: projects};
+			return { length: count, data: projects };
 
 		} catch (e) {
 
