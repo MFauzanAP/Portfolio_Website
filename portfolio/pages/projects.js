@@ -66,13 +66,6 @@ export default function Projects () {
 				//	If project is visible
 				if (project.visible) {
 
-					//	Declare status classes
-					var status_classes = {
-						'Complete'		: styles.complete,
-						'In Progress'		: styles.in_progress,
-						'Incomplete'		: styles.incomplete
-					}
-
 					//	Declare category html
 					var category_html = {
 						'Game Development'	: `<div class="${styles.tag}"><i class="fa fa-gamepad"></i></div>`,
@@ -92,7 +85,7 @@ export default function Projects () {
 							${category}
 							<div class=${styles.title}>${project.name}</div>
 							<div class=${styles.description}>${project.description.short}</div>
-							<a href="/projects/${project.name.replace(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
+							<a href="/projects/${project.name.replaceAll(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
 						</div>`;
 
 				}

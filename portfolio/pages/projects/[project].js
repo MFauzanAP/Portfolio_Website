@@ -101,7 +101,7 @@ export default function Projects () {
 			var results = await fetch('/api/project/get_project', {
 				method		: 'POST',
 				headers		: { 'Content-Type': 'application/json' },
-				body		: JSON.stringify({ name: project.replace('_', ' ') })
+				body		: JSON.stringify({ name: project.replaceAll('_', ' ') })
 			})
 
 			//	Extract response
