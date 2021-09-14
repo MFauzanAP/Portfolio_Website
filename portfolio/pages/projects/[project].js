@@ -19,7 +19,7 @@ export default function Projects () {
 
 	//	Get reference to router and router params
 	const router = useRouter();
-	var { project, left, right } = router.query;
+	var { project } = router.query;
 
 	//	Projects data
 	const [project_data, setProjectData] = useState(0);
@@ -70,7 +70,7 @@ export default function Projects () {
 			if (data.data.links.length) { 
 
 				//	Generate links
-				data.data.links = data.data.links.map((link, index) => {return <li><a key={index} target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
+				data.data.links = data.data.links.map((link, index) => {return <li key={index}><a target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
 
 			}
 			else { 
@@ -195,7 +195,7 @@ export default function Projects () {
 
 						{/* Date */}
 						<div style={{marginBottom: '10px'}}>
-							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar-alt']}></FontAwesomeIcon>
+							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar']}></FontAwesomeIcon>
 							{project_data.data ? project_data.data.date.toString().split('T')[0] : ''}
 						</div>
 

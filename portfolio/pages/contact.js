@@ -283,7 +283,7 @@ function Contact () {
 							<div className={styles.accordion} style={{transitionDelay: '2.55s'}}><Accordion options={{title: 'How can I check your work?'}}>
 								<p>
 									<Link href="/projects"><a>Click here to view my projects. </a></Link>
-									If you'd like to check out the quality of my code or how frequently I work then
+									If you&apos;d like to check out the quality of my code or how frequently I work then
 									<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"> click here to visit my GitHub profile.</a>
 								</p>
 							</Accordion></div>
