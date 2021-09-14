@@ -1012,7 +1012,7 @@ $marker-size		: 9px;
 	/* Header */
 	h2 {
 		margin-top		: 100px;
-		margin-bottom		: 50px;
+		margin-bottom		: 0;
 		padding-left		: 10px;
 		padding-right		: 10px;
 
@@ -1043,6 +1043,17 @@ $marker-size		: 9px;
 		transform		: translateX(-50vw);
 
 		transition		: 0.5s ease 0s;
+	}
+
+	/* View All */
+	.view_all {
+		align-self		: flex-end;
+		
+		margin-bottom		: 25px;
+		margin-right		: calc(15% + 25px);
+
+		font-family		: Lato;
+		font-weight		: bold;
 	}
 
 	/* Sections */

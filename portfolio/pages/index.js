@@ -246,6 +246,9 @@ function Home () {
 					<div className={styles.sideline}></div>
 					<h2>Featured Side Projects</h2>
 
+					{/* View All */}
+					<Link href="/projects"><a className={styles.view_all}>View All</a></Link>
+
 					{/* Section */}
 					<div className={styles.section} style={{transitionDelay: '0.75s'}}>
 
