@@ -128,6 +128,53 @@
 		}
 	}
 
+	/* Trigger */
+	.trigger {
+		position		: absolute;
+		top			: 750px;
+	}
+
+	/* Project Navigation */
+	.project_navigation {
+		position		: absolute;
+		width			: 100%;
+		top			: 650px;
+
+		padding			: 50px;
+
+		color			: #646464;
+
+		font-size		: 2em;
+
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: space-between;
+		align-items		: center;
+
+		/* Active */
+		&.active {
+			position		: fixed;
+			height			: 100%;
+			top			: 0;
+		}
+
+		/* Arrow */
+		.arrow {
+			padding			: 50px;
+
+			opacity			: 0.5;
+
+			transition		: 0.15s ease-in-out;
+
+			/* Hover */
+			&:hover {
+				opacity			: 1;
+
+				transform		: scale(1.25);
+			}
+		}
+	}
+
 	/* Banner */
 	.banner {
 		position		: absolute;

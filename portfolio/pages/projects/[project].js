@@ -173,15 +173,15 @@ export default function Projects () {
 					{/* Meta */}
 					<div className={styles.meta}>{project_data.description ? project_data.description.short : ''}</div>
 
+					{/* Background End */}
+					<div id="background_end"></div>
+
 					{/* Slideshow */}
 					<div className={styles.slideshow} id="slideshow"><Controller><Scene duration={500} triggerElement="#slideshow">{(progress, event) => (
 						<Slideshow id={event} event={event} options={{
 							images: project_data.images || []
 						}}/>
 					)}</Scene></Controller></div>
-
-					{/* Background End */}
-					<div id="background_end"></div>
 
 					{/* Details */}
 					<div className={styles.details}>
@@ -265,6 +265,20 @@ export default function Projects () {
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>
 				<div className='wip2'>WORK IN PROGRESS</div>
+
+				{/* Trigger */}
+				<div className={styles.trigger} id="trigger"></div>
+
+				{/* Project Navigation */}
+				<Controller><Scene classToggle={styles.active} triggerElement="#trigger"><div className={styles.project_navigation}>
+
+					{/* Left Arrow */}
+					<Link href="/"><a className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></a></Link>
+
+					{/* Right Arrow */}
+					<Link href="/"><a className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></a></Link>
+
+				</div></Scene></Controller>
 
 				{/* Navbar Background */}
 				<div className={styles.navbar_background}>
