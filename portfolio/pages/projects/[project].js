@@ -277,10 +277,26 @@ export default function Projects () {
 				<Controller><Scene classToggle={styles.active} triggerElement="#trigger"><div className={styles.project_navigation}>
 
 					{/* Left Arrow */}
-					<Link href={`/projects/${project_data.left || project}`}><a style={{opacity: project_data.left ? 1 : 0, pointerEvents: project_data.left ? 'all' : 'none'}} className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></a></Link>
+					<div style={{opacity: project_data.left ? 1 : 0, pointerEvents: project_data.left ? 'all' : 'none'}} className={styles.arrow}>
+						
+						{/* Icon */}
+						<Link href={`/projects/${project_data.left || project}`}><a><FontAwesomeIcon icon={['fas', 'chevron-left']}/></a></Link>
+
+						{/* Text */}
+						<div className={styles.text}>{project_data.left ? project_data.left.replaceAll('_', ' ') : ''}</div>
+						
+					</div>
 
 					{/* Right Arrow */}
-					<Link href={`/projects/${project_data.right || project}`}><a style={{opacity: project_data.right ? 1 : 0, pointerEvents: project_data.right ? 'all' : 'none'}} className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></a></Link>
+					<Link href={`/projects/${project_data.right || project}`}><div style={{opacity: project_data.right ? 1 : 0, pointerEvents: project_data.right ? 'all' : 'none'}} className={styles.arrow}>
+						
+						{/* Text */}
+						<div className={styles.text}>{project_data.right ? project_data.right.replaceAll('_', ' ') : ''}</div>
+
+						{/* Icon */}
+						<Link href={`/projects/${project_data.right || project}`}><a><FontAwesomeIcon icon={['fas', 'chevron-right']}/></a></Link>
+						
+					</div></Link>
 
 				</div></Scene></Controller>
 

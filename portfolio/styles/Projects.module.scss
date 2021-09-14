@@ -137,7 +137,7 @@
 	/* Project Navigation */
 	.project_navigation {
 		pointer-events		: none;
-		
+
 		position		: absolute;
 		width			: 100%;
 		top			: 650px;
@@ -162,17 +162,89 @@
 
 		/* Arrow */
 		.arrow {
-			padding			: 50px;
-
 			opacity			: 0.5;
 
 			transition		: 0.15s ease-in-out;
+
+			display			: flex;
+			flex-direction		: row;
+			justify-content		: flex-start;
+			align-items		: center;
 
 			/* Hover */
 			&:hover {
 				opacity			: 1;
 
 				transform		: scale(1.25);
+
+				/* Left */
+				&:nth-child(1) {
+					
+					/* Text */
+					.text {
+						opacity			: 1;
+
+						transform		: translateX(-40px);
+					}
+
+				}
+
+				/* Right */
+				&:nth-child(2) {
+					
+					/* Text */
+					.text {
+						opacity			: 1;
+
+						transform		: translateX(40px);
+					}
+
+				}
+			}
+
+			/* Left */
+			&:nth-child(1) {
+					
+				/* Text */
+				.text {
+					transform		: translateX(-100px);
+					transform-origin	: left;
+				}
+
+			}
+
+			/* Right */
+			&:nth-child(2) {
+					
+				/* Text */
+				.text {
+					transform		: translateX(100px);
+					transform-origin	: right;
+				}
+
+			}
+
+			/* Text */
+			.text {
+				pointer-events		: none;
+
+				display			: inline-block;
+
+				opacity			: 0;
+
+				color			: #646464;
+
+				font-size		: 0.5em;
+				font-family		: Work Sans;
+				font-weight		: 500;
+				white-space		: nowrap;
+
+				transition		: 0.25s ease-in-out;
+			}
+
+			/* Link */
+			a {
+				padding			: 50px;
 			}
 		}
 	}
@@ -672,7 +744,7 @@
 		top			: 0;
 
 		background		: #FFFFFF;
-		border-bottom		: 2.5px solid #9B5AE6;
+		border-bottom		: 5px solid #9B5AE6;
 		border-radius		: 10px;
 
 		box-shadow		: 0 0 25px rgba(0, 0, 0, 0.15);
