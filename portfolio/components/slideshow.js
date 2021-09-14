@@ -5,6 +5,7 @@ import React, { createRef, useRef } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
+import { Router } from 'next/router';
 
 
 
@@ -59,6 +60,17 @@ class Slideshow extends React.Component {
 		var image_count = (props.options && props.options.images) ? props.options.images.length : 0;
 		var child_count = props.children ? (props.children.length ? props.children.length : 1) : 0;
 		this.count = image_count + child_count;
+
+		//	On route change
+		Router.events.on('routeChangeComplete', (url) => {
+
+			//	Reset state
+			this.setState({
+				page		: 0,
+				pause		: false
+			});
+
+		})
 
 	}
 

@@ -136,6 +136,8 @@
 
 	/* Project Navigation */
 	.project_navigation {
+		pointer-events		: none;
+		
 		position		: absolute;
 		width			: 100%;
 		top			: 650px;
