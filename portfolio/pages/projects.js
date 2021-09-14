@@ -61,7 +61,7 @@ export default function Projects () {
 			var count = results.length;
 
 			//	For each project
-			var projects = results.map(project => {
+			var projects = results.map((project, index) => {
 
 				//	If project is visible
 				if (project.visible) {

@@ -19,7 +19,7 @@ export default function Projects () {
 
 	//	Get reference to router and router params
 	const router = useRouter();
-	var { project } = router.query;
+	var { project, left, right } = router.query;
 
 	//	Projects data
 	const [project_data, setProjectData] = useState(0);
@@ -54,10 +54,10 @@ export default function Projects () {
 				'Web Development'	: `<i class="fa fa-globe ${styles.icon}"></i>`,
 				'3D Modelling'		: `<i class="fa fa-cube ${styles.icon}"></i>`,
 			}
-			data.category = category_icons[data.category] + (data.category || '');
+			data.data.category = category_icons[data.data.category] + (data.data.category || '');
 
 			//	Generate tech stack list
-			data.tech_stack = data.tech_stack.map((elem, index) => {
+			data.data.tech_stack = data.data.tech_stack.map((elem, index) => {
 
 				//	Return html
 				return (
@@ -67,25 +67,29 @@ export default function Projects () {
 			})
 
 			//	If there are links
-			if (data.links.length) { 
+			if (data.data.links.length) { 
 
 				//	Generate links
-				data.links = data.links.map((link, index) => {return <li><a key={index} target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
+				data.data.links = data.data.links.map((link, index) => {return <li><a key={index} target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
 
 			}
 			else { 
 				
 				//	Set default text if there are no links
-				data.links = <div className={styles.text}>This project has no links.</div>;
+				data.data.links = <div className={styles.text}>This project has no links.</div>;
 
 			}
+
+			//	Escape spaces from project names
+			data.left = data.left.replaceAll(' ', '_');
+			data.right = data.right.replaceAll(' ', '_');
 
 			//	Set project data
 			setProjectData(data);
 
 		}
 
-	}, [router.isReady]);
+	}, [router.isReady, router.asPath]);
 
 
 
@@ -163,15 +167,15 @@ export default function Projects () {
 						<div className={styles.divider}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 						{/* Project Name */}
-						<div className={`${styles.link} ${styles.active}`}><Link href="/projects"><a>{project_data.name || ''}</a></Link></div>
+						<div className={`${styles.link} ${styles.active}`}><Link href="/projects"><a>{project_data.data ? project_data.data.name : ''}</a></Link></div>
 
 					</div>
 
 					{/* Header */}
-					<div className={styles.header}>{project_data.name || ''}</div>
+					<div className={styles.header}>{project_data.data ? project_data.data.name : ''}</div>
 
 					{/* Meta */}
-					<div className={styles.meta}>{project_data.description ? project_data.description.short : ''}</div>
+					<div className={styles.meta}>{project_data.data ? project_data.data.description.short : ''}</div>
 
 					{/* Background End */}
 					<div id="background_end"></div>
@@ -179,7 +183,7 @@ export default function Projects () {
 					{/* Slideshow */}
 					<div className={styles.slideshow} id="slideshow"><Controller><Scene duration={500} triggerElement="#slideshow">{(progress, event) => (
 						<Slideshow id={event} event={event} options={{
-							images: project_data.images || []
+							images: project_data.data ? project_data.data.images : []
 						}}/>
 					)}</Scene></Controller></div>
 
@@ -192,23 +196,23 @@ export default function Projects () {
 						{/* Date */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar-alt']}></FontAwesomeIcon>
-							{project_data.date ? project_data.date.toString().split('T')[0] : ''}
+							{project_data.data ? project_data.data.date.toString().split('T')[0] : ''}
 						</div>
 
 						{/* Company */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'building']}></FontAwesomeIcon>
-							{project_data.company || ''}
+							{project_data.data ? project_data.data.company : ''}
 						</div>
 
 						{/* Status */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'clock']}></FontAwesomeIcon>
-							{project_data.status || ''}
+							{project_data.data ? project_data.data.status : ''}
 						</div>
 
 						{/* Category */}
-						<div dangerouslySetInnerHTML={{__html: project_data.category || ''}}></div>
+						<div dangerouslySetInnerHTML={{__html: project_data.data ? project_data.data.category : ''}}></div>
 
 					</div>
 
@@ -219,7 +223,7 @@ export default function Projects () {
 						<div className={styles.title}>DESCRIPTION</div>
 
 						{/* Text */}
-						<div className={styles.text} dangerouslySetInnerHTML={{__html: project_data.description ? (project_data.description.long || 'This project has no description') : ''}}></div>
+						<div className={styles.text} dangerouslySetInnerHTML={{__html: project_data.data ? (project_data.data.description.long || 'This project has no description') : ''}}></div>
 
 					</div>
 
@@ -233,7 +237,7 @@ export default function Projects () {
 						<div className={styles.text}>These are the technologies I used in this project</div>
 
 						{/* List */}
-						<ul className={styles.list}>{project_data.tech_stack || ''}</ul>
+						<ul className={styles.list}>{project_data.data ? project_data.data.tech_stack : ''}</ul>
 
 					</div>
 
@@ -247,7 +251,7 @@ export default function Projects () {
 						<div className={styles.text}>Here are some extra resourced related to this project</div>
 
 						{/* List */}
-						<ul className={styles.list}>{project_data.links || ''}</ul>
+						<ul className={styles.list}>{project_data.data ? project_data.data.links : ''}</ul>
 
 					</div>
 
@@ -273,10 +277,10 @@ export default function Projects () {
 				<Controller><Scene classToggle={styles.active} triggerElement="#trigger"><div className={styles.project_navigation}>
 
 					{/* Left Arrow */}
-					<Link href="/"><a className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></a></Link>
+					<Link href={`/projects/${project_data.left || project}`}><a style={{opacity: project_data.left ? 1 : 0, pointerEvents: project_data.left ? 'all' : 'none'}} className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-left']}/></a></Link>
 
 					{/* Right Arrow */}
-					<Link href="/"><a className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></a></Link>
+					<Link href={`/projects/${project_data.right || project}`}><a style={{opacity: project_data.right ? 1 : 0, pointerEvents: project_data.right ? 'all' : 'none'}} className={styles.arrow}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></a></Link>
 
 				</div></Scene></Controller>
 
