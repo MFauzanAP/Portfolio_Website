@@ -729,7 +729,7 @@
 	display			: flex;
 	flex-direction		: column;
 	justify-content		: flex-start;
-	align-items		: flex-start;
+	align-items		: center;
 
 
 
@@ -792,7 +792,7 @@
 		font-size		: 2.5rem;
 		font-weight		: bold;
 		letter-spacing		: 1.5px;
-		text-align		: left;
+		text-align		: center;
 	}
 
 	/* Meta */
@@ -807,7 +807,7 @@
 		font-family		: Lato;
 		font-size		: 1.5rem;
 		letter-spacing		: 0.5px;
-		text-align		: left;
+		text-align		: center;
 	}
 
 	/* Slideshow */
@@ -836,6 +836,17 @@
 		font-family		: Work Sans;
 		font-size		: 1.5em;
 		font-weight		: bold;
+		text-align		: center;
+	}
+
+	/* Divider */
+	.line_divider {
+		width			: 650px;
+		height			: 0;
+
+		margin-top		: 50px;
+
+		border			: 1px solid #EFEFEF;
 	}
 
 	/* Details */
@@ -843,14 +854,19 @@
 		position		: relative;
 		width			: 100%;
 
-		margin			: 25px 0;
+		margin			: 50px 0;
 
 		color			: #646464;
 
 		font-family		: Lato;
 		font-size		: 1em;
 		letter-spacing		: 0.5px;
-		text-align		: left;
+		text-align		: center;
+
+		display			: flex;
+		flex-direction		: column;
+		justify-content		: flex-start;
+		align-items		: center;
 
 		/* Icon */
 		.icon {
@@ -863,16 +879,22 @@
 	/* Description */
 	.description {
 		position		: relative;
-		width			: 100%;
+		width			: 75%;
 
-		margin			: 25px 0;
+		margin			: 50px 0;
 
 		color			: #646464;
 
 		font-family		: Lato;
 		font-size		: 1em;
 		letter-spacing		: 0.5px;
-		text-align		: left;
+		text-align		: justify;
+		text-align-last		: center;
+
+		display			: flex;
+		flex-direction		: column;
+		justify-content		: flex-start;
+		align-items		: center;
 
 		/* Text */
 		.text {
@@ -891,20 +913,30 @@
 		position		: relative;
 		width			: 100%;
 
-		margin			: 25px 0;
+		margin			: 50px 0;
 
 		color			: #646464;
 
 		font-family		: Lato;
 		font-size		: 1em;
 		letter-spacing		: 0.5px;
-		text-align		: left;
+		text-align		: center;
+
+		display			: flex;
+		flex-direction		: column;
+		justify-content		: flex-start;
+		align-items		: center;
 
 		/* List */
 		.list {
+			margin			: 25px auto;
+			padding-inline-start	: 0;
+
+			display			: table;
+
 			color			: #3D3D3D;
 			
-			list-style		: circle;
+			list-style		: none;
 
 			font-size		: 1.25em;
 			font-family		: Lato;
@@ -919,26 +951,37 @@
 		position		: relative;
 		width			: 100%;
 
-		margin			: 25px 0;
+		margin			: 50px 0;
 
 		color			: #646464;
 
 		font-family		: Lato;
 		font-size		: 1em;
 		letter-spacing		: 0.5px;
-		text-align		: left;
+		text-align		: center;
+
+		display			: flex;
+		flex-direction		: column;
+		justify-content		: flex-start;
+		align-items		: center;
 
 		/* List */
 		.list {
+			margin			: 25px auto;
+			padding-inline-start	: 0;
+
 			color			: #3D3D3D;
+
+			display			: table;
 			
-			list-style		: circle;
+			list-style		: none;
 
 			font-size		: 1em;
 			font-family		: Lato;
 			line-height		: 1.8;
 			letter-spacing		: 0.03em;
 			text-rendering		: optimizeLegibility;
+			text-align		: left;
 
 			/* Link */
 			a {

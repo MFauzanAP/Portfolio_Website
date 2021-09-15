@@ -196,23 +196,29 @@ export default function Projects () {
 						{/* Date */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar']}></FontAwesomeIcon>
+							<strong>Start Date - </strong>
 							{project_data.data ? project_data.data.date.toString().split('T')[0] : ''}
 						</div>
 
 						{/* Company */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'building']}></FontAwesomeIcon>
+							<strong>Company - </strong>
 							{project_data.data ? project_data.data.company : ''}
 						</div>
 
 						{/* Status */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'clock']}></FontAwesomeIcon>
+							<strong>Status - </strong>
 							{project_data.data ? project_data.data.status : ''}
 						</div>
 
 						{/* Category */}
 						<div dangerouslySetInnerHTML={{__html: project_data.data ? project_data.data.category : ''}}></div>
+
+						{/* Divider */}
+						<div className={styles.line_divider}></div>
 
 					</div>
 
@@ -224,6 +230,9 @@ export default function Projects () {
 
 						{/* Text */}
 						<div className={styles.text} dangerouslySetInnerHTML={{__html: project_data.data ? (project_data.data.description.long || 'This project has no description') : ''}}></div>
+
+						{/* Divider */}
+						<div className={styles.line_divider}></div>
 
 					</div>
 
@@ -239,6 +248,9 @@ export default function Projects () {
 						{/* List */}
 						<ul className={styles.list}>{project_data.data ? project_data.data.tech_stack : ''}</ul>
 
+						{/* Divider */}
+						<div className={styles.line_divider}></div>
+						
 					</div>
 
 					{/* Links */}
