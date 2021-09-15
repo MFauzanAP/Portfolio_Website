@@ -266,7 +266,7 @@ function Home () {
 							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
 
 							{/* Call to Action */}
-							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
+							<Link href="/projects/Snowball_Project"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
 
 						</div>
 
@@ -301,7 +301,7 @@ function Home () {
 							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
 
 							{/* Call to Action */}
-							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
+							<Link href="/projects/Revision_Cards_Project"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
 
 						</div>
 
@@ -342,7 +342,7 @@ function Home () {
 							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
 
 							{/* Call to Action */}
-							<div className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}></FontAwesomeIcon>Learn More</div>
+							<Link href="/projects/Top_Down_Project"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
 
 						</div>
 
