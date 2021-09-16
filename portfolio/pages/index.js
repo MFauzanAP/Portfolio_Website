@@ -562,7 +562,7 @@ function Home () {
 								</ul>
 
 								{/* Link */}
-								<Link href="/about#experience"><a>Click here to learn more</a></Link>
+								<Link href="/projects/Malvor"><a>Click here to learn more</a></Link>
 								<div className={styles.divider}></div>
 
 								{/* Skills */}
