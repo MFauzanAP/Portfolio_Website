@@ -277,7 +277,7 @@ export default function Projects () {
 
 					{/* Loader */}
 					<div className={styles.loader}>
-						<i class="fa fa-spinner fa-spin"></i>
+						<i className="fa fa-spinner fa-spin"></i>
 						<p>Loading Project Data...</p>
 					</div>
 
