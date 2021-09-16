@@ -37,7 +37,7 @@ export default function Projects () {
 		setProjects({length: 0, data: `
 			<div class="${styles.loader}">
 				<i class="fa fa-spinner fa-spin"></i>
-				<p>Loading Projects, Hold On.</p>
+				<p>Loading Projects, Hold On...</p>
 			</div>
 		`})
 

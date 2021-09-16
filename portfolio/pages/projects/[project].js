@@ -44,6 +44,9 @@ export default function Projects () {
 		//	Check if fully loaded
 		if (project) {
 
+			//	Show loader
+			document.querySelector(`.${styles.loader}`).classList.add(styles.active);
+
 			//	Get project data
 			var data = await get_project();
 
@@ -73,6 +76,8 @@ export default function Projects () {
 				data.data.links = data.data.links.map((link, index) => {return <li key={index}><a target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
 
 			}
+
+			//	If there are no links
 			else { 
 				
 				//	Set default text if there are no links
@@ -86,6 +91,9 @@ export default function Projects () {
 
 			//	Set project data
 			setProjectData(data);
+
+			//	Hide loader
+			document.querySelector(`.${styles.loader}`).classList.remove(styles.active);
 
 		}
 
@@ -265,6 +273,12 @@ export default function Projects () {
 						{/* List */}
 						<ul className={styles.list}>{project_data.data ? project_data.data.links : ''}</ul>
 
+					</div>
+
+					{/* Loader */}
+					<div className={styles.loader}>
+						<i class="fa fa-spinner fa-spin"></i>
+						<p>Loading Project Data...</p>
 					</div>
 
 				</div></Scene></Controller>
