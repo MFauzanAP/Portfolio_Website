@@ -33,6 +33,14 @@ export default function Projects () {
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
 
+		//	Add loading indicator for projects
+		setProjects({length: 0, data: `
+			<div class="${styles.loader}">
+				<i class="fa fa-spinner fa-spin"></i>
+				<p>Loading Projects, Hold On.</p>
+			</div>
+		`})
+
 		//	Load projects
 		setProjects(await get_projects());
 
