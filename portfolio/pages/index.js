@@ -571,7 +571,7 @@ function Home () {
 									<li>ExpressJS</li>
 									<li>MongoDB</li>
 									<li>ElasticSearch</li>
-									<li>Semantic</li>
+									<li>Semantic UI</li>
 									<li>Handlebars</li>
 									<li>Unit Testing</li>
 									<li>Lodash</li>

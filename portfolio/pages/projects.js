@@ -58,13 +58,16 @@ export default function Projects () {
 			results = await results.json();
 
 			//	Keep track of number of projects
-			var count = results.length;
+			var count = 0;
 
 			//	For each project
 			var projects = results.map((project, index) => {
 
 				//	If project is visible
 				if (project.visible) {
+
+					//	Increment counter
+					count++;
 
 					//	Declare category html
 					var category_html = {
