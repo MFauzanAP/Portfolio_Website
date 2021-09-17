@@ -21,9 +21,6 @@ class Navbar extends React.Component {
 	//	Reference to navigation menu
 	nav_menu_ref = React.createRef();
 
-	//	Is menu closed or open
-	menu_open = false;
-
 	//	Variables to hold touch data
 	touchX = null;
 	touchY = null;
@@ -55,6 +52,18 @@ class Navbar extends React.Component {
 
 
 
+	/* =================================================== On Unmount =================================================== */
+	componentWillUnmount () {
+
+		//	Unsubscribe events
+		document.removeEventListener('touchstart', this.HandleTouchStart.bind(this));
+		document.removeEventListener('touchmove', this.HandleTouchMove.bind(this));
+		document.removeEventListener('touchend', this.HandleTouchEnd.bind(this));
+
+	}
+
+
+
 	/* ==================================================== Functions =================================================== */
 
 	//	Function to toggle the navigation menu
@@ -72,9 +81,6 @@ class Navbar extends React.Component {
 			//	Close menu
 			menu.className = 'navigation';
 
-			//	Set boolean
-			this.menu_open = false;
-
 			//	Re enable scrolling
 			document.querySelector('body').classList.remove('fixed');
 
@@ -85,9 +91,6 @@ class Navbar extends React.Component {
 
 			//	Add active class to menu
 			menu.className += ' active';
-
-			//	Set boolean
-			this.menu_open = true;
 
 			//	Disable scrolling
 			document.querySelector('body').classList.add('fixed');
@@ -111,6 +114,12 @@ class Navbar extends React.Component {
 	//	Function called to handle touch move
 	HandleTouchMove (e) {
 
+		//	Get menu element
+		var navbar = this.nav_menu_ref.current;
+
+		//	If there is no menu then exit
+		if (!navbar) return;
+
 		//	If touch data is empty then return
 		if (!this.touchX || !this.touchY) return;
 
@@ -126,7 +135,7 @@ class Navbar extends React.Component {
 		if (Math.abs(this.diffX) > Math.abs(this.diffY) && Math.abs(this.diffX) > 50) {
 
 			//	If menu is closed and swipe origin is on the right side
-			if (this.diffX > 0 && !this.menu_open && this.touchX >= window.screen.width * 3/4) {
+			if (this.diffX > 0 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 4/5) {
 
 				//	Get menu element
 				var menu = document.querySelector('.navigation .menu');
@@ -138,7 +147,7 @@ class Navbar extends React.Component {
 			}
 
 			//	If user swiped right while menu is open
-			if (this.diffX < 0 && this.menu_open) {
+			if (this.diffX < 0 && navbar.className.includes('active')) {
 
 				//	Get menu element
 				var menu = document.querySelector('.navigation .menu');
@@ -156,14 +165,23 @@ class Navbar extends React.Component {
 	//	Function called to handle touch end
 	HandleTouchEnd (e) {
 
+		//	Get navbar element
+		var navbar = this.nav_menu_ref.current;
+
+		//	If there is no menu then exit
+		if (!navbar) return;
+
+		//	If touch data is empty then return
+		if (Math.abs(this.diffX) < 50) return;
+
 		//	If not swiping up or down and if swipe duration is long enough
-		if (Math.abs(this.diffX) > Math.abs(this.diffY) && Math.abs(this.diffX) > 50) {
+		if (Math.abs(this.diffX) > Math.abs(this.diffY)) {
 
 			//	Get menu element
 			var menu = document.querySelector('.navigation .menu');
 
 			//	If menu is halfway open
-			if (this.diffX > 100 && !this.menu_open && this.touchX >= window.screen.width * 3/4) {
+			if (this.diffX > 100 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 4/5) {
 
 				//	Reset menu style
 				menu.style.transform = '';
@@ -173,26 +191,26 @@ class Navbar extends React.Component {
 				this.ToggleMenu();
 
 			}
-			else if (!this.menu_open && this.diffX <= 100 && this.touchX >= window.screen.width * 3/4) {
+			else if (!navbar.className.includes('active') && this.diffX <= 100 && this.touchX >= window.screen.width * 4/5) {
 
 				//	Reset menu style
-				menu.style.transform = 'translateX(100%)';
+				menu.style.transform = '';
 				menu.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
 
 			}
 
 			//	If menu is halfway open
-			if (this.diffX < -100 && this.menu_open) {
+			if (this.diffX < -100 && navbar.className.includes('active')) {
 
 				//	Reset menu style
-				menu.style.transform = 'translateX(100%)';
+				menu.style.transform = '';
 				menu.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
 
 				//	Toggle menu
 				this.ToggleMenu();
 
 			}
-			else if (this.menu_open && this.diffX >= -100) {
+			else if (navbar.className.includes('active') && this.diffX >= -100) {
 
 				//	Reset menu style
 				menu.style.transform = '';
@@ -205,6 +223,8 @@ class Navbar extends React.Component {
 		//	Reset touch data
 		this.touchX = null;
 		this.touchY = null;
+		this.diffX = 0;
+		this.diffY = 0;
 
 	}
 

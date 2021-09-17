@@ -350,7 +350,7 @@ button {
 				transform		: translateX(100%);
 				transform-origin	: right;
 
-				transition		: transform 0.2s cubic-bezier(0.71, 0.01, 0.35, 1);
+				transition		: transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s;
 
 				/* Header */
 				.header {
