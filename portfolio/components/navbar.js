@@ -27,6 +27,8 @@ class Navbar extends React.Component {
 	//	Variables to hold touch data
 	touchX = null;
 	touchY = null;
+	diffX = 0;
+	diffY = 0;
 
 
 
@@ -47,6 +49,7 @@ class Navbar extends React.Component {
 		//	Register events
 		document.addEventListener('touchstart', this.HandleTouchStart.bind(this), false);
 		document.addEventListener('touchmove', this.HandleTouchMove.bind(this), false);
+		document.addEventListener('touchend', this.HandleTouchEnd.bind(this), false);
 
 	}
 
@@ -116,26 +119,84 @@ class Navbar extends React.Component {
 		var y = e.touches[0].clientY;
 
 		//	Calculate the difference between the touch positions
-		var diffX = this.touchX - x;
-		var diffY = this.touchY - y;
-		console.log(diffX);
+		this.diffX = this.touchX - x;
+		this.diffY = this.touchY - y;
 
 		//	If not swiping up or down and if swipe duration is long enough
-		if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 9) {
+		if (Math.abs(this.diffX) > Math.abs(this.diffY) && Math.abs(this.diffX) > 50) {
 
-			//	If the user swiped left while menu is closed and if swiping from right side
-			if (diffX > 0 && !this.menu_open && this.touchX >= window.screen.width * 3/4) {
+			//	If menu is closed and swipe origin is on the right side
+			if (this.diffX > 0 && !this.menu_open && this.touchX >= window.screen.width * 3/4) {
+
+				//	Get menu element
+				var menu = document.querySelector('.navigation .menu');
+
+				//	Move menu by diffX
+				menu.style.transform = `translateX(${Math.min(100, Math.max(0, 100 - ((this.diffX - 50) / 3)))}%)`;
+				menu.style.transition = `none`;
+
+			}
+
+			//	If user swiped right while menu is open
+			if (this.diffX < 0 && this.menu_open) {
+
+				//	Get menu element
+				var menu = document.querySelector('.navigation .menu');
+
+				//	Move menu by diffX
+				menu.style.transform = `translateX(${Math.min(100, Math.max(0, Math.abs((this.diffX + 50) / 3)))}%)`;
+				menu.style.transition = `none`;
+
+			}
+
+		}
+
+	}
+
+	//	Function called to handle touch end
+	HandleTouchEnd (e) {
+
+		//	If not swiping up or down and if swipe duration is long enough
+		if (Math.abs(this.diffX) > Math.abs(this.diffY) && Math.abs(this.diffX) > 50) {
+
+			//	Get menu element
+			var menu = document.querySelector('.navigation .menu');
+
+			//	If menu is halfway open
+			if (this.diffX > 100 && !this.menu_open && this.touchX >= window.screen.width * 3/4) {
+
+				//	Reset menu style
+				menu.style.transform = '';
+				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
 
 				//	Toggle menu
 				this.ToggleMenu();
 
 			}
+			else if (!this.menu_open && this.diffX <= 100 && this.touchX >= window.screen.width * 3/4) {
 
-			//	If user swiped right while menu is open
-			if (diffX < 0 && this.menu_open) {
+				//	Reset menu style
+				menu.style.transform = 'translateX(100%)';
+				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
+
+			}
+
+			//	If menu is halfway open
+			if (this.diffX < -100 && this.menu_open) {
+
+				//	Reset menu style
+				menu.style.transform = 'translateX(100%)';
+				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
 
 				//	Toggle menu
 				this.ToggleMenu();
+
+			}
+			else if (this.menu_open && this.diffX >= -100) {
+
+				//	Reset menu style
+				menu.style.transform = '';
+				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
 
 			}
 
