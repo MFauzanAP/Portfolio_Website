@@ -21,11 +21,33 @@ class Navbar extends React.Component {
 	//	Reference to navigation menu
 	nav_menu_ref = React.createRef();
 
+	//	Is menu closed or open
+	menu_open = false;
+
+	//	Variables to hold touch data
+	touchX = null;
+	touchY = null;
+
 
 
 	/* ===================================================== On Load ==================================================== */
 	constructor (props) {
 		super(props);
+
+		//	Bind functions
+		this.ToggleMenu = this.ToggleMenu.bind(this);
+		
+	}
+
+
+
+	/* ==================================================== On Mount ==================================================== */
+	componentDidMount () {
+
+		//	Register events
+		document.addEventListener('touchstart', this.HandleTouchStart.bind(this), false);
+		document.addEventListener('touchmove', this.HandleTouchMove.bind(this), false);
+
 	}
 
 
@@ -38,11 +60,17 @@ class Navbar extends React.Component {
 		//	Get menu element
 		var menu = this.nav_menu_ref.current;
 
+		//	If there is no menu then exit
+		if (!menu) return;
+
 		//	Check if menu is already active
 		if (menu.className.includes('active')) {
 
 			//	Close menu
 			menu.className = 'navigation';
+
+			//	Set boolean
+			this.menu_open = false;
 
 			//	Re enable scrolling
 			document.querySelector('body').classList.remove('fixed');
@@ -55,12 +83,65 @@ class Navbar extends React.Component {
 			//	Add active class to menu
 			menu.className += ' active';
 
+			//	Set boolean
+			this.menu_open = true;
+
 			//	Disable scrolling
 			document.querySelector('body').classList.add('fixed');
 
 		}
 
 	}
+
+	//	Function called on touch start
+	HandleTouchStart (e) {
+
+		//	Get touch position
+		var touch = e.touches[0];
+
+		//	Store touch data
+		this.touchX = touch.clientX;
+		this.touchY = touch.clientY;
+
+	}
+
+	//	Function called to handle touch move
+	HandleTouchMove (e) {
+
+		//	If touch data is empty then return
+		if (!this.touchX || !this.touchY) return;
+
+		//	Get current touch position
+		var x = e.touches[0].clientX;
+		var y = e.touches[0].clientY;
+
+		//	Calculate the difference between the touch positions
+		var diffX = this.touchX - x;
+		var diffY = this.touchY - y;
+
+		//	If the user swiped left while menu is closed
+		if (diffX > 0 && !this.menu_open) {
+
+			//	Toggle menu
+			this.ToggleMenu();
+
+		}
+
+		//	If user swiped right while menu is open
+		if (diffX < 0 && this.menu_open) {
+
+			//	Toggle menu
+			this.ToggleMenu();
+
+		}
+
+		//	Reset touch data
+		this.touchX = null;
+		this.touchY = null;
+
+	}
+
+
 
 	/* ==================================================== On Render =================================================== */
 	render () {
