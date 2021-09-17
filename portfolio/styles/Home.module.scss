@@ -905,6 +905,11 @@ $marker-size		: 9px;
 			transform		: translateX(0);
 		}
 
+		/* View All */
+		.view_all {
+			opacity			: 1;
+		}
+
 		/* Section */
 		.section {
 			opacity			: 1;
@@ -930,6 +935,11 @@ $marker-size		: 9px;
 			transform		: translateX(0);
 
 			transition		: none;
+		}
+
+		/* View All */
+		.view_all {
+			opacity			: 1;
 		}
 
 		/* Section */
@@ -1054,6 +1064,10 @@ $marker-size		: 9px;
 
 		font-family		: Lato;
 		font-weight		: bold;
+
+		opacity			: 0;
+
+		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0.5s;
 	}
 
 	/* Sections */
@@ -1166,9 +1180,42 @@ $marker-size		: 9px;
 			justify-content		: center;
 			align-items		: center;
 		}
+	}
 
-		/* Mobile */
-		@include media("<=mobilel") { 
+	/* Call to Action */
+	.call_to_action {
+		margin-top		: 25px;
+
+		background-color	: #FFFFFF;
+		color			: #9B5AE6;
+
+		font-family		: Lato;
+		font-style		: normal;
+		font-weight		: 600;
+		font-size		: 16px;
+		line-height		: 18px;
+
+		/* Hover */
+		&:hover {
+			background-color	: #dadada;
+		}
+	}
+
+	/* Mobile */
+	@include media("<=mobilel") { 
+
+		/* Header */
+		h2 {
+			margin-bottom		: 25px;
+		}
+
+		/* View All */
+		.view_all {
+			display			: none;
+		}
+
+		/* Section */
+		.section {
 			aspect-ratio		: auto;
 			width			: 95%;
 
@@ -1215,9 +1262,23 @@ $marker-size		: 9px;
 				height			: 300px;
 			}
 		}
+	}
 
-		/* Tablet */
-		@include media("<=tablet", ">mobilel") { 
+	/* Tablet */
+	@include media("<=tablet", ">mobilel") { 
+
+		/* Header */
+		h2 {
+			margin-bottom		: 25px;
+		}
+
+		/* View All */
+		.view_all {
+			display			: none;
+		}
+
+		/* Section */
+		.section {
 			aspect-ratio		: auto;
 			max-width		: 80%;
 
@@ -1248,9 +1309,13 @@ $marker-size		: 9px;
 				height			: 350px;
 			}
 		}
+	}
 
-		/* Laptop */
-		@include media("<=laptop", ">tablet") { 
+	/* Laptop */
+	@include media("<=laptop", ">tablet") { 
+
+		/* Section */
+		.section {
 			aspect-ratio		: auto;
 			max-width		: 80%;
 
@@ -1281,9 +1346,18 @@ $marker-size		: 9px;
 				height			: 350px;
 			}
 		}
+	}
 
-		/* Laptop L */
-		@include media("<=1875px", ">=laptop") { 
+	/* Laptop L */
+	@include media("<=1875px", ">=laptop") { 
+
+		/* View All */
+		.view_all {
+			margin-right		: calc(20% + 25px);
+		}
+
+		/* Section */
+		.section {
 			aspect-ratio		: auto;
 			max-width		: 60%;
 
@@ -1313,25 +1387,6 @@ $marker-size		: 9px;
 				width			: 100%;
 				height			: 500px;
 			}
-		}
-	}
-
-	/* Call to Action */
-	.call_to_action {
-		margin-top		: 25px;
-
-		background-color	: #FFFFFF;
-		color			: #9B5AE6;
-
-		font-family		: Lato;
-		font-style		: normal;
-		font-weight		: 600;
-		font-size		: 16px;
-		line-height		: 18px;
-
-		/* Hover */
-		&:hover {
-			background-color	: #dadada;
 		}
 	}
 }
