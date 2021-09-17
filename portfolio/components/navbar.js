@@ -135,7 +135,7 @@ class Navbar extends React.Component {
 		if (Math.abs(this.diffX) > Math.abs(this.diffY) && Math.abs(this.diffX) > 50) {
 
 			//	If menu is closed and swipe origin is on the right side
-			if (this.diffX > 0 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 4/5) {
+			if (this.diffX > 0 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 7/8) {
 
 				//	Get menu element
 				var menu = document.querySelector('.navigation .menu');
