@@ -229,9 +229,7 @@ class Navbar extends React.Component {
 						<div className={`${projects} link`}><Accordion options={{title: <Link href="/projects"><a><FontAwesomeIcon style={{marginLeft: '4px', marginRight: '15px'}} icon={['fas', 'lightbulb']}/>Projects</a></Link>}}>
 							
 							{/* Links */}
-							<Link href="/projects#hire_me"><a>Hire Me</a></Link>
-							<Link href="/projects#showcase"><a>Side Projects</a></Link>
-							<Link href="/projects#career_timeline"><a>Career Timeline</a></Link>
+							<Link href="/projects#project_list"><a>Project List</a></Link>
 
 						</Accordion></div>
 
