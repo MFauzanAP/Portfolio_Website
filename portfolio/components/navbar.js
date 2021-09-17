@@ -167,7 +167,7 @@ class Navbar extends React.Component {
 
 				//	Reset menu style
 				menu.style.transform = '';
-				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
+				menu.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
 
 				//	Toggle menu
 				this.ToggleMenu();
@@ -177,7 +177,7 @@ class Navbar extends React.Component {
 
 				//	Reset menu style
 				menu.style.transform = 'translateX(100%)';
-				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
+				menu.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
 
 			}
 
@@ -186,7 +186,7 @@ class Navbar extends React.Component {
 
 				//	Reset menu style
 				menu.style.transform = 'translateX(100%)';
-				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
+				menu.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
 
 				//	Toggle menu
 				this.ToggleMenu();
@@ -196,7 +196,7 @@ class Navbar extends React.Component {
 
 				//	Reset menu style
 				menu.style.transform = '';
-				menu.style.transition = 'transform 0.25s cubic-bezier(0.71, 0.01, 0.35, 1)';
+				menu.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
 
 			}
 
