@@ -30,6 +30,15 @@ class Slideshow extends React.Component {
 	/* Bool used to stop infinite loops when updating countdown */
 	updating = false;
 
+	//	Reference to slides
+	slide_ref = createRef();
+
+	//	Variables to hold touch data
+	touchX = null;
+	touchY = null;
+	diffX = 0;
+	diffY = 0;
+
 
 
 	/* ===================================================== On Load ==================================================== */
@@ -76,11 +85,28 @@ class Slideshow extends React.Component {
 
 
 
+	/* ==================================================== On Mount ==================================================== */
+	componentDidMount () {
+
+		//	Register events
+		document.addEventListener('touchstart', this.HandleTouchStart.bind(this), false);
+		document.addEventListener('touchmove', this.HandleTouchMove.bind(this), false);
+		document.addEventListener('touchend', this.HandleTouchEnd.bind(this), false);
+
+	}
+
+
+
 	/* ===================================================== Unmount ==================================================== */
 	componentWillUnmount () {
 
 		//	Stop all autoplay
 		clearInterval(this.autoplay_index);
+
+		//	Unsubscribe events
+		document.removeEventListener('touchstart', this.HandleTouchStart.bind(this));
+		document.removeEventListener('touchmove', this.HandleTouchMove.bind(this));
+		document.removeEventListener('touchend', this.HandleTouchEnd.bind(this));
 
 	}
 
@@ -203,6 +229,120 @@ class Slideshow extends React.Component {
 
 	}
 
+	//	Function called on touch start
+	HandleTouchStart (e) {
+
+		//	Get slides
+		var slides = this.slide_ref.current;
+
+		//	If unable to get slides then exit
+		if (!slides) return;
+
+		//	If clicks are outside of slides then exit
+		if (!slides.contains(e.target)) return;
+
+		//	Get touch position
+		var touch = e.touches[0];
+
+		//	Store touch data
+		this.touchX = touch.clientX;
+		this.touchY = touch.clientY;
+
+	}
+
+	//	Function called to handle touch move
+	HandleTouchMove (e) {
+
+		//	Get slides
+		var slides = this.slide_ref.current;
+
+		//	If unable to get slides then exit
+		if (!slides) return;
+
+		//	If touch data is empty then return
+		if (!this.touchX || !this.touchY) return;
+
+		//	Get current touch position
+		var x = e.touches[0].clientX;
+		var y = e.touches[0].clientY;
+
+		//	Calculate the difference between the touch positions
+		this.diffX = this.touchX - x;
+		this.diffY = this.touchY - y;
+
+		//	Calculate offset
+		var offset = this.state.page * -100;
+
+		//	If not swiping up or down
+		if (Math.abs(this.diffX) > Math.abs(this.diffY)) {
+
+			//	If swiping left
+			if (this.diffX > 0) {
+
+				//	Move slides by diffX
+				slides.style.transform = `translateX(${Math.min(0, Math.max(-100 * (this.count - 1), offset - (this.diffX / 2)))}%)`;
+				slides.style.transition = `none`;
+
+			}
+
+			//	If swiping right
+			if (this.diffX < 0) {
+
+				//	Move slides by diffX
+				slides.style.transform = `translateX(${Math.min(0, Math.max(-100 * (this.count - 1), offset + Math.abs(this.diffX / 2)))}%)`;
+				slides.style.transition = `none`;
+
+			}
+
+		}
+
+	}
+
+	//	Function called to handle touch end
+	HandleTouchEnd (e) {
+
+		//	Get slides
+		var slides = this.slide_ref.current;
+
+		//	If unable to get slides then exit
+		if (!slides) return;
+
+		//	If touch data is empty then return
+		if (Math.abs(this.diffX) < 50) return;
+
+		//	Calculate offset
+		var offset = this.state.page * -100;
+
+		//	Calculate final offset
+		var final_offset = this.diffX > 0 ? offset - (this.diffX / 2) : offset + Math.abs(this.diffX / 2);
+
+		//	If not swiping up or down and if swipe duration is long enough
+		if (Math.abs(this.diffX) > Math.abs(this.diffY)) {
+
+			//	Calculate which page to snap to
+			var page = Math.round(final_offset / -100);
+
+			//	Clamp page
+			page = Math.max(0, Math.min(this.count - 1, page));
+
+			//	Snap to this page
+			slides.style.transform = `translateX(-${page * 100}%)`;
+			slides.style.transition = 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s';
+
+			//	Change page
+			this.setState({page, pause: true});
+			clearInterval(this.autoplay_index);
+
+		}
+
+		//	Reset touch data
+		this.touchX = null;
+		this.touchY = null;
+		this.diffX = 0;
+		this.diffY = 0;
+
+	}
+
 
 
 	/* ==================================================== On Update =================================================== */
@@ -271,18 +411,9 @@ class Slideshow extends React.Component {
 		//	Get callback
 		var callback = this.props.options ? this.props.options.callback : null;
 
-		//	Generate slides styling
-		var slide_style = {
-			maxWidth	: this.state.maxWidth,
-			maxHeight	: this.state.maxHeight
-		}
-
 		//	Generate image elements
 		var images = this.props.options ? (this.props.options.images || []) : [];
 		elements = images.map((source, i) => { 
-
-			//	Calculate offset
-			var offset = ((i - this.state.page) * 100) + ((i - this.state.page) * this.state.padding);
 
 			//	Calculate scale
 			var scale = i == this.state.page ? 1 : this.state.itemScale;
@@ -290,14 +421,14 @@ class Slideshow extends React.Component {
 			//	Create styles
 			var style = {
 				pointerEvents	: i == this.state.page ? 'all' : 'none',
-				
-				position	: 'absolute',
+
 				width		: '100%',
 				height		: '100%',
+				flex		: `1 0 100%`,
 
-				transform	: `translateX(${offset}%) scale(${scale})`,
+				transform	: `scale(${scale})`,
 
-				transition	: '0.5s ease',
+				transition	: 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s',
 
 				opacity		: i == this.state.page ? 1 : this.state.itemOpacity
 			};
@@ -311,9 +442,6 @@ class Slideshow extends React.Component {
 		var children = this.props.children ? (this.props.children.length ? this.props.children : [this.props.children]) : [];
 		children.forEach((element, i) => { 
 
-			//	Calculate offset
-			var offset = (((i + images.length) - this.state.page) * 100) + (((i + images.length) - this.state.page) * this.state.padding);
-
 			//	Calculate scale
 			var scale = (i + images.length) == this.state.page ? 1 : this.state.itemScale;
 
@@ -321,7 +449,9 @@ class Slideshow extends React.Component {
 			var style = {
 				pointerEvents	: (i + images.length) == this.state.page ? 'all' : 'none',
 
-				transform	: `translateX(${offset}%) scale(${scale})`,
+				flex		: `1 0 100%`,
+
+				transform	: `scale(${scale})`,
 
 				opacity		: (i + images.length) == this.state.page ? 1 : this.state.itemOpacity
 			};
@@ -330,6 +460,9 @@ class Slideshow extends React.Component {
 			elements.push(React.cloneElement(element, { style, key: i.toString() }));
 
 		});
+
+		//	Keep track of number of elements
+		this.count = elements.length;
 
 		//	Generate pagination
 		var pagination = [];
@@ -362,12 +495,25 @@ class Slideshow extends React.Component {
 
 		}
 
+		//	Calculate offset
+		var offset = this.state.page * 100;
+
+		//	Generate slides styling
+		var slide_style = {
+			maxWidth	: this.state.maxWidth,
+			maxHeight	: this.state.maxHeight,
+			
+			transform	: `translateX(-${offset}%)`,
+
+			transition	: 'transform 400ms cubic-bezier(0.42, 0.65, 0.27, 0.99) 0s',
+		}
+
 		//	Declare slideshow content
 		var content = (
 			<div className="slideshow">
 
 				{/* Slideshow */}
-				<div className="slides" style={slide_style}>
+				<div className="slides" style={slide_style} ref={this.slide_ref}>
 					{elements}
 				</div>
 

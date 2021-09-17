@@ -1454,7 +1454,7 @@
 	/* Slideshow */
 	.slideshow {
 		position		: relative;
-		width			: 100%;
+		width			: 90%;
 		height			: 700px;
 
 		opacity			: 0;
@@ -1463,7 +1463,6 @@
 
 		/* Card */
 		.card {
-			position		: absolute;
 			height			: 100%;
 			width			: 100%;
 			top			: 0;
@@ -1814,12 +1813,11 @@
 	/* Slideshow */
 	.slideshow {
 		position		: relative;
-		width			: 100%;
+		width			: 90%;
 		height			: 700px;
 
 		/* Card */
 		.card {
-			position		: absolute;
 			height			: 100%;
 			width			: 100%;
 			top			: 0;
