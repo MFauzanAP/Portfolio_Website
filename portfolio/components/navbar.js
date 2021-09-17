@@ -118,20 +118,26 @@ class Navbar extends React.Component {
 		//	Calculate the difference between the touch positions
 		var diffX = this.touchX - x;
 		var diffY = this.touchY - y;
+		console.log(diffX);
 
-		//	If the user swiped left while menu is closed
-		if (diffX > 0 && !this.menu_open) {
+		//	If not swiping up or down and if swipe duration is long enough
+		if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 9) {
 
-			//	Toggle menu
-			this.ToggleMenu();
+			//	If the user swiped left while menu is closed and if swiping from right side
+			if (diffX > 0 && !this.menu_open && this.touchX >= window.screen.width * 3/4) {
 
-		}
+				//	Toggle menu
+				this.ToggleMenu();
 
-		//	If user swiped right while menu is open
-		if (diffX < 0 && this.menu_open) {
+			}
 
-			//	Toggle menu
-			this.ToggleMenu();
+			//	If user swiped right while menu is open
+			if (diffX < 0 && this.menu_open) {
+
+				//	Toggle menu
+				this.ToggleMenu();
+
+			}
 
 		}
 
