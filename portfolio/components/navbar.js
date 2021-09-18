@@ -181,7 +181,7 @@ class Navbar extends React.Component {
 			var menu = document.querySelector('.navigation .menu');
 
 			//	If menu is halfway open
-			if (this.diffX > 100 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 4/5) {
+			if (this.diffX > 100 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 7/8) {
 
 				//	Reset menu style
 				menu.style.transform = '';
@@ -191,7 +191,7 @@ class Navbar extends React.Component {
 				this.ToggleMenu();
 
 			}
-			else if (!navbar.className.includes('active') && this.diffX <= 100 && this.touchX >= window.screen.width * 4/5) {
+			else if (!navbar.className.includes('active') && this.diffX <= 100 && this.touchX >= window.screen.width * 7/8) {
 
 				//	Reset menu style
 				menu.style.transform = '';
