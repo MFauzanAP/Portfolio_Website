@@ -1,5 +1,6 @@
 import styles from '@/styles/Projects.module.scss'
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
@@ -16,8 +17,13 @@ export default function Projects () {
 
 	/* ==================================================== Variables =================================================== */
 
+	//	Get reference to router and router params
+	const router = useRouter();
+
 	//	Projects data
 	const [projects, setProjects] = useState(0);
+	var [filters, setFilters] = useState({categories: [], status: [], featured: []});
+
 
 	//	Store whether or not dropdown is open
 	var is_dropdown_open = false;
@@ -54,15 +60,16 @@ export default function Projects () {
 	/* ==================================================== Functions =================================================== */
 
 	//	Retrieve projects from the database
-	async function get_projects () {
+	async function get_projects (options = {}) {
 
 		//	Try calling api route
 		try {
 
 			//	Call api
 			var results = await fetch('/api/project/get_projects', {
-				method		: 'GET',
-				headers		: { 'Content-Type': 'application/json' }
+				method		: 'POST',
+				headers		: { 'Content-Type': 'application/json' },
+				body		: JSON.stringify(options)
 			})
 
 			//	Extract response
@@ -108,6 +115,15 @@ export default function Projects () {
 
 			//	Concatenate projects into one string
 			projects = projects.join('');
+
+			//	If there are no projects then tell the user there are no projects
+			if (!projects) projects = `
+				<div class="${styles.loader}">
+					<i style="font-size: 5em" class="fa fa-exclamation-circle"></i>
+					<h1>404 Not Found</h1>
+					<p style="font-weight: 400; letter-spacing: 0; margin: 0">Unfortunately, there are no projects that match this filter :( Please try again.</p>
+				</div>
+			`;
 
 			//	Return projects html
 			return { length: count, data: projects };
@@ -191,6 +207,66 @@ export default function Projects () {
 
 		}
 	}
+
+	//	Toggle filter
+	async function ToggleFilter (filter, type, e) {
+
+		//	If document is not ready
+		if (!router.isReady) return;
+
+		//	Get element
+		var item = e.target;
+
+		//	If already selected
+		if (item.classList.contains(styles.active)) {
+
+			//	Deselect
+			item.classList.remove(styles.active);
+
+			//	Remove from filters list
+			filters[type] = filters[type].filter((elem) => {return elem != filter});
+			setFilters(filters);
+			console.log(filters);
+
+			//	Add loading indicator for projects
+			setProjects({length: 0, data: `
+				<div class="${styles.loader}">
+					<i class="fa fa-spinner fa-spin"></i>
+					<p>Loading Projects, Hold On...</p>
+				</div>
+			`})
+
+			//	Load projects
+			setProjects(await get_projects(filters));
+
+		}
+
+		//	If not selected
+		else {
+
+			//	Select item
+			item.classList.add(styles.active);
+
+			//	Add to filters list
+			filters[type].push(filter);
+			setFilters(filters);
+			console.log(filters);
+
+			//	Add loading indicator for projects
+			setProjects({length: 0, data: `
+				<div class="${styles.loader}">
+					<i class="fa fa-spinner fa-spin"></i>
+					<p>Loading Projects, Hold On...</p>
+				</div>
+			`})
+
+			//	Load projects
+			setProjects(await get_projects(filters));
+
+		}
+
+	}
+
 	
 
 	/* ================================================ Output Final HTML =============================================== */

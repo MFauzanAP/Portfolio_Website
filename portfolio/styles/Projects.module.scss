@@ -441,6 +441,8 @@
 				position		: relative;
 				flex			: 1 1 100%;
 
+				margin-right		: 10px;
+
 				/* Hover */
 				&:hover {
 					/* Input Element */
@@ -504,6 +506,117 @@
 					letter-spacing		: 0.05rem;
 
 					transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
+				}
+			}
+			
+			/* Dropdown */
+			.dropdown {
+				position		: relative;
+				flex			: 0 0 40px;
+				height			: 40px;
+
+				/* Active */
+				&.active {
+
+					/* Button */
+					.button {
+						background		: #7B51CA;
+						border-radius		: 15px;
+					}
+
+					/* Menu */
+					.menu {
+						max-height	: 440px;
+					}
+				}
+
+				/* Button */
+				.button {
+					cursor			: pointer;
+
+					width			: 100%;
+					height			: 100%;
+
+					background		: #9B5AE6;
+					color			: #FFFFFF;
+					border-radius		: 20px;
+
+					display			: flex;
+					justify-content		: center;
+					align-items		: center;
+
+					transition		: 0.2s cubic-bezier(0.34,-0.39, 0.68, 1.38);
+
+					/* Hover */
+					&:hover	{
+						background		: #7B51CA;
+						border-radius		: 15px;
+					}
+				}
+
+				/* Menu */
+				.menu {
+					position		: absolute;
+					left			: -55px;
+					top			: calc(100% + 20px);
+					max-height		: 0;
+					width			: 150px;
+
+					overflow		: hidden;
+
+					background		: #FFFFFF;
+					color			: #3D3D3D;
+					border-radius		: 10px;
+
+					box-shadow		: 0 0 20px rgba(0, 0, 0, 0.2);
+
+					z-index			: 5;
+
+					transition		: max-height 0.25s ease-in-out;
+
+					/* Section */
+					.section {
+						cursor			: default;
+
+						padding			: 15px;
+
+						border-bottom		: 1px solid #DDDDDD;
+						border-top		: 1px solid #DDDDDD;
+
+						font-family		: Work Sans;
+						font-weight		: 600;
+						font-size		: 1em;
+						white-space		: nowrap;
+						text-align		: center;
+					}
+
+					/* Item */
+					.item {
+						cursor			: pointer;
+
+						padding			: 10px;
+
+						background		: #FAFAFA;
+
+						font-family		: Lato;
+						font-size		: 0.85em;
+						white-space		: nowrap;
+						text-align		: center;
+
+						transition		: 0.15s ease-in-out;
+
+						/* Hover */
+						&:hover	{
+							background		: #EFEFEF;
+						}
+
+						/* Active */
+						&.active {
+							color			: #9B5AE6;
+
+							font-weight		: bold;
+						}
+					}
 				}
 			}
 		}
@@ -733,8 +846,6 @@
 		p {
 			font-family		: Work Sans;
 			font-size		: 1.25rem;
-			font-weight		: bold;
-			letter-spacing		: 1.5px;
 			text-align		: center;
 		}
 
@@ -762,8 +873,6 @@
 	flex-direction		: column;
 	justify-content		: flex-start;
 	align-items		: center;
-
-	overflow		: hidden;
 
 
 
