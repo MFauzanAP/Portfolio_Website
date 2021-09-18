@@ -19,6 +19,9 @@ export default function Projects () {
 	//	Projects data
 	const [projects, setProjects] = useState(0);
 
+	//	Store whether or not dropdown is open
+	var is_dropdown_open = false;
+
 
 
 	/* =================================================== Use Effect =================================================== */
@@ -118,6 +121,76 @@ export default function Projects () {
 
 	}
 
+	//	Toggle dropdown
+	function ToggleDropdown () {
+
+		//	If document is not ready
+		if (!router.isReady) return;
+
+		//	Get reference to dropdown
+		var dropdown = document.querySelector(`.${styles.dropdown}`);
+
+		//	If there is no dropdown then exit
+		if (!dropdown) return;
+
+		//	If closed
+		if (!dropdown.classList.contains(styles.active)) {
+
+			//	Open dropdown
+			dropdown.classList.add(styles.active);
+
+			//	Subscribe events
+			document.addEventListener('click', CloseDropdown);
+
+			//	Dropdown open
+			is_dropdown_open = true;
+
+		}
+
+		//	Else if open
+		else {
+
+			//	Close dropdown
+			dropdown.classList.remove(styles.active);
+
+			//	Unsubscribe events
+			document.removeEventListener('click', CloseDropdown);
+
+			//	Dropdown closed
+			is_dropdown_open = false;
+
+		}
+
+	}
+
+	//	Close dropdown
+	function CloseDropdown (e) {
+
+		//	If document is not ready
+		if (!router.isReady) return;
+
+		//	Get reference to dropdown
+		var dropdown = document.querySelector(`.${styles.dropdown}`);
+
+		//	If there is no dropdown then exit
+		if (!dropdown) return;
+
+		//	Check if open
+		if (dropdown.classList.contains(styles.active) && is_dropdown_open) {
+
+			//	If clicking outside of dropdown
+			if (!dropdown.contains(e.target)) {
+
+				//	Close dropdown
+				dropdown.classList.remove(styles.active);
+
+				//	Dropdown closed
+				is_dropdown_open = false;
+
+			}
+
+		}
+	}
 	
 
 	/* ================================================ Output Final HTML =============================================== */
@@ -184,11 +257,41 @@ export default function Projects () {
 								<label htmlFor="search">Search Projects</label>
 							</div>
 
-							{/* Sort By Dropdown */}
-							<div className={styles.dropdown}></div>
+							{/* Dropdown */}
+							<div className={styles.dropdown}>
 
-							{/* Sort By Dropdown */}
-							<div className={styles.dropdown}></div>
+								{/* Button */}
+								<div className={styles.button} onClick={ToggleDropdown}><FontAwesomeIcon icon={['fas', 'sort-amount-up']}/></div>
+
+								{/* Menu */}
+								<div className={styles.menu}>
+
+									{/* Categories */}
+									<div className={styles.section}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'cube']}/>Categories</div>
+
+									{/* Items */}
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Web Development', 'categories')}>Web Development</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Game Development', 'categories')}>Game Development</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'App Development', 'categories')}>App Development</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, '3D Modelling', 'categories')}>3D Modelling</div>
+
+									{/* Status */}
+									<div className={styles.section}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'clock']}/>Status</div>
+
+									{/* Items */}
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Complete', 'status')}>Complete</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'In Progress', 'status')}>In Progress</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Incomplete', 'status')}>Incomplete</div>
+
+									{/* Featured */}
+									<div className={styles.section}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'star']}/>Featured</div>
+
+									{/* Items */}
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Featured', 'featured')}>Featured</div>
+
+								</div>
+								
+							</div>
 
 						</div>
 
