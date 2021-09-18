@@ -323,17 +323,6 @@ export default function Projects () {
 					<div className="navbar_container"><Navbar pathname="projects"/></div>
 				</Scene></Controller>
 
-				{/* Scrollbar */}
-				<SideNavbar options={{
-					sections	: [
-						{
-							id		: 'project_list',
-							class		: styles.project_list,
-							name		: 'Project Showcase',
-						}
-					]
-				}}/>
-
 			</div>
 
 		</div>
