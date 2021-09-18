@@ -90,10 +90,10 @@ export default function Projects () {
 
 					//	Declare category html
 					var category_html = {
-						'Game Development'	: `<div class="${styles.tag}"><i class="fa fa-gamepad"></i></div>`,
-						'App Development'	: `<div class="${styles.tag}"><i class="fa fa-desktop"></i></div>`,
-						'Web Development'	: `<div class="${styles.tag}"><i class="fa fa-globe"></i></div>`,
-						'3D Modelling'		: `<div class="${styles.tag}"><i class="fa fa-cube"></i></div>`,
+						'Game Development'	: (<div className={styles.tag}><i class="fa fa-gamepad"></i></div>),
+						'App Development'	: (<div className={styles.tag}><i class="fa fa-desktop"></i></div>),
+						'Web Development'	: (<div className={styles.tag}><i class="fa fa-globe"></i></div>),
+						'3D Modelling'		: (<div className={styles.tag}><i class="fa fa-cube"></i></div>),
 					}
 
 					//	Generate class names
