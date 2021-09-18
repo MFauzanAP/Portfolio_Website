@@ -56,8 +56,19 @@ export default async function (req, res) {
 
 	}
 
+	//	If there is a search query then add it to the query
+	if (options.search) {
+
+		//	Set and query
+		if (!query.$and) query.$and = [];
+
+		//	Add search to query
+		query.$and.push({ $text: { $search: options.search } });
+
+	}
+
 	//      Get collection data
-	const projects = await db.collection('projects').find(query).sort({'date': -1}).toArray();
+	const projects = await db.collection('projects').find(query).sort(Object.keys(query).length ? {} : {'date': -1}).toArray();
 
 	//      Return projects
 	res.json(projects);

@@ -265,6 +265,25 @@ export default function Projects () {
 
 	}
 
+	//	Update the project search value and refresh the search results
+	async function UpdateSearch (e) {
+
+		//	Get text in input field
+		var search = e.target.value;
+
+		//	Update search value
+		filters.search = search;
+		setFilters(filters);
+
+		//	Add loading indicator for projects
+		setProjects({length: 0, data: (
+			<div className={styles.loader}>
+				<i className="fa fa-spinner fa-spin"></i>
+				<p>Loading Projects, Hold On...</p>
+			</div>
+		)})
+
+		//	Call api request to fetch projects
 		setProjects(await get_projects(filters));
 
 
@@ -332,7 +351,7 @@ export default function Projects () {
 
 							{/* Search Bar */}
 							<div className={styles.search_bar}>
-								<input type="text" id="search" name="search" required/>
+								<input type="text" id="search" name="search" onInput={UpdateSearch} required/>
 								<label htmlFor="search">Search Projects</label>
 							</div>
 
