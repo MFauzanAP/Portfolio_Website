@@ -43,12 +43,12 @@ export default function Projects () {
 		document.querySelector('.navigation').classList.remove('active');
 
 		//	Add loading indicator for projects
-		setProjects({length: 0, data: `
-			<div class="${styles.loader}">
-				<i class="fa fa-spinner fa-spin"></i>
+		setProjects({length: 0, data: (
+			<div className={styles.loader}>
+				<i className="fa fa-spinner fa-spin"></i>
 				<p>Loading Projects, Hold On...</p>
 			</div>
-		`})
+		)})
 
 		//	Load projects
 		setProjects(await get_projects());
@@ -79,7 +79,8 @@ export default function Projects () {
 			var count = 0;
 
 			//	For each project
-			var projects = results.map((project, index) => {
+			var projects = [];
+			results.forEach((project, index) => {
 
 				//	If project is visible
 				if (project.visible) {
@@ -100,30 +101,29 @@ export default function Projects () {
 					var category = category_html[project.category];
 
 					//	Return html
-					return `<div class="${styles.card}">
-							<div class=${styles.background}><img src=${project.images[0]}/></div>
-							<div class=${featured}><i class="fa fa-star"></i></div>
-							${category}
-							<div class=${styles.title}>${project.name}</div>
-							<div class=${styles.description}>${project.description.short}</div>
-							<a href="/projects/${project.name.replaceAll(' ', '_')}" class=${styles.call_to_action}>LEARN MORE</a>
-						</div>`;
+					projects.push(
+						<div className={styles.card}>
+							<div className={styles.background}><img src={project.images[0]}/></div>
+							<div className={featured}><i class="fa fa-star"></i></div>
+							{category}
+							<div className={styles.title}>{project.name}</div>
+							<div className={styles.description}>{project.description.short}</div>
+							<Link href={`/projects/${project.name.replaceAll(' ', '_')}`}><a className={styles.call_to_action}>LEARN MORE</a></Link>
+						</div>);
 
 				}
 
 			})
 
-			//	Concatenate projects into one string
-			projects = projects.join('');
-
 			//	If there are no projects then tell the user there are no projects
-			if (!projects) projects = `
-				<div class="${styles.loader}">
-					<i style="font-size: 5em" class="fa fa-exclamation-circle"></i>
+			if (!projects.length) {
+				projects = (
+				<div className={styles.loader}>
+					<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
 					<h1>404 Not Found</h1>
-					<p style="font-weight: 400; letter-spacing: 0; margin: 0">Unfortunately, there are no projects that match this filter :( Please try again.</p>
-				</div>
-			`;
+					<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, there are no projects that match this filter. Please try again.</p>
+				</div>);
+			}
 
 			//	Return projects html
 			return { length: count, data: projects };
@@ -226,15 +226,14 @@ export default function Projects () {
 			//	Remove from filters list
 			filters[type] = filters[type].filter((elem) => {return elem != filter});
 			setFilters(filters);
-			console.log(filters);
 
 			//	Add loading indicator for projects
-			setProjects({length: 0, data: `
-				<div class="${styles.loader}">
-					<i class="fa fa-spinner fa-spin"></i>
+			setProjects({length: 0, data: (
+				<div className={styles.loader}>
+					<i className="fa fa-spinner fa-spin"></i>
 					<p>Loading Projects, Hold On...</p>
 				</div>
-			`})
+			)})
 
 			//	Load projects
 			setProjects(await get_projects(filters));
@@ -250,20 +249,24 @@ export default function Projects () {
 			//	Add to filters list
 			filters[type].push(filter);
 			setFilters(filters);
-			console.log(filters);
 
 			//	Add loading indicator for projects
-			setProjects({length: 0, data: `
-				<div class="${styles.loader}">
-					<i class="fa fa-spinner fa-spin"></i>
+			setProjects({length: 0, data: (
+				<div className={styles.loader}>
+					<i className="fa fa-spinner fa-spin"></i>
 					<p>Loading Projects, Hold On...</p>
 				</div>
-			`})
+			)})
 
 			//	Load projects
 			setProjects(await get_projects(filters));
 
 		}
+
+	}
+
+		setProjects(await get_projects(filters));
+
 
 	}
 
@@ -377,7 +380,7 @@ export default function Projects () {
 					<div id="background_end"></div>
 
 					{/* Grid */}
-					<div className={styles.grid} dangerouslySetInnerHTML={{__html: projects.data}}></div>
+					<div className={styles.grid}>{projects.data}</div>
 
 				</div></Scene></Controller>
 
