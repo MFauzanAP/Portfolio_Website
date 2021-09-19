@@ -125,6 +125,30 @@ export default function Projects () {
 				</div>);
 			}
 
+			//	Else if there are projects then add pagination
+			else {
+
+				//	Calculate number of pages to show
+				var num_pages = Math.ceil(results.length / 9);
+
+				//	Declare variable to hold page html
+				var pages = [];
+
+				//	For loop to generate pages
+				for (let i = 0; i < num_pages; i++) {
+					
+					//	Add this page to pages list
+					pages.push(<div className={`${styles.page} ${i + 1 == page ? styles.active : ''}`} onClick={(e) => {ChangePage(i + 1)}} key={i}></div>);
+					
+				}
+
+				//	Add html
+				projects.push(
+					<div className={styles.pagination} key={'pagination'}>{pages}</div>
+				);
+
+			}
+
 			//	Return projects html
 			return { length: count, data: projects };
 
@@ -143,6 +167,29 @@ export default function Projects () {
 			) };
 
 		}
+
+	}
+
+	//	Change page
+	async function ChangePage (new_page) {
+
+		//	Change page
+		page = new_page;
+		setPage(page);
+
+		//	Add page to url
+		router.push({pathname: router.pathname, page: page});
+
+		//	Add loading indicator for projects
+		setProjects({length: 0, data: (
+			<div className={styles.loader}>
+				<i className="fa fa-spinner fa-spin"></i>
+				<p>Loading Projects, Hold On...</p>
+			</div>
+		)})
+
+		//	Load projects
+		setProjects(await get_projects());
 
 	}
 

@@ -863,6 +863,58 @@
 		}
 	}
 
+	/* Pagination */
+	.pagination {
+		padding			: 5px 10px;
+
+		grid-column		: 1 / span 3;
+		place-self		: center;
+
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: center;
+		align-content		: center;
+
+		/* Page */
+		.page {
+			cursor			: pointer;
+
+			width			: 20px;
+			height			: 20px;
+
+			margin			: 0 3px;
+
+			display			: flex;
+			flex-direction		: column;
+			justify-content		: center;
+			align-content		: center;
+
+			border			: 2px solid #9B5AE6;
+			border-radius		: 50%;
+
+			font-size		: 0.9em;
+			text-align		: center;
+
+			transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38);
+
+			box-shadow		: 0 0 10px rgba(0, 0, 0, 0.15);
+
+			/* Hover */
+			&:hover {
+				background		: #9B5AE6;
+
+				transform		: scale(1.05);
+			}
+
+			/* Active */
+			&.active {
+				background		: #9B5AE6;
+
+				transform		: scale(1.1);
+			}
+		}
+	}
+
 	/* Loader */
 	.loader {
 		width			: 100%;
