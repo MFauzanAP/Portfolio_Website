@@ -22,6 +22,7 @@ export default function Projects () {
 
 	//	Projects data
 	const [projects, setProjects] = useState(0);
+	var [page, setPage] = useState(1);
 	var [filters, setFilters] = useState({categories: [], status: [], featured: []});
 
 
@@ -65,6 +66,9 @@ export default function Projects () {
 		//	Try calling api route
 		try {
 
+			//	Add page to options
+			options.page = page;
+
 			//	Call api
 			var results = await fetch('/api/project/get_projects', {
 				method		: 'POST',
@@ -75,43 +79,32 @@ export default function Projects () {
 			//	Extract response
 			results = await results.json();
 
-			//	Keep track of number of projects
-			var count = 0;
-
 			//	For each project
 			var projects = [];
-			results.forEach((project, index) => {
+			results.data.forEach((project, index) => {
 
-				//	If project is visible
-				if (project.visible) {
-
-					//	Increment counter
-					count++;
-
-					//	Declare category html
-					var category_html = {
-						'Game Development'	: (<div className={styles.tag}><i class="fa fa-gamepad"></i></div>),
-						'App Development'	: (<div className={styles.tag}><i class="fa fa-desktop"></i></div>),
-						'Web Development'	: (<div className={styles.tag}><i class="fa fa-globe"></i></div>),
-						'3D Modelling'		: (<div className={styles.tag}><i class="fa fa-cube"></i></div>),
-					}
-
-					//	Generate class names
-					var featured = project.featured ? styles.featured : '';
-					var category = category_html[project.category];
-
-					//	Return html
-					projects.push(
-						<div className={styles.card}>
-							<div className={styles.background}><img src={project.images[0]}/></div>
-							<div className={featured}><i class="fa fa-star"></i></div>
-							{category}
-							<div className={styles.title}>{project.name}</div>
-							<div className={styles.description}>{project.description.short}</div>
-							<Link href={`/projects/${project.name.replaceAll(' ', '_')}`}><a className={styles.call_to_action}>LEARN MORE</a></Link>
-						</div>);
-
+				//	Declare category html
+				var category_html = {
+					'Game Development'	: (<div className={styles.tag}><i className="fa fa-gamepad"></i></div>),
+					'App Development'	: (<div className={styles.tag}><i className="fa fa-desktop"></i></div>),
+					'Web Development'	: (<div className={styles.tag}><i className="fa fa-globe"></i></div>),
+					'3D Modelling'		: (<div className={styles.tag}><i className="fa fa-cube"></i></div>),
 				}
+
+				//	Generate class names
+				var featured = project.featured ? styles.featured : '';
+				var category = category_html[project.category];
+
+				//	Return html
+				projects.push(
+					<div className={styles.card} key={index}>
+						<div className={styles.background}><img src={project.images[0]}/></div>
+						<div className={featured}><i className="fa fa-star"></i></div>
+						{category}
+						<div className={styles.title}>{project.name}</div>
+						<div className={styles.description}>{project.description.short}</div>
+						<Link href={`/projects/${project.name.replaceAll(' ', '_')}`}><a className={styles.call_to_action}>LEARN MORE</a></Link>
+					</div>);
 
 			})
 
@@ -150,7 +143,7 @@ export default function Projects () {
 			}
 
 			//	Return projects html
-			return { length: count, data: projects };
+			return { length: results.length, data: projects };
 
 		} catch (e) {
 
