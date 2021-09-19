@@ -1120,7 +1120,7 @@ $marker-size		: 9px;
 				width			: 50px;
 				height			: 0px;
 
-				margin-top		: 10px;
+				margin-top		: 25px;
 				margin-bottom		: 5px;
 
 				background		: #9B5AE6;
@@ -1133,17 +1133,46 @@ $marker-size		: 9px;
 			/* Title */
 			h3 {
 				margin			: 0;
+				margin-bottom		: 20px;
 
 				font-size		: 16px;
 			}
 
 			/* Text */
 			p {
+				margin			: 5px 0;
+
 				font-weight		: 400;
 				font-size		: 1rem;
 				line-height		: 1.5;
 				letter-spacing		: 0.03em;
 				text-rendering		: optimizeLegibility;
+			}
+
+			/* Tags */
+			.tags {
+				padding-inline-start	: 0;
+				margin			: 0;
+				margin-top		: 15px;
+
+				/* Tag */
+				li {
+					display			: inline-block;
+					width			: auto;
+					height			: 32px;
+
+					background-color	: #E4E4E4;
+					border-radius		: 12px;
+					color			: #5B5B5B;
+
+					font-size		: 14px;
+					text-align		: center;
+					line-height		: 32px;
+
+					padding			: 0 12px;
+					margin-bottom		: 5px;
+					margin-right		: 5px;
+				}
 			}
 
 			/* Call to Action */
