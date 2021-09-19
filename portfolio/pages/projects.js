@@ -266,14 +266,23 @@ export default function Projects () {
 	}
 
 	//	Update the project search value and refresh the search results
-	async function UpdateSearch (e) {
+	async function UpdateSearch () {
+
+		//	Get search input field
+		var input = document.querySelector('#search');
 
 		//	Get text in input field
-		var search = e.target.value;
+		var search = input.value;
 
 		//	Update search value
 		filters.search = search;
 		setFilters(filters);
+
+		//	Try and get the clear search button
+		var clear = document.querySelector(`.${styles.search_clear}`);
+
+		//	Update clear search button
+		if (clear) search ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
 
 		//	Add loading indicator for projects
 		setProjects({length: 0, data: (
@@ -286,6 +295,19 @@ export default function Projects () {
 		//	Call api request to fetch projects
 		setProjects(await get_projects(filters));
 
+	}
+
+	//	Clear the search input field
+	function ClearSearch () {
+
+		//	Get search input field
+		var input = document.querySelector('#search');
+
+		//	Clear input field
+		if (input) input.value = '';
+
+		//	Update search
+		UpdateSearch();
 
 	}
 
@@ -353,6 +375,7 @@ export default function Projects () {
 							<div className={styles.search_bar}>
 								<input type="text" id="search" name="search" onInput={UpdateSearch} required/>
 								<label htmlFor="search">Search Projects</label>
+								<div className={styles.search_clear} onClick={ClearSearch}><FontAwesomeIcon icon={['fas', 'times']}/></div>
 							</div>
 
 							{/* Dropdown */}

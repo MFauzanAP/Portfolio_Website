@@ -507,6 +507,33 @@
 
 					transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 				}
+
+				/* Clear */
+				.search_clear {
+					cursor			: pointer;
+
+					position		: absolute;
+					right			: 0;
+					top			: 0;
+
+					display			: none;
+
+					margin			: 0.75rem 1.25rem;
+
+					color			: #646464;
+
+					transition		: 0.25s ease-in-out;
+
+					/* Hover */
+					&:hover {
+						transform		: scale(1.25);
+					}
+
+					/* Active */
+					&.active {
+						display			: block;
+					}
+				}
 			}
 			
 			/* Dropdown */
@@ -831,7 +858,7 @@
 		}
 		@for $i from 1 through 1000 {
 			.card:nth-child(#{$i}) {
-				animation-delay		: 0.5s + ($i * 0.1s);
+				animation-delay		: $i * 0.1s;
 			}
 		}
 	}
