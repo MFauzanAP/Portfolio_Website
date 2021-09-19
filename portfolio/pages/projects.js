@@ -133,6 +133,15 @@ export default function Projects () {
 			//	Print error
 			console.log(e);
 
+			//	Return projects html
+			return { length: 0, data: (
+				<div className={styles.loader}>
+					<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
+					<h1>503 Service Unavailable</h1>
+					<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, we were unable to connect to the server. Please try again.</p>
+				</div>
+			) };
+
 		}
 
 	}
