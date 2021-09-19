@@ -7,6 +7,7 @@ export default async function (req, res) {
 	//	Get options from request body
 	var options = req.body;
 	options.page = options.page || 1;
+	options.limit = options.limit || 9;
 
 	//      Connect to database
 	const { db } = await connect_to_database();
@@ -63,7 +64,7 @@ export default async function (req, res) {
 	}
 
 	//      Get collection data
-	var projects = await db.collection('projects').find(query).sort(Object.keys(query).length > 1 ? {} : {'date': -1}).skip((options.page - 1) * 9).limit(9).toArray();
+	var projects = await db.collection('projects').find(query).sort(Object.keys(query).length > 1 ? {} : {'date': -1}).skip((options.page - 1) * options.limit).limit(options.limit).toArray();
 
 	//	Get number of projects
 	var count = (await db.collection('projects').find(query).sort(Object.keys(query).length > 1 ? {} : {'date': -1}).toArray()).length;
