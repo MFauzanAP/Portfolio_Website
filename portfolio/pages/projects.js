@@ -20,7 +20,7 @@ export default function Projects () {
 	//	Get reference to router and router params
 	const router = useRouter();
 
-	//	Projects data
+	//	Page variables
 	const [projects, setProjects] = useState(0);
 	var [page, setPage] = useState(1);
 	var [filters, setFilters] = useState({categories: [], status: [], featured: []});

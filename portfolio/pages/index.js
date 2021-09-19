@@ -18,13 +18,14 @@ function Home () {
 
 	/* ==================================================== Variables =================================================== */
 
-	//	Preloading
+	//	Page variables
 	const [preload, setPreload] = useState(0);
+	const [projects, setProjects] = useState(0);
 
 
 
 	/* =================================================== Use Effect =================================================== */
-	React.useEffect(() => {
+	React.useEffect(async () => {
 
 		// 	Import lottie
 		import("@lottiefiles/lottie-player");
@@ -51,7 +52,115 @@ function Home () {
 		//	Set cookie
 		sessionStorage.setItem('home_visit', true);
 
+		//	Add loading indicator for projects
+		setProjects({length: 0, data: (
+			<div className={styles.loader}>
+				<i className="fa fa-spinner fa-spin"></i>
+				<p>Loading Projects, Hold On...</p>
+			</div>
+		)})
+
+		//	Load projects
+		setProjects(await get_projects());
+
 	}, [])
+
+
+
+	/* ==================================================== Functions =================================================== */
+
+	//	Retrieve projects from the database
+	async function get_projects () {
+
+		//	Try calling api route
+		try {
+
+			//	Declare options
+			var options = {
+				limit		: 5,
+				featured	: [{}]
+			}
+
+			//	Call api
+			var results = await fetch('/api/project/get_projects', {
+				method		: 'POST',
+				headers		: { 'Content-Type': 'application/json' },
+				body		: JSON.stringify(options)
+			})
+
+			//	Extract response
+			results = await results.json();
+
+			//	For each project
+			var projects = [];
+			results.data.forEach((project, index) => {
+
+				//	Generate tech stack list
+				var stack = project.tech_stack.map(elem => {
+
+					//	Return list item
+					return (<li>{elem}</li>);
+
+				})
+
+				//	Return html
+				projects.push(
+					<div className={styles.section} key={index} style={{transitionDelay: `${0.75 + (index * 0.25)}s`}}>
+
+						{/* Meta */}
+						<div className={styles.meta}>
+
+							{/* Title */}
+							<div className={styles.underline}></div>
+							<h3>{project.name}</h3>
+
+							{/* Description */}
+							<p>{project.description.short}</p>
+
+							{/* Tech Stack */}
+							<ul className={styles.tags}>{stack}</ul>
+
+							{/* Call to Action */}
+							<Link href={`/projects/${project.name.replace(' ', '_')}`}><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
+
+						</div>
+
+						{/* Media */}
+						<div className={styles.media_container} id={`#media_container_${index}`}>
+
+							{/* Slideshow */}
+							<Controller><Scene duration={500} triggerElement={`media_container_${index}`}>{(progress, event) => (
+								<Slideshow id={event} event={event} options={{
+									images: project.images
+								}}/>
+							)}</Scene></Controller>
+
+						</div>
+
+					</div>);
+
+			})
+
+			//	Return projects html
+			return { length: results.length, data: projects };
+
+		} catch (e) {
+
+			//	Print error
+			console.log(e);
+
+			//	Return projects html
+			return { length: 0, data: (
+				<div className={styles.loader}>
+					<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
+					<h1>503 Service Unavailable</h1>
+					<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, we were unable to connect to the server. Please try again.</p>
+				</div>
+			) };
+
+		}
+
+	}
 
 
 
@@ -250,121 +359,7 @@ function Home () {
 					<Link href="/projects"><a className={styles.view_all}>View All</a></Link>
 
 					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '0.75s'}}>
-
-						{/* Meta */}
-						<div className={styles.meta}>
-
-							{/* Title */}
-							<div className={styles.underline}></div>
-							<h3>Snowball Project</h3>
-
-							{/* Description */}
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
-							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
-							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
-
-							{/* Call to Action */}
-							<Link href="/projects/Snowball_Project"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
-
-						</div>
-
-						{/* Media */}
-						<div className={styles.media_container}  id="media_container_1">
-
-							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement="#media_container_1">{(progress, event) => (
-								<Slideshow id={event} event={event} options={{
-									images: []
-								}}/>
-							)}</Scene></Controller>
-
-						</div>
-
-					</div>
-
-					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '1s'}}>
-
-						{/* Meta */}
-						<div className={styles.meta}>
-
-							{/* Title */}
-							<div className={styles.underline}></div>
-							<h3>Revision Cards Project</h3>
-
-							{/* Description */}
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
-							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
-							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
-
-							{/* Call to Action */}
-							<Link href="/projects/Revision_Cards_Project"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
-
-						</div>
-
-						{/* Media */}
-						<div className={styles.media_container} id="media_container_2">
-
-							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement="#media_container_2">{(progress, event) => (
-								<Slideshow id={event} event={event} options={{
-									images: [
-										"/revision_cards_project_image_1.png",
-										"/revision_cards_project_image_2.png",
-										"/revision_cards_project_image_3.png",
-										"/revision_cards_project_image_4.png",
-										"/revision_cards_project_image_5.png"
-									]
-								}}/>
-							)}</Scene></Controller>
-
-						</div>
-
-					</div>
-
-					{/* Section */}
-					<div className={styles.section} style={{transitionDelay: '1.25s'}}>
-
-						{/* Meta */}
-						<div className={styles.meta}>
-
-							{/* Title */}
-							<div className={styles.underline}></div>
-							<h3>Top Down Project</h3>
-
-							{/* Description */}
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id nibh eu purus dapibus venenatis quis at nisi.
-							Nulla gravida mattis risus, a vehicula est aliquam in. Pellentesque a mauris id turpis ornare tincidunt at non ligula.
-							Sed ligula nunc, imperdiet ac vehicula sed, scelerisque eget urna. Nunc pretium magna non magna dapibus condimentum ut non massa.
-							Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vulputate volutpat semper.</p>
-
-							{/* Call to Action */}
-							<Link href="/projects/Top_Down_Project"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
-
-						</div>
-
-						{/* Media */}
-						<div className={styles.media_container} id="media_container_3">
-
-							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement="#media_container_3">{(progress, event) => (
-								<Slideshow id={event} event={event} options={{
-									images: [
-										"/top_down_project_image_1.png",
-										"/top_down_project_image_2.png",
-										"/top_down_project_image_3.png",
-										"/top_down_project_image_4.png",
-										"/top_down_project_image_5.png"
-									]
-								}}/>
-							)}</Scene></Controller>
-
-						</div>
-
-					</div>
+					{projects.data}
 
 					{/* Call to Action */}
 					<Link href="/projects"><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'search']}/>View All</a></Link>
