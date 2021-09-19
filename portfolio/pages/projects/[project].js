@@ -50,44 +50,49 @@ export default function Projects () {
 			//	Get project data
 			var data = await get_project();
 
-			//	Generate category details
-			var category_icons = {
-				'Game Development'	: `<i class="fa fa-gamepad ${styles.icon}"></i>`,
-				'App Development'	: `<i class="fa fa-desktop ${styles.icon}"></i>`,
-				'Web Development'	: `<i class="fa fa-globe ${styles.icon}"></i>`,
-				'3D Modelling'		: `<i class="fa fa-cube ${styles.icon}"></i>`,
+			//	If there is data
+			if (data.data) {
+
+				//	Generate category details
+				var category_icons = {
+					'Game Development'	: `<i class="fa fa-gamepad ${styles.icon}"></i>`,
+					'App Development'	: `<i class="fa fa-desktop ${styles.icon}"></i>`,
+					'Web Development'	: `<i class="fa fa-globe ${styles.icon}"></i>`,
+					'3D Modelling'		: `<i class="fa fa-cube ${styles.icon}"></i>`,
+				}
+				data.data.category = category_icons[data.data.category] + (data.data.category || '');
+
+				//	Generate tech stack list
+				data.data.tech_stack = data.data.tech_stack.map((elem, index) => {
+
+					//	Return html
+					return (
+						<li key={index}>{elem}</li>
+					)
+
+				})
+
+				//	If there are links
+				if (data.data.links.length) { 
+
+					//	Generate links
+					data.data.links = data.data.links.map((link, index) => {return <li key={index}><a target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
+
+				}
+
+				//	If there are no links
+				else { 
+					
+					//	Set default text if there are no links
+					data.data.links = <div className={styles.text}>This project has no links.</div>;
+
+				}
+
+				//	Escape spaces from project names
+				data.left = data.left.replaceAll(' ', '_');
+				data.right = data.right.replaceAll(' ', '_');
+
 			}
-			data.data.category = category_icons[data.data.category] + (data.data.category || '');
-
-			//	Generate tech stack list
-			data.data.tech_stack = data.data.tech_stack.map((elem, index) => {
-
-				//	Return html
-				return (
-					<li key={index}>{elem}</li>
-				)
-
-			})
-
-			//	If there are links
-			if (data.data.links.length) { 
-
-				//	Generate links
-				data.data.links = data.data.links.map((link, index) => {return <li key={index}><a target="_blank" rel="noreferrer" href={link.url}>{link.text}</a></li>}) 
-
-			}
-
-			//	If there are no links
-			else { 
-				
-				//	Set default text if there are no links
-				data.data.links = <div className={styles.text}>This project has no links.</div>;
-
-			}
-
-			//	Escape spaces from project names
-			data.left = data.left.replaceAll(' ', '_');
-			data.right = data.right.replaceAll(' ', '_');
 
 			//	Set project data
 			setProjectData(data);
@@ -126,6 +131,12 @@ export default function Projects () {
 
 			//	Print error
 			console.log(e);
+
+			//	Show error
+			document.querySelector(`.${styles.error}`).classList.add(styles.active);
+
+			//	Return nothing
+			return {};
 
 		}
 
@@ -279,6 +290,13 @@ export default function Projects () {
 					<div className={styles.loader}>
 						<i className="fa fa-spinner fa-spin"></i>
 						<p>Loading Project Data...</p>
+					</div>
+
+					{/* Error */}
+					<div className={styles.error}>
+						<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
+						<h1>503 Service Unavailable</h1>
+						<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, we were unable to connect to the server. Please try again.</p>
 					</div>
 
 				</div></Scene></Controller>
