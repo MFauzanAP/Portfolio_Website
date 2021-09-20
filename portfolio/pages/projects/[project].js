@@ -186,7 +186,7 @@ export default function Projects () {
 						<div className={styles.divider}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 						{/* Project Name */}
-						<div className={`${styles.link} ${styles.active}`}><Link href="/projects"><a>{project_data.data ? project_data.data.name : <div className={styles.skeleton}>1</div>}</a></Link></div>
+						<div className={`${styles.link} ${styles.active}`}><Link href={`/projects/${project_data.data ? project_data.data.name.replace(' ', '_') : ''}`}><a>{project_data.data ? project_data.data.name : <div className={styles.skeleton}>1</div>}</a></Link></div>
 
 					</div>
 
