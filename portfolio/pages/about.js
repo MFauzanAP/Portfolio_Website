@@ -46,13 +46,14 @@ function Home () {
 	//	Reference
 	const ref = useRef(null);
 
-	//	Preloading
+	//	Page variables
 	const [preload, setPreload] = useState(0);
+	const [techStack, setTechStack] = useState(0);
 
 
 
 	/* =================================================== Use Effect =================================================== */
-	React.useEffect(() => {
+	React.useEffect(async () => {
 
 		// 	Import lottie
 		import("@lottiefiles/lottie-player");
@@ -79,7 +80,97 @@ function Home () {
 		//	Set cookie
 		sessionStorage.setItem('about_visit', true);
 
-	})
+		//	Add loading indicator for tech stack
+		setTechStack({length: 0, data: (
+			<div className={styles.loader}>
+				<i className="fa fa-spinner fa-spin"></i>
+				<p>Loading Tech Stack, Hold On...</p>
+			</div>
+		)})
+
+		//	Load projects
+		setTechStack(await get_tech_stack());
+
+	}, [])
+
+
+
+	/* ==================================================== Functions =================================================== */
+
+	//	Retrieve tech stack from the database
+	async function get_tech_stack (options = {}) {
+
+		//	Try calling api route
+		try {
+
+			//	Call api
+			var results = await fetch('/api/about/get_tech_stack', {
+				method		: 'POST',
+				headers		: { 'Content-Type': 'application/json' },
+				body		: JSON.stringify(options)
+			})
+
+			//	Extract response
+			results = await results.json();
+
+			//	For each tech stack
+			var tech_stack = [];
+			results.data.forEach((tech, index) => {
+
+				//	Calculate number of years since starting tech
+				var diffDate = Date.now() - Date.parse(tech.date);
+				
+				//	Convert difference from milliseconds to years
+				var years = Math.round(diffDate / 31536000000);
+
+				//	Return html
+				tech_stack.push(
+					<div className={styles.details} key={index}>
+
+						{/* Icon */}
+						<img className={styles.image} src={tech.image}/>
+
+						{/* Description */}
+						<div className={styles.title}>{tech.name}</div>
+						<div className={styles.description}>
+							{tech.category}<br/>
+							{years ? years : '<1'} Year{years > 1 ? 's' : ''} of Experience<br/>
+						</div>
+
+					</div>);
+
+			})
+
+			//	If there are no projects then tell the user there are no projects
+			// if (!projects.length) {
+			// 	projects = (
+			// 	<div className={styles.loader}>
+			// 		<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
+			// 		<h1>404 Not Found</h1>
+			// 		<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, there are no projects that match this filter. Please try again.</p>
+			// 	</div>);
+			// }
+
+			//	Return projects html
+			return { length: results.length, data: tech_stack };
+
+		} catch (e) {
+
+			//	Print error
+			console.log(e);
+
+			//	Return projects html
+			return { length: 0, data: (
+				<div className={styles.loader}>
+					<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
+					<h1>503 Service Unavailable</h1>
+					<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, we were unable to connect to the server. Please try again.</p>
+				</div>
+			) };
+
+		}
+
+	}
 
 
 
@@ -313,309 +404,7 @@ function Home () {
 					<div className={styles.header}>TECHNICAL SKILLS</div>
 
 					{/* Grid */}
-					<div className={styles.grid}>
-						
-						{/* Skills */}
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={htmlLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>HTML</div>
-							<div className={styles.description}>
-								Web Development<br/>
-								3 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={cssLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>CSS</div>
-							<div className={styles.description}>
-								Web Development<br/>
-								3 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={jsLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>JavaScript</div>
-							<div className={styles.description}>
-								Web Development<br/>
-								3 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={sassLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Sass</div>
-							<div className={styles.description}>
-								Front End<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={jqueryLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>jQuery</div>
-							<div className={styles.description}>
-								Front End<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={reactLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>ReactJS</div>
-							<div className={styles.description}>
-								Front End<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={nextLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>NextJS</div>
-							<div className={styles.description}>
-								Full Stack<br/>
-								1 Year of Experience<br/>
-							</div>
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={nodeLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>NodeJS</div>
-							<div className={styles.description}>
-								Back End<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={expressLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>ExpressJS</div>
-							<div className={styles.description}>
-								Back End<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={mongodbLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>MongoDB</div>
-							<div className={styles.description}>
-								Database<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={elasticsearchLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>ElasticSearch</div>
-							<div className={styles.description}>
-								Database<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={handlebarsLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Handlebars</div>
-							<div className={styles.description}>
-								Front End<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={chaiLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>ChaiJS</div>
-							<div className={styles.description}>
-								Unit Testing<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={lodashLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Lodash</div>
-							<div className={styles.description}>
-								Utility<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={githubLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>GitHub</div>
-							<div className={styles.description}>
-								Version Control<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={figmaLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Figma</div>
-							<div className={styles.description}>
-								UI &amp; Design<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={unityLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Unity3D</div>
-							<div className={styles.description}>
-								Game Engine<br/>
-								6 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={csharpLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>C#</div>
-							<div className={styles.description}>
-								Programming Language<br/>
-								6 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={vbLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>VB.net</div>
-							<div className={styles.description}>
-								Programming Language<br/>
-								3 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={pythonLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Python</div>
-							<div className={styles.description}>
-								Programming Language<br/>
-								1 Year of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={blenderLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Blender</div>
-							<div className={styles.description}>
-								3D Modelling<br/>
-								5 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={asepriteLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Aseprite</div>
-							<div className={styles.description}>
-								UI &amp; Design<br/>
-								2 Years of Experience<br/>
-							</div>
-
-						</div>
-						<div className={styles.details}>
-
-							{/* Icon */}
-							<div className={styles.image}><Image src={photoshopLogo}/></div>
-
-							{/* Description */}
-							<div className={styles.title}>Photoshop</div>
-							<div className={styles.description}>
-								UI &amp; Design<br/>
-								2 Years of Experience<br/>
-							</div>
-
-						</div>
-
-					</div>
+					<div className={styles.grid}>{techStack.data}</div>
 
 					{/* Footer */}
 					<div className={styles.footer}>
