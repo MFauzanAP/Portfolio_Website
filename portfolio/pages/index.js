@@ -96,10 +96,10 @@ function Home () {
 			results.data.forEach((project, index) => {
 
 				//	Generate tech stack list
-				var stack = project.tech_stack.map(elem => {
+				var stack = project.tech_stack.map((elem, index) => {
 
 					//	Return list item
-					return (<li>{elem}</li>);
+					return (<li key={index}>{elem}</li>);
 
 				})
 
@@ -114,6 +114,9 @@ function Home () {
 							<div className={styles.underline}></div>
 							<h3>{project.name}</h3>
 
+							{/* Date */}
+							<div className={styles.date}>{project.date.toString().split('T')[0]}</div>
+
 							{/* Description */}
 							<p>{project.description.short}</p>
 
@@ -126,10 +129,10 @@ function Home () {
 						</div>
 
 						{/* Media */}
-						<div className={styles.media_container} id={`#media_container_${index}`}>
+						<div className={styles.media_container} id={`media_container_${index}`}>
 
 							{/* Slideshow */}
-							<Controller><Scene duration={500} triggerElement={`media_container_${index}`}>{(progress, event) => (
+							<Controller><Scene duration={500} triggerElement={`#media_container_${index}`}>{(progress, event) => (
 								<Slideshow id={event} event={event} options={{
 									images: project.images
 								}}/>

@@ -1133,9 +1133,18 @@ $marker-size		: 9px;
 			/* Title */
 			h3 {
 				margin			: 0;
-				margin-bottom		: 20px;
+				margin-bottom		: 5px;
 
 				font-size		: 16px;
+			}
+
+			/* Date */
+			.date {
+				margin-bottom		: 15px;
+
+				color			: #aaa;
+
+				font-size		: 0.9em;
 			}
 
 			/* Text */
@@ -1179,7 +1188,8 @@ $marker-size		: 9px;
 			.call_to_action {
 				width			: 200px;
 
-				margin-top		: 25px;
+				margin			: 0;
+				margin-top		: 30px;
 
 				background-color	: #9B5AE6;
 				color			: #FFFFFF;
