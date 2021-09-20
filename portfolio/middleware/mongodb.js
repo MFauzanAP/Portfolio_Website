@@ -6,19 +6,19 @@ import { MongoClient } from 'mongodb';
 const MONGODB_URI = process.env.MONGODB_URI;
 const MONGODB_DB = process.env.MONGODB_DB;
 
-let cachedClient = null;
-let cachedDb = null;
+global.cachedClient = null;
+global.cachedDb = null;
 
 //	Function used to connect to the databse
 export async function connect_to_database() {
 
 	//	Check if there is a cached client or database
-	if (cachedClient && cachedDb) {
+	if (global.cachedClient && global.cachedDb) {
 
 		//	Load from cache instead
 		return {
-			client			: cachedClient,
-			db			: cachedDb
+			client			: global.cachedClient,
+			db			: global.cachedDb
 		};
 
 	}
@@ -37,13 +37,13 @@ export async function connect_to_database() {
 	let db = client.db(MONGODB_DB);
 
 	//	Store database and client in cache
-	cachedClient = client;
-	cachedDb = db;
+	global.cachedClient = client;
+	global.cachedDb = db;
 
 	//	Return client and database
 	return {
-		client			: cachedClient,
-		db			: cachedDb,
+		client			: global.cachedClient,
+		db			: global.cachedDb,
 	};
 
 }
