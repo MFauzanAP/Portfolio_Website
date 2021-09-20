@@ -54,14 +54,12 @@ function Contact () {
 
 
 	/* ==================================================== Functions =================================================== */
+
+	//	Function used to send email
 	const sendEmail = async (event) => {
 
 		//	Stop page from refreshing
 		event.preventDefault();
-
-		//	Show loading indicator
-		event.target.button.className = `${styles.loading} ${styles.call_to_action}`;
-		event.target.button.innerHTML = `<i class="fa fa-spinner fa-spin"></i>`;
 
 		//	Extract data from form
 		var data = {
@@ -71,6 +69,27 @@ function Contact () {
 			message		: sanitizeHTML(event.target.message.value),
 			cc		: event.target.cc.checked
 		}
+
+		//	Declare test regex for email
+		var test = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		
+		//	If email is invalid then notify user and cancel operation
+		if (!test.test(data.email)) {
+
+			//	Show toast
+			toast.notify(`Invalid Email`, {
+				duration	: 2,
+				title		: 'Error',
+			});
+
+			//	Exit function
+			return;
+
+		}
+
+		//	Show loading indicator
+		event.target.button.className = `${styles.loading} ${styles.call_to_action}`;
+		event.target.button.innerHTML = `<i class="fa fa-spinner fa-spin"></i>`;
 
 		//	Try sending api call to send email
 		try {
