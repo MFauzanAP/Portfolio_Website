@@ -9,6 +9,7 @@ import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Accordion from "@/components/accordion";
 import { toast } from 'react-nextjs-toast';
+import sanitizeHTML from 'sanitize-html';
 
 //	Declare output function
 function Contact () {
@@ -64,10 +65,10 @@ function Contact () {
 
 		//	Extract data from form
 		var data = {
-			name		: event.target.name.value,
-			email		: event.target.email.value,
-			subject		: event.target.subject.value,
-			message		: event.target.message.value,
+			name		: sanitizeHTML(event.target.name.value),
+			email		: sanitizeHTML(event.target.email.value),
+			subject		: sanitizeHTML(event.target.subject.value),
+			message		: sanitizeHTML(event.target.message.value),
 			cc		: event.target.cc.checked
 		}
 

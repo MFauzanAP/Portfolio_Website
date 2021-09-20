@@ -11,7 +11,6 @@ import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from '@/components/slideshow';
 import ContactMe from '@/components/contact_me';
-import { set_cookies, get_cookies, delete_cookies } from '@/components/utils/cookies';
 
 //	Declare output function
 function Home () {

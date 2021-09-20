@@ -2,15 +2,12 @@ import styles from '@/styles/Projects.module.scss'
 import React, { useState, } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import SideNavbar from '@/components/side_navbar';
-import Accordion from "@/components/accordion";
-import { toast } from 'react-nextjs-toast';
+import sanitizeHTML from 'sanitize-html';
 
 //	Declare output function
 export default function Projects () {
@@ -321,7 +318,7 @@ export default function Projects () {
 		var input = document.querySelector('#search');
 
 		//	Get text in input field
-		var search = input.value;
+		var search = sanitizeHTML(input.value);
 
 		//	Update search value
 		filters.search = search;
