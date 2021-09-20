@@ -1070,6 +1070,84 @@ $marker-size		: 9px;
 		transition		: 0.75s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0.5s;
 	}
 
+	/* Skeleton */
+	.skeleton {
+
+		/* Title */
+		h3 {
+			width			: 250px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 2.25 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
+		}
+
+		/* Date */
+		.date {
+			width			: 150px !important;
+
+			background-image	: linear-gradient(to right, rgba(220, 220, 220, 1) 0%, rgba(200, 200, 200, 1) 50%, rgba(220, 220, 220, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
+		}
+
+		/* Text */
+		p {
+			color			: transparent !important;
+
+			line-height		: 1.8 !important;
+
+			/* First */
+			&:nth-of-type(1) {
+				width			: 400px !important;
+
+				background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+				background-size		: 200% 100% !important;
+
+				animation		: skeleton_loading 2s infinite linear forwards;
+			}
+
+			/* Second */
+			&:nth-of-type(2) {
+				width			: 425px !important;
+				
+				background-image	: linear-gradient(to right, rgba(220, 220, 220, 1) 0%, rgba(200, 200, 200, 1) 50%, rgba(220, 220, 220, 1) 100%) !important;
+				background-size		: 200% 100% !important;
+
+				animation		: skeleton_loading 2s infinite linear forwards;
+			}
+
+			/* Third */
+			&:nth-of-type(3) {
+				width			: 325px !important;
+				
+				background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+				background-size		: 200% 100% !important;
+
+				animation		: skeleton_loading 2s infinite linear forwards;
+			}
+		}
+
+		/* Tag */
+		li {
+			color			: transparent !important;
+		}
+
+		/* Media Container */
+		.media_container {
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
+		}
+	}
+
 	/* Sections */
 	.section {
 		aspect-ratio		: 8/3;
@@ -1214,6 +1292,8 @@ $marker-size		: 9px;
 			width			: 50%;
 
 			overflow		: hidden;
+
+			background		: #EFEFEF;
 
 			display			: flex;
 			justify-content		: center;
@@ -2140,5 +2220,14 @@ $marker-size		: 9px;
 	}
 	100% {
 		transform		: scaleY(1);
+	}
+}
+
+@keyframes skeleton_loading {
+	from {
+		background-position-x	: 0%;
+	}
+	to {
+		background-position-x	: -200%;
 	}
 }

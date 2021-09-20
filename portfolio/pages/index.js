@@ -52,13 +52,40 @@ function Home () {
 		//	Set cookie
 		sessionStorage.setItem('home_visit', true);
 
+		//	Generate skeleton html
+		var skeleton = [];
+		for (let i = 0; i < 5; i++) {
+			
+			//	Push to array
+			skeleton.push(<div className={`${styles.skeleton} ${styles.section}`} key={i} style={{transitionDelay: `${0.75 + (i * 0.25)}s`}}>
+
+				{/* Meta */}
+				<div className={styles.meta}>
+
+					{/* Title */}
+					<h3>Lorem ipsum dolor sit amet</h3>
+
+					{/* Date */}
+					<div className={styles.date}>Lorem ipsum dolor</div>
+
+					{/* Description */}
+					<p>1</p>
+					<p>2</p>
+					<p>3</p>
+
+				</div>
+
+				{/* Media */}
+				<div className={styles.media_container}>
+
+				</div>
+
+			</div>);
+			
+		}
+
 		//	Add loading indicator for projects
-		setProjects({length: 0, data: (
-			<div className={styles.loader}>
-				<i className="fa fa-spinner fa-spin"></i>
-				<p>Loading Projects, Hold On...</p>
-			</div>
-		)})
+		setProjects({length: 0, data: skeleton});
 
 		//	Load projects
 		setProjects(await get_projects());
