@@ -26,6 +26,7 @@
     "react-nextjs-toast": "^1.2.5",
     "react-particles-js": "^3.5.3",
     "react-scrollmagic": "^2.3.0",
+    "sanitize-html": "^2.5.1",
     "sass": "^1.37.5",
     "tsparticles": "^1.33.3"
   },
