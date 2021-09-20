@@ -1,5 +1,5 @@
 import styles from '@/styles/Projects.module.scss'
-import React, { useState, } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head'
 import Link from 'next/link';
@@ -8,6 +8,7 @@ import { Controller, Scene } from "react-scrollmagic";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import sanitizeHTML from 'sanitize-html';
+import { ToastContainer } from 'react-nextjs-toast';
 
 //	Declare output function
 export default function Projects () {
@@ -489,6 +490,9 @@ export default function Projects () {
 				<Controller><Scene classToggle="active" triggerElement="#background_end">
 					<div className="navbar_container"><Navbar pathname="projects"/></div>
 				</Scene></Controller>
+
+				{/* Toast Container */}
+				<ToastContainer style={{zIndex: 5}}/>
 
 			</div>
 

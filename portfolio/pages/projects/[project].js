@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from "@/components/slideshow";
-import { toast } from 'react-nextjs-toast';
+import { ToastContainer } from 'react-nextjs-toast';
 
 //	Declare output function
 export default function Projects () {
@@ -368,6 +368,9 @@ export default function Projects () {
 						}
 					]
 				}}/>
+
+				{/* Toast Container */}
+				<ToastContainer style={{zIndex: 5}}/>
 
 			</div>
 

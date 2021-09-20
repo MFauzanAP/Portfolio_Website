@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { ToastContainer } from 'react-nextjs-toast';
 
 //	Declare output function
 function Error () {
@@ -88,6 +89,9 @@ function Error () {
 
 				{/* Navbar */}
 				<div className="navbar_container"><Navbar pathname="error"/></div>
+
+				{/* Toast Container */}
+				<ToastContainer style={{zIndex: 5}}/>
 
 			</div>
 

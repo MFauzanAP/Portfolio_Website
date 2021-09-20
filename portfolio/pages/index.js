@@ -724,7 +724,7 @@ function Home () {
 				<div className='wip2'>WORK IN PROGRESS</div>
 				
 				{/* Toast Container */}
-				<ToastContainer style={{zIndex: 3}}/>
+				<ToastContainer style={{zIndex: 5}}/>
 
 			</div>
 

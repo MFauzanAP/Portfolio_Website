@@ -8,7 +8,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Accordion from "@/components/accordion";
-import { toast } from 'react-nextjs-toast';
+import { toast, ToastContainer } from 'react-nextjs-toast';
 import sanitizeHTML from 'sanitize-html';
 
 //	Declare output function
@@ -435,6 +435,9 @@ function Contact () {
 						}
 					]
 				}}/>
+
+				{/* Toast Container */}
+				<ToastContainer style={{zIndex: 5}}/>
 
 			</div>
 
