@@ -998,6 +998,19 @@
 			&.active {
 				color			: #3D3D3D;
 			}
+
+			/* Skeleton */
+			.skeleton {
+				width			: 150px !important;
+
+				background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+				background-size		: 200% 100% !important;
+				color			: transparent !important;
+
+				line-height		: 1.8 !important;
+
+				animation		: skeleton_loading 2s infinite linear forwards;
+			}
 		}
 
 		/* Divider */
@@ -1024,6 +1037,19 @@
 		font-weight		: bold;
 		letter-spacing		: 1.5px;
 		text-align		: center;
+
+		/* Skeleton */
+		.skeleton {
+			width			: 750px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 1.5 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
+		}
 	}
 
 	/* Meta */
@@ -1039,6 +1065,19 @@
 		font-size		: 1.5rem;
 		letter-spacing		: 0.5px;
 		text-align		: center;
+
+		/* Skeleton */
+		.skeleton {
+			width			: 400px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 1.5 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
+		}
 	}
 
 	/* Slideshow */
@@ -1105,6 +1144,19 @@
 
 			margin-right		: 10px;
 		}
+
+		/* Skeleton */
+		.skeleton {
+			width			: 150px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 1.5 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
+		}
 	}
 
 	/* Description */
@@ -1141,6 +1193,19 @@
 			img {
 				object-fit		: contain;
 			}
+		}
+
+		/* Skeleton */
+		.skeleton {
+			width			: 400px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 1.5 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
 		}
 	}
 
@@ -1179,6 +1244,19 @@
 			line-height		: 1.8;
 			letter-spacing		: 0.03em;
 			text-rendering		: optimizeLegibility;
+		}
+
+		/* Skeleton */
+		.skeleton {
+			width			: 400px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 1.5 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
 		}
 	}
 
@@ -1228,6 +1306,19 @@
 				letter-spacing		: 0.5px;
 				text-align		: left;
 			}
+		}
+
+		/* Skeleton */
+		.skeleton {
+			width			: 400px !important;
+
+			background-image	: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(220, 220, 220, 1) 50%, rgba(240, 240, 240, 1) 100%) !important;
+			background-size		: 200% 100% !important;
+			color			: transparent !important;
+
+			line-height		: 1.5 !important;
+
+			animation		: skeleton_loading 2s infinite linear forwards;
 		}
 	}
 
@@ -1345,5 +1436,14 @@
 		transform		: scale(1);
 
 		opacity			: 1;
+	}
+}
+
+@keyframes skeleton_loading {
+	from {
+		background-position-x	: 0%;
+	}
+	to {
+		background-position-x	: -200%;
 	}
 }

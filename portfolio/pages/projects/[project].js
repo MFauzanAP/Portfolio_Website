@@ -186,15 +186,15 @@ export default function Projects () {
 						<div className={styles.divider}><FontAwesomeIcon icon={['fas', 'chevron-right']}/></div>
 
 						{/* Project Name */}
-						<div className={`${styles.link} ${styles.active}`}><Link href="/projects"><a>{project_data.data ? project_data.data.name : ''}</a></Link></div>
+						<div className={`${styles.link} ${styles.active}`}><Link href="/projects"><a>{project_data.data ? project_data.data.name : <div className={styles.skeleton}>1</div>}</a></Link></div>
 
 					</div>
 
 					{/* Header */}
-					<div className={styles.header}>{project_data.data ? project_data.data.name : ''}</div>
+					<div className={styles.header}>{project_data.data ? project_data.data.name : <div className={styles.skeleton}>1</div>}</div>
 
 					{/* Meta */}
-					<div className={styles.meta}>{project_data.data ? project_data.data.description.short : ''}</div>
+					<div className={styles.meta}>{project_data.data ? project_data.data.description.short : <div className={styles.skeleton}>1</div>}</div>
 
 					{/* Background End */}
 					<div id="background_end"></div>
@@ -216,25 +216,25 @@ export default function Projects () {
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'calendar']}></FontAwesomeIcon>
 							<strong>Start Date - </strong>
-							{project_data.data ? project_data.data.date.toString().split('T')[0] : ''}
+							{project_data.data ? project_data.data.date.toString().split('T')[0] : <div className={styles.skeleton}>1</div>}
 						</div>
 
 						{/* Company */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'building']}></FontAwesomeIcon>
 							<strong>Company - </strong>
-							{project_data.data ? project_data.data.company : ''}
+							{project_data.data ? project_data.data.company : <div className={styles.skeleton}>1</div>}
 						</div>
 
 						{/* Status */}
 						<div style={{marginBottom: '10px'}}>
 							<FontAwesomeIcon className={styles.icon} icon={['fas', 'clock']}></FontAwesomeIcon>
 							<strong>Status - </strong>
-							{project_data.data ? project_data.data.status : ''}
+							{project_data.data ? project_data.data.status : <div className={styles.skeleton}>1</div>}
 						</div>
 
 						{/* Category */}
-						<div dangerouslySetInnerHTML={{__html: project_data.data ? project_data.data.category : ''}}></div>
+						<div dangerouslySetInnerHTML={{__html: project_data.data ? project_data.data.category : `<div class=${styles.skeleton}>1</div>`}}></div>
 
 						{/* Divider */}
 						<div className={styles.line_divider}></div>
@@ -248,7 +248,7 @@ export default function Projects () {
 						<div className={styles.title}>DESCRIPTION</div>
 
 						{/* Text */}
-						<div className={styles.text} dangerouslySetInnerHTML={{__html: project_data.data ? (project_data.data.description.long || 'This project has no description') : ''}}></div>
+						<div className={styles.text} dangerouslySetInnerHTML={{__html: project_data.data ? (project_data.data.description.long || 'This project has no description') : `<div class=${styles.skeleton}>1</div>`}}></div>
 
 						{/* Divider */}
 						<div className={styles.line_divider}></div>
@@ -265,7 +265,7 @@ export default function Projects () {
 						<div className={styles.text}>These are the technologies I used in this project</div>
 
 						{/* List */}
-						<ul className={styles.list}>{project_data.data ? project_data.data.tech_stack : ''}</ul>
+						<ul className={styles.list}>{project_data.data ? project_data.data.tech_stack : <div className={styles.skeleton}>1</div>}</ul>
 
 						{/* Divider */}
 						<div className={styles.line_divider}></div>
@@ -282,7 +282,7 @@ export default function Projects () {
 						<div className={styles.text}>Here are some extra resourced related to this project</div>
 
 						{/* List */}
-						<ul className={styles.list}>{project_data.data ? project_data.data.links : ''}</ul>
+						<ul className={styles.list}>{project_data.data ? project_data.data.links : <div className={styles.skeleton}>1</div>}</ul>
 
 					</div>
 
