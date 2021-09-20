@@ -607,6 +607,10 @@ function Home () {
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
+								<Link href="/projects/Malvor" ><a><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
+									View Project
+								</button></a></Link>
 
 							</div>
 
