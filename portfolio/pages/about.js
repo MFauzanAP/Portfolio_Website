@@ -4,29 +4,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import profilePicture from '@/public/profile_picture.png';
-import htmlLogo from '@/public/html_logo.png';
-import cssLogo from '@/public/css_logo.png';
-import jsLogo from '@/public/js_logo.png';
-import sassLogo from '@/public/sass_logo.png';
-import jqueryLogo from '@/public/jquery_logo.png';
-import reactLogo from '@/public/react_logo.png';
-import nextLogo from '@/public/next_logo.png';
-import nodeLogo from '@/public/node_logo.png';
-import expressLogo from '@/public/express_logo.png';
-import mongodbLogo from '@/public/mongodb_logo.png';
-import elasticsearchLogo from '@/public/elasticsearch_logo.png';
-import handlebarsLogo from '@/public/handlebars_logo.png';
-import chaiLogo from '@/public/chai_logo.png';
-import lodashLogo from '@/public/lodash_logo.png';
-import githubLogo from '@/public/github_logo.png';
-import figmaLogo from '@/public/figma_logo.png';
-import unityLogo from '@/public/unity_logo.png';
-import csharpLogo from '@/public/csharp_logo.png';
-import vbLogo from '@/public/vb_logo.png';
-import pythonLogo from '@/public/python_logo.png';
-import blenderLogo from '@/public/blender_logo.png';
-import asepriteLogo from '@/public/aseprite_logo.png';
-import photoshopLogo from '@/public/photoshop_logo.png';
 import akisLogo from '@/public/akis_logo.png';
 import quLogo from '@/public/qu_logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -39,7 +16,7 @@ import Slideshow from '@/components/slideshow';
 import ContactMe from '@/components/contact_me';
 
 //	Declare output function
-function Home () {
+function About () {
 
 	/* ==================================================== Variables =================================================== */
 
@@ -128,7 +105,7 @@ function Home () {
 					<div className={styles.details} key={index}>
 
 						{/* Icon */}
-						<img className={styles.image} src={tech.image}/>
+						<Link href={`/projects?query=${tech.name}`}><a><img className={styles.image} src={tech.image}/></a></Link>
 
 						{/* Description */}
 						<div className={styles.title}>{tech.name}</div>
@@ -805,4 +782,4 @@ function Home () {
 
 }
 
-export default Home
+export default About
