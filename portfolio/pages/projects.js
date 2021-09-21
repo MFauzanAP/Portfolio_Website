@@ -17,6 +17,7 @@ export default function Projects () {
 
 	//	Get reference to router and router params
 	const router = useRouter();
+	const { query } = router.query;
 
 	//	Page variables
 	const [projects, setProjects] = useState(0);
@@ -41,18 +42,11 @@ export default function Projects () {
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
 
-		//	Add loading indicator for projects
-		setProjects({length: 0, data: (
-			<div className={styles.loader}>
-				<i className="fa fa-spinner fa-spin"></i>
-				<p>Loading Projects, Hold On...</p>
-			</div>
-		)})
+		//	Update search value
+		document.querySelector('#search').value = query || '';
+		UpdateSearch();
 
-		//	Load projects
-		setProjects(await get_projects());
-
-	}, []);
+	}, [router.isReady]);
 
 
 
@@ -325,12 +319,6 @@ export default function Projects () {
 		filters.search = search;
 		setFilters(filters);
 
-		//	Try and get the clear search button
-		var clear = document.querySelector(`.${styles.search_clear}`);
-
-		//	Update clear search button
-		if (clear) search ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
-
 		//	Add loading indicator for projects
 		setProjects({length: 0, data: (
 			<div className={styles.loader}>
@@ -341,6 +329,15 @@ export default function Projects () {
 
 		//	Call api request to fetch projects
 		setProjects(await get_projects(filters));
+
+		//	Re set search value
+		document.querySelector('#search').value = search;
+
+		//	Try and get the clear search button
+		var clear = document.querySelector(`.${styles.search_clear}`);
+
+		//	Update clear search button
+		if (clear) search ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
 
 	}
 
