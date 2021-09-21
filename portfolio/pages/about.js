@@ -3,6 +3,7 @@ import styles from '@/styles/About.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import profilePicture from '@/public/profile_picture.png';
 import akisLogo from '@/public/akis_logo.png';
 import quLogo from '@/public/qu_logo.png';
@@ -14,6 +15,7 @@ import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from '@/components/slideshow';
 import ContactMe from '@/components/contact_me';
+import sanitizeHTML from 'sanitize-html';
 
 //	Declare output function
 function About () {
@@ -23,9 +25,16 @@ function About () {
 	//	Reference
 	const ref = useRef(null);
 
+	//	Get reference to router and router params
+	const router = useRouter();
+
 	//	Page variables
 	const [preload, setPreload] = useState(0);
 	const [techStack, setTechStack] = useState(0);
+	var [filters, setFilters] = useState({categories: []});
+
+	//	Store whether or not dropdown is open
+	var is_dropdown_open = false;
 
 
 
@@ -146,6 +155,183 @@ function About () {
 			) };
 
 		}
+
+	}
+
+	//	Toggle dropdown
+	function ToggleDropdown () {
+
+		//	If document is not ready
+		if (!router.isReady) return;
+
+		//	Get reference to dropdown
+		var dropdown = document.querySelector(`.${styles.dropdown}`);
+
+		//	If there is no dropdown then exit
+		if (!dropdown) return;
+
+		//	If closed
+		if (!dropdown.classList.contains(styles.active)) {
+
+			//	Open dropdown
+			dropdown.classList.add(styles.active);
+
+			//	Subscribe events
+			document.addEventListener('click', CloseDropdown);
+
+			//	Dropdown open
+			is_dropdown_open = true;
+
+		}
+
+		//	Else if open
+		else {
+
+			//	Close dropdown
+			dropdown.classList.remove(styles.active);
+
+			//	Unsubscribe events
+			document.removeEventListener('click', CloseDropdown);
+
+			//	Dropdown closed
+			is_dropdown_open = false;
+
+		}
+
+	}
+
+	//	Close dropdown
+	function CloseDropdown (e) {
+
+		//	If document is not ready
+		if (!router.isReady) return;
+
+		//	Get reference to dropdown
+		var dropdown = document.querySelector(`.${styles.dropdown}`);
+
+		//	If there is no dropdown then exit
+		if (!dropdown) return;
+
+		//	Check if open
+		if (dropdown.classList.contains(styles.active) && is_dropdown_open) {
+
+			//	If clicking outside of dropdown
+			if (!dropdown.contains(e.target)) {
+
+				//	Close dropdown
+				dropdown.classList.remove(styles.active);
+
+				//	Dropdown closed
+				is_dropdown_open = false;
+
+			}
+
+		}
+	}
+
+	//	Toggle filter
+	async function ToggleFilter (filter, type, e) {
+
+		//	If document is not ready
+		if (!router.isReady) return;
+
+		//	Get element
+		var item = e.target;
+
+		//	If already selected
+		if (item.classList.contains(styles.active)) {
+
+			//	Deselect
+			item.classList.remove(styles.active);
+
+			//	Remove from filters list
+			filters[type] = filters[type].filter((elem) => {return elem != filter});
+			setFilters(filters);
+
+			//	Add loading indicator for projects
+			setTechStack({length: 0, data: (
+				<div className={styles.loader}>
+					<i className="fa fa-spinner fa-spin"></i>
+					<p>Loading Projects, Hold On...</p>
+				</div>
+			)})
+
+			//	Load projects
+			setTechStack(await get_tech_stack(filters));
+
+		}
+
+		//	If not selected
+		else {
+
+			//	Select item
+			item.classList.add(styles.active);
+
+			//	Add to filters list
+			filters[type].push(filter);
+			setFilters(filters);
+
+			//	Add loading indicator for projects
+			setTechStack({length: 0, data: (
+				<div className={styles.loader}>
+					<i className="fa fa-spinner fa-spin"></i>
+					<p>Loading Projects, Hold On...</p>
+				</div>
+			)})
+
+			//	Load projects
+			setTechStack(await get_tech_stack(filters));
+
+		}
+
+	}
+
+	//	Update the project search value and refresh the search results
+	async function UpdateSearch () {
+
+		//	Get search input field
+		var input = document.querySelector('#search');
+
+		//	Get text in input field
+		var search = sanitizeHTML(input.value);
+
+		//	Try and get the clear search button
+		var clear = document.querySelector(`.${styles.search_clear}`);
+
+		//	Update clear search button
+		if (clear) search ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
+
+		//	Update search value
+		filters.search = search;
+		setFilters(filters);
+
+		//	Add loading indicator for projects
+		setTechStack({length: 0, data: (
+			<div className={styles.loader}>
+				<i className="fa fa-spinner fa-spin"></i>
+				<p>Loading Tech Stack, Hold On...</p>
+			</div>
+		)})
+
+		//	Call api request to fetch projects
+		setTechStack(await get_tech_stack(filters));
+
+		//	End function
+		return;
+
+	}
+
+	//	Clear the search input field
+	function ClearSearch () {
+
+		//	Get search input field
+		var input = document.querySelector('#search');
+
+		//	Clear input field
+		if (input) input.value = '';
+
+		//	Update search
+		UpdateSearch();
 
 	}
 
@@ -379,6 +565,57 @@ function About () {
 
 					{/* Title */}
 					<div className={styles.header}>TECHNICAL SKILLS</div>
+
+					{/* Toolbar */}
+					<div className={styles.toolbar}>
+
+						{/* Search Results */}
+						<div className={styles.search_results}>{techStack.length || 0} Projects Found</div>
+
+						{/* Search Tools */}
+						<div className={styles.search_tools}>
+
+							{/* Search Bar */}
+							<div className={styles.search_bar}>
+								<input type="text" id="search" name="search" onInput={UpdateSearch} required/>
+								<label htmlFor="search">Search Tech Stack</label>
+								<div className={styles.search_clear} onClick={ClearSearch}><FontAwesomeIcon icon={['fas', 'times']}/></div>
+							</div>
+
+							{/* Dropdown */}
+							<div className={styles.dropdown}>
+
+								{/* Button */}
+								<div className={styles.button} onClick={ToggleDropdown}><FontAwesomeIcon icon={['fas', 'sort-amount-up']}/></div>
+
+								{/* Menu */}
+								<div className={styles.menu}>
+
+									{/* Categories */}
+									<div className={styles.section}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'cube']}/>Categories</div>
+
+									{/* Items */}
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Front End', 'categories')}>Front End</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Back End', 'categories')}>Back End</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Full Stack', 'categories')}>Full Stack</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Database', 'categories')}>Database</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Unit Testing', 'categories')}>Unit Testing</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Utility', 'categories')}>Utility</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Version Control', 'categories')}>Version Control</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'UI & Design', 'categories')}>UI &amp; Design</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Game Engine', 'categories')}>Game Engine</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, 'Programming Language', 'categories')}>Programming Language</div>
+									<div className={styles.item} onClick={ToggleFilter.bind(this, '3D Modelling', 'categories')}>3D Modelling</div>
+
+								</div>
+								
+							</div>
+
+
+						</div>
+
+					</div>
+
 
 					{/* Grid */}
 					<div className={styles.grid}>{techStack.data}</div>

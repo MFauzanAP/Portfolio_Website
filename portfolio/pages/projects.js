@@ -46,7 +46,7 @@ export default function Projects () {
 		await UpdateSearch();
 
 		//	Ensure search input matches query
-		if (document.querySelector('#search').value != query) document.querySelector('#search').value = query;
+		if (document.querySelector('#search').value != query) document.querySelector('#search').value = query || '';
 
 		//	Try and get the clear search button
 		var clear = document.querySelector(`.${styles.search_clear}`);
