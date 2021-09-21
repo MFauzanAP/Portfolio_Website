@@ -24,7 +24,6 @@ export default function Projects () {
 	var [page, setPage] = useState(1);
 	var [filters, setFilters] = useState({categories: [], status: [], featured: []});
 
-
 	//	Store whether or not dropdown is open
 	var is_dropdown_open = false;
 
@@ -44,7 +43,16 @@ export default function Projects () {
 
 		//	Update search value
 		document.querySelector('#search').value = query || '';
-		UpdateSearch();
+		await UpdateSearch();
+
+		//	Ensure search input matches query
+		if (document.querySelector('#search').value != query) document.querySelector('#search').value = query;
+
+		//	Try and get the clear search button
+		var clear = document.querySelector(`.${styles.search_clear}`);
+
+		//	Update clear search button
+		if (clear) query ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
 
 	}, [router.isReady]);
 
@@ -315,6 +323,12 @@ export default function Projects () {
 		//	Get text in input field
 		var search = sanitizeHTML(input.value);
 
+		//	Try and get the clear search button
+		var clear = document.querySelector(`.${styles.search_clear}`);
+
+		//	Update clear search button
+		if (clear) search ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
+
 		//	Update search value
 		filters.search = search;
 		setFilters(filters);
@@ -330,14 +344,8 @@ export default function Projects () {
 		//	Call api request to fetch projects
 		setProjects(await get_projects(filters));
 
-		//	Re set search value
-		document.querySelector('#search').value = search;
-
-		//	Try and get the clear search button
-		var clear = document.querySelector(`.${styles.search_clear}`);
-
-		//	Update clear search button
-		if (clear) search ? clear.classList.add(styles.active) : clear.classList.remove(styles.active);
+		//	End function
+		return;
 
 	}
 
