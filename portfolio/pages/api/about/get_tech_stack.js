@@ -11,12 +11,13 @@ export default async function (req, res) {
 	const { db } = await connect_to_database();
 
 	//	Declare variable to store query
-	var query = {
-		$and		: []
-	};
+	var query = {};
 
 	//	If there are categories to filter by then add them to the query
 	if (options.categories && options.categories.length > 0) {
+
+		//	Set $and operator if it doesn't exist
+		if (query.$and === undefined) query.$and = [];
 
 		//	Add each category to the query
 		query.$and.push({$or: options.categories.map(elem => {
@@ -28,29 +29,11 @@ export default async function (req, res) {
 
 	}
 
-	//	If there are statuses to filter by then add them to the query
-	if (options.status && options.status.length > 0) {
-
-		//	Add each status to the query
-		query.$and.push({$or: options.status.map(elem => {
-
-			//	Return processed status
-			return { status: elem };
-
-		})});
-
-	}
-
-	//	If there are featured to filter by then add them to the query
-	if (options.featured && options.featured.length > 0) {
-
-		//	Add each featured to the query
-		query.$and.push({ featured: true });
-
-	}
-
 	//	If there is a search query then add it to the query
 	if (options.search) {
+
+		//	Set $and operator if it doesn't exist
+		if (query.$and === undefined) query.$and = [];
 
 		//	Add search to query
 		query.$and.push({ $text: { $search: options.search } });
@@ -58,7 +41,7 @@ export default async function (req, res) {
 	}
 
 	//      Get collection data
-	var tech_stack = await db.collection('tech_stack').find({}).sort({}).toArray();
+	var tech_stack = await db.collection('tech_stack').find(query).sort({}).toArray();
 
 	//	Get number of tech_stack
 	var count = tech_stack.length;
