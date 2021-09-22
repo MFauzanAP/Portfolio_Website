@@ -10,12 +10,13 @@ import quLogo from '@/public/qu_logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
+import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from '@/components/slideshow';
 import ContactMe from '@/components/contact_me';
-import sanitizeHTML from 'sanitize-html';
+import ScrollToTop from '@/components/scroll_to_top';
 
 //	Declare output function
 function About () {
@@ -971,6 +972,9 @@ function About () {
 
 
 				{/* ================================================== Miscellaneous ================================================= */}
+
+				{/* Scroll to Top */}
+				<ScrollToTop options={{trigger: '#grid'}}/>
 
 				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#grid">

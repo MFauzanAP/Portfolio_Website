@@ -11,6 +11,7 @@ import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from '@/components/slideshow';
 import ContactMe from '@/components/contact_me';
+import ScrollToTop from '@/components/scroll_to_top';
 
 //	Declare output function
 function Home () {
@@ -696,6 +697,9 @@ function Home () {
 
 
 				{/* ================================================== Miscellaneous ================================================= */}
+
+				{/* Scroll to Top */}
+				<ScrollToTop options={{trigger: '#fade_end'}}/>
 
 				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#fade_end">

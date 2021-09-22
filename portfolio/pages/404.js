@@ -2,9 +2,10 @@ import React, { useRef } from 'react';
 import styles from '@/styles/Error.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
+import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { ToastContainer } from 'react-nextjs-toast';
+import ScrollToTop from '@/components/scroll_to_top';
 
 //	Declare output function
 function Error () {
@@ -82,6 +83,9 @@ function Error () {
 
 
 				{/* ================================================== Miscellaneous ================================================= */}
+
+				{/* Scroll to Top */}
+				<ScrollToTop/>
 
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>

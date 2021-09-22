@@ -2,15 +2,15 @@ import styles from '@/styles/Projects.module.scss'
 import React, { useState } from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router';
-import Image from 'next/image'
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
+import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from "@/components/slideshow";
-import { ToastContainer } from 'react-nextjs-toast';
+import ScrollToTop from '@/components/scroll_to_top';
 
 //	Declare output function
 export default function Projects () {
@@ -309,6 +309,9 @@ export default function Projects () {
 
 
 				{/* ================================================== Miscellaneous ================================================= */}
+
+				{/* Scroll to Top */}
+				<ScrollToTop options={{trigger: '#background_end'}}/>
 
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>

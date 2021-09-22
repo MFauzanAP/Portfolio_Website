@@ -5,10 +5,11 @@ import Head from 'next/head'
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
+import { ToastContainer } from 'react-nextjs-toast';
+import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import sanitizeHTML from 'sanitize-html';
-import { ToastContainer } from 'react-nextjs-toast';
+import ScrollToTop from '@/components/scroll_to_top';
 
 //	Declare output function
 export default function Projects () {
@@ -486,6 +487,9 @@ export default function Projects () {
 
 
 				{/* ================================================== Miscellaneous ================================================= */}
+
+				{/* Scroll to Top */}
+				<ScrollToTop options={{trigger: '#background_end'}}/>
 
 				{/* WIP Indicator */}
 				<div className='wip1'>WORK IN PROGRESS</div>
