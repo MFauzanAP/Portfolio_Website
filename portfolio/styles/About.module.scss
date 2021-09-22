@@ -970,8 +970,8 @@
 		margin-bottom		: 25px;
 		padding			: 25px;
 
-		background		: #FFFFFF;
-		color			: #3D3D3D;
+		background		: #332D61;
+		color			: #FFFFFF;
 		border-radius		: 15px;
 
 		box-shadow		: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -1006,9 +1006,9 @@
 				&:hover {
 					/* Input Element */
 					input {
-						border			: 2px solid #9B5AE6;
+						border			: 2px solid #7B51CA;
 
-						color			: #9B5AE6;
+						color			: #FFFFFF;
 					}
 				}
 
@@ -1018,8 +1018,9 @@
 
 					padding			: 0.75rem 1.25rem;
 
-					color			: #3D3D3D;
-					border			: 2px solid #DDDDDD;
+					background		: #55488A;
+					color			: #FFFFFF;
+					border			: 2px solid #55488A;
 					border-radius		: 1.5rem;
 
 					font-size		: 0.9rem;
@@ -1033,7 +1034,7 @@
 
 					/* Focus */
 					&:focus, &:not(:focus):valid {
-						border			: 2px solid #9B5AE6;
+						border			: 2px solid #7B51CA;
 
 						/* Label */
 						~ label {
@@ -1043,8 +1044,11 @@
 
 					/* Autofill */
 					&:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active {
-						-webkit-box-shadow	: 0 0 0 30px white inset !important;
-						box-shadow		: 0 0 0 30px white inset !important;
+						background		: #55488A !important;
+						-webkit-box-shadow	: 0 0 0 50px #55488A inset !important;
+						box-shadow		: 0 0 0 50px #55488A inset !important;
+						-webkit-text-fill-color	: #FFFFFF !important;
+						color			: #FFFFFF !important;
 					}
 				}
 
@@ -1058,7 +1062,7 @@
 
 					margin			: 0.75rem 1.25rem;
 
-					color			: #AAAAAA;
+					color			: #DDDDDD;
 
 					font-size		: 0.8rem;
 					line-height		: 1.25rem;
@@ -1079,7 +1083,7 @@
 
 					margin			: 0.75rem 1.25rem;
 
-					color			: #646464;
+					color			: #FFFFFF;
 
 					transition		: 0.25s ease-in-out;
 
@@ -1106,7 +1110,7 @@
 
 					/* Button */
 					.button {
-						background		: #7B51CA;
+						background		: #6E47b4;
 						border-radius		: 15px;
 					}
 
@@ -1123,7 +1127,7 @@
 					width			: 100%;
 					height			: 100%;
 
-					background		: #9B5AE6;
+					background		: #7B51CA;
 					color			: #FFFFFF;
 					border-radius		: 20px;
 
@@ -1135,7 +1139,7 @@
 
 					/* Hover */
 					&:hover	{
-						background		: #7B51CA;
+						background		: #6E47b4;
 						border-radius		: 15px;
 					}
 				}
@@ -1143,15 +1147,15 @@
 				/* Menu */
 				.menu {
 					position		: absolute;
-					left			: -55px;
+					left			: -85px;
 					top			: calc(100% + 20px);
 					max-height		: 0;
-					width			: 150px;
+					width			: 200px;
 
 					overflow		: hidden;
 
-					background		: #FFFFFF;
-					color			: #3D3D3D;
+					background		: #3F3779;
+					color			: #FFFFFF;
 					border-radius		: 10px;
 
 					box-shadow		: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -1166,8 +1170,7 @@
 
 						padding			: 15px;
 
-						border-bottom		: 1px solid #DDDDDD;
-						border-top		: 1px solid #DDDDDD;
+						border-bottom		: 1px solid #6E6A90;
 
 						font-family		: Work Sans;
 						font-weight		: 600;
@@ -1182,7 +1185,7 @@
 
 						padding			: 10px;
 
-						background		: #FAFAFA;
+						background		: #453D7D;
 
 						font-family		: Lato;
 						font-size		: 0.85em;

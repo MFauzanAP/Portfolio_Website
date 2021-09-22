@@ -570,7 +570,7 @@ function About () {
 					<div className={styles.toolbar}>
 
 						{/* Search Results */}
-						<div className={styles.search_results}>{techStack.length || 0} Projects Found</div>
+						<div className={styles.search_results}>{techStack.length || 0} Technologies Found</div>
 
 						{/* Search Tools */}
 						<div className={styles.search_tools}>
