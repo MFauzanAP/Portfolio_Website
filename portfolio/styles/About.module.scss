@@ -1074,13 +1074,18 @@
 					left			: 0;
 					top			: 0;
 
+					overflow		: hidden;
+
 					margin			: 0.75rem 1.25rem;
+					margin-right		: 1.5rem;
 
 					color			: #DDDDDD;
 
 					font-size		: 0.8rem;
 					line-height		: 1.25rem;
 					letter-spacing		: 0.05rem;
+					text-overflow		: ellipsis;
+					white-space		: nowrap;
 
 					transition		: 0.15s cubic-bezier(0.34,-0.39, 0.68, 1.38) 0s;
 				}
@@ -1368,6 +1373,10 @@
 			}
 		}
 
+		.toolbar {
+			display			: none;
+		}
+
 		.grid {
 			width			: 100%;
 
@@ -1418,6 +1427,20 @@
 			}
 		}
 
+		.toolbar {
+			width			: 100%;
+
+			flex-direction		: column-reverse;
+
+			.search_results	{
+				margin-top		: 15px;
+			}
+
+			.search_tools {
+				width			: 100%;
+			}
+		}
+
 		.grid {
 			width			: 100%;
 
@@ -1465,6 +1488,14 @@
 			}
 		}
 
+		.toolbar {
+			width			: 100%;
+
+			.search_tools {
+				flex			: 0 1 100%;
+			}
+		}
+
 		.grid {
 			width			: 100%;
 
@@ -1499,6 +1530,10 @@
 			}
 		}
 
+		.toolbar {
+			width			: 100%;
+		}
+
 		.grid {
 			width			: 100%;
 
@@ -1523,6 +1558,10 @@
 
 	/* Laptop Large */
 	@include media (">=laptopl", "<1875px") {
+		.toolbar {
+			width			: 80%;
+		}
+
 		.grid {
 			width			: 85%;
 
