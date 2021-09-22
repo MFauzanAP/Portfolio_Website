@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 /*                                                       Imports                                                      */
 /* ------------------------------------------------------------------------------------------------------------------ */
-import React, { createRef, useRef } from 'react';
+import React, { createRef } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
@@ -32,6 +32,9 @@ class Slideshow extends React.Component {
 
 	//	Reference to slides
 	slide_ref = createRef();
+
+	//	Variable to check if component is mounted
+	isMounted = false;
 
 	//	Variables to hold touch data
 	touchX = null;
@@ -74,10 +77,12 @@ class Slideshow extends React.Component {
 		Router.events.on('routeChangeComplete', (url) => {
 
 			//	Reset state
-			this.setState({
-				page		: 0,
-				pause		: false
-			});
+			this.state.page = 0;
+			this.state.pause = false;
+			// this.setState({
+			// 	page		: 0,
+			// 	pause		: false
+			// });
 
 		})
 

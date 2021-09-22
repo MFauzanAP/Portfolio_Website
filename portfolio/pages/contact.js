@@ -218,7 +218,7 @@ function Contact () {
 					</div>
 
 					{/* Map */}
-					<div className={styles.map}><iframe src="https://maps.google.com/maps?q=Al%20Khor%20Community&amp;z=15&amp;ie=UTF8&amp;output=embed"/></div>
+					<div className={styles.map}><iframe src="https://maps.googleapis.com/maps?q=Al%20Khor%20Community&amp;z=15&amp;ie=UTF8&amp;output=embed"/></div>
 
 					{/* Background End */}
 					<div style={{position: 'absolute', bottom: "10%"}} id="background_end"></div>

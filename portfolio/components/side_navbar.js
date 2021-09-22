@@ -25,6 +25,9 @@ class SideNavbar extends React.Component {
 	//	Variable to hold href
 	href = '';
 
+	//	Variable to check if component is mounted
+	isMounted = false;
+
 
 
 	/* ===================================================== On Load ==================================================== */
@@ -38,12 +41,16 @@ class SideNavbar extends React.Component {
 
 		//	Bind function
 		this.UpdateScroll.bind(this);
+
 	}
 
 
 
 	/* ==================================================== On Mount ==================================================== */
 	componentDidMount () {
+
+		//	Componenet is mounted
+		this.isMounted = true;
 
 		//	If not mobile
 		if (!check_mobile_tablet()) {
@@ -63,8 +70,11 @@ class SideNavbar extends React.Component {
 	/* =================================================== On Unmount =================================================== */
 	componentWillUnmount () {
 
+		//	Componenet is unmounted
+		this.isMounted = false;
+
 		//	Remove event listener for scroll event
-		window.removeEventListener('scroll', this.UpdateScroll.bind(this));
+		window.removeEventListener('scroll', this.UpdateScroll());
 		
 	}
 
@@ -74,6 +84,9 @@ class SideNavbar extends React.Component {
 
 	//	Function to update scroll
 	UpdateScroll () {
+
+		//	If unmounted exit
+		if (!this.isMounted) return;
 
 		//	Declare temporary variables
 		var top = 0;
@@ -113,8 +126,8 @@ class SideNavbar extends React.Component {
 		//	If scroll position is out of bounds then hide navbar
 		if (scroll_pos < top || scroll_pos > bot) this.active = false;
 
-		//	Set state
-		this.setState({scrolled: scroll_pos});
+		//	Set state if mounted
+		if (this.isMounted) this.setState({scrolled: scroll_pos});
 
 	}
 
