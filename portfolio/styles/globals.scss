@@ -1008,6 +1008,69 @@ div {
 
 
 
+/* ================================================== Scroll To Top ================================================= */
+.scroll_to_top {
+
+	/* Active */
+	&.active {
+
+		/* Link */
+		.link {
+			transform		: translateX(200px);
+		}
+	}
+
+	/* Anchor */
+	.anchor {
+		position		: absolute;
+		top			: 0;
+	}
+
+	/* Link */
+	.link {
+		position		: fixed;
+		right			: 0;
+		bottom			: 100px;
+		width			: 250px;
+		height			: 50px;
+
+		padding			: 15px;
+
+		background		: #9B5AE6;
+		color			: #FFFFFF;
+		border-radius		: 10px 0 0 10px;
+
+		box-shadow		: 0 0 25px rgba(0, 0, 0, 0.25);
+
+		font-size		: 1.5em;
+
+		display			: flex;
+		flex-direction		: row;
+		justify-content		: flex-start;
+		align-items		: center;
+
+		transform		: translateX(100%);
+
+		transition		: 0.25s cubic-bezier(0.34,-0.39, 0.68, 1.38);
+
+		/* Hover */
+		&:hover {
+			transform		: translateX(65px);
+		}
+
+		/* Text */
+		.text {
+			margin-left		: 15px;
+
+			font-family		: Work Sans;
+			font-weight		: 600;
+			font-size		: 0.75em;
+		}
+	}
+}
+
+
+
 /* ==================================================== Scrollbar =================================================== */
 .scrollbar {
 	position		: fixed;

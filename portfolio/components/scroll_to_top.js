@@ -3,15 +3,16 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Controller, Scene } from "react-scrollmagic";
 
 
 
 
 
 /* ------------------------------------------------------------------------------------------------------------------ */
-/*                                                   Accordion Class                                                  */
+/*                                                  ScrollToTop Class                                                 */
 /* ------------------------------------------------------------------------------------------------------------------ */
-class Accordion extends React.Component {
+class ScrollToTop extends React.Component {
 
 	/* ===================================================== On Load ==================================================== */
 	constructor (props) {
@@ -19,21 +20,8 @@ class Accordion extends React.Component {
 
 		//	Set state
 		this.state = {
-			open                            : false,
-			title				: props.options ? (props.options.title || 'Accordion') : 'Accordion',
+			trigger				: props.options ? (props.options.trigger || 'scroll_to_top') : 'scroll_to_top',
 		}
-
-	}
-
-
-
-	/* ==================================================== Functions =================================================== */
-
-	/* Toggle */
-	toggle () {
-
-		//	Set open state
-		this.setState({open: !this.state.open});
 
 	}
 
@@ -42,32 +30,29 @@ class Accordion extends React.Component {
 	/* ==================================================== On Render =================================================== */
 	render () {
 
-		//      Generate class name
-		var class_name = this.state.open ? `active accordion` : `accordion`;
-
 		//	Return html
 		return (
-			<div className={class_name}>
+			<Controller><Scene classToggle="active" reverse={true} triggerElement={this.state.trigger}><div className="scroll_to_top">
 
-				{/* Title */}
-				<div className="title" onClick={this.toggle.bind(this)}>
+				{/* Anchor */}
+				<a className="anchor" id="scroll_to_top"></a>
 
-					{/* Text */}
-					{this.state.title}
+				{/* Link */}
+				<a href="#scroll_to_top" className="link">
 
 					{/* Icon */}
-					<FontAwesomeIcon className="chevron" icon={['fas', 'chevron-down']}/>
+					<FontAwesomeIcon icon={['fas', 'chevron-up']}/>
 
-				</div>
+					{/* Text */}
+					<div className="text">Scroll To Top</div>
 
-				{/* Content */}
-				<div className="content">{this.props.children}</div>
+				</a>
 
-			</div>
+			</div></Scene></Controller>
 		);
 
 	}
 
 }
 
-export default Accordion
+export default ScrollToTop
