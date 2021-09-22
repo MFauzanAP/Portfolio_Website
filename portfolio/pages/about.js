@@ -128,14 +128,14 @@ function About () {
 			})
 
 			//	If there are no projects then tell the user there are no projects
-			// if (!projects.length) {
-			// 	projects = (
-			// 	<div className={styles.loader}>
-			// 		<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
-			// 		<h1>404 Not Found</h1>
-			// 		<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, there are no projects that match this filter. Please try again.</p>
-			// 	</div>);
-			// }
+			if (!tech_stack.length) {
+				tech_stack = (
+				<div className={styles.loader}>
+					<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
+					<h1>404 Not Found</h1>
+					<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, there are no technologies that match this filter. Please try again.</p>
+				</div>);
+			}
 
 			//	Return projects html
 			return { length: results.length, data: tech_stack };
@@ -252,7 +252,7 @@ function About () {
 			setTechStack({length: 0, data: (
 				<div className={styles.loader}>
 					<i className="fa fa-spinner fa-spin"></i>
-					<p>Loading Projects, Hold On...</p>
+					<p>Loading Tech Stack, Hold On...</p>
 				</div>
 			)})
 
@@ -275,7 +275,7 @@ function About () {
 			setTechStack({length: 0, data: (
 				<div className={styles.loader}>
 					<i className="fa fa-spinner fa-spin"></i>
-					<p>Loading Projects, Hold On...</p>
+					<p>Loading Tech Stack, Hold On...</p>
 				</div>
 			)})
 
@@ -348,6 +348,9 @@ function About () {
 				<title>About | Muhammad Fauzan Aristya Putra</title>
 				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
+
+				{/* Font Awesome */}
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 
 			</Head>
 
