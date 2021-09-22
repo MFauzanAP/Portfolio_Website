@@ -267,6 +267,8 @@ button {
 
 				/* Opacity */
 				.overlay {
+					pointer-events		: all;
+
 					opacity			: 0.75;
 				}
 

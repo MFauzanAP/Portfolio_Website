@@ -134,7 +134,7 @@ class Navbar extends React.Component {
 		//	If not swiping up or down and if swipe duration is long enough
 		if (Math.abs(this.diffX) > Math.abs(this.diffY) && Math.abs(this.diffX) > 50) {
 
-			//	If menu is closed and swipe origin is on the right side
+			//	If menu is closed, user swiped left and swipe origin is on the right side
 			if (this.diffX > 0 && !navbar.className.includes('active') && this.touchX >= window.screen.width * 7/8) {
 
 				//	Get menu element
@@ -286,7 +286,7 @@ class Navbar extends React.Component {
 			<div className="navigation" ref={this.nav_menu_ref}>
 
 				{/* Overlay */}
-				<div className="overlay"></div>
+				<div className="overlay" onClick={this.ToggleMenu.bind(this)}></div>
 			
 				{/* Menu */}
 				<div className="menu">
