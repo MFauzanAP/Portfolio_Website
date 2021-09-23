@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps, router }) {
 
 	/* ================================================ Output final html =============================================== */
 	return (
-		<>
+		<div style={{overflowX: 'hidden'}}>
 
 			{/* Main Body */}
 			<AnimatePresence exitBeforeEnter><Component key={router.route} {...pageProps} /></AnimatePresence>
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps, router }) {
 			{/* Footer */}
 			<Footer/>
 			
-		</>
+		</div>
 	);
 
 }
