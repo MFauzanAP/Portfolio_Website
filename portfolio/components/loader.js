@@ -18,28 +18,35 @@ class Loader extends React.Component {
 
 		//	Return html
 		return (
-			<motion.div className="loader" exit="initial" initial="initial" animate="animate" variants={{
-					animate		: {
-						width		: '0%',
-						height		: '0%',
-						left		: '50%',
-						top		: '50%',
-						transition: {
-							duration	: 1.5,
-							ease		: [0.87, 0, 0.13, 1],
+			<motion.div 
+					className="loader" 
+					exit="initial" 
+					initial="initial" 
+					animate="animate" 
+					variants={{
+						animate		: {
+							width		: '0%',
+							height		: '0%',
+							left		: '50%',
+							top		: '50%',
+							transition: {
+								duration	: 1.5,
+								ease		: [0.87, 0, 0.13, 1],
+							},
 						},
-					},
-					initial		: {
-						width		: '300%',
-						height		: '300%',
-						left		: '-100%',
-						top		: '-100%',
-						transition: {
-							duration	: 1.5,
-							ease		: [0.87, 0, 0.13, 1],
-						},
-					}
-				}}>
+						initial		: {
+							width		: '300%',
+							height		: '300%',
+							left		: '-100%',
+							top		: '-100%',
+							transition: {
+								duration	: 1.5,
+								ease		: [0.87, 0, 0.13, 1],
+							},
+						}
+					}} 
+					onAnimationStart={() => {document.querySelector('body').classList.add('fixed');}}
+					onAnimationComplete={() => {document.querySelector('body').classList.remove('fixed');}}>
 
 				{/* Sections */}
 				<div className="blob">
