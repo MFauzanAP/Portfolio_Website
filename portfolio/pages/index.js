@@ -200,7 +200,7 @@ function Home () {
 
 				{/* Details */}
 				<title>Home | Muhammad Fauzan Aristya Putra</title>
-				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
+				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio"/>
 				<link rel="icon" href="/favicon.ico" />
 
 			</Head>
