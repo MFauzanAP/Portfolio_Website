@@ -77,12 +77,10 @@ class Slideshow extends React.Component {
 		Router.events.on('routeChangeComplete', (url) => {
 
 			//	Reset state
-			this.state.page = 0;
-			this.state.pause = false;
-			// this.setState({
-			// 	page		: 0,
-			// 	pause		: false
-			// });
+			this.setState({
+				page		: 0,
+				pause		: false
+			});
 
 		})
 
