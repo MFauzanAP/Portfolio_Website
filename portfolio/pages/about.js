@@ -12,11 +12,11 @@ import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from '@/components/slideshow';
 import ContactMe from '@/components/contact_me';
 import ScrollToTop from '@/components/scroll_to_top';
+import Loader from '@/components/loader';
 
 //	Declare output function
 function About () {
@@ -963,11 +963,6 @@ function About () {
 
 				{/* =================================================== Contact Me =================================================== */}
 				<ContactMe/>
-
-
-
-				{/* ===================================================== Footer ===================================================== */}
-				<Footer/>
 				
 
 
@@ -1018,6 +1013,9 @@ function About () {
 
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
+
+				{/* Loader */}
+				<Loader/>
 
 			</div>
 

@@ -8,8 +8,8 @@ import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
 import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import ScrollToTop from '@/components/scroll_to_top';
+import Loader from '@/components/loader';
 
 //	Declare output function
 export default function Projects () {
@@ -477,12 +477,13 @@ export default function Projects () {
 					{/* Grid */}
 					<div className={styles.grid}>{projects.data}</div>
 
+					{/* Footer */}
+					<div className={styles.footer}></div>
+
+					{/* Loader */}
+					<Loader/>
+
 				</div></Scene></Controller>
-
-
-
-				{/* ===================================================== Footer ===================================================== */}
-				<Footer/>
 				
 
 

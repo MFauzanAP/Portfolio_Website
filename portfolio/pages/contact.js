@@ -7,10 +7,10 @@ import { Controller, Scene } from "react-scrollmagic";
 import { toast, ToastContainer } from 'react-nextjs-toast';
 import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Accordion from "@/components/accordion";
 import ScrollToTop from '@/components/scroll_to_top';
+import Loader from '@/components/loader';
 
 //	Declare output function
 function Contact () {
@@ -397,11 +397,6 @@ function Contact () {
 					</div>
 
 				</div></Scene></Controller>
-
-
-
-				{/* ===================================================== Footer ===================================================== */}
-				<Footer/>
 				
 
 
@@ -442,6 +437,9 @@ function Contact () {
 
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
+
+				{/* Loader */}
+				<Loader/>
 
 			</div>
 

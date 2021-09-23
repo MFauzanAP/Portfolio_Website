@@ -4,8 +4,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { ToastContainer } from 'react-nextjs-toast';
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import ScrollToTop from '@/components/scroll_to_top';
+import Loader from '@/components/loader';
 
 //	Declare output function
 function Error () {
@@ -29,7 +29,7 @@ function Error () {
 		//	Hide navigation menu
 		document.querySelector('.navigation').classList.remove('active');
 
-	})
+	}, [])
 
 
 	
@@ -74,11 +74,6 @@ function Error () {
 					<Link href='/'><a className={styles.call_to_action}>Return Home</a></Link>
 
 				</div>
-
-
-
-				{/* ===================================================== Footer ===================================================== */}
-				<Footer/>
 				
 
 
@@ -96,6 +91,9 @@ function Error () {
 
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
+
+				{/* Loader */}
+				<Loader/>
 
 			</div>
 
