@@ -148,7 +148,7 @@ function Home () {
 							<ul className={styles.tags}>{stack}</ul>
 
 							{/* Call to Action */}
-							<Link href={`/projects/${project.name.replace(' ', '_')}`}><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Learn More</a></Link>
+							<Link href={`/projects/${project.name.replace(' ', '_')}`}><a className={styles.call_to_action}><FontAwesomeIcon style={{marginRight: '10px'}} icon={['fas', 'info-circle']}/>Project Details</a></Link>
 
 						</div>
 
@@ -426,7 +426,7 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/akis_logo.webp"></img>
+									<img alt="AKIS logo" src="/akis_logo.webp"/>
 								</div>
 
 								{/* Header */}
@@ -485,7 +485,7 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/malvor_logo.svg"></img>
+									<img alt="Malvor logo" src="/malvor_logo.svg"/>
 								</div>
 
 								{/* Header */}
@@ -539,7 +539,7 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/malvor_logo.svg"></img>
+									<img alt="Malvor logo" src="/malvor_logo.svg"/>
 								</div>
 
 								{/* Header */}
@@ -584,7 +584,7 @@ function Home () {
 								</ul>
 
 								{/* Link */}
-								<Link href="/projects/Malvor"><a>Click here to learn more</a></Link>
+								<Link href="/projects/Malvor"><a>Click here to view project details</a></Link>
 								<div className={styles.divider}></div>
 
 								{/* Skills */}
@@ -625,7 +625,7 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/qu_logo.svg"></img>
+									<img alt="Qatar University logo" src="/qu_logo.svg"/>
 								</div>
 
 								{/* Header */}
@@ -676,7 +676,7 @@ function Home () {
 					{/* Learn More */}
 					<Link href="/about"><a className={styles.call_to_action}>
 						<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['far', 'address-card']}></FontAwesomeIcon>
-						Learn More
+						About Me
 					</a></Link>
 
 				</div></Scene></Controller>

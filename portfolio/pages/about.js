@@ -112,7 +112,7 @@ function About () {
 					<div className={styles.details} key={index}>
 
 						{/* Icon */}
-						<Link href={`/projects?query=${tech.name}`}><a><img className={styles.image} src={tech.image}/></a></Link>
+						<Link href={`/projects?query=${tech.name}`}><a><img alt={`${tech.name} technology logo`} className={styles.image} src={tech.image}/></a></Link>
 
 						{/* Description */}
 						<div className={styles.title}>{tech.name}</div>
@@ -383,7 +383,7 @@ function About () {
 						/></div>
 
 						{/* Profile Picture */}
-						<div className={styles.profile_picture}><span className={styles.blob}/><span className={styles.blob}/><Image placeholder='blur' src={profilePicture}/></div>
+						<div className={styles.profile_picture}><span className={styles.blob}/><span className={styles.blob}/><Image alt="Profile picture" placeholder='blur' src={profilePicture}/></div>
 
 						{/* Text */}
 						<div className={styles.text}>
@@ -795,7 +795,7 @@ function About () {
 						<div className={styles.card}>
 
 							{/* Logo */}
-							<div className={styles.logo}><Image layout='fill' src={akisLogo}/></div>
+							<div className={styles.logo}><Image alt="AKIS logo" layout='fill' src={akisLogo}/></div>
 
 							{/* Meta */}
 							<div className={styles.meta}>August 2009 - July 2021</div>
@@ -824,7 +824,7 @@ function About () {
 						<div className={styles.card}>
 
 							{/* Logo */}
-							<div className={styles.logo}><Image layout='fill' src={quLogo}/></div>
+							<div className={styles.logo}><Image alt="Qatar University logo" layout='fill' src={quLogo}/></div>
 
 							{/* Meta */}
 							<div className={styles.meta}>August 2021 - Present</div>

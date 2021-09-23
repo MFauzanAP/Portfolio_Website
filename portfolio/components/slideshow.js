@@ -437,7 +437,7 @@ class Slideshow extends React.Component {
 			};
 
 			//	Add element
-			return <div key={i.toString()} style={style}><Image layout='fill' placeholder='blur' blurDataURL={source} src={source}/></div>
+			return <div key={i.toString()} style={style}><Image alt={`Slideshow image ${i + 1}`} layout='fill' placeholder='blur' blurDataURL={source} src={source}/></div>
 
 		});
 

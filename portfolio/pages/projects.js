@@ -96,12 +96,14 @@ export default function Projects () {
 				//	Return html
 				projects.push(
 					<div className={styles.card} key={index}>
-						<div className={styles.background}><img src={project.images[0]}/></div>
+						<div className={styles.background}><img alt={`${project.name} main image`} src={project.images[0]}/></div>
 						<div className={featured}><i className="fa fa-star"></i></div>
 						{category}
 						<div className={styles.title}>{project.name}</div>
 						<div className={styles.description}>{project.description.short}</div>
-						<Link href={`/projects/${project.name.replaceAll(' ', '_')}`}><a className={styles.call_to_action}>LEARN MORE</a></Link>
+						<Link href={`/projects/${project.name.replaceAll(' ', '_')}`}><a className={styles.call_to_action}>
+							VIEW PROJECT
+						</a></Link>
 					</div>);
 
 			})

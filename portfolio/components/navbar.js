@@ -249,7 +249,7 @@ class Navbar extends React.Component {
 			<Link href="/projects"><a className={`${projects} desktop laptop`}>Projects</a></Link>
 
 			{/* Logo */}
-			<div className="logo_container"><img className="logo" src="/logo.svg"/></div>
+			<div className="logo_container"><img alt="Website Logo" className="logo" src="/logo.svg"/></div>
 
 			{/* About */}
 			<Link href="/about"><a className={`${about} desktop laptop`}>About</a></Link>
