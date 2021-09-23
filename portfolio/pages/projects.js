@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
+import { motion } from 'framer-motion';
 import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
 import ScrollToTop from '@/components/scroll_to_top';
@@ -382,8 +383,8 @@ export default function Projects () {
 
 			</Head>
 
-			{/* Homepage */}
-			<div className={styles.projects}>
+			{/* Project Page */}
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.projects}>
 
 				{/* Navbar Background */}
 				<div className={styles.navbar_background}>
@@ -479,9 +480,6 @@ export default function Projects () {
 					{/* Footer */}
 					<div className={styles.footer}></div>
 
-					{/* Loader */}
-					<Loader/>
-
 				</div></Scene></Controller>
 				
 
@@ -503,7 +501,10 @@ export default function Projects () {
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
 
-			</div>
+			</motion.div>
+
+			{/* Loader */}
+			<Loader/>
 
 		</div>
 	);

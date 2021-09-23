@@ -3,6 +3,7 @@ import styles from '@/styles/Error.module.scss';
 import Head from 'next/head';
 import Link from 'next/link';
 import { ToastContainer } from 'react-nextjs-toast';
+import { motion } from 'framer-motion';
 import Navbar from "@/components/navbar";
 import ScrollToTop from '@/components/scroll_to_top';
 import Loader from '@/components/loader';
@@ -45,7 +46,7 @@ function Error () {
 			</Head>
 
 			{/* Homepage */}
-			<div className={styles.error}>
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.error}>
 
 				{/* ====================================================== Body ====================================================== */}
 				<div className={styles.body}>
@@ -89,10 +90,10 @@ function Error () {
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
 
-				{/* Loader */}
-				<Loader/>
+			</motion.div>
 
-			</div>
+			{/* Loader */}
+			<Loader/>
 
 		</div>
 	);

@@ -35,10 +35,10 @@ class Loader extends React.Component {
 							},
 						},
 						initial		: {
-							width		: '200%',
-							height		: '200%',
-							left		: '-50%',
-							top		: '-50%',
+							width		: '300%',
+							height		: '300%',
+							left		: '-100%',
+							top		: '-100%',
 							transition: {
 								duration	: 1,
 								ease		: [0.87, 0, 0.13, 1],

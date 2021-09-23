@@ -6,6 +6,7 @@ import Particles from 'react-particles-js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
+import { motion } from 'framer-motion';
 import Navbar from "@/components/navbar";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from '@/components/slideshow';
@@ -206,7 +207,7 @@ function Home () {
 			</Head>
 
 			{/* Homepage */}
-			<div className={styles.home}>
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.home}>
 
 				{/* ================================================== Landing Page ================================================== */}
 
@@ -726,10 +727,10 @@ function Home () {
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
 
-				{/* Loader */}
-				<Loader/>
+			</motion.div>
 
-			</div>
+			{/* Loader */}
+			<Loader/>
 
 		</div>
 	);

@@ -353,7 +353,7 @@ function About () {
 			</Head>
 
 			{/* About Page */}
-			<div className={styles.about}>
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.about}>
 
 				{/* Navbar Background */}
 				<div className={styles.navbar_background}>
@@ -1011,10 +1011,10 @@ function About () {
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
 
-				{/* Loader */}
-				<Loader/>
+			</motion.div>
 
-			</div>
+			{/* Loader */}
+			<Loader/>
 
 		</div>
 	);
