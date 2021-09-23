@@ -1,6 +1,9 @@
 import '../styles/globals.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import React from 'react';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
+import { AnimatePresence } from 'framer-motion';
+import Footer from "@/components/footer";
 
 //      Import brand icons
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -21,8 +24,21 @@ library.add(
 	fas
 );
 
-function MyApp({ Component, pageProps }) {
-	return <Component {...pageProps} />
+function MyApp({ Component, pageProps, router }) {
+
+	/* ================================================ Output final html =============================================== */
+	return (
+		<>
+
+			{/* Main Body */}
+			<AnimatePresence exitBeforeEnter><Component key={router.route} {...pageProps} /></AnimatePresence>
+
+			{/* Footer */}
+			<Footer/>
+			
+		</>
+	);
+
 }
 
 export default MyApp
