@@ -929,6 +929,16 @@
 		}
 	}
 
+	/* Footer */
+	.footer {
+		position		: absolute;
+		bottom			: 0;
+		height			: 100px;
+		width			: 100%;
+
+		background		: linear-gradient(to bottom, #F8F8F8, #FFFFFF);
+	}
+
 	/* Loader */
 	.loader {
 		width			: 100%;
