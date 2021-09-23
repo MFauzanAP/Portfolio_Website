@@ -10,6 +10,7 @@ import quLogo from '@/public/qu_logo.webp';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
+import { motion } from 'framer-motion';
 import sanitizeHTML from 'sanitize-html';
 import Navbar from "@/components/navbar";
 import SideNavbar from '@/components/side_navbar';

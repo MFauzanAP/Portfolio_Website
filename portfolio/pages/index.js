@@ -23,6 +23,9 @@ function Home () {
 	const [preload, setPreload] = useState(0);
 	const [projects, setProjects] = useState(0);
 
+	//	Skeleton html
+	var skeleton = [];
+
 
 
 	/* =================================================== Use Effect =================================================== */
@@ -51,7 +54,6 @@ function Home () {
 		sessionStorage.setItem('home_visit', true);
 
 		//	Generate skeleton html
-		var skeleton = [];
 		for (let i = 0; i < 5; i++) {
 			
 			//	Push to array
@@ -178,13 +180,7 @@ function Home () {
 			console.log(e);
 
 			//	Return projects html
-			return { length: 0, data: (
-				<div className={styles.loader}>
-					<FontAwesomeIcon icon={['fas', 'exclamation-circle']} style={{fontSize: '5em'}}/>
-					<h1>503 Service Unavailable</h1>
-					<p style={{fontWeight: 400, letterSpacing: 0, margin: 0}}>Unfortunately, we were unable to connect to the server. Please try again.</p>
-				</div>
-			) };
+			return { length: 0, data: skeleton };
 
 		}
 
