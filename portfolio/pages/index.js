@@ -426,7 +426,7 @@ function Home () {
 
 								{/* Logo */}
 								<div className={styles.icon_box}>
-									<img src="/akis_logo.png"></img>
+									<img src="/akis_logo.webp"></img>
 								</div>
 
 								{/* Header */}
