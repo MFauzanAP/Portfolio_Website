@@ -6,7 +6,7 @@ const config = {
 	async headers () {
 		return [
 			{
-				sources		: '/(.*)',
+				source		: '/(.*)',
 				headers		: [
 					{
 						key	: 'X-DNS-Prefetch-Control',
