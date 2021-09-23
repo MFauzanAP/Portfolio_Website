@@ -6,11 +6,13 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Controller, Scene } from "react-scrollmagic";
 import { ToastContainer } from 'react-nextjs-toast';
+import { motion } from 'framer-motion';
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import SideNavbar from '@/components/side_navbar';
 import Slideshow from "@/components/slideshow";
 import ScrollToTop from '@/components/scroll_to_top';
+import Loader from '@/components/loader';
 
 //	Declare output function
 export default function Projects () {
@@ -161,8 +163,8 @@ export default function Projects () {
 
 			</Head>
 
-			{/* Homepage */}
-			<div className={styles.projects}>
+			{/* Project Details Page */}
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.projects}>
 
 				{/* Banner */}
 				<div className={styles.banner}></div>
@@ -375,7 +377,10 @@ export default function Projects () {
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
 
-			</div>
+			</motion.div>
+
+			{/* Loader */}
+			<Loader/>
 
 		</div>
 	);
