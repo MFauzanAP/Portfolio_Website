@@ -1,0 +1,6 @@
+Sitemap: https://www.muhammadfauzan.me/sitemap.xml
+
+User-Agent: *
+Allow: /
+
+Disallow: /api/*
