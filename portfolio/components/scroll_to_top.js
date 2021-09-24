@@ -35,7 +35,7 @@ class ScrollToTop extends React.Component {
 			<Controller><Scene classToggle="active" reverse={true} triggerElement={this.state.trigger}><div className="scroll_to_top">
 
 				{/* Anchor */}
-				<a className="anchor" id="scroll_to_top"></a>
+				<p className="anchor" id="scroll_to_top"></p>
 
 				{/* Link */}
 				<a href="#scroll_to_top" className="link">

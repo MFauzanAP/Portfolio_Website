@@ -405,7 +405,7 @@ export default function Projects () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={styles.project_list}>
 
 					{/* Anchor */}
-					<a className="anchor" id="project_list"/>
+					<p className="anchor" id="project_list"/>
 
 					{/* Header */}
 					<div className={styles.header}>PROJECT SHOWCASE</div>

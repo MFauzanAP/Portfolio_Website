@@ -375,7 +375,7 @@ function About () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.personal_info} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="profile"/>
+					<p className="anchor" id="profile"/>
 
 					{/* Details */}
 					<div className={styles.details}>
@@ -562,7 +562,7 @@ function About () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.tech_stack} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="tech_stack"/>
+					<p className="anchor" id="tech_stack"/>
 
 					{/* Background */}
 					<div className={styles.background}>
@@ -643,7 +643,7 @@ function About () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.experience} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="experience"/>
+					<p className="anchor" id="experience"/>
 
 					{/* Header */}
 					<div className={styles.header}>EXPERIENCE</div>
@@ -770,7 +770,7 @@ function About () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.education} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="education"/>
+					<p className="anchor" id="education"/>
 
 					{/* Background */}
 					<div className={styles.background}></div>
@@ -868,7 +868,7 @@ function About () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.hobbies} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="hobbies"/>
+					<p className="anchor" id="hobbies"/>
 
 					{/* Header */}
 					<div className={styles.header}>IN MY FREE TIME</div>

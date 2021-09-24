@@ -179,7 +179,7 @@ function Contact () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.map} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="contact_details"/>
+					<p className="anchor" id="contact_details"/>
 
 					{/* Background */}
 					<div className={styles.background}></div>
@@ -242,7 +242,7 @@ function Contact () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.faq} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="faq"/>
+					<p className="anchor" id="faq"/>
 
 					{/* Title */}
 					<div className={styles.title}>Frequently Asked Questions</div>
@@ -325,7 +325,7 @@ function Contact () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.contact_form} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="contact_form"/>
+					<p className="anchor" id="contact_form"/>
 
 					{/* Divider */}
 					<div className={styles.divider}><div className={styles.connectors}>

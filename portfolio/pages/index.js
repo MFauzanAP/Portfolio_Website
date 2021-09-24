@@ -283,7 +283,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.hire_me} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="hire_me"/>
+					<p className="anchor" id="hire_me"/>
 
 					{/* Meta */}
 					<div className={styles.meta}>
@@ -331,7 +331,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.showcase} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="showcase"/>
+					<p className="anchor" id="showcase"/>
 
 					{/* Background */}
 					<div className={styles.background}>
@@ -402,7 +402,7 @@ function Home () {
 				<Controller><Scene classToggle={styles.active} reverse={false}><div className={`${styles.career_timeline} ${preload} load_animation`}>
 
 					{/* Anchor */}
-					<a className="anchor" id="career_timeline"/>
+					<p className="anchor" id="career_timeline"/>
 
 					{/* Background */}
 					<div className={styles.background}></div>
