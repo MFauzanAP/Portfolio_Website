@@ -345,7 +345,13 @@ function About () {
 
 				{/* Details */}
 				<title>About | Muhammad Fauzan Aristya Putra</title>
-				<meta name="description" content="Muhammad Fauzan Aristya Putra's Portfolio" />
+				<meta name="title" content="About | Muhammad Fauzan Aristya Putra"/>
+				<meta name="description" content="A personal portfolio for a first-year student at Qatar University with a passion for web design and game development. "/>
+				<meta name="keywords" content="muhammad, fauzan, aristya, putra, portfolio, web development, game development, technology, html, css, javascript, react, nextjs, jquery, c#, unity, blender, python"/>
+				<meta name="robots" content="index, follow"/>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+				<meta name="language" content="English"/>
+				<meta name="author" content="Muhammad Fauzan Aristya Putra"/>
 				<link rel="icon" href="/favicon.ico" />
 
 				{/* Font Awesome */}
