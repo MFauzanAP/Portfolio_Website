@@ -3,6 +3,7 @@
 /* ------------------------------------------------------------------------------------------------------------------ */
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "../components/accordion";
 import CopyToClipboard from './utils/copy_to_clipboard';
@@ -249,7 +250,7 @@ class Navbar extends React.Component {
 			<Link href="/projects"><a className={`${projects} desktop laptop`}>Projects</a></Link>
 
 			{/* Logo */}
-			<div className="logo_container"><img alt="Website Logo" className="logo" src="/logo.svg"/></div>
+			<div className="logo_container"><Image alt="Website Logo" className="logo" width="72" height="72" src="/logo.svg"/></div>
 
 			{/* About */}
 			<Link href="/about"><a className={`${about} desktop laptop`}>About</a></Link>
