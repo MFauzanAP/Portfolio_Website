@@ -164,7 +164,7 @@ function Contact () {
 			</Head>
 
 			{/* Homepage */}
-			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.contact}>
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.1}} className={styles.contact}>
 
 				{/* Navbar Background */}
 				<div className={styles.navbar_background}>

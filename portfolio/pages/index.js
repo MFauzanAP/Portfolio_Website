@@ -209,7 +209,7 @@ function Home () {
 			</Head>
 
 			{/* Homepage */}
-			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.home}>
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.1}} className={styles.home}>
 
 				{/* ================================================== Landing Page ================================================== */}
 

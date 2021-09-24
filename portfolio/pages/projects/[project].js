@@ -169,7 +169,7 @@ export default function Projects () {
 			</Head>
 
 			{/* Project Details Page */}
-			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} className={styles.projects}>
+			<motion.div initial={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.1}} className={styles.projects}>
 
 				{/* Banner */}
 				<div className={styles.banner}></div>
