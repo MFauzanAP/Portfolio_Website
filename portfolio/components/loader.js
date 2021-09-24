@@ -25,21 +25,15 @@ class Loader extends React.Component {
 					animate="animate" 
 					variants={{
 						animate		: {
-							width		: '0%',
-							height		: '0%',
-							left		: '50%',
-							top		: '50%',
-							transition: {
+							transform	: 'scale(0)',
+							transition	: {
 								duration	: 1,
 								ease		: [0.87, 0, 0.13, 1],
 							},
 						},
 						initial		: {
-							width		: '300%',
-							height		: '300%',
-							left		: '-100%',
-							top		: '-100%',
-							transition: {
+							transform	: 'scale(1)',
+							transition	: {
 								duration	: 1,
 								ease		: [0.87, 0, 0.13, 1],
 							},
