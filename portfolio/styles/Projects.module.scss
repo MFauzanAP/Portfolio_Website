@@ -317,6 +317,16 @@
 		}
 	}
 
+	/* Footer */
+	.footer {
+		position		: absolute;
+		bottom			: 0;
+		height			: 100px;
+		width			: 100%;
+
+		background		: linear-gradient(to bottom, #F8F8F8, #FFFFFF);
+	}
+
 	/* Mobile */
 	@include media ("<=laptop") {
 		.project_navigation {
@@ -927,16 +937,6 @@
 				transform		: scale(1.1);
 			}
 		}
-	}
-
-	/* Footer */
-	.footer {
-		position		: absolute;
-		bottom			: 0;
-		height			: 100px;
-		width			: 100%;
-
-		background		: linear-gradient(to bottom, #F8F8F8, #FFFFFF);
 	}
 
 	/* Loader */
