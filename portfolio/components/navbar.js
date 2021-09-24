@@ -273,10 +273,10 @@ class Navbar extends React.Component {
 
 					{/* Links */}
 					<ul style={{listStyleType: 'none', paddingInlineStart: '0', display: "flex", flexDirection: "row"}}>
-						<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></li></a>
-						<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
-						<a href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
-						<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
+						<li><a alt="GitHub link" href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></a></li>
+						<li><a alt="Linkedin link" href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></a></li>
+						<li><a alt="Instagram link" href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></a></li>
+						<li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><a alt="Email link" href="mailto: muhammadfauzanaristyaputra@gmail.com"><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></a></li>
 					</ul>
 
 				</div>
@@ -350,10 +350,10 @@ class Navbar extends React.Component {
 
 						{/* Links */}
 						<ul style={{listStyleType: 'none', paddingInlineStart: '0', display: "flex", flexDirection: "row"}}>
-							<a href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></li></a>
-							<a href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></li></a>
-							<a href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><li><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></li></a>
-							<a href="mailto: muhammadfauzanaristyaputra@gmail.com"><li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></li></a>
+							<li><a alt="GitHub link" href="https://github.com/MFauzanAP" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon></a></li>
+							<li><a alt="Linkedin link" href="https://linkedin.com/in/muhammad-fauzan-6256441b4" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'linkedin']}></FontAwesomeIcon></a></li>
+							<li><a alt="Instagram link" href="https://www.instagram.com/fow_zen/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'instagram']}></FontAwesomeIcon></a></li>
+							<li onClick={CopyToClipboard.bind(this, "muhammadfauzanaristyaputra@gmail.com", "Email")}><a alt="Email link" href="mailto: muhammadfauzanaristyaputra@gmail.com"><FontAwesomeIcon icon={['fas', 'envelope']}></FontAwesomeIcon></a></li>
 						</ul>
 
 						{/* Copyright */}
