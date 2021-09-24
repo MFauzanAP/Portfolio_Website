@@ -409,10 +409,6 @@ function Contact () {
 				{/* Scroll to Top */}
 				<ScrollToTop options={{trigger: '#background_end'}}/>
 
-				{/* WIP Indicator */}
-				<div className='wip1'>WORK IN PROGRESS</div>
-				<div className='wip2'>WORK IN PROGRESS</div>
-
 				{/* Navbar */}
 				<Controller><Scene classToggle="active" triggerElement="#background_end">
 					<div className="navbar_container"><Navbar pathname="contact"/></div>

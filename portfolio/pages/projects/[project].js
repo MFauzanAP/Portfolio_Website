@@ -318,10 +318,6 @@ export default function Projects () {
 				{/* Scroll to Top */}
 				<ScrollToTop options={{trigger: '#background_end'}}/>
 
-				{/* WIP Indicator */}
-				<div className='wip1'>WORK IN PROGRESS</div>
-				<div className='wip2'>WORK IN PROGRESS</div>
-
 				{/* Trigger */}
 				<div className={styles.trigger} id="trigger"></div>
 

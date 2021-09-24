@@ -1011,10 +1011,6 @@ function About () {
 					]
 				}}/>
 
-				{/* WIP Indicator */}
-				<div className='wip1'>WORK IN PROGRESS</div>
-				<div className='wip2'>WORK IN PROGRESS</div>
-
 				{/* Toast Container */}
 				<ToastContainer style={{zIndex: 5}}/>
 
