@@ -396,16 +396,13 @@ function About () {
 						<div className={styles.text}>
 
 							{/* Header */}
-							<div className={styles.header}>Hey, I&apos;m Fauzan</div>
+							<div className={styles.header}>Hey, I&apos;m Fauzan.</div>
 
 							{/* Description */}
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id dolor at dui hendrerit accumsan.
-								Curabitur nec ante risus. Donec vel erat iaculis, volutpat ante in, porttitor arcu. Interdum et malesuada
-								fames ac ante ipsum primis in faucibus. Sed vel urna condimentum, gravida tortor sit amet, molestie purus.
-								Donec nisl erat, ornare sit amet auctor ac, mattis in justo. Quisque accumsan justo arcu,
-								nec dapibus eros blandit ut. Aliquam convallis consectetur ante, eget ullamcorper ipsum auctor nec.
-								Mauris pellentesque vel odio ac ornare. Sed sed velit at risus aliquam pellentesque.
+								I'm a mechanical engineering/computer science student at Qatar University, and this is my website! 
+								I like to think of myself as a passionate and hard-working individual interested in making the world 
+								a better place through tech. If you'd like to reach out to me, feel free to visit my contact page.
 							</p>
 
 							{/* Resume */}
