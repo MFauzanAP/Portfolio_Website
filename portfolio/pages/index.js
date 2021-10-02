@@ -526,6 +526,10 @@ function Home () {
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Website
 								</button></a>
+								<a href="malvor_recommendation_letter.pdf" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									View Letter Of Recomendation
+								</button></a>
 
 							</div>
 
@@ -612,6 +616,10 @@ function Home () {
 									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'external-link-alt']}></FontAwesomeIcon>
 									View Project
 								</button></a></Link>
+								<a href="malvor_recommendation_letter.pdf" target="_blank" rel="noreferrer"><button style={{color: '#3D3D3D', margin: '10px'}}>
+									<FontAwesomeIcon className={styles.icon} style={{marginRight: '10px'}} icon={['fas', 'download']}></FontAwesomeIcon>
+									View Letter Of Recomendation
+								</button></a>
 
 							</div>
 
