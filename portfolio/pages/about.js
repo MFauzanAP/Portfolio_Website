@@ -400,9 +400,9 @@ function About () {
 
 							{/* Description */}
 							<p>
-								I'm a mechanical engineering/computer science student at Qatar University, and this is my website! 
+								I&apos;m a mechanical engineering/computer science student at Qatar University, and this is my website! 
 								I like to think of myself as a passionate and hard-working individual interested in making the world 
-								a better place through tech. If you'd like to reach out to me, feel free to visit my contact page.
+								a better place through tech. If you&apos;d like to reach out to me, feel free to visit my contact page.
 							</p>
 
 							{/* Resume */}
