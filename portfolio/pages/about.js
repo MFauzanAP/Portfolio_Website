@@ -406,7 +406,7 @@ function About () {
 							</p>
 
 							{/* Resume */}
-							<button><FontAwesomeIcon icon={['fas', 'download']} style={{marginRight: '10px'}}/>View Resume</button>
+							<a href="resume_jan_2022.pdf" target="_blank" rel="noreferrer"><button><FontAwesomeIcon icon={['fas', 'download']} style={{marginRight: '10px'}}/>View Resume</button></a>
 
 						</div>
 
